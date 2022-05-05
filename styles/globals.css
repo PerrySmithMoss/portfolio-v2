@@ -2,9 +2,10 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Oswald-Regular";
+  font-family: "Lato-Regular";
   overflow-x: hidden;
   overflow-y: hidden;
+  overflow: hidden;
 }
 
 a {
@@ -14,4 +15,54 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.active_slide {
+  display: block !important;
+}
+
+.transitionDiv {
+  width: 200px;
+  height: 200px;
+  background: white;
+  position: absolute;
+  transform: scale(0);
+  z-index: 1;
+}
+
+.split_vertical {
+  transform: scaleY(0);
+}
+
+.easytransitions__TransitionPart7 {
+  width: 100% !important;
+  display: none;
+  bottom: -100px;
+  animation: horizontal 1s forwards;
+}
+.easytransitions__TransitionPart7.split_vertical {
+  display: block;
+}
+
+.easytransitions__TransitionPart8 {
+  width: 100% !important;
+  display: none;
+  top: -100px;
+  animation: horizontal 1s forwards;
+}
+.easytransitions__TransitionPart8.split_vertical {
+  display: block;
+}
+
+/* // Transition animations */
+@keyframes horizontal {
+  0% {
+    transform: scaleY(0);
+  }
+  50% {
+    transform: scaleY(10);
+  }
+  100% {
+    transform: scaleY(0);
+  }
 }
