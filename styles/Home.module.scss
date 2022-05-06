@@ -157,9 +157,10 @@
 
 // Transitions
 .easytransitions {
-  background: #001514;
+  background: #001219;
+  // background: #001514;
   // font-family: "Oswald-Regular", sans-serif;
-  font-family: "Lato-Regular", sans-serif;
+  font-family: "Lato-Bold", sans-serif;
   height: 100vh;
   .transitionSection {
     height: 100vh;
@@ -177,4 +178,13 @@
       transform: translateY(-50%);
     }
   }
+}
+
+// Hero 
+.mainWrapper {
+  padding: 0px 150px;
+  width: 100%;
+  max-width: 1600px;
+  min-height: 100vh;
+  margin: 0 auto;
 }

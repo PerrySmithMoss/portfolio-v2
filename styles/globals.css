@@ -6,6 +6,25 @@ body {
   overflow-x: hidden;
   overflow-y: hidden;
   overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+
+  --dark-navy: #001219;
+  --light-navy: #1b1f30;
+  --cyan: #00ffff;
+  --white: #ffffff;
+  --light-white: #b1bdc5;
+  --font-lato: "Lato-Regular", "Inter", "San Francisco", "SF Pro Text",
+    -apple-system, system-ui, sans-serif;
+  --font-oswald: "Oswald-Regular", "Inter", "San Francisco", "SF Pro Text",
+    -apple-system, system-ui, sans-serif;
+  --fs-xxs: 12px;
+  --fs-xs: 13px;
+  --fs-sm: 14px;
+  --fs-md: 16px;
+  --fs-lg: 18px;
+  --fs-xl: 20px;
+  --fs-xxl: 22px;
+  --border-radius: 4px
 }
 
 a {
@@ -15,6 +34,19 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  box-sizing: inherit;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.1;
+  margin: 0px;
 }
 
 .active_slide {
