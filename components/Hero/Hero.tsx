@@ -7,10 +7,10 @@ export const Hero: React.FC<HeroProps> = ({}) => {
   return (
     <section className={styles.heroContainer}>
       <div>
-        <h1>Welcome, my name is</h1>
+        <h1>Greetings, my name is</h1>
       </div>
       <div>
-        <h2>Perry Smith-Moss</h2>
+        <h2>Perry Smith-Moss.</h2>
       </div>
       <div>
         <p>

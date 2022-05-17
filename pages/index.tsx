@@ -13,6 +13,7 @@ const Home: NextPage = () => {
   const router = useRouter();
   const isHome = router.pathname === "/";
   const [isLoading, setIsLoading] = useState(isHome);
+  const [isMouted, setIsMouted] = useState(isHome);
 
   useEffect(() => {
     let timerFunc = setTimeout(() => {
@@ -20,6 +21,14 @@ const Home: NextPage = () => {
     }, 1000);
 
     return () => clearTimeout(timerFunc);
+  }, []);
+
+  useEffect(() => {
+    let timerFunc2 = setTimeout(() => {
+      setIsMouted(false);
+    }, 1600);
+
+    return () => clearTimeout(timerFunc2);
   }, []);
 
   return (
@@ -31,7 +40,6 @@ const Home: NextPage = () => {
       {isLoading && isHome ? (
         <Loader />
       ) : (
-        // Convert this to a component
         <div className={styles.easytransitions}>
           <div className={styles.easytransitions_transition}>
             <div
@@ -45,10 +53,16 @@ const Home: NextPage = () => {
             className={`active_slide ${styles.transitionSection} slideSection`}
             data-transition={`split_vertical`}
           >
-            <Navbar />
-            <main className={styles.mainWrapper}>
-              <Hero />
-            </main>
+            {isMouted && isHome ? (
+              <Loader />
+            ) : (
+              <>
+                <Navbar />
+                <main className={styles.mainWrapper}>
+                  <Hero />
+                </main>
+              </>
+            )}
           </div>
         </div>
       )}
