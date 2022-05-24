@@ -32,9 +32,8 @@ export const SEO: React.FC<SEOProps> = ({
   ogImage = "/favicon.ico",
 }) => {
   return (
-    <>
+    <Head>
       <html lang="en" />
-
       <meta name="title" content={metaTitle} />
       <meta name="description" content={metaDescription} />
       <meta name="keywords" content={metaKeywords} />
@@ -58,6 +57,6 @@ export const SEO: React.FC<SEOProps> = ({
       <meta name="twitter:title" content={metaTitle} />
       <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:image" content={ogUrl} />
-    </>
+    </Head>
   );
 };

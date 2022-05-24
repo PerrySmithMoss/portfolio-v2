@@ -16,7 +16,7 @@ export const Hero: React.FC<HeroProps> = ({}) => {
         <p>
           I am a software engineer who specializes in solving business problems
           with the best suited technology. Currently, I am building an
-          e-commerce platform for{" "}
+          E-commerce platform for{" "}
           <a
             target="_blank"
             rel="noreferrer"
@@ -28,7 +28,7 @@ export const Hero: React.FC<HeroProps> = ({}) => {
         </p>
       </div>
       <div>
-        <button className={styles.heroButton}>Projects</button>
+        <a className={styles.heroButton}>Projects</a>
       </div>
     </section>
   );

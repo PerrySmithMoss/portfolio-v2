@@ -1,15 +1,32 @@
-import type { NextPage } from "next";
+import fs from "fs";
+import path from "path";
+
+import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import { Hero } from "../components/Hero/Hero";
+import { FeaturedProjects } from "../components/Home/FeaturedProjects/FeaturedProjects";
 import { Loader } from "../components/Loader/Loader";
 import { Navbar } from "../components/Navbar/Navbar";
 import { SEO } from "../components/SEO/SEO";
 import styles from "../styles/Home.module.scss";
+import matter from "gray-matter";
+import { IFeaturedSnippet } from "../types/ISnippet";
+import { FeaturedSnippets } from "../components/Home/FeaturedSnippets/FeaturedSnippets";
+import { getMarkdownFromFilePath } from "../utils/files";
+import { IFeaturedProject } from "../types/IProject";
 
-const Home: NextPage = () => {
+interface HomePageProps {
+  featuredProjects: IFeaturedProject[];
+  featuredSnippets: IFeaturedSnippet[];
+}
+
+const Home: NextPage<HomePageProps> = ({
+  featuredProjects,
+  featuredSnippets,
+}) => {
   const router = useRouter();
   const isHome = router.pathname === "/";
   const [isLoading, setIsLoading] = useState(isHome);
@@ -56,12 +73,14 @@ const Home: NextPage = () => {
             {isMouted && isHome ? (
               <Loader />
             ) : (
-              <>
+              <div className={styles.mainContainer}>
                 <Navbar />
                 <main className={styles.mainWrapper}>
                   <Hero />
+                  <FeaturedProjects featuredProjects={featuredProjects} />
+                  <FeaturedSnippets featuredSnippets={featuredSnippets} />
                 </main>
-              </>
+              </div>
             )}
           </div>
         </div>
@@ -71,3 +90,15 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const featuredSnippets = await getMarkdownFromFilePath("content/home/snippets");
+  const featuredProjects = await getMarkdownFromFilePath("content/home/projects")
+
+  return {
+    props: {
+      featuredSnippets,
+      featuredProjects,
+    },
+  };
+};

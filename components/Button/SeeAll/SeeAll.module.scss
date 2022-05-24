@@ -1,0 +1,27 @@
+.arrow {
+  color: var(--cyan);
+  position: relative;
+  display: inline-block;
+  //   transition: transform 0.2s, -webkit-transform 0.2s;
+  font-size: var(--fs-sm);
+  cursor: pointer;
+    // padding: 0.5rem 0rem;
+//   padding-right: 8px;
+//   padding: 0px 20px;
+}
+.arrow svg {
+  display: inline-block;
+  margin-left: 10px;
+  -webkit-transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  -ms-transition: transform 0.3s ease-out;
+  -o-transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
+.arrow:hover svg {
+  -webkit-transform: translateX(4px);
+  -moz-transform: translateX(4px);
+  -ms-transform: translateX(4px);
+  -o-transform: translateX(4px);
+  transform: translateX(5px);
+}

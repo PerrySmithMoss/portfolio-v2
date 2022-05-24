@@ -1,0 +1,14 @@
+// Dynamic tech Icons
+.dynamicTechIconsContainer {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style-type: none;
+  padding: 0px !important;
+  margin: .7rem 0 0 0 !important;
+  gap: .60rem;
+}
+
+.dynamicTechIconsContainer li {
+  font-size: 1.25rem;
+}

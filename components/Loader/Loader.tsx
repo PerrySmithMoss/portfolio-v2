@@ -11,7 +11,7 @@ export const Loader: React.FC<LoaderProps> = ({}) => {
           Perry Smith-Moss
         </div>
         <div className={styles.glow}>Perry Smith-Moss</div>
-        <p className={styles.subtitle}>Software Developer</p>
+        <p className={styles.subtitle}>Software Engineer</p>
       </div>
       <div className={styles.scanlines}></div>
     </section>
