@@ -38,7 +38,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             backgroundColour="rgb(40, 45, 65)"
             variant="filled"
           />
-          {project.data.links.url != null && (
+          {project.data.urlLink != null && (
             <SeeAll
               padding="0.5rem 0rem"
               colour="#00FFFF"

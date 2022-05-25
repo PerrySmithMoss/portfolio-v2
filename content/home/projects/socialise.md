@@ -1,10 +1,9 @@
 ---
 id: "2"
 title: "Socialise"
-links: 
-- readMore: "/projects/im-listening"
-- github: "https://github.com/PerrySmithMoss/im-listening"
-- url: "needlink.com"
+readMoreLink: "/projects/im-listening"
+githubLink: "https://github.com/PerrySmithMoss/im-listening"
+urlLink: "needlink.co.uk"
 image: "/assets/images/home/projects/template.png"
 description: "Lorem ipsum, lorem ipsum. Lorem ipsum, lorem ipsum. Lorem ipsum, lorem ipsum. Lorem ipsum, lorem ipsum. Lorem ipsum, lorem ipsum."
 tech: ["React.js", "Node.js", "GraphQL", "Apollo"]

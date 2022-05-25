@@ -26,7 +26,7 @@
   font-family: "Poppins-SemiBold";
   line-height: 1.3;
   margin: 0px;
-  font-size: clamp(40px, 8vw, 82px);
+  font-size: clamp(40px, 8vw, 78px);
 }
 
 .heroContainer p {
@@ -38,7 +38,7 @@
   max-width: 540px;
 }
 
-.heroContainer a {
+.heroLink {
   display: inline-block;
   text-decoration: none;
   text-decoration-skip-ink: auto;
@@ -47,7 +47,7 @@
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.heroContainer a::after {
+.heroLink::after {
   content: "";
   display: block;
   width: 0px;
@@ -58,8 +58,14 @@
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 0.5s;
 }
-.heroContainer a:hover {
+.heroLink:hover {
   text-decoration: underline;
+}
+
+.heroButtonContainer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .heroButton {
@@ -81,3 +87,40 @@
   opacity: 0.5s;
   background-color: var(--light-navy);
 }
+
+.heroButtonSecondary {
+  display: inline-block;
+  position: relative;
+  color: white;
+  padding: 1.15rem 1rem;
+  font-size: var(--fs-md);
+  font-family: var(--font-poppins);
+  line-height: 1;
+  text-decoration: none !important;
+  cursor: pointer;
+  margin-top: 45px;
+}
+.heroButtonSecondary svg {
+  display: inline-block;
+  margin-left: 10px;
+  -webkit-transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  -ms-transition: transform 0.3s ease-out;
+  -o-transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
+.heroButtonSecondary:hover svg {
+  -webkit-transform: translateX(4px);
+  -moz-transform: translateX(4px);
+  -ms-transform: translateX(4px);
+  -o-transform: translateX(4px);
+  transform: translateX(5px);
+}
+
+.heroButtonSecondary:hover,
+.heroButtonSecondary:hover svg path{
+  // fill: var(--light-white);
+  // color: var(--light-white);
+}
+
+

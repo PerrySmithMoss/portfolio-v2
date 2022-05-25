@@ -1,0 +1,51 @@
+.mySkillsWrapper {
+  margin: 0px auto;
+  max-width: 1000px;
+  color: var(--white);
+  font-family: "Poppins-Regular";
+}
+
+.mySkillsHeader {
+  margin-top: 75px;
+}
+.mySkillsHeader h2 {
+  color: var(--white);
+  font-size: 36px;
+}
+
+.mySkillsContainer {
+  margin-top: 25px;
+}
+
+.skillsFlexWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.skillsFlexWrapper li {
+  padding: 2rem;
+  background-color: var(--light-navy);
+  color: var(--white);
+  border-radius: 10%;
+  text-align: center;
+  align-items: center;
+  margin: 1.5rem .85rem;
+  display: flex;
+  flex-direction: column;
+  font-size: var(--fs-sm);
+  width: 125px;
+  height: 125px;
+  cursor: pointer;
+}
+
+.mySkillsWrapper li:hover {
+  background-color: #212539;
+}
+
+.skillsFlexWrapper li p {
+  margin: 0px;
+  margin-top: 10px;
+}
+

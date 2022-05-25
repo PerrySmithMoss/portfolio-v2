@@ -1,20 +1,15 @@
 export interface IFeaturedProject {
-  data: IData
-}
-
-interface ILink {
-  readMore: string;
-  github: string;
-  url: string | null;
+  data: IData;
 }
 
 interface IData {
   id: string;
   title: string;
-  links: ILink;
+  readMoreLink: string;
+  githubLink: string;
+  urlLink: string;
   image: string;
   description: string;
   tech: string[];
   platform: string;
 }
-

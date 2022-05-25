@@ -18,27 +18,9 @@ export const SnippetCard: React.FC<SnippetCardProps> = ({ snippet }) => {
       <div className={styles.cardBody}>
         <div className={styles.cardHeader}>
           <h4>{snippet.data.title}</h4>
-
-          {/* <Badge text={project.platform} /> */}
         </div>
-        <DynamicTechIcons techs={snippet.data.tech as Array<TechListType>}/>
-
+        <DynamicTechIcons techs={snippet.data.tech as Array<TechListType>} />
         <p>{snippet.data.excerpt}</p>
-        {/* <div className={styles.buttonsContainer}>
-          <Button
-            text="Read more"
-            colour="white"
-            backgroundColour="rgb(40, 45, 65)"
-            variant="filled"
-          />
-          {project.links.url != null && (
-            <SeeAll
-              padding="0.5rem 0rem"
-              colour="#00FFFF"
-              buttonText="Visit site"
-            />
-          )}
-        </div> */}
       </div>
     </article>
   );

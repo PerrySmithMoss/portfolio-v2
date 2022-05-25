@@ -1,10 +1,9 @@
 ---
 id: "1"
 title: "I'm Listening"
-links: 
-- readMore: "/projects/im-listening"
-- github: "https://github.com/PerrySmithMoss/im-listening"
-- url: "needlink.com"
+readMoreLink: "/projects/im-listening"
+githubLink: "https://github.com/PerrySmithMoss/im-listening"
+urlLink: "needlink.co.uk"
 image: "/assets/images/home/projects/template.png"
 description: "I'm listening is a platform where users can share what music they're listening to."
 tech: ["React.js", "Node.js", "GraphQL", "Apollo"]

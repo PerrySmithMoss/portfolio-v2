@@ -1,9 +1,5 @@
-import fs from "fs";
-import path from "path";
-
 import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import { Hero } from "../components/Hero/Hero";
@@ -12,11 +8,11 @@ import { Loader } from "../components/Loader/Loader";
 import { Navbar } from "../components/Navbar/Navbar";
 import { SEO } from "../components/SEO/SEO";
 import styles from "../styles/Home.module.scss";
-import matter from "gray-matter";
 import { IFeaturedSnippet } from "../types/ISnippet";
 import { FeaturedSnippets } from "../components/Home/FeaturedSnippets/FeaturedSnippets";
 import { getMarkdownFromFilePath } from "../utils/files";
 import { IFeaturedProject } from "../types/IProject";
+import { AboutMe } from "../components/Home/About/AboutMe/AboutMe";
 
 interface HomePageProps {
   featuredProjects: IFeaturedProject[];

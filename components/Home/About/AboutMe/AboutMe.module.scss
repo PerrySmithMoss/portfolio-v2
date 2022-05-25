@@ -1,0 +1,76 @@
+.aboutMeWrapper {
+  margin: 0px auto;
+  max-width: 1000px;
+  color: var(--white);
+  font-family: "Poppins-Regular";
+  margin-top: 200px;
+}
+.aboutMeWrapper h2 {
+  color: var(--white);
+  font-size: 36px;
+}
+
+.aboutMeheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.aboutMeContainer {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 50px;
+}
+
+.aboutMeContainer p {
+  color: var(--light-white);
+}
+
+.inlineLink {
+  display: inline-block;
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  position: relative;
+  color: var(--cyan);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.inlineLink::after {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 1px;
+  position: relative;
+  bottom: 0.37rem;
+  background-color: var(--cyan);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  opacity: 0.5s;
+}
+.inlineLink:hover {
+  text-decoration: underline;
+}
+
+.pictureContainer {
+  position: relative;
+  max-width: 300px;
+}
+
+.pictureWrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  border-radius: 4px;
+}
+.pictureWrapper img {
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .aboutMeContainer {
+    display: block;
+  }
+  .pictureContainer {
+    margin: 50px auto 0px;
+    width: 70%;
+  }
+}
