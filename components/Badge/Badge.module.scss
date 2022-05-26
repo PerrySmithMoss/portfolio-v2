@@ -12,7 +12,6 @@
 .badgeOuter {
   background-color: #0c2231;
   border: 1px solid transparent;
-  font-size: 11px;
   height: 23px;
   line-height: 18px;
   text-decoration: none;
@@ -34,20 +33,22 @@
 
 .small {
   padding: .75rem .75rem;
+  font-size: 11px;
 }
 
 .medium {
-  padding: 1rem 0.65rem;
+  padding: 0.85rem .9rem;
+  font-size: 12px;
 }
 
 .large {
   padding: 1rem 1.1rem;
+  font-size: 12px;
 }
 
 .badgeInner {
   text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
-  color: rgb(34, 139, 230);
   -webkit-tap-highlight-color: transparent;
   line-height: 24px;
   text-transform: uppercase;

@@ -2,19 +2,19 @@ import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
-import { Hero } from "../components/Hero/Hero";
-import { FeaturedProjects } from "../components/Home/FeaturedProjects/FeaturedProjects";
+import { Hero } from "../components/Containers/Home/Hero/Hero";
+import { FeaturedProjects } from "../components/Containers/Home/FeaturedProjects/FeaturedProjects";
 import { Loader } from "../components/Loader/Loader";
 import { Navbar } from "../components/Navbar/Navbar";
 import { SEO } from "../components/SEO/SEO";
 import styles from "../styles/Home.module.scss";
 import { IFeaturedSnippet } from "../types/ISnippet";
-import { FeaturedSnippets } from "../components/Home/FeaturedSnippets/FeaturedSnippets";
+import { FeaturedSnippets } from "../components/Containers/Home/FeaturedSnippets/FeaturedSnippets";
 import { getMarkdownFrontMatter } from "../utils/files";
 import { IFeaturedProject } from "../types/IProject";
-import { AboutMe } from "../components/Home/About/AboutMe/AboutMe";
+import { AboutMe } from "../components/Containers/About/AboutMe/AboutMe";
 import { IFeaturedBlogPost } from "../types/IBlog";
-import { FeaturedBlogPosts } from "../components/Home/FeaturedBlogPosts/FeaturedBlogPosts";
+import { FeaturedBlogPosts } from "../components/Containers/Home/FeaturedBlogPosts/FeaturedBlogPosts";
 
 interface HomePageProps {
   featuredProjects: IFeaturedProject[];

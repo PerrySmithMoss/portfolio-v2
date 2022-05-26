@@ -1,7 +1,7 @@
 import React from "react";
-import { SeeAll } from "../../Button/SeeAll/SeeAll";
+import { SeeAll } from "../../../Button/SeeAll/SeeAll";
 import styles from "./FeaturedSnippets.module.scss";
-import { IFeaturedSnippet } from "../../../types/ISnippet";
+import { IFeaturedSnippet } from "../../../../types/ISnippet";
 import { SnippetCard } from "./SnippetCard";
 
 interface FeaturedSnippetsProps {
@@ -14,7 +14,7 @@ export const FeaturedSnippets: React.FC<FeaturedSnippetsProps> = ({
   return (
     <section className={styles.wrapper}>
       <div className={styles.header}>
-        <div>
+      <div className={styles.headerBorderLeft}>
           <h2>Featured Code Snippets</h2>
         </div>
         <div className={styles.arrowContainer}>

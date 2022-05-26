@@ -1,11 +1,11 @@
 import Image from "next/image";
 import React from "react";
-import { IFeaturedSnippet } from "../../../types/ISnippet";
-import { IFeaturedProject } from "../../../types/IProject";
-import { Badge } from "../../Badge/Badge";
-import { Button } from "../../Button/Button/Button";
-import { SeeAll } from "../../Button/SeeAll/SeeAll";
-import { DynamicTechIcons, TechListType } from "../../Icon/DynamicTechIcon";
+import { IFeaturedSnippet } from "../../../../types/ISnippet";
+import { IFeaturedProject } from "../../../../types/IProject";
+import { Badge } from "../../../Badge/Badge";
+import { Button } from "../../../Button/Button/Button";
+import { SeeAll } from "../../../Button/SeeAll/SeeAll";
+import { DynamicTechIcons, TechListType } from "../../../DynamicIcon/DynamicTechIcon";
 import styles from "./FeaturedSnippets.module.scss";
 
 interface SnippetCardProps {

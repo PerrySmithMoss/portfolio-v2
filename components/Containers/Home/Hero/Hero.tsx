@@ -1,6 +1,6 @@
 import React from "react";
-import { Button } from "../Button/Button/Button";
-import { SeeAll } from "../Button/SeeAll/SeeAll";
+import { Button } from "../../../Button/Button/Button";
+import { SeeAll } from "../../../Button/SeeAll/SeeAll";
 import styles from "./Hero.module.scss";
 
 interface HeroProps {}

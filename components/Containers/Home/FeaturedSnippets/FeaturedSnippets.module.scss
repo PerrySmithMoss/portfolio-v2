@@ -3,12 +3,22 @@
   max-width: 1000px;
   color: var(--white);
   font-family: "Poppins-Regular";
-  margin-top: 200px;
+  padding-top: 75px;
+
+  // min-height: 100vh;
 }
 .wrapper h2 {
   color: var(--white);
   font-size: 42px;
   font-family: "Poppins-Bold";
+}
+
+.headerBorderLeft {
+  border-left: 6px solid var(--cyan);
+
+  h2 {
+    padding-left: 15px;
+  }
 }
 
 .header {

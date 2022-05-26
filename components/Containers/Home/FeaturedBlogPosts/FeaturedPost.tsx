@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import { IFeaturedBlogPost } from "../../../types/IBlog";
+import { IFeaturedBlogPost } from "../../../../types/IBlog";
 import styles from "./FeaturedBlogPosts.module.scss";
-import { Badge } from "../../Badge/Badge";
-import { SeeAll } from "../../Button/SeeAll/SeeAll";
-import { Button } from "../../Button/Button/Button";
+import { Badge } from "../../../Badge/Badge";
+import { SeeAll } from "../../../Button/SeeAll/SeeAll";
+import { Button } from "../../../Button/Button/Button";
 
 interface FeaturedPostProps {
   post: IFeaturedBlogPost;
@@ -20,12 +20,12 @@ export const FeaturedPost: React.FC<FeaturedPostProps> = ({ post }) => {
       <div className={styles.featuredPostText}>
         {/* Text */}
         <div>
-          <Badge text={post.data.tech[0]} size="lg" />
+          <Badge colour="rgb(34, 139, 230)" backgroundColour="#0c2231"  text={post.data.tech[0]} size="lg" />
         </div>
         <h3>{post.data.title}</h3>
         <p>{post.data.description}</p>
         {/* <SeeAll buttonText="Read Full Article"/> */}
-        <Button text="Read More" backgroundColour="rgb(40, 45, 65)" colour="white" variant="filled" />
+        {/* <Button text="Read More" backgroundColour="rgb(40, 45, 65)" colour="white" variant="filled" /> */}
       </div>
     </article>
   );

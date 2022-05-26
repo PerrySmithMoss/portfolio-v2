@@ -1,7 +1,7 @@
 import React from "react";
-import { SeeAll } from "../../Button/SeeAll/SeeAll";
+import { SeeAll } from "../../../Button/SeeAll/SeeAll";
 import styles from "./FeaturedProjects.module.scss";
-import { IFeaturedProject } from "../../../types/IProject";
+import { IFeaturedProject } from "../../../../types/IProject";
 import { ProjectCard } from "./ProjectCard";
 
 interface FeaturedProjectsProps {
@@ -12,7 +12,7 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({featuredProje
   return (
     <section className={styles.wrapper}>
       <div className={styles.header}>
-        <div>
+        <div className={styles.headerBorderLeft}>
           <h2>Featured Projects</h2>
         </div>
         <div className={styles.arrowContainer}>
