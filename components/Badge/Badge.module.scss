@@ -10,13 +10,12 @@
 }
 
 .badgeOuter {
-  background-color: #0C2231;
+  background-color: #0c2231;
   border: 1px solid transparent;
   font-size: 11px;
   height: 23px;
   line-height: 18px;
   text-decoration: none;
-  padding: 0px 10.6667px;
   display: inline-flex;
   -webkit-box-align: center;
   align-items: center;
@@ -24,7 +23,7 @@
   justify-content: center;
   width: auto;
   text-transform: uppercase;
-  border-radius: 32px;
+  border-radius: 8px;
   cursor: default;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -33,15 +32,26 @@
   flex-grow: 0;
 }
 
+.small {
+  padding: .75rem .75rem;
+}
+
+.medium {
+  padding: 1rem 0.65rem;
+}
+
+.large {
+  padding: 1rem 1.1rem;
+}
+
 .badgeInner {
   text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   color: rgb(34, 139, 230);
   -webkit-tap-highlight-color: transparent;
-  font-size: 11px;
   line-height: 24px;
   text-transform: uppercase;
-  font-family: "Poppins-SemiBold";
+  font-family: "Poppins-Bold";
   letter-spacing: 0.3px;
   box-sizing: border-box;
   white-space: nowrap;

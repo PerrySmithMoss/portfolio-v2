@@ -10,18 +10,22 @@ import { SEO } from "../components/SEO/SEO";
 import styles from "../styles/Home.module.scss";
 import { IFeaturedSnippet } from "../types/ISnippet";
 import { FeaturedSnippets } from "../components/Home/FeaturedSnippets/FeaturedSnippets";
-import { getMarkdownFromFilePath } from "../utils/files";
+import { getMarkdownFrontMatter } from "../utils/files";
 import { IFeaturedProject } from "../types/IProject";
 import { AboutMe } from "../components/Home/About/AboutMe/AboutMe";
+import { IFeaturedBlogPost } from "../types/IBlog";
+import { FeaturedBlogPosts } from "../components/Home/FeaturedBlogPosts/FeaturedBlogPosts";
 
 interface HomePageProps {
   featuredProjects: IFeaturedProject[];
   featuredSnippets: IFeaturedSnippet[];
+  featuredBlogPosts: IFeaturedBlogPost[];
 }
 
 const Home: NextPage<HomePageProps> = ({
   featuredProjects,
   featuredSnippets,
+  featuredBlogPosts,
 }) => {
   const router = useRouter();
   const isHome = router.pathname === "/";
@@ -74,6 +78,7 @@ const Home: NextPage<HomePageProps> = ({
                 <main className={styles.mainWrapper}>
                   <Hero />
                   <FeaturedProjects featuredProjects={featuredProjects} />
+                  <FeaturedBlogPosts featuredBlogPosts={featuredBlogPosts} />
                   <FeaturedSnippets featuredSnippets={featuredSnippets} />
                 </main>
               </div>
@@ -88,13 +93,19 @@ const Home: NextPage<HomePageProps> = ({
 export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const featuredSnippets = await getMarkdownFromFilePath("content/home/snippets");
-  const featuredProjects = await getMarkdownFromFilePath("content/home/projects")
+  const featuredSnippets = await getMarkdownFrontMatter(
+    "content/home/snippets"
+  );
+  const featuredProjects = await getMarkdownFrontMatter(
+    "content/home/projects"
+  );
+  const featuredBlogPosts = await getMarkdownFrontMatter("content/home/blog");
 
   return {
     props: {
       featuredSnippets,
       featuredProjects,
+      featuredBlogPosts,
     },
   };
 };

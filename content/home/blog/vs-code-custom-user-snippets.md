@@ -1,1 +1,0 @@
-Show how to add custom user snippets to a users VS Code.

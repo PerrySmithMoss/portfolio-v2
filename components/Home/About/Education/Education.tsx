@@ -16,7 +16,6 @@ export const Education: React.FC<EducationProps> = ({}) => {
         <div>
           <div className={styles.educationCardFlex}>
             <div className={styles.universityImageContainer}>
-              {/* University image */}
               <Image
                 height={60}
                 width={90}
@@ -25,7 +24,6 @@ export const Education: React.FC<EducationProps> = ({}) => {
               />
             </div>
             <div className={styles.cardTextContainer}>
-              {/* University text */}
               <div className={styles.cardTextHeading}>
                 <h4>BSc Computer Networks &amp; Security</h4>
                 <span>2017-2020</span>

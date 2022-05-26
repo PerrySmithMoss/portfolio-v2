@@ -50,6 +50,7 @@ export const AboutMe: React.FC<AboutMeProps> = ({}) => {
         </div>
         <div className={styles.pictureContainer}>
           <div className={styles.pictureWrapper}>
+            {/* @TODO: Add picture of myself */}
             <Image
               src="/assets/images/about/picture.png"
               height={500}

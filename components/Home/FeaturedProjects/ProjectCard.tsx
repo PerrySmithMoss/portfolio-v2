@@ -28,7 +28,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <div className={styles.cardHeader}>
           <h4>{project.data.title}</h4>
 
-          <Badge text={project.data.platform} />
+          <Badge text={project.data.platform} size="sm"/>
         </div>
         <p>{project.data.description}</p>
         <div className={styles.buttonsContainer}>

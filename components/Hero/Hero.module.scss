@@ -23,10 +23,11 @@
 }
 
 .heroContainer h2 {
-  font-family: "Poppins-SemiBold";
+  font-family: "Poppins-Bold";
   line-height: 1.3;
+  letter-spacing: 0.05rem;
   margin: 0px;
-  font-size: clamp(40px, 8vw, 78px);
+  font-size: clamp(40px, 8vw, 80px);
 }
 
 .heroContainer p {
@@ -72,7 +73,9 @@
   display: inline-block;
   position: relative;
   color: var(--cyan);
+  // color: #000036;
   background-color: transparent;
+  // background-color: var(--cyan);
   border: 1px solid var(--cyan);
   border-radius: var(--border-radius);
   padding: 1.15rem 3rem;
@@ -123,4 +126,23 @@
   // color: var(--light-white);
 }
 
+.heroButtonAccent {
+  display: inline-block;
+  position: relative;
+  color: white;
+  background-color: rgb(40, 45, 65);
+  border: 1px solid rgb(40, 45, 65);
+  border-radius: var(--border-radius);
+  padding: 1.15rem 2.75rem;
+  font-size: var(--fs-md);
+  font-family: var(--font-poppins);
+  line-height: 1;
+  text-decoration: none !important;
+  cursor: pointer;
+  margin-top: 45px;
+}
+.heroButtonAccent:hover {
+  opacity: 0.5s;
+  background-color: var(--light-navy);
+}
 

@@ -6,7 +6,8 @@
 }
 .wrapper h2 {
   color: var(--white);
-  font-size: 36px;
+  font-size: 42px;
+  font-family: "Poppins-Bold";
 }
 
 .header {
@@ -44,7 +45,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
-  margin-top: 25px;
+  margin-top: 2.5rem;
 }
 
 .cardWrapper {
