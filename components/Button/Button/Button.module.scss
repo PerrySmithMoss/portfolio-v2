@@ -1,4 +1,4 @@
-.button {
+.primaryButton {
   box-sizing: inherit;
   display: inline-block;
   text-decoration-skip-ink: auto;
@@ -8,18 +8,43 @@
   text-decoration: none;
   cursor: pointer;
   font-size: var(--fs-sm);
-  // background-color: rgb(40, 45, 65) !important;
 }
-
-.button:hover {
+.primaryButton:hover {
   background-color: #212539 !important;
 }
 
-.filled {
-  padding: 0.70rem 1.2rem;
+.secondaryButton {
+  box-sizing: inherit;
+  display: inline-block;
+  text-decoration-skip-ink: auto;
+  position: relative;
+  border-radius: 4px;
+  font-family: var(--font-poppins);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: var(--fs-sm);
+  background-color: transparent;
+}
+.secondaryButton:hover {
+  opacity: 0.5s;
+  background-color: #20caca !important;
 }
 
+.filled {
+}
 .outline {
   border: 1px solid var(--cyan);
-  padding: 0.5rem 1.2rem;
 }
+
+.small {
+  padding: 0.50rem 1.2rem;
+}
+.medium {
+  padding: 0.70rem 1.2rem;
+}
+.large {
+  padding: 0.75rem 3rem;
+  // width: 100%;
+  text-align: center;
+}
+

@@ -40,6 +40,8 @@
   font-family: var(--font-poppins);
   counter-reset: item 0;
   z-index: 12;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .navbarLogo {
@@ -71,7 +73,7 @@
   margin: 0px 5px;
   position: relative;
   counter-increment: item 1;
-  font-size: var(--fs-sm);
+  font-size: 15px;
   display: list-item;
   list-style: none;
 }
@@ -83,7 +85,7 @@
   text-decoration-skip-ink: auto;
   position: relative;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 15px;
 }
 .navbarLinks ol li a:hover {
   color: var(--cyan) !important;

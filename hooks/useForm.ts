@@ -1,0 +1,70 @@
+import { useState } from "react";
+
+type Errors = {
+  [key: string]: string;
+};
+
+type FormData = {
+  name: string;
+  email: string;
+  message: string;
+};
+
+export const useForm = () => {
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState<Errors>({});
+
+  const emailRegex = new RegExp(
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+  );
+  const nameRegex = new RegExp(/^[a-zA-Z\s]*[^\s]$/gim);
+  const messageRegex = new RegExp(/^[\w\d][^<>/\\&]*$/gim);
+
+  function isValid(value: string, name: string, regex: RegExp, text: string) {
+    if (!value) {
+      setErrors({ ...errors, [name]: `Your ${text} is required` });
+      return false;
+    } else if (!regex.test(value)) {
+      setErrors({ ...errors, [name]: `Your ${text} is not valid` });
+      return false;
+    } else {
+      setErrors({ ...errors, [name]: "" });
+      return true;
+    }
+  }
+
+  function validateInput(name: string, value: string) {
+    switch (name) {
+      case "fromAddress":
+        return isValid(value, name, emailRegex, "fromAddress");
+      case "name":
+        return isValid(value, name, nameRegex, "Name");
+      case "message":
+        return isValid(value, name, messageRegex, "Message");
+      default:
+        break;
+    }
+  }
+
+  const handleInput = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    e.preventDefault();
+    console.log(e.target.name)
+    const { value, name } = e.target;
+    // validate
+    validateInput(name, value);
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const isFormValid = () => {
+    let errorArray = Object.values(errors);
+    return errorArray.length === 3 && errorArray.filter(Boolean).length === 0;
+  };
+
+  return { formData, errors, handleInput, isFormValid: isFormValid() };
+};

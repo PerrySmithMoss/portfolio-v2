@@ -37,6 +37,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         </div>
         <p>{project.data.description}</p>
         <div className={styles.buttonsContainer}>
+          <Button
+            text="Read more"
+            colour="white"
+            backgroundColour="rgb(40, 45, 65)"
+            variant="filled"
+          />
           {project.data.urlLink != null && (
             //   <a
             //   target="_blank"
@@ -51,14 +57,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               colour="#000036"
               backgroundColour="#00FFFF"
               variant="filled"
+              type="secondary"
             />
           )}
-          <Button
-            text="Read more"
-            colour="white"
-            backgroundColour="rgb(40, 45, 65)"
-            variant="filled"
-          />
         </div>
       </div>
     </article>

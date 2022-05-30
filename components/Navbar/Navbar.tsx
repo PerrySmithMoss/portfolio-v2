@@ -2,6 +2,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import styles from "./Navbar.module.scss";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { IoLogoLinkedin } from "react-icons/io";
 
 interface NavbarProps {}
 
@@ -14,7 +16,7 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
           <Link href="/" aria-label="home">
             <svg
               width="42"
-              height="52"
+              height="42"
               viewBox="0 0 42 56"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

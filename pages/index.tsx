@@ -15,6 +15,8 @@ import { IFeaturedProject } from "../types/IProject";
 import { AboutMe } from "../components/Containers/About/AboutMe/AboutMe";
 import { IFeaturedBlogPost } from "../types/IBlog";
 import { FeaturedBlogPosts } from "../components/Containers/Home/FeaturedBlogPosts/FeaturedBlogPosts";
+import { GetInTouch } from "../components/Containers/Home/GetInTouch/GetInTouch";
+import { Footer } from "../components/Footer/Footer";
 
 interface HomePageProps {
   featuredProjects: IFeaturedProject[];
@@ -80,6 +82,8 @@ const Home: NextPage<HomePageProps> = ({
                   <FeaturedProjects featuredProjects={featuredProjects} />
                   <FeaturedBlogPosts featuredBlogPosts={featuredBlogPosts} />
                   <FeaturedSnippets featuredSnippets={featuredSnippets} />
+                  <GetInTouch />
+                  <Footer />
                 </main>
               </div>
             )}
