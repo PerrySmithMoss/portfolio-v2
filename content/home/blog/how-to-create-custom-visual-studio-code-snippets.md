@@ -4,7 +4,7 @@ title: "How To Create Custom Visual Studio Code Snippets"
 datePublished: "19th May, 2022"
 readMoreLink: "/blog/how-to-create-custom-visual-studio-code-snippets"
 image: "/assets/images/home/blog/code.jpg"
-description: "Learn how to create your own custom visual studio code snippets."
+description: "Increase your programming efficiency by learning how to create your own custom Visual Studio Code snippets."
 featuredPost: true
 tech: ["VS Code"]
 tag: "Featured Post"

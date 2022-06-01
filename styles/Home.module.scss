@@ -182,9 +182,15 @@
 
 // Hero 
 .mainWrapper {
-  // padding: 0px 150px;
+  padding: 0px 3rem;
   width: 100%;
-  // max-width: 1600px;
+  max-width: 1600px;
   min-height: 100vh;
   margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .mainWrapper {
+    padding: 0px 1rem;
+  }
 }

@@ -24,10 +24,11 @@ export const GetInTouch: React.FC<GetInTouchProps> = ({}) => {
             <ContactForm />
           </div>
           <div className={styles.rightGrid}>
-            <div>
+            <div className={styles.mailIconWrapper}>
               <svg
-                width="325px"
-                height="325px"
+              className={styles.mailSVG}
+                width="300px"
+                height="300px"
                 viewBox="0 0 570 512"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -77,6 +78,7 @@ export const GetInTouch: React.FC<GetInTouchProps> = ({}) => {
                   fill="#CCCCCC"
                 />
               </svg>
+              </div>
 
               <div className={styles.emailContainer}>
                 <MdEmail size={25} />
@@ -108,7 +110,6 @@ export const GetInTouch: React.FC<GetInTouchProps> = ({}) => {
                   </li>
                 </ul>
               </div>
-            </div>
           </div>
         </div>
       </div>

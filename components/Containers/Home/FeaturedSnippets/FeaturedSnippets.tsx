@@ -3,6 +3,7 @@ import { SeeAll } from "../../../Button/SeeAll/SeeAll";
 import styles from "./FeaturedSnippets.module.scss";
 import { IFeaturedSnippet } from "../../../../types/ISnippet";
 import { SnippetCard } from "./SnippetCard";
+import { Button } from "../../../Button/Button/Button";
 
 interface FeaturedSnippetsProps {
   featuredSnippets: IFeaturedSnippet[];
@@ -14,12 +15,12 @@ export const FeaturedSnippets: React.FC<FeaturedSnippetsProps> = ({
   return (
     <section className={styles.wrapper}>
       <div className={styles.header}>
-      <div className={styles.headerBorderLeft}>
+        <div className={styles.headerBorderLeft}>
           <h2>Featured Code Snippets</h2>
         </div>
-        <div className={styles.arrowContainer}>
+        {/* <div className={styles.arrowContainer}>
           <SeeAll colour="#00FFFF" buttonText="View more" />
-        </div>
+        </div> */}
       </div>
       <div className={styles.projectsContainer}>
         <div className={styles.projectsGrid}>
@@ -27,6 +28,14 @@ export const FeaturedSnippets: React.FC<FeaturedSnippetsProps> = ({
             <SnippetCard key={snippet.data.id} snippet={snippet} />
           ))}
         </div>
+        <div className={styles.loadMoreButton}>
+        <Button
+          text="See more"
+          variant="outline"
+          colour="#00FFFF"
+          // backgroundColour="rgb(40, 45, 65)"
+        />
+          </div>
       </div>
     </section>
   );

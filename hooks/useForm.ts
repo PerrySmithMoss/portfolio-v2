@@ -39,8 +39,8 @@ export const useForm = () => {
 
   function validateInput(name: string, value: string) {
     switch (name) {
-      case "fromAddress":
-        return isValid(value, name, emailRegex, "fromAddress");
+      case "email":
+        return isValid(value, name, emailRegex, "email");
       case "name":
         return isValid(value, name, nameRegex, "Name");
       case "message":
@@ -54,7 +54,6 @@ export const useForm = () => {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     e.preventDefault();
-    console.log(e.target.name)
     const { value, name } = e.target;
     // validate
     validateInput(name, value);

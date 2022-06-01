@@ -4,14 +4,17 @@ import {
   SiFirebase,
   SiGit,
   SiGoogleanalytics,
+  SiGraphql,
   SiJavascript,
   SiMarkdown,
   SiMongodb,
+  SiMysql,
   SiNextdotjs,
   SiNodedotjs,
   SiNotion,
   SiPrettier,
   SiReact,
+  SiRedis,
   SiRedux,
   SiSass,
   SiTailwindcss,
@@ -87,5 +90,17 @@ const techList = {
   redux: {
     icon: SiRedux,
     name: "Redux",
+  },
+  graphql: {
+    icon: SiGraphql,
+    name: "GraphQL",
+  },
+  mysql: {
+    icon: SiMysql,
+    name: "MySQL",
+  },
+  redis: {
+    icon: SiRedis,
+    name: "Redis",
   },
 };

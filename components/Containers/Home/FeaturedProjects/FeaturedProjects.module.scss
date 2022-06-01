@@ -8,7 +8,7 @@
 }
 .wrapper h2 {
   color: var(--white);
-  font-size: 42px;
+  font-size: 34px;
   font-family: "Poppins-Bold";
 }
 
@@ -49,97 +49,190 @@
   transform: translateZ(1000px);
 }
 
-// Featured Projects
-.projectsGrid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 2.5rem;
-}
-
-.cardWrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
-  border-radius: 0.5rem;
-  background-color: #141724;
-  // padding: 8px;
-  // cursor: pointer;
-  -webkit-box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-    // border: 1px solid rgb(75, 85, 99, 1);
-}
-
-// .cardWrapper:hover {
-//   background-color: #1b1f30;
+// Featured Projects V1
+// .projectsGrid {
+//   display: grid;
+//   grid-template-columns: repeat(3, minmax(0, 1fr));
+//   gap: 1rem;
+//   margin-top: 2.5rem;
 // }
 
-.cardImage {
-  height: auto;
-  max-width: 100%;
-  border-radius: 4px;
+// .cardWrapper {
+//   display: flex;
+//   flex-direction: column;
+//   height: 100%;
+//   justify-content: center;
+//   border-radius: 0.5rem;
+//   background-color: #141724;
+//   // padding: 8px;
+//   // cursor: pointer;
+//   -webkit-box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+//     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+//   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+//     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+//     // border: 1px solid rgb(75, 85, 99, 1);
+// }
+
+// // .cardWrapper:hover {
+// //   background-color: #1b1f30;
+// // }
+
+// .cardImage {
+//   height: auto;
+//   max-width: 100%;
+//   border-radius: 4px;
+// }
+
+// .cardBody {
+//   display: flex;
+//   flex-direction: column;
+//   flex-grow: 1;
+//   padding: 1rem;
+// }
+
+// .cardHeader {
+//   display: flex;
+//   flex-direction: row;
+//   -webkit-box-align: center;
+//   align-items: center;
+//   flex-wrap: wrap;
+//   -webkit-box-pack: justify;
+//   justify-content: space-between;
+// }
+// .cardBody h4 {
+//   font-family: "Poppins-Medium";
+//   font-size: var(--fs-lg);
+// }
+
+// .cardBody p {
+//   color: #a6a9b0;
+//   font-size: var(--fs-sm);
+//   flex-grow: 1;
+// }
+
+// .buttonsContainer {
+//   display: flex;
+//   align-items: center;
+//   margin-top: 8px;
+
+//   .cardLink {
+//     display: inline-block;
+//     text-decoration: none;
+//     text-decoration-skip-ink: auto;
+//     position: relative;
+//     color: var(--cyan);
+//     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+//   }
+
+//   .cardLink::after {
+//     content: "";
+//     display: block;
+//     width: 0px;
+//     height: 1px;
+//     position: relative;
+//     bottom: 0.37rem;
+//     background-color: var(--cyan);
+//     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+//     opacity: 0.5s;
+//   }
+//   .cardLink:hover {
+//     text-decoration: underline;
+//   }
+// }
+
+// .buttonsContainer a:first-child {
+//   margin-right: 16px;
+// }
+
+// Featured Projects V2
+.projectsWrapper {
+  list-style: none;
+  margin: 0;
+  margin-top: 2.5rem;
+  padding: 0;
 }
 
-.cardBody {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  padding: 1rem;
-}
-
-.cardHeader {
-  display: flex;
-  flex-direction: row;
-  -webkit-box-align: center;
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+  position: relative;
+  // margin-bottom: 100px;
   align-items: center;
-  flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
+
+  .columnOne {
+    position: relative;
+    // grid-area: 1 / 1 / -1 / 7;
+    grid-area: 1 / 6 / -1 / -1;
+  }
+  .cardBody {
+    position: relative;
+    // grid-area: 1 / 6 / -1 / -1;
+    grid-area: 1 / 1 / -1 / 7;
+  }
+
+  .badgeContainer {
+    display: flex;
+  }
+  .cardHeader {
+  }
+  .cardBody h4 {
+    font-family: "Poppins-Medium";
+    font-size: 28px;
+    margin-top: 1rem;
+  }
+
+  .cardDescription {
+    background-color: #202539;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1.75rem;
+  }
+  .cardBody p {
+    color: #a6a9b0;
+    font-size: var(--fs-md);
+    flex-grow: 1;
+  }
+  .buttonsContainer {
+    display: flex;
+    align-items: center;
+  }
+  .buttonsContainer a:first-child {
+    margin-right: 20px;
+  }
+
+  .techIcons {
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: center;
+  }
+  .techIcons > svg {
+    margin-right: 12px;
+  }
 }
-.cardBody h4 {
-  font-family: "Poppins-Medium";
-  font-size: var(--fs-lg);
+.projectGrid:not(:last-of-type) {
+  margin-bottom: 125px;
+}
+.projectGrid:nth-of-type(2n + 1) .columnOne {
+  // grid-column: 7 / -1;
+  grid-column: 1 / 8;
+  // text-align: right;
+}
+.projectGrid:nth-of-type(2n + 1) .cardBody {
+  // grid-column: 1 / 8;
+  grid-column: 7 / -1;
+  text-align: right;
 }
 
-.cardBody p {
-  color: #a6a9b0;
-  font-size: var(--fs-sm);
-  flex-grow: 1;
-}
-
-.buttonsContainer {
+.projectGrid:nth-of-type(2n + 1) .badgeContainer {
   display: flex;
-  align-items: center;
-  margin-top: 8px;
-
-  .cardLink {
-    display: inline-block;
-    text-decoration: none;
-    text-decoration-skip-ink: auto;
-    position: relative;
-    color: var(--cyan);
-    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-  }
-  
-  .cardLink::after {
-    content: "";
-    display: block;
-    width: 0px;
-    height: 1px;
-    position: relative;
-    bottom: 0.37rem;
-    background-color: var(--cyan);
-    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-    opacity: 0.5s;
-  }
-  .cardLink:hover {
-    text-decoration: underline;
-  }
+  justify-content: right;
 }
-
-.buttonsContainer a:first-child {
-  margin-right: 16px;
+.projectGrid:nth-of-type(2n + 1) .techIcons {
+  display: flex;
+  justify-content: right;
+}
+.projectGrid:nth-of-type(2n + 1) .buttonsContainer {
+  display: flex;
+  justify-content: right;
 }

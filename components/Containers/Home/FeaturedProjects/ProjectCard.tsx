@@ -13,14 +13,14 @@ interface ProjectCardProps {
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <article className={styles.cardWrapper}>
-      <div>
+      <div className={styles.cardLeft}>
         <Image
           alt={project.data.title}
           src={project.data.image}
           width="100%"
           height="100%"
           layout="responsive"
-          objectFit="cover"
+          objectFit="fill"
           className={styles.cardImage}
         />
       </div>

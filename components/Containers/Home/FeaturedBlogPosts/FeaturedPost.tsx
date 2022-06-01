@@ -15,7 +15,8 @@ export const FeaturedPost: React.FC<FeaturedPostProps> = ({ post }) => {
     <article className={styles.featuredPostWrapper}>
       <div className={styles.featurePostImageContainer}>
         {/* Image */}
-        <Image src={post.data.image} layout="fill" objectFit="fill" />
+        <Image           layout="fill"
+          objectFit="contain" src={post.data.image} />
       </div>
       <div className={styles.featuredPostText}>
         {/* Text */}

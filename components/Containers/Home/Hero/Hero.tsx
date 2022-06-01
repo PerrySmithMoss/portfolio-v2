@@ -12,11 +12,11 @@ export const Hero: React.FC<HeroProps> = ({}) => {
         <h1>Greetings, my name is</h1>
       </div>
       <div>
-        <h2>Perry Smith-Moss.</h2>
+        <h2>Perry Smith Moss.</h2>
       </div>
       <div>
         <p>
-          I am a software engineer who specializes in solving business problems
+          I'm a software engineer who specializes in solving business problems
           with the best suited technology. Currently, I am building an
           E-commerce platform for{" "}
           <a

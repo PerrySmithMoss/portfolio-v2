@@ -10,7 +10,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({}) => {
   return (
     <form
       noValidate
-      action="https://formspree.io/f/mgerrqan"
+      action="https://formspree.io/f/xyyoollv"
       method="POST"
       className={styles.contactForm}
     >
@@ -32,7 +32,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({}) => {
           className={errors.fromAddress && styles.invalid}
           onChange={handleInput}
           value={formData.email}
-          name="fromAddress"
+          name="email"
           type="email"
           required
           placeholder="example@gmail.com"

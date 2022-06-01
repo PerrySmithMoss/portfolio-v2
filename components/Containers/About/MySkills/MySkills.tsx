@@ -84,10 +84,10 @@ export const MySkills: React.FC<MySkillsProps> = ({}) => {
               <p>SCSS</p>
             </li>
             <li>
-              <div>
-                <SiTailwindcss color="38bdf8" size={40} />
+            <div>
+                <SiGraphql color="e535ab" size={40} />
               </div>
-              <p>Tailwind</p>
+              <p>GraphQL</p>
             </li>
           </div>
           <div>

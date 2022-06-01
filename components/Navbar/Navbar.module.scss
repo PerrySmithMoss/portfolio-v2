@@ -7,7 +7,7 @@
   position: fixed;
   top: 0px;
   z-index: 11;
-  padding: 0px 50px;
+  padding: 0px 2.25rem;
   width: 100%;
   height: 100px;
   background-color: #001219;
@@ -158,52 +158,14 @@
 }
 
 @media (max-width: 768px) {
-  .navbarMobileMenu {
-    display: block;
-  }
-  .navbarMobileHamburger {
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
-    position: relative;
-    z-index: 10;
-    margin-right: -15px;
-    padding: 15px;
-    border: 0px;
-    cursor: pointer;
-    border-radius: 0px;
-    background-color: transparent;
-    color: inherit;
-    text-transform: none;
-    transition-timing-function: linear;
-    transition-duration: 0.15s;
-    transition-property: opacity, filter;
-  }
-  .navbarMobileDrawer {
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
-    position: fixed;
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
-    padding: 50px 10px;
-    width: min(75vw, 400px);
-    height: 100vh;
-    outline: 0px;
-    background-color: var(--light-navy);
-    box-shadow: -10px 0px 30px -15px var(--navy-shadow);
-    z-index: 9;
-    transform: translateX(0vw);
-    visibility: visible;
-    transition: var(--transition);
-  }
-
   .navbarLinks {
     display: none;
+  }
+}
+
+
+@media (max-width: 640px) {
+  .navbarHeader {
+    padding: 0px 1rem !important;
   }
 }

@@ -1,8 +1,7 @@
 .wrapper {
-// background-color: white;
-padding-top:75px;
-padding-bottom: 75px;
-// min-height: 100vh;
+  // background-color: white;
+  padding: 100px 0;
+  // min-height: 100vh;
 }
 
 .container {
@@ -14,7 +13,7 @@ padding-bottom: 75px;
 }
 .wrapper h2 {
   color: var(--white);
-  font-size: 42px;
+  font-size: 34px;
   font-family: "Poppins-Bold";
 }
 
@@ -48,7 +47,7 @@ padding-bottom: 75px;
 .postsGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 3rem;
+  gap: 2rem;
   margin-top: 4rem;
 }
 
@@ -56,21 +55,22 @@ padding-bottom: 75px;
 .featuredPostWrapper {
   display: grid;
   grid-template-columns: 55% 35%;
-  gap: 2.25rem;
+  gap: 1.75rem;
+  align-items: center;
 
   .featurePostImageContainer {
-    height: 100%;
+    height: 350px;
     width: 100%;
     position: relative;
 
     img {
-      border-radius: 1.5rem;
+      border-radius: 1rem;
     }
   }
 
   h3 {
     margin-top: 0.5rem;
-    font-size: 36px;
+    font-size: 30px;
     color: var(--white);
     font-family: "Poppins-Bold";
     line-height: 2.75rem;
@@ -83,13 +83,13 @@ padding-bottom: 75px;
     color: var(--light-white);
     // color: #7E7E7E;
     // color: #200c31;
-    font-size: var(--fs-lg);
+    font-size: var(--fs-md);
     margin-top: 1rem;
     line-height: 1.6rem;
     // font-family: "Poppins-Light";
   }
   .featuredPostText {
-    padding: .5rem 0rem;
+    padding: 1rem 0rem;
   }
 }
 
@@ -129,6 +129,78 @@ padding-bottom: 75px;
   position: relative;
 
   img {
-    border-radius: 1.25rem;
+    border-radius: 1rem;
   }
 }
+
+.loadMoreButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.postsWithoutFeature {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .postsGrid {
+    gap: 1rem;
+  }
+  .featuredPostWrapper h3{
+    font-size: 24px;
+    line-height: 2.25rem;
+  }
+}
+
+@media (max-width: 875px) {
+  .postsWithFeature {
+    display: none;
+  }
+  .postsWithoutFeature {
+    display: inline-flex;
+  }
+  .postsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    margin-top: 0rem;
+  }
+  .postsContainer {
+    margin-top: 2rem;
+  }
+  .wrapper h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .postsGrid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 2rem;
+  }
+  .wrapper h2 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 520px) {
+  .postsGrid {
+    gap: 1rem;
+  }
+  .postsContainer {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .wrapper h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 325px) {
+  .headerBorderLeft h2{
+    font-size: 22px;
+  }  
+}
+

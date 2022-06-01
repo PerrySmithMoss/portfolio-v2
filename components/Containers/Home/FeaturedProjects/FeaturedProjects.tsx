@@ -3,28 +3,42 @@ import { SeeAll } from "../../../Button/SeeAll/SeeAll";
 import styles from "./FeaturedProjects.module.scss";
 import { IFeaturedProject } from "../../../../types/IProject";
 import { ProjectCard } from "./ProjectCard";
+import { ProjectCardV2 } from "./ProjectCardV2";
 
 interface FeaturedProjectsProps {
-  featuredProjects: IFeaturedProject[]
+  featuredProjects: IFeaturedProject[];
 }
 
-export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({featuredProjects}) => {
+export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
+  featuredProjects,
+}) => {
   return (
     <section className={styles.wrapper}>
       <div className={styles.header}>
         <div className={styles.headerBorderLeft}>
           <h2>Featured Projects</h2>
         </div>
-        <div className={styles.arrowContainer}>
+        {/* <div className={styles.arrowContainer}>
           <SeeAll colour="#00FFFF" buttonText="View more" />
-        </div>
+        </div> */}
       </div>
       <div className={styles.projectsContainer}>
-          <div className={styles.projectsGrid}>
+        {/* <ul className={styles.projectsGrid}>
             {featuredProjects.map((project: IFeaturedProject) => (
               <ProjectCard key={project.data.id} project={project}/>
             ))}
-          </div>
+          </ul> */}
+
+        <ul className={styles.projectsWrapper}>
+          {featuredProjects
+            .sort(
+              (a: IFeaturedProject, b: IFeaturedProject) =>
+                parseInt(a.data.id) - parseInt(b.data.id)
+            )
+            .map((project: IFeaturedProject) => (
+              <ProjectCardV2 key={project.data.id} project={project} />
+            ))}
+        </ul>
       </div>
     </section>
   );
