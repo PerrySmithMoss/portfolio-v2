@@ -1,14 +1,17 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Navbar.module.scss";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoLogoLinkedin } from "react-icons/io";
+import { useGlobalUIContext } from "../../context/GlobalUI.context";
 
 interface NavbarProps {}
 
 export const Navbar: React.FC<NavbarProps> = ({}) => {
   const router = useRouter();
+  const { isMobileMenuDrawerOpen, setIsMobileMenuDrawerOpen } =
+    useGlobalUIContext();
   return (
     <header className={styles.navbarHeader}>
       <nav className={styles.navbarNav}>
@@ -150,17 +153,39 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
         </div>
         <div className={styles.navbarMobileMenu}>
           <div>
-            <button className={styles.navbarMobileHamburger}>
-              {/* TODO: Add the hamburger icon and animation here */}
+            <button
+              aria-label="Mobile Menu"
+              className={styles.navbarMobileHamburger}
+            >
+              <label htmlFor="check">
+                <input
+                  onClick={() =>
+                    setIsMobileMenuDrawerOpen(!isMobileMenuDrawerOpen)
+                  }
+                  type="checkbox"
+                  id="check"
+                />
+                <span></span>
+                <span></span>
+                <span></span>
+              </label>
             </button>
             <aside
-              aria-hidden={true}
-              tabIndex={-1}
-              className={styles.navbarMobileDrawer}
+              aria-hidden={isMobileMenuDrawerOpen ? "true" : "false"}
+              tabIndex={isMobileMenuDrawerOpen ? 1 : -1}
+              className={
+                isMobileMenuDrawerOpen
+                  ? styles.navbarMobileDrawerActive
+                  : styles.navbarMobileDrawer
+              }
             >
               <nav>
                 <ol>
-                  <li></li>
+                  <li>Home</li>
+                  <li>Projects</li>
+                  <li>Blog</li>
+                  <li>Snippets</li>
+                  <li>About</li>
                 </ol>
                 <a
                   className={styles.navbarButon}

@@ -17,6 +17,7 @@ import { IFeaturedBlogPost } from "../types/IBlog";
 import { FeaturedBlogPosts } from "../components/Containers/Home/FeaturedBlogPosts/FeaturedBlogPosts";
 import { GetInTouch } from "../components/Containers/Home/GetInTouch/GetInTouch";
 import { Footer } from "../components/Footer/Footer";
+import { useGlobalUIContext } from "../context/GlobalUI.context";
 
 interface HomePageProps {
   featuredProjects: IFeaturedProject[];
@@ -33,6 +34,8 @@ const Home: NextPage<HomePageProps> = ({
   const isHome = router.pathname === "/";
   const [isLoading, setIsLoading] = useState(isHome);
   const [isMouted, setIsMouted] = useState(isHome);
+  const { isMobileMenuDrawerOpen, setIsMobileMenuDrawerOpen } =
+    useGlobalUIContext();
 
   useEffect(() => {
     let timerFunc = setTimeout(() => {
@@ -77,7 +80,13 @@ const Home: NextPage<HomePageProps> = ({
             ) : (
               <div className={styles.mainContainer}>
                 <Navbar />
-                <main className={styles.mainWrapper}>
+                <main
+                  className={
+                    isMobileMenuDrawerOpen
+                      ? `${styles.mainWrapperBlur} ${styles.mainWrapper}`
+                      : styles.mainWrapper
+                  }
+                >
                   <Hero />
                   <FeaturedProjects featuredProjects={featuredProjects} />
                   <FeaturedBlogPosts featuredBlogPosts={featuredBlogPosts} />

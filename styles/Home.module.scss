@@ -189,6 +189,13 @@
   margin: 0 auto;
 }
 
+.mainWrapperBlur > * {
+  filter: blur(5px) brightness(0.7);
+  transition: var(--transition);
+  pointer-events: none;
+  user-select: none;
+}
+
 @media (max-width: 640px) {
   .mainWrapper {
     padding: 0px 1rem;

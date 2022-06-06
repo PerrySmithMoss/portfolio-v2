@@ -40,7 +40,7 @@ body::-webkit-scrollbar {
   z-index: 20;
   	background: #0000;
 	/* width: 4px; */
-	height: 4px;
+	/* height: 4px !important; */
   width: 12px;
 }
 body::-webkit-scrollbar-track,
