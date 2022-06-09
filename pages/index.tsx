@@ -34,8 +34,7 @@ const Home: NextPage<HomePageProps> = ({
   const isHome = router.pathname === "/";
   const [isLoading, setIsLoading] = useState(isHome);
   const [isMouted, setIsMouted] = useState(isHome);
-  const { isMobileMenuDrawerOpen, setIsMobileMenuDrawerOpen } =
-    useGlobalUIContext();
+  const { isMobileMenuDrawerOpen } = useGlobalUIContext();
 
   useEffect(() => {
     let timerFunc = setTimeout(() => {

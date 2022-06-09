@@ -26,7 +26,7 @@ export const GetInTouch: React.FC<GetInTouchProps> = ({}) => {
           <div className={styles.rightGrid}>
             <div className={styles.mailIconWrapper}>
               <svg
-              className={styles.mailSVG}
+                className={styles.mailSVG}
                 width="300px"
                 height="300px"
                 viewBox="0 0 570 512"
@@ -78,38 +78,38 @@ export const GetInTouch: React.FC<GetInTouchProps> = ({}) => {
                   fill="#CCCCCC"
                 />
               </svg>
-              </div>
+            </div>
 
-              <div className={styles.emailContainer}>
-                <MdEmail size={25} />
-                <a
-                  className={styles.emailLink}
-                  href="mailto:perrysmithmoss@gmail.com"
-                >
-                  perrysmithmoss@gmail.com
-                </a>
-              </div>
-              <div className={styles.socialsContainer}>
-                <ul className={`${styles.socialNetworks} ${styles.spinIcon}`}>
-                  <li>
-                    <a href="https://github.com/PerrySmithMoss" target="_blank">
-                      <span className={`${styles.iconGithub} icon-github`}>
-                        Github
-                      </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.linkedin.com/in/perrysmithmoss"
-                      target="_blank"
-                    >
-                      <span className={`${styles.iconLinkedIn} icon-linkedin2`}>
-                        LinkedIn
-                      </span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+            <div className={styles.emailContainer}>
+              <MdEmail size={25} />
+              <a
+                className={styles.emailLink}
+                href="mailto:perrysmithmoss@gmail.com"
+              >
+                perrysmithmoss@gmail.com
+              </a>
+            </div>
+            <div className={styles.socialsContainer}>
+              <ul className={`${styles.socialNetworks} ${styles.spinIcon}`}>
+                <li>
+                  <a href="https://github.com/PerrySmithMoss" target="_blank">
+                    <span className={`${styles.iconGithub} icon-github`}>
+                      Github
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/perrysmithmoss"
+                    target="_blank"
+                  >
+                    <span className={`${styles.iconLinkedIn} icon-linkedin2`}>
+                      LinkedIn
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

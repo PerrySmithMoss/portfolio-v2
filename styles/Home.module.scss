@@ -182,22 +182,32 @@
 
 // Hero 
 .mainWrapper {
-  padding: 0px 3rem;
+  padding: 0px 125px;
   width: 100%;
   max-width: 1600px;
   min-height: 100vh;
   margin: 0 auto;
 }
 
-.mainWrapperBlur > * {
-  filter: blur(5px) brightness(0.7);
-  transition: var(--transition);
-  pointer-events: none;
-  user-select: none;
+@media (max-width: 1080px) {
+  .mainWrapper {
+    padding: 0px 75px;
+  }
+
 }
+
+@media (max-width: 768px) {
+  .mainWrapperBlur > * {
+    filter: blur(5px) brightness(0.7);
+    transition: var(--transition);
+    pointer-events: none;
+    user-select: none;
+  }
+}
+
 
 @media (max-width: 640px) {
   .mainWrapper {
-    padding: 0px 1rem;
+    padding: 0px 1.5rem;
   }
 }

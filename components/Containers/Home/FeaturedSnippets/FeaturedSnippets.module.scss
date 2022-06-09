@@ -4,12 +4,11 @@
   color: var(--white);
   font-family: "Poppins-Regular";
   padding: 100px 0;
-
   // min-height: 100vh;
 }
 .wrapper h2 {
   color: var(--white);
-  font-size: 34px;
+  font-size: clamp(26px, 5vw, 34px);
   font-family: "Poppins-Bold";
 }
 
@@ -139,33 +138,35 @@
     // gap: 1rem;
     // margin-top: 2.5rem;
   }
-  .wrapper h2 {
-    font-size: 32px;
-  }
+  // .wrapper h2 {
+  //   font-size: 32px;
+  // }
 }
 
 @media (max-width: 640px) {
   .projectsGrid {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
-  .wrapper h2 {
-    font-size: 30px;
-  }
 }
 
 @media (max-width: 520px) {
-  .headerBorderLeft {
-    // border-left: none;
-
-    // h2 {
-    //   padding-left: 0px;
-    // }
+  .wrapper {
+    padding: 0px 0 100px 0;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 408px) {
   .wrapper h2 {
     font-size: 24px;
+  }
+  .cardBody p {
+    margin: 0.5rem 0 0 0 !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .cardBody h4 {
+    font-size: var(--fs-md);
   }
 }
 

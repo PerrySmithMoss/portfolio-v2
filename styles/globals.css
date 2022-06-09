@@ -86,6 +86,7 @@ h6 {
 .transitionDiv {
   width: 200px;
   height: 200px;
+  background: #001219;
   background: white;
   position: absolute;
   transform: scale(0);
@@ -128,3 +129,5 @@ h6 {
     transform: scaleY(0);
   }
 }
+
+/* Text responsiveness */

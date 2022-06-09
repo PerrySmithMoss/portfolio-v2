@@ -1,0 +1,216 @@
+.blogWrapper {
+  margin: 0px auto;
+  max-width: 1200px;
+  color: var(--white);
+  font-family: "Poppins-Regular";
+  padding-bottom: 100px;
+}
+
+.wrapper {
+  margin-top: 150px;
+  color: white;
+
+  hr {
+    height: 1px;
+    background-color: var(--light-white);
+    border: 1px solid var(--light-white);
+    color: var(--light-white);
+  }
+}
+
+.wrapper h1 {
+  font-size: clamp(26px, 5vw, 34px);
+  //   color: var(--cyan);
+  color: white;
+}
+
+.headerBorderLeft {
+  border-left: 6px solid var(--cyan);
+
+  h1 {
+    padding-left: 15px;
+  }
+}
+
+.subtextContainer {
+  display: flex;
+  justify-content: center;
+  // max-width: 500px;
+
+  p {
+    width: 500px;
+    text-align: center;
+  }
+}
+
+.featuredPostsMobile {
+  display: none;
+  margin-top: 2rem;
+}
+
+// Featured Posts
+.featuredPostsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem;
+  color: white;
+  margin-top: 3rem;
+}
+
+.featuredPost {
+  .imageContainer {
+    position: relative;
+    height: 65%;
+    width: 100%;
+  }
+
+  h2 {
+    margin-top: 1rem;
+    font-size: clamp(18px, 5vw, 24px);
+    font-family: "Poppins-Medium";
+    cursor: pointer;
+  }
+  h2:hover {
+    text-decoration: underline;
+  }
+  p {
+    margin: 0;
+    margin-top: 1rem;
+    font-size: 16px;
+    color: #a6a9b0;
+  }
+  img {
+    border-radius: 8px;
+  }
+  .badgeWrapper {
+    margin-top: 1.25rem;
+  }
+}
+
+// Other Posts
+.post {
+  display: flex;
+  flex-direction: row;
+  .postContent {
+    margin-left: 20px;
+  }
+  .imageContainer {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+  }
+  img {
+    border-radius: 8px;
+  }
+  h3 {
+    margin-top: 1rem;
+    font-size: 18px;
+    font-family: "Poppins-Medium";
+    cursor: pointer;
+  }
+  h3:hover {
+    text-decoration: underline;
+  }
+  p {
+    margin: 0;
+    color: #a6a9b0;
+    margin-top: 0.5rem;
+    font-size: 14px;
+  }
+  .badgeWrapper {
+    margin-top: 0.75rem;
+  }
+}
+
+.post:not(:first-child) {
+  padding-top: 2.25rem;
+}
+
+// All posts
+.allPostsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 75px;
+}
+
+.otherPost {
+  img {
+    border-radius: 8px;
+  }
+  h3 {
+    margin-top: 0.75rem;
+    font-size: 18px;
+    font-family: "Poppins-Medium";
+    cursor: pointer;
+  }
+  h3:hover {
+    text-decoration: underline;
+  }
+  p {
+    margin: 0;
+    color: #a6a9b0;
+    margin-top: 0.5rem;
+    font-size: 14px;
+  }
+  .badgeWrapper {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 1180px) {
+  .featuredPostsGrid {
+    gap: 1.75rem !important;
+  }
+}
+
+@media (max-width: 952px) {
+  .featuredPostsGrid {
+    display: none;
+  }
+  .featuredPostsMobile {
+    display: block;
+  }
+  .postContent {
+    margin-left: 0px !important;
+    margin-right: 40px;
+  }
+  .allPostsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 50px;
+  }
+  .postContent {
+    margin-left: 20px !important;
+  }
+}
+@media (max-width: 640px) {
+  .wrapper {
+    margin-top: 125px;
+  }
+  .allPostsGrid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .otherPost img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 510px) {
+  .post {
+    flex-direction: column;
+  }
+  .postContent {
+    margin-left: 0px !important;
+  }
+  .featuredPost {
+    p {
+      margin-top: .5rem;
+      font-size: 14px;
+    }
+    h2{
+      font-size: 18px;
+    }
+}
+}

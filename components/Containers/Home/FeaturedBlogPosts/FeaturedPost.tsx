@@ -15,13 +15,17 @@ export const FeaturedPost: React.FC<FeaturedPostProps> = ({ post }) => {
     <article className={styles.featuredPostWrapper}>
       <div className={styles.featurePostImageContainer}>
         {/* Image */}
-        <Image           layout="fill"
-          objectFit="contain" src={post.data.image} />
+        <Image layout="fill" objectFit="cover" src={post.data.image} />
       </div>
       <div className={styles.featuredPostText}>
         {/* Text */}
         <div>
-          <Badge colour="rgb(34, 139, 230)" backgroundColour="#0c2231"  text={post.data.tech[0]} size="lg" />
+          <Badge
+            colour="rgb(34, 139, 230)"
+            backgroundColour="#0c2231"
+            text={post.data.tech[0]}
+            size="lg"
+          />
         </div>
         <h3>{post.data.title}</h3>
         <p>{post.data.description}</p>

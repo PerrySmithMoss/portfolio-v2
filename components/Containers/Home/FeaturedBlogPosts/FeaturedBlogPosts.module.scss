@@ -54,17 +54,18 @@
 // Featured Post
 .featuredPostWrapper {
   display: grid;
-  grid-template-columns: 55% 35%;
+  grid-template-columns: 55% 43%;
   gap: 1.75rem;
   align-items: center;
 
   .featurePostImageContainer {
-    height: 350px;
+    height: 100%;
     width: 100%;
     position: relative;
+    border-radius: .75rem;
 
     img {
-      border-radius: 1rem;
+      border-radius: .75rem;
     }
   }
 
@@ -129,7 +130,7 @@
   position: relative;
 
   img {
-    border-radius: 1rem;
+    border-radius: .75rem;
   }
 }
 
@@ -189,6 +190,9 @@
   }
   .postsContainer {
     margin-top: 1.5rem;
+  }
+  .wrapper {
+    padding: 0px 0 100px 0;
   }
 }
 

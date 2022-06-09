@@ -181,14 +181,68 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
             >
               <nav>
                 <ol>
-                  <li>Home</li>
-                  <li>Projects</li>
-                  <li>Blog</li>
-                  <li>Snippets</li>
-                  <li>About</li>
+                <li>
+              <Link href="/">
+                <a
+                  className={
+                    router.pathname === "/" ? (styles.active as any) : ""
+                  }
+                >
+                  Home
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/projects">
+                <a
+                  className={
+                    router.pathname === "/projects"
+                      ? (styles.active as any)
+                      : ""
+                  }
+                >
+                  Projects
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog">
+                <a
+                  className={
+                    router.pathname === "/blog" ? (styles.active as any) : ""
+                  }
+                >
+                  Blog
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/snippets">
+                <a
+                  className={
+                    router.pathname === "/snippets"
+                      ? (styles.active as any)
+                      : ""
+                  }
+                >
+                  Snippets
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/about">
+                <a
+                  className={
+                    router.pathname === "/about" ? (styles.active as any) : ""
+                  }
+                >
+                  About
+                </a>
+              </Link>
+            </li>
                 </ol>
                 <a
-                  className={styles.navbarButon}
+                  className={styles.navbarMobileButon}
                   href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
