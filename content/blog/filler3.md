@@ -1,5 +1,5 @@
 ---
-id: "4"
+id: "5"
 title: "How To Create Custom Visual Studio Code Snippets"
 datePublished: "19th May, 2022"
 readMoreLink: "/blog/how-to-create-custom-visual-studio-code-snippets"

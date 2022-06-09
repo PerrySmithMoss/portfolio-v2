@@ -10,7 +10,7 @@
 }
 .educationHeader h2 {
   color: var(--white);
-  font-size: 36px;
+  font-size: clamp(26px, 5vw, 34px);
 }
 
 .educationCardWrapper {
@@ -37,6 +37,7 @@
 .cardTextHeading {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   span {
     color: var(--light-white);
@@ -88,8 +89,36 @@
 .cardList {
   margin-top: 0.5rem;
   font-size: var(--fs-sm);
+}
 
-  span {
-    // font-family: "Poppins-Bold";
+@media (max-width: 540px) {
+  .educationCardFlex {
+    display: block;
   }
+  .cardTextContainer {
+    padding-left: 0rem;
+
+    h4 {
+      font-size: 16px;
+      margin-top: 3px;
+    }
+  }
+  .educationCardWrapper {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+.educationCardWrapper {
+  margin-top: 1rem;
+  padding: 1rem;
+}
+}
+
+@media (max-width: 450px) {
+.cardTextContainer {
+  h4 {
+    margin: .5rem 0 3px 0;
+  }
+}
 }
