@@ -1,0 +1,25 @@
+.chip {
+  margin-top: 15px;
+  display: inline-block;
+  flex-grow: 0;
+  border-radius: 30px;
+  padding: 5px 15px;
+  // font-size: 12px;
+  font-family: "Poppins-Regular";
+  background: none;
+  background-color: transparent;
+  border: 1px solid rgb(40, 45, 65);
+  color: inherit;
+  outline: inherit;
+}
+
+.allowed {
+  cursor: pointer;
+}
+.allowed:hover {
+  background-color: var(--light-navy);
+}
+
+.disabled {
+  cursor: not-allowed;
+}

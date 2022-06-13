@@ -124,7 +124,7 @@ export const Blog: React.FC<BlogProps> = ({
           {otherBlogPosts.map((post: IFeaturedBlogPost) => (
             <article key={post.data.id}  className={styles.otherPost}>
               <Image
-                height={350}
+                height={400}
                 width={750}
                 objectFit="cover"
                 className={styles.image}

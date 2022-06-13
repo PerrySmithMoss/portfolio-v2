@@ -22,8 +22,8 @@ export const FeaturedSnippets: React.FC<FeaturedSnippetsProps> = ({
           <SeeAll colour="#00FFFF" buttonText="View more" />
         </div> */}
       </div>
-      <div className={styles.projectsContainer}>
-        <div className={styles.projectsGrid}>
+      <div className={styles.snippetsContainer}>
+        <div className={styles.snippetsGrid}>
           {featuredSnippets.map((snippet: IFeaturedSnippet) => (
             <SnippetCard key={snippet.data.id} snippet={snippet} />
           ))}

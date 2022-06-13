@@ -50,12 +50,14 @@
   transform: translateZ(1000px);
 }
 
-// Featured Projects
-.projectsGrid {
+// Featured Snippets
+.snippetsGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
   margin-top: 2.5rem;
+  // margin: 0 !important;
+  // padding: 0 !important;
 }
 
 .cardWrapper {
@@ -133,7 +135,7 @@
 }
 
 @media (max-width: 875px) {
-  .projectsGrid {
+  .snippetsGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     // gap: 1rem;
     // margin-top: 2.5rem;
@@ -144,7 +146,7 @@
 }
 
 @media (max-width: 640px) {
-  .projectsGrid {
+  .snippetsGrid {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }

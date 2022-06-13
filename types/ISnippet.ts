@@ -8,5 +8,6 @@ interface IData {
   excerpt: string;
   thumbnail: string;
   slug: string;
-  tech: string[]
+  tags: string[];
+  tech: string[];
 }

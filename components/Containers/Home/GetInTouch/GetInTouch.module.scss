@@ -59,6 +59,7 @@
 
   p {
     margin-top: 2rem;
+    color: var(--light-white);
   }
 }
 
@@ -101,9 +102,14 @@
     border-radius: 4px;
     padding: 0.85rem;
     margin-top: 0.2rem;
-    color: white;
+    color: var(--light-white);
     background-color: rgb(40, 45, 65);
-    border: none;
+    border: 1px solid transparent;
+    resize: none;
+    outline: none;
+  }
+  input:focus {
+    border: 1px solid var(--cyan);
   }
   textarea {
     width: 100%;
@@ -111,7 +117,7 @@
     padding: 0.85rem;
     margin-top: 0.2rem;
     height: 125px;
-    color: white;
+    color: var(--light-white);
     background-color: rgb(40, 45, 65);
     border: none;
     font-size: var(--fs-xs);
