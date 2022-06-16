@@ -10,6 +10,9 @@ interface NavbarProps {}
 
 export const Navbar: React.FC<NavbarProps> = ({}) => {
   const router = useRouter();
+  const arrOfRoute = router.route.split("/");
+  const baseRoute = arrOfRoute[1];
+
   const { isMobileMenuDrawerOpen, setIsMobileMenuDrawerOpen } =
     useGlobalUIContext();
   return (
@@ -57,9 +60,7 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
               <Link href="/projects">
                 <a
                   className={
-                    router.pathname === "/projects"
-                      ? (styles.active as any)
-                      : ""
+                    baseRoute === "projects" ? (styles.active as any) : ""
                   }
                 >
                   Projects
@@ -69,9 +70,7 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
             <li>
               <Link href="/blog">
                 <a
-                  className={
-                    router.pathname === "/blog" ? (styles.active as any) : ""
-                  }
+                  className={baseRoute === "blog" ? (styles.active as any) : ""}
                 >
                   Blog
                 </a>
@@ -81,9 +80,7 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
               <Link href="/snippets">
                 <a
                   className={
-                    router.pathname === "/snippets"
-                      ? (styles.active as any)
-                      : ""
+                    baseRoute === "snippets" ? (styles.active as any) : ""
                   }
                 >
                   Snippets
@@ -181,65 +178,69 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
             >
               <nav>
                 <ol>
-                <li>
-              <Link href="/">
-                <a
-                  className={
-                    router.pathname === "/" ? (styles.active as any) : ""
-                  }
-                >
-                  Home
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/projects">
-                <a
-                  className={
-                    router.pathname === "/projects"
-                      ? (styles.active as any)
-                      : ""
-                  }
-                >
-                  Projects
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/blog">
-                <a
-                  className={
-                    router.pathname === "/blog" ? (styles.active as any) : ""
-                  }
-                >
-                  Blog
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/snippets">
-                <a
-                  className={
-                    router.pathname === "/snippets"
-                      ? (styles.active as any)
-                      : ""
-                  }
-                >
-                  Snippets
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/about">
-                <a
-                  className={
-                    router.pathname === "/about" ? (styles.active as any) : ""
-                  }
-                >
-                  About
-                </a>
-              </Link>
-            </li>
+                  <li>
+                    <Link href="/">
+                      <a
+                        className={
+                          router.pathname === "/" ? (styles.active as any) : ""
+                        }
+                      >
+                        Home
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/projects">
+                      <a
+                        className={
+                          router.pathname === "/projects"
+                            ? (styles.active as any)
+                            : ""
+                        }
+                      >
+                        Projects
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/blog">
+                      <a
+                        className={
+                          router.pathname === "/blog"
+                            ? (styles.active as any)
+                            : ""
+                        }
+                      >
+                        Blog
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/snippets">
+                      <a
+                        className={
+                          router.pathname === "/snippets"
+                            ? (styles.active as any)
+                            : ""
+                        }
+                      >
+                        Snippets
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/about">
+                      <a
+                        className={
+                          router.pathname === "/about"
+                            ? (styles.active as any)
+                            : ""
+                        }
+                      >
+                        About
+                      </a>
+                    </Link>
+                  </li>
                 </ol>
                 <a
                   className={styles.navbarMobileButon}

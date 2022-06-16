@@ -63,9 +63,11 @@ export const MySkills: React.FC<MySkillsProps> = ({}) => {
           <div>
             <li>
               <div>
-                <SiCss3 color="2865f0" size={40} />
+                {/* Possibly change this to Tailwind? CSS & HTML are givens if you're a developer */}
+                {/* <SiCss3 color="2865f0" size={40} /> */}
+                <SiTailwindcss color="38bdf8" size={40} />
               </div>
-              <p>CSS</p>
+              <p>Tailwind</p>
             </li>
             <li>
               <div>

@@ -1,12 +1,12 @@
 import React from "react";
 import { SeeAll } from "../../../Button/SeeAll/SeeAll";
 import styles from "./FeaturedSnippets.module.scss";
-import { IFeaturedSnippet } from "../../../../types/ISnippet";
+import { ISnippet } from "../../../../types/ISnippet";
 import { SnippetCard } from "./SnippetCard";
 import { Button } from "../../../Button/Button/Button";
 
 interface FeaturedSnippetsProps {
-  featuredSnippets: IFeaturedSnippet[];
+  featuredSnippets: ISnippet[];
 }
 
 export const FeaturedSnippets: React.FC<FeaturedSnippetsProps> = ({
@@ -24,18 +24,18 @@ export const FeaturedSnippets: React.FC<FeaturedSnippetsProps> = ({
       </div>
       <div className={styles.snippetsContainer}>
         <div className={styles.snippetsGrid}>
-          {featuredSnippets.map((snippet: IFeaturedSnippet) => (
-            <SnippetCard key={snippet.data.id} snippet={snippet} />
+          {featuredSnippets.map((snippet: ISnippet) => (
+            <SnippetCard key={snippet.id} snippet={snippet} />
           ))}
         </div>
         <div className={styles.loadMoreButton}>
-        <Button
-          text="See more"
-          variant="outline"
-          colour="#00FFFF"
-          // backgroundColour="rgb(40, 45, 65)"
-        />
-          </div>
+          <Button
+            text="See more"
+            variant="outline"
+            colour="#00FFFF"
+            // backgroundColour="rgb(40, 45, 65)"
+          />
+        </div>
       </div>
     </section>
   );

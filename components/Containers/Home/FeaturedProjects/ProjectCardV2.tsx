@@ -1,5 +1,5 @@
 import React from "react";
-import { IFeaturedProject } from "../../../../types/IProject";
+import { IProject } from "../../../../types/IProject";
 import styles from "./FeaturedProjects.module.scss";
 import Image from "next/image";
 import { Badge } from "../../../Badge/Badge";
@@ -14,7 +14,7 @@ import {
 } from "react-icons/si";
 
 interface ProjectCardV2Props {
-  project: IFeaturedProject;
+  project: IProject;
 }
 
 export const ProjectCardV2: React.FC<ProjectCardV2Props> = ({ project }) => {
@@ -22,8 +22,8 @@ export const ProjectCardV2: React.FC<ProjectCardV2Props> = ({ project }) => {
     <li className={styles.projectGrid}>
       <div className={styles.columnOne}>
         <Image
-          alt={project.data.title}
-          src={project.data.image}
+          alt={project.title}
+          src={project.image}
           width="100%"
           height="70%"
           layout="responsive"
@@ -37,13 +37,13 @@ export const ProjectCardV2: React.FC<ProjectCardV2Props> = ({ project }) => {
             <Badge
               colour="rgb(34, 139, 230)"
               backgroundColour="#0c2231"
-              text={project.data.platform}
+              text={project.platform}
               size="md"
             />
           </div>
-          <h4>{project.data.title}</h4>
+          <h4>{project.title}</h4>
           <div className={styles.cardDescription}>
-          <p>{project.data.description}</p>
+          <p>{project.description}</p>
           </div>
           <div className={styles.techIcons}>
             <SiNextdotjs color="fff" size={28} />
@@ -60,7 +60,7 @@ export const ProjectCardV2: React.FC<ProjectCardV2Props> = ({ project }) => {
             backgroundColour="rgb(40, 45, 65)"
             variant="filled"
           />
-          {project.data.urlLink != null && (
+          {project.urlLink != null && (
             //   <a
             //   target="_blank"
             //   rel="noreferrer"

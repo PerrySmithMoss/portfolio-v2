@@ -1,17 +1,17 @@
 import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
-import { Blog } from "../../components/Containers/Blog/Blog";
+import { Blog } from "../../components/Containers/Blog/Posts/Blog";
 import { Footer } from "../../components/Footer/Footer";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { SEO } from "../../components/SEO/SEO";
 import { useGlobalUIContext } from "../../context/GlobalUI.context";
 import styles from "../../styles/Home.module.scss";
-import { IFeaturedBlogPost } from "../../types/IBlog";
+import { IPost } from "../../types/IBlog";
 import { getMarkdownFrontMatter } from "../../utils/files";
 
 interface BlogPageProps {
-  featuredBlogPosts: IFeaturedBlogPost[];
-  otherBlogPosts: IFeaturedBlogPost[];
+  featuredBlogPosts: IPost[];
+  otherBlogPosts: IPost[];
 }
 
 const BlogPage: NextPage<BlogPageProps> = ({

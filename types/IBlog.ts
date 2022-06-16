@@ -1,14 +1,12 @@
-export interface IFeaturedBlogPost {
-  data: IData;
-}
-
-interface IData {
+export interface IPost {
   id: string;
   title: string;
-  readMoreLink: string;
+  slug: string;
   image: string;
   description: string;
   featuredPost: boolean;
   tech: string[];
-  tag: string;
+  tags: string[];
+  readingTime: number;
+  wordCount: number;
 }

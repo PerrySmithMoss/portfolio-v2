@@ -1,0 +1,18 @@
+.tableOfContentsWrapper {
+  overflow: auto;
+
+  .tableOfContentsLinksContainer {
+    a:first-child {
+      margin-top: 1.2rem !important;
+    }
+    a {
+      display: block;
+      color: rgb(107 114 128);
+      margin-top: 0.7rem;
+      font-size: 14px;
+    }
+    a:hover {
+        color: white;
+    }
+  }
+}

@@ -1,15 +1,15 @@
-import { IFeaturedSnippet } from "../types/ISnippet";
+import { ISnippet } from "../types/ISnippet";
 
 /**
  * A function which returns the tags from snippet data (removing duplicates)
- * @param {IFeaturedSnippet[]} snippets - snippet data
+ * @param {ISnippet[]} snippets - snippet data
  * @returns {string[]} An array of tags
  */
-export function getTags(snippets: IFeaturedSnippet[]) {
+export function getTags(snippets: ISnippet[]) {
   const tags = snippets.reduce(
-    (accTags: string[], snippet: IFeaturedSnippet) => [
+    (accTags: string[], snippet: ISnippet) => [
       ...accTags,
-      ...snippet.data.tags,
+      ...snippet.tags,
     ],
     []
   );

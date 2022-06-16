@@ -8,21 +8,20 @@ import { Loader } from "../components/Loader/Loader";
 import { Navbar } from "../components/Navbar/Navbar";
 import { SEO } from "../components/SEO/SEO";
 import styles from "../styles/Home.module.scss";
-import { IFeaturedSnippet } from "../types/ISnippet";
+import { ISnippet } from "../types/ISnippet";
 import { FeaturedSnippets } from "../components/Containers/Home/FeaturedSnippets/FeaturedSnippets";
 import { getMarkdownFrontMatter } from "../utils/files";
-import { IFeaturedProject } from "../types/IProject";
-import { AboutMe } from "../components/Containers/About/AboutMe/AboutMe";
-import { IFeaturedBlogPost } from "../types/IBlog";
+import { IProject } from "../types/IProject";
+import { IPost } from "../types/IBlog";
 import { FeaturedBlogPosts } from "../components/Containers/Home/FeaturedBlogPosts/FeaturedBlogPosts";
 import { GetInTouch } from "../components/Containers/Home/GetInTouch/GetInTouch";
 import { Footer } from "../components/Footer/Footer";
 import { useGlobalUIContext } from "../context/GlobalUI.context";
 
 interface HomePageProps {
-  featuredProjects: IFeaturedProject[];
-  featuredSnippets: IFeaturedSnippet[];
-  featuredBlogPosts: IFeaturedBlogPost[];
+  featuredProjects: IProject[];
+  featuredSnippets: ISnippet[];
+  featuredBlogPosts: IPost[];
 }
 
 const Home: NextPage<HomePageProps> = ({

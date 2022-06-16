@@ -2,6 +2,7 @@ import React from "react";
 import { ContactForm } from "./ContactForm";
 import styles from "./GetInTouch.module.scss";
 import { MdEmail } from "react-icons/md";
+import { SocialLinks } from "../../../SocialLinks/SocialLinks";
 
 interface GetInTouchProps {}
 
@@ -90,25 +91,7 @@ export const GetInTouch: React.FC<GetInTouchProps> = ({}) => {
               </a>
             </div>
             <div className={styles.socialsContainer}>
-              <ul className={`${styles.socialNetworks} ${styles.spinIcon}`}>
-                <li>
-                  <a href="https://github.com/PerrySmithMoss" target="_blank">
-                    <span className={`${styles.iconGithub} icon-github`}>
-                      Github
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.linkedin.com/in/perrysmithmoss"
-                    target="_blank"
-                  >
-                    <span className={`${styles.iconLinkedIn} icon-linkedin2`}>
-                      LinkedIn
-                    </span>
-                  </a>
-                </li>
-              </ul>
+              <SocialLinks align="center"/>
             </div>
           </div>
         </div>

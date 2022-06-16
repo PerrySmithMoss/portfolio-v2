@@ -1,0 +1,146 @@
+.postWrapper {
+  margin: 0px auto;
+  max-width: 1200px;
+  color: var(--white);
+  font-family: "Poppins-Regular";
+  // padding-bottom: 100px;
+  height: 100vh;
+}
+
+.wrapper {
+  margin-top: 150px;
+  color: white;
+
+  h1 {
+    font-size: 34px;
+    font-family: "Poppins-Bold";
+    margin-top: 0.75rem;
+  }
+
+  p {
+    color: var(--light-white);
+    margin: 0;
+    margin-top: 0.75rem;
+  }
+
+  .blogHeader {
+    p {
+      margin: 0;
+      padding: 0;
+      margin-top: .5rem;
+    }
+  }
+
+  .heroImage {
+    position: relative;
+    border-radius: 8px;
+    padding-bottom: .75rem;
+
+    img {
+      border-radius: 8px;
+    }
+  }
+
+
+  .blogInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+
+  .readingTime p {
+    color: var(--cyan) ;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    gap: 4rem;
+    color: white;
+    margin-top: 1.5rem;
+    border-top: 1px solid rgb(75 85 99);
+    article, aside {
+      margin-top: 1rem;
+      width: 100%;
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        // margin-top: 2rem;
+        margin-bottom: 0.75rem;
+        font-family: "Poppins-Bold";
+      }
+    }
+  }
+}
+
+.sidebar {
+  // height: 100vh;
+  position: relative;
+  .sidebarOuter {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 7.5rem;
+  }
+  .socialLinksContainer {
+    margin-top: 0.5rem;
+  }
+}
+
+.recommendationsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 5rem;
+
+  img {
+    border-radius: 8px;
+  }
+  h3 {
+    margin-top: 0.75rem;
+    font-size: 18px;
+    font-family: "Poppins-Medium";
+    cursor: pointer;
+  }
+  h3:hover {
+    text-decoration: underline;
+  }
+  p {
+    margin: 0;
+    color: #a6a9b0;
+    margin-top: 0.5rem;
+    font-size: 14px;
+  }
+  .badgeWrapper {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    gap: 4rem !important;
+  }
+}
+@media (max-width: 952px) {
+  .recommendationsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 100% !important;
+    gap: 2rem !important;
+  }
+  .socialLinksContainer {
+    padding-bottom: 1rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .recommendationsGrid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}

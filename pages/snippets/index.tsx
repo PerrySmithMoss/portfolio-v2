@@ -1,6 +1,6 @@
 import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
-import { Blog } from "../../components/Containers/Blog/Blog";
+import { Blog } from "../../components/Containers/Blog/Posts/Blog";
 import { Snippets } from "../../components/Containers/Snippet/Snippets/Snippets";
 import { Footer } from "../../components/Footer/Footer";
 import { Navbar } from "../../components/Navbar/Navbar";
@@ -48,7 +48,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const snippets = await getMarkdownFrontMatter("content/snippets");
 
   // Gather all tags (removing duplicates)
-  const tags = await getTags(snippets as IFeaturedSnippet[]);
+  const tags = getTags(snippets as IFeaturedSnippet[]);
 
   return {
     props: {

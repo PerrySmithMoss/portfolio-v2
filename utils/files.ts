@@ -2,6 +2,18 @@ import { promises as fsPromise } from "fs";
 import matter from "gray-matter";
 import path from "path";
 
+import { serialize } from "next-mdx-remote/serialize";
+import mdxPrism from "mdx-prism";
+import { MDXRemoteSerializeResult } from "next-mdx-remote/dist/types";
+import remarkAutolinkHeadings from "remark-autolink-headings";
+import remarkSlug from "remark-slug";
+import remarkCodeTitles from "remark-code-titles";
+import { ISnippet } from "../types/ISnippet";
+import { IPost } from "../types/IBlog";
+import { IProject } from "../types/IProject";
+import { IHeading, IMedia } from "../types/IMedia";
+import { readingTime } from "./words";
+
 /**
  * A function to asynchronously return file names
  * @param {string} pathOfFiles - The path of where the files are stored
@@ -47,13 +59,9 @@ export async function readFile(
  * @param {string} pathOfFiles - The path of where the files are stored
  * @returns {data[]} An array of data objects which contain the front matter of a markdown file
  */
-export async function getMarkdownFrontMatter(pathOfFiles: string): Promise<
-  {
-    data: {
-      [key: string]: any;
-    };
-  }[]
-> {
+export async function getMarkdownFrontMatter(
+  pathOfFiles: string
+): Promise<IMedia[]> {
   const files = await getFiles(pathOfFiles);
 
   let parsedMarkdownFiles;
@@ -64,7 +72,7 @@ export async function getMarkdownFrontMatter(pathOfFiles: string): Promise<
         const { data } = matter(markdown);
 
         return {
-          data,
+          ...(data as ISnippet | IPost | IProject),
         };
       })
     );
@@ -80,3 +88,94 @@ export async function getMarkdownFrontMatter(pathOfFiles: string): Promise<
   }
 }
 
+type Groups = {
+  [key: string]: any;
+};
+
+/**
+ * A function to asynchronously return a file with its front-matter & markdown
+ * @param {string} pathOfFile - The path of where the files are stored
+ * @param {string} slug - The slug of the file
+ * @returns {mdxSource, frontMatter} An object which contains the markdown and front-matter
+ */
+export async function getFileBySlug(
+  pathOfFile: string,
+  slug: string
+): Promise<{
+  mdxSource: MDXRemoteSerializeResult<Record<string, unknown>>;
+  frontMatter: {
+    wordCount: number;
+    readingTime: number;
+  };
+  headings: IHeading[];
+}> {
+  const source = await readFile(pathOfFile, slug + ".md");
+
+  const { data, content } = matter(source);
+
+  const regXHeader = /(?<flag>#{1,6})\s+(?<content>.+)/g;
+
+  const headings = Array.from(content.matchAll(regXHeader)).map(
+    ({ groups: { flag, content } }: { [key: string]: any }) => ({
+      heading: `h${flag.length}`,
+      content,
+      indent: flag.length
+    })
+  );
+
+  console.log(headings)
+
+  const mdxSource = await serialize(content, {
+    //  components: MDXComponents,
+    mdxOptions: {
+      remarkPlugins: [remarkAutolinkHeadings, remarkSlug, remarkCodeTitles],
+      rehypePlugins: [mdxPrism],
+    },
+  });
+
+  return {
+    mdxSource,
+    frontMatter: {
+      wordCount: content.split(/\s+/gu).length,
+      readingTime: readingTime(content),
+      ...data,
+    },
+    headings,
+  };
+}
+
+/**
+ * A function to asynchronously return recommendations
+ * @param {string} pathOfFile - The path of where the files are stored
+ * @param {string} slug - The slug of the file
+ * @returns {IMedia} An array of recommendation objects which contain the front-matter
+ */
+export async function getRecommendations(
+  pathOfFile: string,
+  slug: string
+): Promise<(IMedia | IMedia[])[]> {
+  const files = await getMarkdownFrontMatter(pathOfFile);
+
+  const currentFile = files.find((file: IMedia) => file.slug === slug);
+
+  const otherFiles = files.filter((file: IMedia) => file.slug !== slug);
+
+  const similarRecommendations = otherFiles.filter((file: IMedia) =>
+    file.tags.some((tag: string) => currentFile!.tags.includes(tag))
+  );
+
+  const recommendations =
+    similarRecommendations.length >= 3
+      ? similarRecommendations
+      : [
+          ...similarRecommendations,
+          otherFiles.filter(
+            (file: any) =>
+              !similarRecommendations.some(
+                (recommendation: any) => (recommendation.slug = file.slug)
+              )
+          ),
+        ];
+
+  return recommendations.slice(0, 3);
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import { IFeaturedBlogPost } from "../../../../types/IBlog";
+import { IPost } from "../../../../types/IBlog";
 import { Button } from "../../../Button/Button/Button";
 import { SeeAll } from "../../../Button/SeeAll/SeeAll";
 import { BlogPostCard } from "./BlogPostCard";
@@ -7,18 +7,18 @@ import styles from "./FeaturedBlogPosts.module.scss";
 import { FeaturedPost } from "./FeaturedPost";
 
 interface FeaturedBlogPostsProps {
-  featuredBlogPosts: IFeaturedBlogPost[];
+  featuredBlogPosts: IPost[];
 }
 
 export const FeaturedBlogPosts: React.FC<FeaturedBlogPostsProps> = ({
   featuredBlogPosts,
 }) => {
   const featuredPost = featuredBlogPosts.find(
-    (post: IFeaturedBlogPost) => post.data.featuredPost === true
+    (post: IPost) => post.featuredPost === true
   );
 
   const allPostsMinusFeatured = featuredBlogPosts.filter(
-    (post: IFeaturedBlogPost) => post.data.featuredPost === false
+    (post: IPost) => post.featuredPost === false
   );
 
   return (
@@ -35,19 +35,19 @@ export const FeaturedBlogPosts: React.FC<FeaturedBlogPostsProps> = ({
         <div className={styles.postsContainer}>
           <div className={styles.postsWithFeature}>
             <div className={styles.featuredPostContainer}>
-              <FeaturedPost post={featuredPost as IFeaturedBlogPost} />
+              <FeaturedPost post={featuredPost as IPost} />
             </div>
             <div className={styles.postsGrid}>
-              {allPostsMinusFeatured.map((post: IFeaturedBlogPost) => (
-                <BlogPostCard key={post.data.id} post={post} />
+              {allPostsMinusFeatured.map((post: IPost) => (
+                <BlogPostCard key={post.id} post={post} />
               ))}
             </div>
           </div>
 
           <div className={styles.postsWithoutFeature}>
           <div className={styles.postsGrid}>
-            {featuredBlogPosts.map((post: IFeaturedBlogPost) => (
-              <BlogPostCard key={post.data.id} post={post} />
+            {featuredBlogPosts.map((post: IPost) => (
+              <BlogPostCard key={post.id} post={post} />
             ))}
           </div>
           </div>

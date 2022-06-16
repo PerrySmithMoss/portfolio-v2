@@ -1,17 +1,33 @@
-import type { NextPage } from "next";
+import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { SEO } from "../../components/SEO/SEO";
 import { useGlobalUIContext } from "../../context/GlobalUI.context";
 import styles from "../../styles/Home.module.scss";
 
-import fs from 'fs'
-import path from 'path'
-import matter from 'gray-matter'
+import { getFileBySlug, getFiles, getRecommendations } from "../../utils/files";
+import { IParams } from "../../types/IParams";
+import { Footer } from "../../components/Footer/Footer";
+import { PostContainer } from "../../components/Containers/Blog/Post/PostContainer";
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
+import { IPost } from "../../types/IBlog";
+import { IHeading } from "../../types/IMedia";
 
-interface BlogPostProps {}
+interface BlogPostProps {
+  slug: string;
+  frontMatter: IPost;
+  mdxSource: MDXRemoteSerializeResult<Record<string, unknown>>;
+  recommendations: IPost[];
+  headings: IHeading[]
+}
 
-const BlogPost: NextPage<BlogPostProps> = ({}) => {
+const BlogPost: NextPage<BlogPostProps> = ({
+  slug,
+  mdxSource,
+  frontMatter,
+  recommendations,
+  headings
+}) => {
   const { isMobileMenuDrawerOpen } = useGlobalUIContext();
   return (
     <div>
@@ -28,7 +44,15 @@ const BlogPost: NextPage<BlogPostProps> = ({}) => {
               ? `${styles.mainWrapperBlur} ${styles.mainWrapper}`
               : styles.mainWrapper
           }
-        ></main>
+        >
+          <PostContainer
+            content={mdxSource}
+            frontMatter={frontMatter}
+            recommendations={recommendations}
+            headings={headings}
+          />
+          <Footer />
+        </main>
       </div>
     </div>
   );
@@ -36,36 +60,36 @@ const BlogPost: NextPage<BlogPostProps> = ({}) => {
 
 export default BlogPost;
 
-export async function getStaticPaths() {
-  const files = fs.readdirSync(path.join('posts'))
+export const getStaticPaths: GetStaticPaths = async () => {
+  const files = await getFiles("content/blog");
 
   const paths = files.map((filename) => ({
     params: {
-      slug: filename.replace('.md', ''),
+      slug: filename.replace(".md", ""),
     },
-  }))
+  }));
 
   return {
     paths,
     fallback: false,
-  }
-}
+  };
+};
 
-export async function getStaticProps({ params }: { params: { slug: string } }) {
-  const slug = params;
-  
-  const markdownWithMeta = fs.readFileSync(
-    path.join('posts', slug + '.md'),
-    'utf-8'
-  )
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { slug } = context.params as IParams;
 
-  const { data: frontmatter, content } = matter(markdownWithMeta)
+  const { frontMatter, mdxSource, headings } = await getFileBySlug("content/blog", slug);
+
+
+  const recommendations = await getRecommendations("content/blog", slug);
 
   return {
     props: {
-      frontmatter,
       slug,
-      content,
+      mdxSource,
+      frontMatter,
+      recommendations,
+      headings
     },
-  }
-}
+  };
+};

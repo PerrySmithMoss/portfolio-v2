@@ -30,6 +30,10 @@
   }
 }
 
+.subHeading p {
+  font-size: clamp(14px, 3vw, 16px);
+}
+
 .searchContainer {
   font-family: "Poppins-Regular";
   margin-top: 2rem;
@@ -114,6 +118,7 @@
   display: flex;
   flex-flow: row wrap;
   align-items: center;
+  margin-top: 15px;
   // justify-content: center;
   gap: 10px;
 }
@@ -131,7 +136,6 @@
   margin: 0;
   padding: 0 !important;
   margin-top: 2.5rem;
-
 }
 
 .cardWrapper {
@@ -181,7 +185,7 @@
 }
 .cardBody h4 {
   font-family: "Poppins-Medium";
-  font-size: var(--fs-lg);
+  font-size: clamp(16px, 3vw, 18px);
 }
 
 .cardBody p {
@@ -206,4 +210,16 @@
 
 .buttonsContainer a:first-child {
   margin-right: 16px;
+}
+
+@media (max-width: 768px) {
+  .snippetsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 625px) {
+  .snippetsGrid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }

@@ -1,13 +1,13 @@
 ---
 id: "2"
-title: "How To Create Custom Visual Studio Code Snippets"
+title: "Responsive Typography Made Simple"
 datePublished: "19th May, 2022"
-readMoreLink: "/blog/how-to-create-custom-visual-studio-code-snippets"
+slug: "make-responsive-typography-easy-with-css-clamp"
 image: "/assets/images/home/blog/code.jpg"
 description: "Increase your programming efficiency by learning how to create your own custom Visual Studio Code snippets."
 featuredPost: true
 tech: ["VS Code"]
-tag: "Featured Post"
+tags: ["Featured Post"]
 ---
 
-#### How To Create Custom Visual Studio Code Snippets
+## Introduction

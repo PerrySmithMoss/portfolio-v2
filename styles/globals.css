@@ -3,7 +3,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Poppins-Regular";
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   /* overflow-y: hidden; */
   /* overflow: hidden; */
   -webkit-font-smoothing: antialiased;
@@ -38,9 +38,9 @@ html {
 
 body::-webkit-scrollbar {
   z-index: 20;
-  	background: #0000;
-	/* width: 4px; */
-	/* height: 4px !important; */
+  background: #0000;
+  /* width: 4px; */
+  /* height: 4px !important; */
   width: 12px;
 }
 body::-webkit-scrollbar-track,
@@ -59,7 +59,7 @@ body::-webkit-scrollbar-thumb {
 a {
   color: inherit;
   text-decoration: none;
-  transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 * {

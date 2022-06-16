@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { IFeaturedSnippet } from "../../../../types/ISnippet";
+import { ISnippet } from "../../../../types/ISnippet";
 import { getTags } from "../../../../utils/tags";
 import { Chip } from "../../../Chip/Chip";
 import { SnippetCard } from "./SnippetCard";
 import styles from "./Snippets.module.scss";
 
 interface SnippetsProps {
-  snippets: IFeaturedSnippet[];
+  snippets: ISnippet[];
   tags: string[];
 }
 
@@ -14,26 +14,22 @@ export const Snippets: React.FC<SnippetsProps> = ({ snippets, tags }) => {
   const [searchInput, setSearchInput] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [filteredSnippets, setFilteredSnippets] =
-    useState<IFeaturedSnippet[]>(snippets);
+    useState<ISnippet[]>(snippets);
 
   useEffect(() => {
-    const snippetResults = snippets.filter((snippet: IFeaturedSnippet) => {
-      return selectedTags.every((tag: string) =>
-        snippet.data.tags.includes(tag)
-      );
+    const snippetResults = snippets.filter((snippet: ISnippet) => {
+      return selectedTags.every((tag: string) => snippet.tags.includes(tag));
     });
 
     setFilteredSnippets(snippetResults);
   }, [selectedTags]);
 
   useEffect(() => {
-    const snippetResults = snippets.filter((snippet: IFeaturedSnippet) => {
+    const snippetResults = snippets.filter((snippet: ISnippet) => {
       return (
-        snippet.data.title.toLowerCase().includes(searchInput.toLowerCase()) ||
-        snippet.data.excerpt
-          .toLowerCase()
-          .includes(searchInput.toLowerCase()) ||
-        snippet.data.tags.find((tag: string) =>
+        snippet.title.toLowerCase().includes(searchInput.toLowerCase()) ||
+        snippet.excerpt.toLowerCase().includes(searchInput.toLowerCase()) ||
+        snippet.tags.find((tag: string) =>
           tag.toLowerCase().includes(searchInput.toLowerCase())
         )
       );
@@ -64,7 +60,7 @@ export const Snippets: React.FC<SnippetsProps> = ({ snippets, tags }) => {
         <div className={styles.headerBorderLeft}>
           <h1>Snippets</h1>
         </div>
-        <div>
+        <div className={styles.subHeading}>
           <p>
             Here is a collection of code snippets which you may find useful.
           </p>
@@ -189,8 +185,8 @@ export const Snippets: React.FC<SnippetsProps> = ({ snippets, tags }) => {
         <div>
           <ul className={styles.snippetsGrid}>
             {filteredSnippets.length > 0 ? (
-              filteredSnippets.map((snippet: IFeaturedSnippet) => (
-                <SnippetCard key={snippet.data.id} snippet={snippet} />
+              filteredSnippets.map((snippet: ISnippet) => (
+                <SnippetCard key={snippet.id} snippet={snippet} />
               ))
             ) : (
               <div style={{ color: "white" }}>No snippets to show</div>

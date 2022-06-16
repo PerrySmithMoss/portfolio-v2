@@ -1,5 +1,6 @@
 import React from "react";
-import { IFeaturedSnippet } from "../../../../types/ISnippet";
+import Link from "next/link";
+import { ISnippet } from "../../../../types/ISnippet";
 import {
   DynamicTechIcons,
   TechListType,
@@ -7,19 +8,21 @@ import {
 import styles from "./Snippets.module.scss";
 
 interface SnippetCardProps {
-  snippet: IFeaturedSnippet;
+  snippet: ISnippet;
 }
 
 export const SnippetCard: React.FC<SnippetCardProps> = ({ snippet }) => {
   return (
     <li className={styles.cardWrapper}>
-      <div className={styles.cardBody}>
-        <div className={styles.cardHeader}>
-          <h4>{snippet.data.title}</h4>
+      <Link href={`/snippets/${snippet.slug}`}>
+        <div className={styles.cardBody}>
+          <div className={styles.cardHeader}>
+            <h4>{snippet.title}</h4>
+          </div>
+          <DynamicTechIcons techs={snippet.tech as Array<TechListType>} />
+          <p>{snippet.excerpt}</p>
         </div>
-        <DynamicTechIcons techs={snippet.data.tech as Array<TechListType>} />
-        <p>{snippet.data.excerpt}</p>
-      </div>
+      </Link>
     </li>
   );
 };
