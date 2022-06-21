@@ -33,6 +33,7 @@ body {
 html {
   scrollbar-width: thin;
   z-index: 20;
+  scroll-padding-top: 175px;
   scrollbar-color: var(--light-navy) var(--dark-navy);
 }
 
@@ -115,6 +116,28 @@ h6 {
 }
 .easytransitions__TransitionPart8.split_vertical {
   display: block;
+}
+
+.heading-hash_anchor {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  top: 0;
+}
+.heading-hash_anchor:after {
+  content: "#";
+  visibility: hidden;
+  color: var(--cyan);
+  position: absolute;
+  left: -25px;
+  font-size: 20px;
+}
+.heading-hash_anchor:hover:after {
+  visibility: visible;
 }
 
 /* // Transition animations */

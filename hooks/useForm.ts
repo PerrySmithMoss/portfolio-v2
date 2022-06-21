@@ -10,7 +10,7 @@ type FormData = {
   message: string;
 };
 
-export const useForm = () => {
+export function useForm() {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -66,4 +66,4 @@ export const useForm = () => {
   };
 
   return { formData, errors, handleInput, isFormValid: isFormValid() };
-};
+}

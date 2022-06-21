@@ -7,12 +7,12 @@ import { Navbar } from "../../components/Navbar/Navbar";
 import { SEO } from "../../components/SEO/SEO";
 import { useGlobalUIContext } from "../../context/GlobalUI.context";
 import styles from "../../styles/Home.module.scss";
-import { IFeaturedSnippet } from "../../types/ISnippet";
+import { ISnippet } from "../../types/ISnippet";
 import { getMarkdownFrontMatter } from "../../utils/files";
 import { getTags } from "../../utils/tags";
 
 interface SnippetsPageProps {
-  snippets: IFeaturedSnippet[];
+  snippets: ISnippet[];
   tags: string[];
 }
 
@@ -48,7 +48,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const snippets = await getMarkdownFrontMatter("content/snippets");
 
   // Gather all tags (removing duplicates)
-  const tags = getTags(snippets as IFeaturedSnippet[]);
+  const tags = getTags(snippets as ISnippet[]);
 
   return {
     props: {

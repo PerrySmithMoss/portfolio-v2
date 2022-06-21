@@ -33,8 +33,8 @@ export const MySkills: React.FC<MySkillsProps> = ({}) => {
         <div>
           <h2>Tech Stack</h2>
           <p>
-            Below you can see a list of technolgies which are my 'bread and
-            butter'.
+            Below you can see a list of technolgies which are my &apos;bread and
+            butter&apos;.
           </p>
         </div>
       </div>
@@ -63,7 +63,7 @@ export const MySkills: React.FC<MySkillsProps> = ({}) => {
           <div>
             <li>
               <div>
-                {/* Possibly change this to Tailwind? CSS & HTML are givens if you're a developer */}
+                {/* Possibly change this to Tailwind? CSS & HTML are givens if you&apos;re a developer */}
                 {/* <SiCss3 color="2865f0" size={40} /> */}
                 <SiTailwindcss color="38bdf8" size={40} />
               </div>

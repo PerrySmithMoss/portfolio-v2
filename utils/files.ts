@@ -2,17 +2,18 @@ import { promises as fsPromise } from "fs";
 import matter from "gray-matter";
 import path from "path";
 
-import { serialize } from "next-mdx-remote/serialize";
-import mdxPrism from "mdx-prism";
-import { MDXRemoteSerializeResult } from "next-mdx-remote/dist/types";
-import remarkAutolinkHeadings from "remark-autolink-headings";
-import remarkSlug from "remark-slug";
-import remarkCodeTitles from "remark-code-titles";
 import { ISnippet } from "../types/ISnippet";
 import { IPost } from "../types/IBlog";
 import { IProject } from "../types/IProject";
 import { IHeading, IMedia } from "../types/IMedia";
 import { readingTime } from "./words";
+
+import { bundleMDX } from "mdx-bundler";
+import mdxPrism from "mdx-prism";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import remarkGfm from "remark-gfm";
+import { slugify } from "./slugify";
 
 /**
  * A function to asynchronously return file names
@@ -88,10 +89,6 @@ export async function getMarkdownFrontMatter(
   }
 }
 
-type Groups = {
-  [key: string]: any;
-};
-
 /**
  * A function to asynchronously return a file with its front-matter & markdown
  * @param {string} pathOfFile - The path of where the files are stored
@@ -102,7 +99,7 @@ export async function getFileBySlug(
   pathOfFile: string,
   slug: string
 ): Promise<{
-  mdxSource: MDXRemoteSerializeResult<Record<string, unknown>>;
+  mdxSource: string;
   frontMatter: {
     wordCount: number;
     readingTime: number;
@@ -111,34 +108,73 @@ export async function getFileBySlug(
 }> {
   const source = await readFile(pathOfFile, slug + ".md");
 
-  const { data, content } = matter(source);
+  // https://github.com/kentcdodds/mdx-bundler#nextjs-esbuild-enoent
+  // Esbuild has to be manually told
+  // where to be pointed
+  // because Next JS breaks stuff
+  if (process.platform === "win32") {
+    process.env.ESBUILD_BINARY_PATH = path.join(
+      process.cwd(),
+      "node_modules",
+      "esbuild",
+      "esbuild.exe"
+    );
+  } else {
+    process.env.ESBUILD_BINARY_PATH = path.join(
+      process.cwd(),
+      "node_modules",
+      "esbuild",
+      "bin",
+      "esbuild"
+    );
+  }
 
-  const regXHeader = /(?<flag>#{1,6})\s+(?<content>.+)/g;
+  const { code, frontmatter } = await bundleMDX({
+    source: source,
+    cwd: "/" + pathOfFile + slug + ".md",
+    mdxOptions(options) {
+      options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkGfm];
+      options.rehypePlugins = [
+        ...(options?.rehypePlugins ?? []),
+        rehypeSlug,
+        [
+          rehypeAutolinkHeadings,
+          {
+            behavior: "append",
+            properties: {
+              class: "heading-hash_anchor",
+            },
+          },
+        ],
+        mdxPrism,
+      ];
+      return options;
+    },
+    esbuildOptions(options, frontmatter) {
+      options.minify = false;
+      options.target = ["chrome60", "firefox60", "safari11", "edge18"];
 
-  const headings = Array.from(content.matchAll(regXHeader)).map(
-    ({ groups: { flag, content } }: { [key: string]: any }) => ({
-      heading: `h${flag.length}`,
-      content,
-      indent: flag.length
-    })
-  );
-
-  console.log(headings)
-
-  const mdxSource = await serialize(content, {
-    //  components: MDXComponents,
-    mdxOptions: {
-      remarkPlugins: [remarkAutolinkHeadings, remarkSlug, remarkCodeTitles],
-      rehypePlugins: [mdxPrism],
+      return options;
     },
   });
 
+  const regXHeader = /(?<flag>#{1,6})\s+(?<content>.+)/g;
+
+  const headings = Array.from(source.matchAll(regXHeader)).map(
+    ({ groups: { flag, content } }: { [key: string]: any }) => ({
+      heading: `h${flag.length}`,
+      content,
+      indent: flag.length,
+      slug: slugify(content)
+    })
+  );
+
   return {
-    mdxSource,
+    mdxSource: code,
     frontMatter: {
-      wordCount: content.split(/\s+/gu).length,
-      readingTime: readingTime(content),
-      ...data,
+      wordCount: source.split(/\s+/gu).length,
+      readingTime: readingTime(source),
+      ...frontmatter,
     },
     headings,
   };

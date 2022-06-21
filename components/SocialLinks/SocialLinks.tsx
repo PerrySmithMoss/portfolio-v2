@@ -19,7 +19,7 @@ export const SocialLinks: React.FC<SocialLinksProps> = ({ align, size }) => {
         }`}
       >
         <li>
-          <a href="https://github.com/PerrySmithMoss" target="_blank">
+          <a rel="noreferrer" href="https://github.com/PerrySmithMoss" target="_blank">
             <span
               className={`${styles.iconGithub} ${
                 size === "large" ? styles.large : styles.small
@@ -30,7 +30,7 @@ export const SocialLinks: React.FC<SocialLinksProps> = ({ align, size }) => {
           </a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/in/perrysmithmoss" target="_blank">
+          <a rel="noreferrer" href="https://www.linkedin.com/in/perrysmithmoss" target="_blank">
             <span
               className={`${styles.iconLinkedIn} ${
                 size === "large" ? styles.large : styles.small

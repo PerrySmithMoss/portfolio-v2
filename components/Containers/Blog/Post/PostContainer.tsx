@@ -1,4 +1,3 @@
-import { MDXRemote } from "next-mdx-remote";
 import React from "react";
 import Link from "next/link";
 import styles from "./Post.module.scss";
@@ -7,26 +6,36 @@ import { IPost } from "../../../../types/IBlog";
 import { Badge } from "../../../Badge/Badge";
 import { TableOfContents } from "../../../TableOfContents/TableOfContents";
 import { IHeading } from "../../../../types/IMedia";
+import {
+  HiOutlineClock,
+  HiOutlinePencil,
+  HiOutlineCalendar,
+} from "react-icons/hi";
+import { getMDXComponent } from "mdx-bundler/client";
+import { MDXComponents } from "../../../MDXComponents/MDXComponents";
 
 interface PostContainerProps {
-  content: any;
+  mdxSource: any;
   frontMatter: IPost;
   recommendations: IPost[];
-  headings: IHeading[]
+  headings: IHeading[];
 }
 
 export const PostContainer: React.FC<PostContainerProps> = ({
-  content,
+  mdxSource,
   frontMatter,
   recommendations,
-  headings
+  headings,
 }) => {
-  console.log(headings)
+  const Component = React.useMemo(
+    () => getMDXComponent(mdxSource),
+    [mdxSource]
+  );
   return (
     <section>
       <div className={styles.wrapper}>
         <div className={styles.heroImage}>
-          <Image src={frontMatter.image} height={500} width={1300} />
+          <Image src={frontMatter.image} height={600} width={1300} />
         </div>
         <Badge
           colour="rgb(34, 139, 230)"
@@ -36,26 +45,52 @@ export const PostContainer: React.FC<PostContainerProps> = ({
         />
         <div className={styles.blogHeader}>
           <h1>{frontMatter.title}</h1>
-          <p>Published May 23rd, 2022</p>
         </div>
-        <div className={styles.blogInfo}>
-          <div>
-            <p> Perry Smith-Moss</p>
-          </div>
-          <div className={styles.readingTime}>
-            <p>{frontMatter.readingTime} minute read</p>
-          </div>
-        </div>
+        <ul className={styles.blogInfo}>
+          <li className={styles.flex}>
+            <HiOutlinePencil />
+            <div>
+              <p>
+                <span>Perry Smith-Moss</span>
+              </p>
+            </div>
+          </li>
+          <li className={styles.flex}>
+            <HiOutlineCalendar />
+            <div>
+              <p>
+                <span>May 23rd, 2022</span>
+              </p>
+            </div>
+          </li>
+
+          <li className={styles.flex}>
+            <HiOutlineClock />
+            <div>
+              <p>
+                <span>{frontMatter.readingTime} minute read</span>
+              </p>
+            </div>
+          </li>
+        </ul>
         <div className={styles.grid}>
-          <article>
+          <article className={`${styles.markdown} markdown`}>
             <div className={styles.articleBody}>
-              <MDXRemote {...content} />
+              {/* <MDXRemote {...content} /> */}
+              <Component
+                components={
+                  {
+                    ...MDXComponents,
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                  } as any
+                }
+              />
             </div>
           </article>
           <aside className={styles.sidebar}>
             <div className={styles.sidebarOuter}>
               <div className={styles.sidebarInner}>
-                <TableOfContents headings={headings}/>
+                <TableOfContents headings={headings} />
               </div>
             </div>
           </aside>

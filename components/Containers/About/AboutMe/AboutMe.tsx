@@ -15,7 +15,7 @@ export const AboutMe: React.FC<AboutMeProps> = ({}) => {
       <div className={styles.aboutMeContainer}>
         <div>
           <p>
-            Howdy! My name is Perry but some people call me Pez. I'm a software
+            Howdy! My name is Perry but some people call me Pez. I&apos;m a software
             engineer who revels in taking an idea and transforming it into a
             fully operational piece of software.
           </p>
@@ -31,7 +31,7 @@ export const AboutMe: React.FC<AboutMeProps> = ({}) => {
               Handover
             </a>
             , which was part of my dissertation project in university. Since
-            then I've been hooked on anything software related.
+            then I&apos;ve been hooked on anything software related.
           </p>
           <p>
             Currently, I am working with{" "}

@@ -9,13 +9,12 @@ import { getFileBySlug, getFiles, getRecommendations } from "../../utils/files";
 
 import { SnippetContainer } from "../../components/Containers/Snippet/Snippet/Snippet";
 import { ISnippet } from "../../types/ISnippet";
-import { MDXRemoteSerializeResult } from "next-mdx-remote/dist/types";
 import { IParams } from "../../types/IParams";
 
 interface SnippetProps {
   slug: string;
   frontMatter: ISnippet;
-  mdxSource:  MDXRemoteSerializeResult<Record<string, unknown>>;
+  mdxSource:  string;
   recommendations: ISnippet[]
 }
 

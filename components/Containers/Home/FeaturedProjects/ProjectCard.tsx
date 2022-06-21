@@ -1,13 +1,13 @@
 import Image from "next/image";
 import React from "react";
-import { IFeaturedProject } from "../../../../types/IProject";
+import { IProject } from "../../../../types/IProject";
 import { Badge } from "../../../Badge/Badge";
 import { Button } from "../../../Button/Button/Button";
 import { SeeAll } from "../../../Button/SeeAll/SeeAll";
 import styles from "./FeaturedProjects.module.scss";
 
 interface ProjectCardProps {
-  project: IFeaturedProject;
+  project: IProject;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
@@ -15,8 +15,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     <article className={styles.cardWrapper}>
       <div className={styles.cardLeft}>
         <Image
-          alt={project.data.title}
-          src={project.data.image}
+          alt={project.title}
+          src={project.image}
           width="100%"
           height="100%"
           layout="responsive"
@@ -26,16 +26,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       </div>
       <div className={styles.cardBody}>
         <div className={styles.cardHeader}>
-          <h4>{project.data.title}</h4>
+          <h4>{project.title}</h4>
 
           <Badge
             colour="rgb(34, 139, 230)"
             backgroundColour="#0c2231"
-            text={project.data.platform}
+            text={project.platform}
             size="sm"
           />
         </div>
-        <p>{project.data.description}</p>
+        <p>{project.description}</p>
         <div className={styles.buttonsContainer}>
           <Button
             text="Read more"
@@ -43,7 +43,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             backgroundColour="rgb(40, 45, 65)"
             variant="filled"
           />
-          {project.data.urlLink != null && (
+          {project.urlLink != null && (
             //   <a
             //   target="_blank"
             //   rel="noreferrer"

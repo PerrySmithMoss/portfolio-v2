@@ -19,7 +19,7 @@ export const GetInTouch: React.FC<GetInTouchProps> = ({}) => {
             </div>
             <p>
               If you want to know more about me or my work, or if you would just
-              like to say hello, feel free to send me a message. I'd love to
+              like to say hello, feel free to send me a message. I&apos;d love to
               hear from you.
             </p>
             <ContactForm />

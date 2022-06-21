@@ -9,14 +9,13 @@ import { getFileBySlug, getFiles, getRecommendations } from "../../utils/files";
 import { IParams } from "../../types/IParams";
 import { Footer } from "../../components/Footer/Footer";
 import { PostContainer } from "../../components/Containers/Blog/Post/PostContainer";
-import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { IPost } from "../../types/IBlog";
 import { IHeading } from "../../types/IMedia";
 
 interface BlogPostProps {
   slug: string;
   frontMatter: IPost;
-  mdxSource: MDXRemoteSerializeResult<Record<string, unknown>>;
+  mdxSource: string;
   recommendations: IPost[];
   headings: IHeading[]
 }
@@ -46,7 +45,7 @@ const BlogPost: NextPage<BlogPostProps> = ({
           }
         >
           <PostContainer
-            content={mdxSource}
+            mdxSource={mdxSource}
             frontMatter={frontMatter}
             recommendations={recommendations}
             headings={headings}

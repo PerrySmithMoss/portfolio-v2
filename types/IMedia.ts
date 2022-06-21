@@ -8,4 +8,5 @@ export interface IHeading {
   heading: string;
   content: any;
   indent: number
+  slug: string
 }

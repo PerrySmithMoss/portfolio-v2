@@ -16,7 +16,7 @@ export const Hero: React.FC<HeroProps> = ({}) => {
       </div>
       <div>
         <p>
-          I'm a software engineer who specializes in solving business problems
+          I&apos;m a software engineer who specializes in solving business problems
           with the best suited technology. Currently, I am building an
           E-commerce platform for{" "}
           <a
