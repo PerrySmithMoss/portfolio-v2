@@ -1,5 +1,5 @@
 ---
-id: "2"
+id: "5"
 title: "Responsive Typography Made Simple"
 datePublished: "19th May, 2022"
 slug: "make-responsive-typography-easy-with-css-clamp"

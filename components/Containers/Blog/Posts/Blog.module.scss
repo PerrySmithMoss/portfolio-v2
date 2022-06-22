@@ -100,6 +100,27 @@
     width: 100%;
     border-radius: 6px;
   }
+  .postImageContainer {
+    position: relative;
+    height: 100%;
+    max-width: 320px;
+    max-height: 320px;
+    width: 100%;
+    border-radius: 6px;
+
+    img {
+      position: relative;
+      height: 100%;
+      max-width: 320px;
+      max-height: 320px;
+      width: 100%;
+      border-radius: 6px;
+    }
+  }
+  .smallImageContainer {
+    width: 200px;
+    max-width: 200px;
+  }
   img {
     border-radius: 8px;
   }
@@ -132,7 +153,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2rem;
-  margin-top: 75px;
+  margin-top: 50px;
 }
 
 .otherPost {
@@ -174,7 +195,7 @@
   }
   .postContent {
     margin-left: 0px !important;
-    margin-right: 40px;
+    margin-right: 0px;
   }
   .allPostsGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));

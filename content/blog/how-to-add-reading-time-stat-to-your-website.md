@@ -1,5 +1,5 @@
 ---
-id: "6"
+id: "7"
 title: "How to add a reading time stat to your website"
 datePublished: "19th May, 2022"
 slug: "how-to-add-reading-time-stat-to-your-website"

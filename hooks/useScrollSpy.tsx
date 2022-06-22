@@ -6,7 +6,6 @@ import { throttle } from "../utils/throtte";
 
 export function useScrollSpy() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
-  //   const throttleMs = 100;
 
   const actionSectionScrollSpy = throttle(() => {
     const sections = document.getElementsByClassName("heading-hash_anchor");

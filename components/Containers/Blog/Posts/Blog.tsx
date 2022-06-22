@@ -22,26 +22,34 @@ export const Blog: React.FC<BlogProps> = ({
   const allPostsMinusFeatured = featuredBlogPosts.filter(
     (post: IPost) => post.featuredPost === false
   );
+
+  const allPosts = featuredBlogPosts.concat(otherBlogPosts);
+
   return (
     <section className={styles.blogWrapper}>
       <div className={styles.wrapper}>
         <div className={styles.headerBorderLeft}>
           <h1>Latest Posts</h1>
         </div>
-        <div className={styles.featuredPostsGrid}>
+        {/* <div className={styles.featuredPostsGrid}>
           <FeaturedPost post={featuredPost as IPost} />
           <div className={styles.otherPostsContainer}>
             {allPostsMinusFeatured.map((post: IPost) => (
               <article key={post.id} className={styles.post}>
+                <div
+                  className={styles.smallImageContainer}
+                >
                 <Image
-                  height={300}
-                  width={400}
+                  // height={300}
+                  // width={400}
+                  layout="fill"
                   objectFit="cover"
                   className={styles.image}
                   src={post.image}
                   alt={post.title}
                 />
 
+                </div>
                 <div className={styles.postContent}>
                   <div className={styles.badgeWrapper}>
                     <Badge
@@ -63,8 +71,8 @@ export const Blog: React.FC<BlogProps> = ({
               </article>
             ))}
           </div>
-        </div>
-        <div className={styles.featuredPostsMobile}>
+        </div> */}
+        {/* <div className={styles.featuredPostsMobile}>
           <article className={styles.featuredPost}>
             <Image
               // layout="fill"
@@ -93,14 +101,17 @@ export const Blog: React.FC<BlogProps> = ({
           </article>
           {allPostsMinusFeatured.map((post: IPost) => (
             <article key={post.id} className={styles.post}>
-              <Image
-                height={200}
-                width={300}
-                objectFit="cover"
-                className={styles.image}
-                src={post.image}
-                alt={post.title}
-              />
+              <div className={styles.postImageContainer}>
+                <Image
+                  height={200}
+                  width={300}
+                  // layout="fill"
+                  objectFit="cover"
+                  className={styles.image}
+                  src={post.image}
+                  alt={post.title}
+                />
+              </div>
               <div className={styles.postContent}>
                 <div className={styles.badgeWrapper}>
                   <Badge
@@ -121,13 +132,12 @@ export const Blog: React.FC<BlogProps> = ({
               </div>
             </article>
           ))}
-        </div>
-        {/* <hr /> */}
+        </div> */}
         <div className={styles.allPostsGrid}>
-          {otherBlogPosts.map((post: IPost) => (
+          {allPosts.map((post: IPost) => (
             <article key={post.id} className={styles.otherPost}>
               <Image
-                height={400}
+                height={500}
                 width={750}
                 objectFit="cover"
                 className={styles.image}
