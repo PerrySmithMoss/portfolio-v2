@@ -8,12 +8,12 @@
 }
 .wrapper h2 {
   color: var(--white);
-  font-size: clamp(26px, 5vw, 34px);
+  font-size: clamp(16px, 5vw, 24px);
   font-family: "Poppins-Bold";
 }
 
 .headerBorderLeft {
-  border-left: 6px solid var(--cyan);
+  border-left: 5px solid var(--cyan);
 
   h2 {
     padding-left: 15px;

@@ -19,13 +19,13 @@
 }
 
 .wrapper h1 {
-  font-size: clamp(26px, 5vw, 34px);
+  font-size: clamp(16px, 5vw, 24px);
   //   color: var(--cyan);
   color: white;
 }
 
 .headerBorderLeft {
-  border-left: 6px solid var(--cyan);
+  border-left: 5px solid var(--cyan);
 
   h1 {
     padding-left: 15px;

@@ -1,9 +1,7 @@
-import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { IProject } from "../../../../types/IProject";
 import { Badge } from "../../../Badge/Badge";
-import { Button } from "../../../Button/Button/Button";
-import { SeeAll } from "../../../Button/SeeAll/SeeAll";
 import styles from "./FeaturedProjects.module.scss";
 
 interface ProjectCardProps {
@@ -12,56 +10,40 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
-    <article className={styles.cardWrapper}>
-      <div className={styles.cardLeft}>
-        <Image
-          alt={project.title}
-          src={project.image}
-          width="100%"
-          height="100%"
-          layout="responsive"
-          objectFit="fill"
-          className={styles.cardImage}
-        />
-      </div>
-      <div className={styles.cardBody}>
-        <div className={styles.cardHeader}>
-          <h4>{project.title}</h4>
-
-          <Badge
-            colour="rgb(34, 139, 230)"
-            backgroundColour="#0c2231"
-            text={project.platform}
-            size="sm"
-          />
+    <li
+      style={{ backgroundColor: project.brandColor }}
+      className={styles.cardWrapper}
+    >
+      <Link href={project.readMoreLink}>
+        <div className={styles.cardInner}>
+          <div className={styles.columnOne}>
+            <div className={styles.columnText}>
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <div className={styles.badgeContainer}>
+                {project.tech.map((tech: string, index) => (
+                  <Badge
+                    key={index}
+                    text={tech}
+                    colour="#fff"
+                    size="lg"
+                    backgroundColour="#7B7B7B"
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className={styles.columnTwo}>
+            <div className={styles.imageContainer}>
+              <img
+                src={project.mockupImage}
+                alt={`${project.title} mockup image`}
+                className={styles.mockupImage}
+              />
+            </div>
+          </div>
         </div>
-        <p>{project.description}</p>
-        <div className={styles.buttonsContainer}>
-          <Button
-            text="Read more"
-            colour="white"
-            backgroundColour="rgb(40, 45, 65)"
-            variant="filled"
-          />
-          {project.urlLink != null && (
-            //   <a
-            //   target="_blank"
-            //   rel="noreferrer"
-            //   href="https://meadowvalefoods.co.uk/"
-            //   className={styles.cardLink}
-            // >
-            //   Visit Site
-            // </a>
-            <Button
-              text="Preview"
-              colour="#000036"
-              backgroundColour="#00FFFF"
-              variant="filled"
-              type="secondary"
-            />
-          )}
-        </div>
-      </div>
-    </article>
+      </Link>
+    </li>
   );
 };

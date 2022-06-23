@@ -3,10 +3,12 @@ id: "1"
 title: "I'm Listening"
 readMoreLink: "/projects/im-listening"
 githubLink: "https://github.com/PerrySmithMoss/im-listening"
+mockupImage: "/assets/images/home/projects/im-listening/mockup3.png"
 urlLink: "needlink.co.uk"
+brandColor: "#df532a"
 image: "/assets/images/home/projects/template.png"
 description: "I'm Listening is a platform where users can share what music they're listening to."
-tech: ["React", "Node.js", "GraphQL", "Apollo"]
+tech: ["Next.js", "Node.js", "GraphQL", "Redis"]
 platform: "Web"
 ---
 

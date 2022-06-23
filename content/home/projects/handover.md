@@ -4,9 +4,10 @@ title: "Handover"
 readMoreLink: "/projects/im-listening"
 githubLink: "https://github.com/PerrySmithMoss/im-listening"
 urlLink: null
+brandColor: "#8338ec"
 image: "/assets/images/home/projects/template.png"
-description: "Lorem ipsum, lorem ipsum. Lorem ipsum, lorem ipsum."
-tech: ["React.js", "Node.js", "GraphQL", "Apollo"]
+description: "A secure messaging platform which allows healthcare professinals to track and handover their patients."
+tech: ["Flutter", "Dart", "Firebase"]
 platform: "Mobile"
 ---
 

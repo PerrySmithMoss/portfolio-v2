@@ -16,8 +16,10 @@ export const BlogPostCard: React.FC<BlogPostCardProps> = ({ post }) => {
       <div className={styles.postInner}>
         <div className={styles.postImageContainer}>
           <Image
+            height={85}
             width="100%"
-            height="100%"
+            // width="100%"
+            // height="100%"
             layout="responsive"
             objectFit="fill"
             src={post.image}
