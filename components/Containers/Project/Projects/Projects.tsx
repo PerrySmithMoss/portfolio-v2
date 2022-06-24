@@ -61,7 +61,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, tags }) => {
           <h1>Projects</h1>
         </div>
         <div className={styles.subHeading}>
-          <p>Check out my some of my side projects below.</p>
+          <p>Check some out my of my side projects below.</p>
         </div>
         <div className={styles.chipsContainer}>
           {tags.map((tag) => (

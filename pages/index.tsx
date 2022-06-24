@@ -33,7 +33,8 @@ const Home: NextPage<HomePageProps> = ({
   const isHome = router.pathname === "/";
   const [isLoading, setIsLoading] = useState(isHome);
   const [isMouted, setIsMouted] = useState(isHome);
-  const { isMobileMenuDrawerOpen } = useGlobalUIContext();
+  const { isMobileMenuDrawerOpen, setIsLoaded, isLoaded } =
+    useGlobalUIContext();
 
   useEffect(() => {
     let timerFunc = setTimeout(() => {
@@ -46,59 +47,81 @@ const Home: NextPage<HomePageProps> = ({
   useEffect(() => {
     let timerFunc2 = setTimeout(() => {
       setIsMouted(false);
+      setIsLoaded(true);
     }, 1600);
 
     return () => clearTimeout(timerFunc2);
   }, []);
 
-  return (
-    <div>
-      <Head>
-        <title>Perry Smith-Moss</title>
-        <SEO />
-      </Head>
-      {isLoading && isHome ? (
-        <Loader />
-      ) : (
-        <div className={styles.easytransitions}>
-          <div className={styles.easytransitions_transition}>
+  if (isLoaded) {
+    return (
+      <div className={styles.mainContainer}>
+        <Navbar />
+        <main
+          className={
+            isMobileMenuDrawerOpen
+              ? `${styles.mainWrapperBlur} ${styles.mainWrapper}`
+              : styles.mainWrapper
+          }
+        >
+          <Hero />
+          <FeaturedProjects featuredProjects={featuredProjects} />
+          <FeaturedBlogPosts featuredBlogPosts={featuredBlogPosts} />
+          <FeaturedSnippets featuredSnippets={featuredSnippets} />
+          <GetInTouch />
+          <Footer />
+        </main>
+      </div>
+    );
+  } else
+    return (
+      <div>
+        <Head>
+          <title>Perry Smith-Moss</title>
+          <SEO />
+        </Head>
+        {isLoading && isHome ? (
+          <Loader />
+        ) : (
+          <div className={styles.easytransitions}>
+            <div className={styles.easytransitions_transition}>
+              <div
+                className={`transitionDiv easytransitions__TransitionPart7 split_vertical`}
+              ></div>
+              <div
+                className={`transitionDiv easytransitions__TransitionPart8 split_vertical`}
+              ></div>
+            </div>
             <div
-              className={`transitionDiv easytransitions__TransitionPart7 split_vertical`}
-            ></div>
-            <div
-              className={`transitionDiv easytransitions__TransitionPart8 split_vertical`}
-            ></div>
+              className={`active_slide ${styles.transitionSection} slideSection`}
+              data-transition={`split_vertical`}
+            >
+              {isMouted && isHome ? (
+                <Loader />
+              ) : (
+                <div className={styles.mainContainer}>
+                  <Navbar />
+                  <main
+                    className={
+                      isMobileMenuDrawerOpen
+                        ? `${styles.mainWrapperBlur} ${styles.mainWrapper}`
+                        : styles.mainWrapper
+                    }
+                  >
+                    <Hero />
+                    <FeaturedProjects featuredProjects={featuredProjects} />
+                    <FeaturedBlogPosts featuredBlogPosts={featuredBlogPosts} />
+                    <FeaturedSnippets featuredSnippets={featuredSnippets} />
+                    <GetInTouch />
+                    <Footer />
+                  </main>
+                </div>
+              )}
+            </div>
           </div>
-          <div
-            className={`active_slide ${styles.transitionSection} slideSection`}
-            data-transition={`split_vertical`}
-          >
-            {isMouted && isHome ? (
-              <Loader />
-            ) : (
-              <div className={styles.mainContainer}>
-                <Navbar />
-                <main
-                  className={
-                    isMobileMenuDrawerOpen
-                      ? `${styles.mainWrapperBlur} ${styles.mainWrapper}`
-                      : styles.mainWrapper
-                  }
-                >
-                  <Hero />
-                  <FeaturedProjects featuredProjects={featuredProjects} />
-                  <FeaturedBlogPosts featuredBlogPosts={featuredBlogPosts} />
-                  <FeaturedSnippets featuredSnippets={featuredSnippets} />
-                  <GetInTouch />
-                  <Footer />
-                </main>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
-    </div>
-  );
+        )}
+      </div>
+    );
 };
 
 export default Home;
