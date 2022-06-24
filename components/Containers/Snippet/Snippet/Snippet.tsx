@@ -1,4 +1,3 @@
-import { MDXRemote } from "next-mdx-remote";
 import React from "react";
 import Link from "next/link";
 import { ISnippet } from "../../../../types/ISnippet";
@@ -8,6 +7,8 @@ import {
 } from "../../../DynamicIcon/DynamicTechIcon";
 import { SocialLinks } from "../../../SocialLinks/SocialLinks";
 import styles from "./Snippet.module.scss";
+import { MDXComponents } from "../../../MDXComponents/MDXComponents";
+import { getMDXComponent } from "mdx-bundler/client";
 
 interface SnippetProps {
   content: any;
@@ -20,6 +21,10 @@ export const SnippetContainer: React.FC<SnippetProps> = ({
   frontMatter,
   recommendations,
 }) => {
+  const Component = React.useMemo(
+    () => getMDXComponent(content),
+    [content]
+  );
   return (
     <section className={styles.snippetsWrapper}>
       <div className={styles.wrapper}>
@@ -34,7 +39,15 @@ export const SnippetContainer: React.FC<SnippetProps> = ({
             </div>
 
             <div className={styles.articleBody}>
-              <MDXRemote {...content} />
+              {/* <MDXRemote {...content} /> */}
+                        <Component
+                components={
+                  {
+                    ...MDXComponents,
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                  } as any
+                }
+              />
             </div>
           </article>
           <aside className={styles.sidebar}>

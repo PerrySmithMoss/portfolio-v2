@@ -1,9 +1,11 @@
 .primaryButton {
   box-sizing: inherit;
-  display: inline-block;
+  display: flex;
+  align-items: center;
   text-decoration-skip-ink: auto;
   position: relative;
   border-radius: 4px;
+  gap: 8px;
   font-family: var(--font-poppins);
   text-decoration: none;
   cursor: pointer;
@@ -15,10 +17,12 @@
 
 .secondaryButton {
   box-sizing: inherit;
-  display: inline-block;
+  display: flex;
+  align-items: center;
   text-decoration-skip-ink: auto;
   position: relative;
   border-radius: 4px;
+  gap: 8px;
   font-family: var(--font-poppins);
   text-decoration: none;
   cursor: pointer;
@@ -30,21 +34,47 @@
   background-color: #20caca !important;
 }
 
-.filled {
+.accentButton {
+  box-sizing: inherit;
+  display: flex;
+  align-items: center;
+  text-decoration-skip-ink: auto;
+  position: relative;
+  border-radius: 4px;
+  gap: 8px;
+  font-family: var(--font-poppins);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: var(--fs-sm);
 }
+.accentButton:hover {
+  // color: var(--cyan) !important;
+  text-decoration: underline;
+}
+// .accentButton:hover svg {
+//   fill: var(--cyan) !important;
+// }
+
+// .filled {
+// }
 .outline {
   border: 1px solid var(--cyan);
 }
 
 .small {
   padding: 0.50rem 1.2rem;
+  text-align: center;
 }
 .medium {
   padding: 0.70rem 1.2rem;
+  text-align: center;
 }
 .large {
   padding: 0.75rem 3rem;
-  // width: 100%;
+  text-align: center;
+}
+.none {
+  padding: 0.75rem 1rem 0.75rem 0;
   text-align: center;
 }
 

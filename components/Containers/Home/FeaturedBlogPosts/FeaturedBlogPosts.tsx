@@ -26,7 +26,7 @@ export const FeaturedBlogPosts: React.FC<FeaturedBlogPostsProps> = ({
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={styles.headerBorderLeft}>
-            <h2>Featured Blog Posts</h2>
+            <h2>Featured Posts</h2>
           </div>
           {/* <div className={styles.arrowContainer}>
             <SeeAll colour="#00FFFF" buttonText="View more" />

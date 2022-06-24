@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./FeaturedProjects.module.scss";
 import { IProject } from "../../../../types/IProject";
 import { ProjectCard } from "./ProjectCard";
+import { Button } from "../../../Button/Button/Button";
 
 interface FeaturedProjectsProps {
   featuredProjects: IProject[];
@@ -25,6 +26,14 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
               <ProjectCard key={project.id} project={project} />
             ))}
         </ul>
+      </div>
+      <div className={styles.loadMoreButton}>
+        <Button
+          text="See more"
+          variant="outline"
+          colour="#00FFFF"
+          // backgroundColour="rgb(40, 45, 65)"
+        />
       </div>
     </section>
   );

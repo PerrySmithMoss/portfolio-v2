@@ -16,7 +16,7 @@ export const FeaturedSnippets: React.FC<FeaturedSnippetsProps> = ({
     <section className={styles.wrapper}>
       <div className={styles.header}>
         <div className={styles.headerBorderLeft}>
-          <h2>Featured Code Snippets</h2>
+          <h2>Featured Snippets</h2>
         </div>
         {/* <div className={styles.arrowContainer}>
           <SeeAll colour="#00FFFF" buttonText="View more" />

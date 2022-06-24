@@ -21,7 +21,7 @@ const SnippetsPage: NextPage<SnippetsPageProps> = ({ snippets, tags }) => {
   return (
     <div>
       <Head>
-        <title>Perry Smith-Moss</title>
+        <title>Snippets | Perry Smith-Moss</title>
         <SEO />
       </Head>
 

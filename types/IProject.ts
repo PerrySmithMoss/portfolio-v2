@@ -7,7 +7,9 @@ export interface IProject {
   urlLink: string;
   brandColor: string
   image: string;
+  logo: string;
   mockupImage: string;
+  coverImage: string;
   description: string;
   tech: string[];
   tags: string[]

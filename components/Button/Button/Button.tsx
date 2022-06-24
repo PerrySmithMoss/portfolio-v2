@@ -3,16 +3,18 @@ import styles from "./Button.module.scss";
 
 interface ButtonProps {
   variant: "filled" | "outline" | "none";
+  children?: React.ReactNode;
   link?: string;
   text: string;
   colour?: string;
   backgroundColour?: string;
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "none";
   type?: "primary" | "secondary" | "accent";
 }
 
 export const Button: React.FC<ButtonProps> = ({
   link,
+  children,
   text,
   variant,
   colour,
@@ -42,10 +44,13 @@ export const Button: React.FC<ButtonProps> = ({
                 ? styles.large
                 : size === "sm"
                 ? styles.small
-                : styles.medium
+                : size === "md"
+                ? styles.medium
+                : styles.none
             }`}
             href={link}
           >
+            {children}
             {text}
           </a>
         ) : (
@@ -67,9 +72,12 @@ export const Button: React.FC<ButtonProps> = ({
                 ? styles.large
                 : size === "sm"
                 ? styles.small
-                : styles.medium
+                : size === "md"
+                ? styles.medium
+                : styles.none
             }`}
           >
+            {children}
             {text}
           </a>
         )}
@@ -97,10 +105,13 @@ export const Button: React.FC<ButtonProps> = ({
                 ? styles.large
                 : size === "sm"
                 ? styles.small
-                : styles.medium
+                : size === "md"
+                ? styles.medium
+                : styles.none
             }`}
             href={link}
           >
+            {children}
             {text}
           </a>
         ) : (
@@ -122,9 +133,12 @@ export const Button: React.FC<ButtonProps> = ({
                 ? styles.large
                 : size === "sm"
                 ? styles.small
-                : styles.medium
+                : size === "md"
+                ? styles.medium
+                : styles.none
             }`}
           >
+            {children}
             {text}
           </a>
         )}
@@ -152,10 +166,13 @@ export const Button: React.FC<ButtonProps> = ({
                 ? styles.large
                 : size === "sm"
                 ? styles.small
-                : styles.medium
+                : size === "md"
+                ? styles.medium
+                : styles.none
             }`}
             href={link}
           >
+            {children}
             {text}
           </a>
         ) : (
@@ -177,9 +194,12 @@ export const Button: React.FC<ButtonProps> = ({
                 ? styles.large
                 : size === "sm"
                 ? styles.small
-                : styles.medium
+                : size === "md"
+                ? styles.medium
+                : styles.none
             }`}
           >
+            {children}
             {text}
           </a>
         )}

@@ -14,16 +14,21 @@ import { IParams } from "../../types/IParams";
 interface SnippetProps {
   slug: string;
   frontMatter: ISnippet;
-  mdxSource:  string;
-  recommendations: ISnippet[]
+  mdxSource: string;
+  recommendations: ISnippet[];
 }
 
-const Snippet: NextPage<SnippetProps> = ({ slug, mdxSource, frontMatter, recommendations }) => {
+const Snippet: NextPage<SnippetProps> = ({
+  slug,
+  mdxSource,
+  frontMatter,
+  recommendations,
+}) => {
   const { isMobileMenuDrawerOpen } = useGlobalUIContext();
   return (
     <div>
       <Head>
-        <title>Perry Smith-Moss</title>
+        <title>{frontMatter.title} | Perry Smith-Moss</title>
         <SEO />
       </Head>
 
@@ -36,7 +41,11 @@ const Snippet: NextPage<SnippetProps> = ({ slug, mdxSource, frontMatter, recomme
               : styles.mainWrapper
           }
         >
-          <SnippetContainer content={mdxSource} frontMatter={frontMatter} recommendations={recommendations}  />
+          <SnippetContainer
+            content={mdxSource}
+            frontMatter={frontMatter}
+            recommendations={recommendations}
+          />
           <Footer />
         </main>
       </div>
@@ -64,16 +73,19 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const { slug } = context.params as IParams;
 
-  const {frontMatter, mdxSource} = await getFileBySlug('content/snippets', slug)
+  const { frontMatter, mdxSource } = await getFileBySlug(
+    "content/snippets",
+    slug
+  );
 
-  const recommendations = await getRecommendations('content/snippets', slug);
+  const recommendations = await getRecommendations("content/snippets", slug);
 
   return {
     props: {
       slug,
       mdxSource,
       frontMatter,
-      recommendations
+      recommendations,
     },
   };
 };

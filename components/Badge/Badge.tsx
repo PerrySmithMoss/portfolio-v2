@@ -6,6 +6,7 @@ interface BadgeProps {
   size?: "sm" | "md" | "lg";
   colour?: string;
   backgroundColour?: string;
+  uppercase?: boolean;
 }
 
 export const Badge: React.FC<BadgeProps> = ({
@@ -13,6 +14,7 @@ export const Badge: React.FC<BadgeProps> = ({
   size,
   colour,
   backgroundColour,
+  uppercase,
 }) => {
   return (
     <div className={styles.badgeWrapper}>
@@ -34,6 +36,7 @@ export const Badge: React.FC<BadgeProps> = ({
             backgroundColor: backgroundColour
               ? backgroundColour
               : "transparent",
+            textTransform: uppercase  ? "uppercase" : "none",
           }}
           className={styles.badgeInner}
         >

@@ -17,7 +17,7 @@ interface BlogPostProps {
   frontMatter: IPost;
   mdxSource: string;
   recommendations: IPost[];
-  headings: IHeading[]
+  headings: IHeading[];
 }
 
 const BlogPost: NextPage<BlogPostProps> = ({
@@ -25,13 +25,13 @@ const BlogPost: NextPage<BlogPostProps> = ({
   mdxSource,
   frontMatter,
   recommendations,
-  headings
+  headings,
 }) => {
   const { isMobileMenuDrawerOpen } = useGlobalUIContext();
   return (
     <div>
       <Head>
-        <title>Perry Smith-Moss</title>
+        <title>{frontMatter.title} | Perry Smith-Moss</title>
         <SEO />
       </Head>
 
@@ -77,8 +77,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const { slug } = context.params as IParams;
 
-  const { frontMatter, mdxSource, headings } = await getFileBySlug("content/blog", slug);
-
+  const { frontMatter, mdxSource, headings } = await getFileBySlug(
+    "content/blog",
+    slug
+  );
 
   const recommendations = await getRecommendations("content/blog", slug);
 
@@ -88,7 +90,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       mdxSource,
       frontMatter,
       recommendations,
-      headings
+      headings,
     },
   };
 };

@@ -1,13 +1,13 @@
-import { ISnippet } from "../types/ISnippet";
+import { IMedia } from "../types/IMedia";
 
 /**
  * A function which returns the tags from snippet data (removing duplicates)
  * @param {ISnippet[]} snippets - snippet data
  * @returns {string[]} An array of tags
  */
-export function getTags(snippets: ISnippet[]) {
+export function getTags(snippets: IMedia[]) {
   const tags = snippets.reduce(
-    (accTags: string[], snippet: ISnippet) => [
+    (accTags: string[], snippet: IMedia) => [
       ...accTags,
       ...snippet.tags,
     ],

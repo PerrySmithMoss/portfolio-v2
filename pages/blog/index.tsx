@@ -22,7 +22,7 @@ const BlogPage: NextPage<BlogPageProps> = ({
   return (
     <div>
       <Head>
-        <title>Perry Smith-Moss</title>
+        <title>Blog | Perry Smith-Moss</title>
         <SEO />
       </Head>
 
