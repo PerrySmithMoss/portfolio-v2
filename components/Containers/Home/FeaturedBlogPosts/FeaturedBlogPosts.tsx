@@ -55,7 +55,9 @@ export const FeaturedBlogPosts: React.FC<FeaturedBlogPostsProps> = ({
             <Button
               text="See more"
               variant="outline"
+              size="lg"
               colour="#00FFFF"
+              link="/blog"
               // backgroundColour="rgb(40, 45, 65)"
             />
           </div>

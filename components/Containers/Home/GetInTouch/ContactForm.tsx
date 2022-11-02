@@ -51,14 +51,16 @@ export const ContactForm: React.FC<ContactFormProps> = ({}) => {
         />
       </label>
 
-      <Button
-        text="Submit"
-        colour="#00FFFF"
-        //   backgroundColour="#00FFFF"
-        size="lg"
-        variant="outline"
-        // type="secondary"
-      />
+      <div className={styles.buttonContainer}>
+        <Button
+          text="Submit"
+          colour="#00FFFF"
+          //   backgroundColour="#00FFFF"
+          size="lg"
+          variant="outline"
+          // type="secondary"
+        />
+      </div>
     </form>
   );
 };

@@ -1,5 +1,5 @@
 .wrapper {
-  margin: 0px auto;
+  margin: 0px auto 0px auto;
   max-width: 1000px;
   color: var(--white);
   font-family: "Poppins-Regular";
@@ -8,7 +8,7 @@
 }
 .wrapper h2 {
   color: var(--white);
-  font-size: clamp(15px, 5vw, 22px);
+  font-size: clamp(18px, 5vw, 22px);
   font-family: "Poppins-Bold";
 }
 
@@ -20,13 +20,18 @@
     text-transform: uppercase;
   }
 }
-
 // Featured Projects
+.featuredProjectsLink {
+  display: block;
+  position: relative;
+  top: 15px;
+  visibility: hidden;
+}
 .projectsWrapper {
   list-style: none;
   padding: 0;
   margin: 0;
-  margin-top: 4rem;
+  margin-top: 3.15rem;
 }
 .cardWrapper:first-child {
   margin-top: 0rem;
@@ -78,7 +83,8 @@
     }
     .buttonContainer {
       display: flex;
-      margin-top: 2.5rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
     }
     .columnTwo {
       display: flex;
@@ -86,6 +92,7 @@
       z-index: 2;
       width: 50%;
       align-items: center;
+      justify-content: center;
 
       .imageContainer {
         position: relative;
@@ -112,7 +119,6 @@
   justify-content: center;
   margin-top: 2rem;
 }
-
 
 @media (max-width: 970px) {
   .cardInner {
@@ -169,17 +175,17 @@
 }
 
 @media (max-width: 540px) {
-.badgeContainer {
-  display: none !important;
-}
-.columnOne {
-  padding: 55px 40px 10px 40px !important;
-}
-.columnTwo {
-  .mockupImage {
-    max-width: 100% !important;
+  .badgeContainer {
+    display: none !important;
   }
-}
+  .columnOne {
+    padding: 55px 40px 10px 40px !important;
+  }
+  .columnTwo {
+    .mockupImage {
+      max-width: 100% !important;
+    }
+  }
 }
 
 @media (max-width: 480px) {
@@ -202,7 +208,7 @@
     }
   }
   .columnOne {
-    padding: 55px 40px 20px 40px !important;
+    padding: 50px 40px 20px 40px !important;
   }
   .columnTwo {
     .mockupImage {

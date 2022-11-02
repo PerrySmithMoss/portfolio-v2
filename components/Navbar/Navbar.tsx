@@ -20,6 +20,7 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
       <nav className={styles.navbarNav}>
         <div className={styles.navbarLogo} tabIndex={-1}>
           <Link href="/" aria-label="home">
+            <a>
             <svg
               width="42"
               height="42"
@@ -41,6 +42,7 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
                 fill="#00FFFF"
               />
             </svg>
+            </a>
           </Link>
         </div>
         <div className={styles.navbarLinks}>

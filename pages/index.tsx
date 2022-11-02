@@ -55,23 +55,29 @@ const Home: NextPage<HomePageProps> = ({
 
   if (isLoaded) {
     return (
-      <div className={styles.mainContainer}>
-        <Navbar />
-        <main
-          className={
-            isMobileMenuDrawerOpen
-              ? `${styles.mainWrapperBlur} ${styles.mainWrapper}`
-              : styles.mainWrapper
-          }
-        >
-          <Hero />
-          <FeaturedProjects featuredProjects={featuredProjects} />
-          <FeaturedBlogPosts featuredBlogPosts={featuredBlogPosts} />
-          <FeaturedSnippets featuredSnippets={featuredSnippets} />
-          <GetInTouch />
-          <Footer />
-        </main>
-      </div>
+      <>
+        <Head>
+          <title>Perry Smith-Moss</title>
+          <SEO />
+        </Head>
+        <div className={styles.mainContainer}>
+          <Navbar />
+          <main
+            className={
+              isMobileMenuDrawerOpen
+                ? `${styles.mainWrapperBlur} ${styles.mainWrapper}`
+                : styles.mainWrapper
+            }
+          >
+            <Hero />
+            <FeaturedProjects featuredProjects={featuredProjects} />
+            <FeaturedBlogPosts featuredBlogPosts={featuredBlogPosts} />
+            <FeaturedSnippets featuredSnippets={featuredSnippets} />
+            <GetInTouch />
+            <Footer />
+          </main>
+        </div>
+      </>
     );
   } else
     return (
@@ -92,7 +98,7 @@ const Home: NextPage<HomePageProps> = ({
                 className={`transitionDiv easytransitions__TransitionPart8 split_vertical`}
               ></div>
             </div>
-            <div
+            {/* <div
               className={`active_slide ${styles.transitionSection} slideSection`}
               data-transition={`split_vertical`}
             >
@@ -117,7 +123,7 @@ const Home: NextPage<HomePageProps> = ({
                   </main>
                 </div>
               )}
-            </div>
+            </div> */}
           </div>
         )}
       </div>
@@ -130,9 +136,11 @@ export const getStaticProps: GetStaticProps = async () => {
   const featuredSnippets = await getMarkdownFrontMatter(
     "content/home/snippets"
   );
+
   const featuredProjects = await getMarkdownFrontMatter(
     "content/home/projects"
   );
+  
   const featuredBlogPosts = await getMarkdownFrontMatter("content/home/blog");
 
   return {

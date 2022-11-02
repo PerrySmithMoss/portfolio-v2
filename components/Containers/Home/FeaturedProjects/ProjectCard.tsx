@@ -39,6 +39,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                   variant="none"
                   size="none"
                   type="accent"
+                  fontSize="16px"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -63,6 +64,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                   variant="none"
                   size="sm"
                   type="accent"
+                  fontSize="16px"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

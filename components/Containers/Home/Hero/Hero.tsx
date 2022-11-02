@@ -1,7 +1,7 @@
 import React from "react";
-import { Button } from "../../../Button/Button/Button";
-import { SeeAll } from "../../../Button/SeeAll/SeeAll";
+import Link from "next/link";
 import styles from "./Hero.module.scss";
+import { ScrollDown } from "../../../ScrollDown/ScrollDown";
 
 interface HeroProps {}
 
@@ -16,8 +16,8 @@ export const Hero: React.FC<HeroProps> = ({}) => {
       </div>
       <div>
         <p>
-          I&apos;m a software engineer who specializes in solving business problems
-          with the best suited technology. Currently, I am building an
+          I&apos;m a software engineer who specializes in solving business
+          problems with the best suited technology. Currently, I am building an
           E-commerce platform for{" "}
           <a
             target="_blank"
@@ -48,9 +48,12 @@ export const Hero: React.FC<HeroProps> = ({}) => {
           <a className={styles.heroButtonAccent}>About me</a>
         </div> */}
         <div>
-          <a className={styles.heroButton}>Projects</a>
+          <Link href="/projects">
+            <a className={styles.heroButton}>Projects</a>
+          </Link>
         </div>
       </div>
+      <ScrollDown />
     </section>
   );
 };

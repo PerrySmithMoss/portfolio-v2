@@ -15,9 +15,10 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
     <section className={styles.wrapper}>
       <div className={styles.header}>
         <div className={styles.headerBorderLeft}>
-          <h2>Featured Projects</h2>
+          <h2 >Featured Projects</h2>
         </div>
       </div>
+      <a id="featuredProjects" className={styles.featuredProjectsLink}></a>
       <div className={styles.projectsContainer}>
         <ul className={styles.projectsWrapper}>
           {featuredProjects
@@ -31,7 +32,9 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
         <Button
           text="See more"
           variant="outline"
+          size="lg"
           colour="#00FFFF"
+          link="/projects"
           // backgroundColour="rgb(40, 45, 65)"
         />
       </div>

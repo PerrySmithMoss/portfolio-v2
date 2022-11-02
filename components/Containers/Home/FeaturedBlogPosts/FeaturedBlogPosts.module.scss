@@ -13,7 +13,7 @@
 }
 .wrapper h2 {
   color: var(--white);
-  font-size: clamp(15px, 5vw, 22px);
+  font-size: clamp(18px, 5vw, 22px);
   font-family: "Poppins-Bold";
 }
 
@@ -42,7 +42,7 @@
 
 // Posts
 .postsContainer {
-  margin-top: 3rem;
+  margin-top: 3.15rem;
 }
 
 .postsGrid {
@@ -170,18 +170,12 @@
   .postsContainer {
     margin-top: 2rem;
   }
-  .wrapper h2 {
-    font-size: 32px;
-  }
 }
 
 @media (max-width: 640px) {
   .postsGrid {
     grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 2rem;
-  }
-  .wrapper h2 {
-    font-size: 30px;
   }
 }
 
@@ -195,17 +189,5 @@
   .wrapper {
     padding: 0px 0 100px 0;
   }
-}
-
-@media (max-width: 400px) {
-  .wrapper h2 {
-    font-size: 24px;
-  }
-}
-
-@media (max-width: 325px) {
-  .headerBorderLeft h2{
-    font-size: 22px;
-  }  
 }
 

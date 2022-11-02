@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import styles from "./Button.module.scss";
 
@@ -7,6 +8,7 @@ interface ButtonProps {
   link?: string;
   text: string;
   colour?: string;
+  fontSize?: string
   backgroundColour?: string;
   size?: "sm" | "md" | "lg" | "none";
   type?: "primary" | "secondary" | "accent";
@@ -17,6 +19,7 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   text,
   variant,
+  fontSize,
   colour,
   backgroundColour,
   type,
@@ -32,6 +35,7 @@ export const Button: React.FC<ButtonProps> = ({
               backgroundColor: backgroundColour
                 ? backgroundColour
                 : "transparent",
+                fontSize: fontSize ? fontSize : "14px"
             }}
             className={`${styles.accentButton} ${
               variant === "filled"
@@ -60,6 +64,7 @@ export const Button: React.FC<ButtonProps> = ({
               backgroundColor: backgroundColour
                 ? backgroundColour
                 : "transparent",
+                fontSize: fontSize ? fontSize : "14px"
             }}
             className={`${styles.accentButton} ${
               variant === "filled"
@@ -87,33 +92,36 @@ export const Button: React.FC<ButtonProps> = ({
     return (
       <>
         {link ? (
-          <a
-            style={{
-              color: colour ? colour : "#00FFFF",
-              backgroundColor: backgroundColour
-                ? backgroundColour
-                : "transparent",
-            }}
-            className={`${styles.secondaryButton} ${
-              variant === "filled"
-                ? styles.filled
-                : variant === "outline"
-                ? styles.outline
-                : null
-            } ${
-              size === "lg"
-                ? styles.large
-                : size === "sm"
-                ? styles.small
-                : size === "md"
-                ? styles.medium
-                : styles.none
-            }`}
-            href={link}
-          >
-            {children}
-            {text}
-          </a>
+          <Link href={link}>
+            <a
+              style={{
+                color: colour ? colour : "#00FFFF",
+                backgroundColor: backgroundColour
+                  ? backgroundColour
+                  : "transparent",
+                  fontSize: fontSize ? fontSize : "14px"
+              }}
+              className={`${styles.secondaryButton} ${
+                variant === "filled"
+                  ? styles.filled
+                  : variant === "outline"
+                  ? styles.outline
+                  : null
+              } ${
+                size === "lg"
+                  ? styles.large
+                  : size === "sm"
+                  ? styles.small
+                  : size === "md"
+                  ? styles.medium
+                  : styles.none
+              }`}
+              href={link}
+            >
+              {children}
+              {text}
+            </a>
+          </Link>
         ) : (
           <a
             style={{
@@ -121,6 +129,7 @@ export const Button: React.FC<ButtonProps> = ({
               backgroundColor: backgroundColour
                 ? backgroundColour
                 : "transparent",
+                fontSize: fontSize ? fontSize : "14px"
             }}
             className={`${styles.secondaryButton} ${
               variant === "filled"
@@ -148,33 +157,36 @@ export const Button: React.FC<ButtonProps> = ({
     return (
       <>
         {link ? (
-          <a
-            style={{
-              color: colour ? colour : "#00FFFF",
-              backgroundColor: backgroundColour
-                ? backgroundColour
-                : "transparent",
-            }}
-            className={`${styles.primaryButton} ${
-              variant === "filled"
-                ? styles.filled
-                : variant === "outline"
-                ? styles.outline
-                : null
-            } ${
-              size === "lg"
-                ? styles.large
-                : size === "sm"
-                ? styles.small
-                : size === "md"
-                ? styles.medium
-                : styles.none
-            }`}
-            href={link}
-          >
-            {children}
-            {text}
-          </a>
+          <Link href={link}>
+            <a
+              style={{
+                color: colour ? colour : "#00FFFF",
+                backgroundColor: backgroundColour
+                  ? backgroundColour
+                  : "transparent",
+                  fontSize: fontSize ? fontSize : "14px"
+              }}
+              className={`${styles.primaryButton} ${
+                variant === "filled"
+                  ? styles.filled
+                  : variant === "outline"
+                  ? styles.outline
+                  : null
+              } ${
+                size === "lg"
+                  ? styles.large
+                  : size === "sm"
+                  ? styles.small
+                  : size === "md"
+                  ? styles.medium
+                  : styles.none
+              }`}
+              href={link}
+            >
+              {children}
+              {text}
+            </a>
+          </Link>
         ) : (
           <a
             style={{
@@ -182,6 +194,7 @@ export const Button: React.FC<ButtonProps> = ({
               backgroundColor: backgroundColour
                 ? backgroundColour
                 : "transparent",
+                fontSize: fontSize ? fontSize : "14px"
             }}
             className={`${styles.primaryButton} ${
               variant === "filled"
