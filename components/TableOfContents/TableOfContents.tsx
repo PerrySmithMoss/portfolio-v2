@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React, { Children } from "react";
+import React from "react";
 import { useScrollSpy } from "../../hooks/useScrollSpy";
 import { IHeading } from "../../types/IMedia";
 import { DefaultLink } from "../Links/DefaultLink";
@@ -12,6 +12,7 @@ interface TableOfContentsProps {
 export const TableOfContents: React.FC<TableOfContentsProps> = ({
   headings,
 }) => {
+  console.log("headings; ", headings)
   const router = useRouter();
   const activeSection = useScrollSpy();
   return (
@@ -26,7 +27,7 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
                 activeSection === heading.slug ? "white" : "rgb(107 114 128)",
               marginLeft: heading.indent > 2 ? `${heading.indent * 5}px` : 0,
             }}
-            href={`${router.asPath}#${heading.slug}`}
+            href={`#${heading.slug}`}
           >
             {heading.content}
           </DefaultLink>

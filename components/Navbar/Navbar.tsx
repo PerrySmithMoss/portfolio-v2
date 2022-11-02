@@ -54,7 +54,7 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
                     router.pathname === "/" ? (styles.active as any) : ""
                   }
                 >
-                  Home
+                  Home.
                 </a>
               </Link>
             </li>
@@ -65,7 +65,7 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
                     baseRoute === "projects" ? (styles.active as any) : ""
                   }
                 >
-                  Projects
+                  Projects.
                 </a>
               </Link>
             </li>
@@ -74,7 +74,7 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
                 <a
                   className={baseRoute === "blog" ? (styles.active as any) : ""}
                 >
-                  Blog
+                  Blog.
                 </a>
               </Link>
             </li>
@@ -85,7 +85,7 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
                     baseRoute === "snippets" ? (styles.active as any) : ""
                   }
                 >
-                  Snippets
+                  Snippets.
                 </a>
               </Link>
             </li>
@@ -96,7 +96,7 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
                     router.pathname === "/about" ? (styles.active as any) : ""
                   }
                 >
-                  About
+                  About.
                 </a>
               </Link>
             </li>
