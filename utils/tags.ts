@@ -14,7 +14,7 @@ export function getTags(snippets: IMedia[]) {
     []
   );
 
-  //   Remove duplicates
+  // Remove duplicates
   const uniqueChars = Array.from(new Set(tags));
 
   return uniqueChars;

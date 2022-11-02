@@ -5,7 +5,7 @@ excerpt: "React hook which listens for clicks outside of a specified element."
 thumbnail: "/assets/images/home/snippets/debounce.png"
 slug: "useOnClickOutside"
 tags: ['JavaScript', 'TypeScript', 'React.js']
-tech: ['react', 'typescript']
+tech: ['react', 'typescript', 'javascript']
 ---
 
 #### React useOnClickOutside hook

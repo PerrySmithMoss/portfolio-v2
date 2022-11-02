@@ -19,6 +19,8 @@ import {
   SiSass,
   SiTailwindcss,
   SiTypescript,
+  SiReacttable,
+  SiSocketdotio
 } from "react-icons/si";
 import styles from  "./Icon.module.scss"
 
@@ -102,5 +104,13 @@ const techList = {
   redis: {
     icon: SiRedis,
     name: "Redis",
+  },
+  reactQuery: {
+    icon: SiReacttable,
+    name: "React-Query",
+  },
+  socketIo: {
+    icon: SiSocketdotio,
+    name: "Socket.io",
   },
 };

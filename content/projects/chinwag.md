@@ -10,8 +10,8 @@ logo: "/assets/images/home/projects/im-listening/logo.png"
 mockupImage: "/assets/images/home/projects/im-listening/mockup3.png"
 coverImage: "/assets/images/home/projects/im-listening/cover.png"
 description: "Real-time messaging platform which enables text and video communication between multiple users."
-tech: ["React.js", "Node.js", "Socket.io"]
-tags: ["React.js", "Node.js", "Socket.io"]
+tech: ["next.js", "nodejs", "socketIo", "reactQuery"]
+tags: ["Next.js", "Node.js", "Socket.io", "React-Query"]
 platform: "Web"
 ---
 
