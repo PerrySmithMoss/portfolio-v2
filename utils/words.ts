@@ -25,7 +25,6 @@ function isWord(str: string) {
       (code > 64 && code < 91) || // upper alpha (A-Z)
       (code > 96 && code < 123)
     ) {
-      // lower alpha (a-z)
       alphaNumericFound = true;
       return alphaNumericFound;
     }

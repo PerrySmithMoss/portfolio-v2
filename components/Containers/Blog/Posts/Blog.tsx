@@ -3,8 +3,8 @@ import Image from "next/image";
 import { IPost } from "../../../../types/IBlog";
 import styles from "./Blog.module.scss";
 import { Badge } from "../../../Badge/Badge";
-import { FeaturedPost } from "./FeaturedPost";
 import Link from "next/link";
+import { HiOutlineClock } from "react-icons/hi";
 
 interface BlogProps {
   featuredBlogPosts: IPost[];
@@ -15,16 +15,7 @@ export const Blog: React.FC<BlogProps> = ({
   featuredBlogPosts,
   otherBlogPosts,
 }) => {
-  const featuredPost = featuredBlogPosts.find(
-    (post: IPost) => post.featuredPost === true
-  );
-
-  const allPostsMinusFeatured = featuredBlogPosts.filter(
-    (post: IPost) => post.featuredPost === false
-  );
-
   const allPosts = featuredBlogPosts.concat(otherBlogPosts);
-
   return (
     <section className={styles.blogWrapper}>
       <div className={styles.wrapper}>

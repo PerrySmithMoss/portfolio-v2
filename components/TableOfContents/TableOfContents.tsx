@@ -12,8 +12,6 @@ interface TableOfContentsProps {
 export const TableOfContents: React.FC<TableOfContentsProps> = ({
   headings,
 }) => {
-  console.log("headings; ", headings)
-  const router = useRouter();
   const activeSection = useScrollSpy();
   return (
     <div className={styles.tableOfContentsWrapper}>

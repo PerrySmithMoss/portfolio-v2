@@ -75,7 +75,7 @@
     .flex:not(:last-of-type):after {
       margin: 0;
       padding: 0;
-      margin-left: .5rem;
+      margin-left: 0.5rem;
       background: var(--light-white);
       border-radius: 50%;
       content: "";
@@ -84,7 +84,7 @@
       height: 4px;
       width: 4px;
       left: calc(-1.0666666667rem + 2px);
-      top: calc(.8rem - 2px);
+      top: calc(0.8rem - 2px);
     }
   }
 
@@ -109,7 +109,6 @@
         position: relative;
         display: block;
         width: fit-content;
-        
       }
       h2:first-of-type {
         margin-top: 0rem;
@@ -128,8 +127,6 @@
         margin-bottom: 0.75rem;
         font-family: "Poppins-Bold";
       }
-    }
-    aside {
     }
   }
 }
@@ -193,32 +190,40 @@
   }
 }
 
-.recommendationsGrid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2rem;
+.recommendationsContainer {
   margin-top: 5rem;
 
-  img {
-    border-radius: 8px;
+  h2 {
+    font-family: "Poppins-Bold";
+    padding-bottom: 25px;
   }
-  h3 {
-    margin-top: 0.75rem;
-    font-size: 18px;
-    font-family: "Poppins-Medium";
-    cursor: pointer;
-  }
-  h3:hover {
-    text-decoration: underline;
-  }
-  p {
-    margin: 0;
-    color: #a6a9b0;
-    margin-top: 0.5rem;
-    font-size: 14px;
-  }
-  .badgeWrapper {
-    margin-top: 0.5rem;
+
+  .recommendationsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+
+    img {
+      border-radius: 8px;
+    }
+    h3 {
+      margin-top: 0.75rem;
+      font-size: 18px;
+      font-family: "Poppins-Medium";
+      cursor: pointer;
+    }
+    h3:hover {
+      text-decoration: underline;
+    }
+    p {
+      margin: 0;
+      color: #a6a9b0;
+      margin-top: 0.5rem;
+      font-size: 14px;
+    }
+    .badgeWrapper {
+      margin-top: 0.5rem;
+    }
   }
 }
 
@@ -229,8 +234,8 @@
 }
 @media (max-width: 952px) {
   .recommendationsGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    margin-top: 50px;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    margin-top: 0px;
   }
 }
 
@@ -242,10 +247,45 @@
   .socialLinksContainer {
     padding-bottom: 1rem !important;
   }
+  .wrapper {
+    margin-top: 100px;
+  }
+  .sidebar {
+    display: none;
+  }
+  .recommendationsContainer {
+    margin-top: 3.5rem;
+  }
+  .blogHeader {
+    h1 {
+      font-size: 28px;
+    }
+  }
 }
 
 @media (max-width: 640px) {
   .recommendationsGrid {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
   }
+  .recommendationsContainer {
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .blogHeader {
+    h1 {
+      font-size: 24px;
+    }
+  }
+}
+
+@media (max-width: 350px) {
+.recommendationsContainer {
+  margin-top: 2.5rem;
+
+  h2 {
+    font-size: 20px;
+  }
+}
 }

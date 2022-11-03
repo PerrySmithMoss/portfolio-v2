@@ -95,38 +95,41 @@ export const PostContainer: React.FC<PostContainerProps> = ({
             </div>
           </aside>
         </div>
-        <div className={styles.recommendationsGrid}>
-          {recommendations.map((post: IPost) => (
-            <article key={post.id} className={styles.otherPost}>
-              <Image
-                height={400}
-                width={750}
-                objectFit="cover"
-                className={styles.image}
-                src={post.image}
-                alt={post.title}
-              />
+        <div className={styles.recommendationsContainer}>
+          <h2>Other posts you may like</h2>
+          <div className={styles.recommendationsGrid}>
+            {recommendations.map((post: IPost) => (
+              <article key={post.id} className={styles.otherPost}>
+                <Image
+                  height={400}
+                  width={750}
+                  objectFit="cover"
+                  className={styles.image}
+                  src={post.image}
+                  alt={post.title}
+                />
 
-              <div>
-                <div className={styles.badgeWrapper}>
-                  <Badge
-                    colour="rgb(34, 139, 230)"
-                    backgroundColour="#0c2231"
-                    text={post.tech[0]}
-                    size="md"
-                  />
-                </div>
-                <Link href={`/blog/${post!.slug}`}>
-                  <div>
-                    <h3>{post.title}</h3>
-                  </div>
-                </Link>
                 <div>
-                  <p>{post.description}</p>
+                  <div className={styles.badgeWrapper}>
+                    <Badge
+                      colour="rgb(34, 139, 230)"
+                      backgroundColour="#0c2231"
+                      text={post.tech[0]}
+                      size="md"
+                    />
+                  </div>
+                  <Link href={`/blog/${post!.slug}`}>
+                    <div>
+                      <h3>{post.title}</h3>
+                    </div>
+                  </Link>
+                  <div>
+                    <p>{post.description}</p>
+                  </div>
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
