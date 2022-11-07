@@ -1,13 +1,13 @@
 ---
 id: "4"
-title: "Learn How You Can Make Your Own Next.js With Markdown Blog"
+title: "Learn how you can make your own blog with Next.js"
 datePublished: "19th May, 2022"
-slug: "create-your-own-nextjs-with-markdown-blog"
-image: "/assets/images/home/blog/code.jpg"
-description: "Learn how you can add a reading time stat to your own website.."
+slug: "create-your-own-blog-with-nextjs"
+image: "/assets/images/blog/create-your-own-nextjs-blog.jpg"
+description: "Learn how you can create your own blog with Next.js."
 featuredPost: false
-tech: ["Next.js", "React.js"]
+tech: ["Next.js"]
 tags: ["Featured Post"]
 ---
 
-#### How To Create Custom Visual Studio Code Snippets
+## How To Create Custom Visual Studio Code Snippets

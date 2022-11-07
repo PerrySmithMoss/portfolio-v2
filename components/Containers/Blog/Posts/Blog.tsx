@@ -7,15 +7,15 @@ import Link from "next/link";
 import { HiOutlineClock } from "react-icons/hi";
 
 interface BlogProps {
-  featuredBlogPosts: IPost[];
-  otherBlogPosts: IPost[];
+  posts: IPost[];
 }
 
 export const Blog: React.FC<BlogProps> = ({
-  featuredBlogPosts,
-  otherBlogPosts,
+  posts,
 }) => {
-  const allPosts = featuredBlogPosts.concat(otherBlogPosts);
+  // Sometimes you will get error if there is a .DS_Store file in the directory where your posts are kept
+  // To resolve this problem you will need to delete that file by using the following command on macOS:
+  // find . -name '.DS_Store' -type f -delete
   return (
     <section className={styles.blogWrapper}>
       <div className={styles.wrapper}>
@@ -23,7 +23,7 @@ export const Blog: React.FC<BlogProps> = ({
           <h1>Latest Posts</h1>
         </div>
         <div className={styles.allPostsGrid}>
-          {allPosts.map((post: IPost) => (
+          {posts.map((post: IPost) => (
             <article key={post.id} className={styles.otherPost}>
               <Image
                 height={500}

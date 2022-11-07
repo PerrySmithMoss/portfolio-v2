@@ -1,18 +1,18 @@
 ---
-id: "7"
-title: "How to add an estimated reading time stat to your content in JavaScript"
+id: "3"
+title: "How to add an estimated reading time stat to your website in JavaScript"
 datePublished: "2nd Nov, 2022"
-slug: "how-to-add-an-estimated-reading-time-stat-to-your-content-in-javascript"
-image: "/assets/images/home/blog/code.jpg"
+slug: "how-to-add-reading-time-stat-to-your-website"
+image: "/assets/images/blog/estimated-reading-time.jpg"
 description: "Find out how you can calculate the estimated reading time of a piece of content in JavaScript."
 featuredPost: false
-tech: ["JavaScript", "TypeScript"]
+tech: ["JavaScript"]
 tags: ["Featured Post"]
 ---
 
 ## Introduction
 
-Have you seen those blog posts which state how long it will take you to read the post? That's a neat feature, right? That's exactly what I thought when I first saw it. Lucky for you, I am going to explain how you can also add this exact feature to your blog posts. All it's going to take is a little sprinkle of JavaScript.
+Have you seen those blog posts which state how long it will take you to read the post? Just like this very blog post that you're reading right now... Neat feature, right? That's exactly what I thought when I first saw it. Lucky for you, I am going to explain how you can also add this exact feature to your blog posts. All it's going to take is a little sprinkle of JavaScript.
 
 ---
 

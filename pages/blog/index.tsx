@@ -10,13 +10,11 @@ import { IPost } from "../../types/IBlog";
 import { getMarkdownFrontMatter } from "../../utils/files";
 
 interface BlogPageProps {
-  featuredBlogPosts: IPost[];
-  otherBlogPosts: IPost[];
+  posts: IPost[];
 }
 
 const BlogPage: NextPage<BlogPageProps> = ({
-  featuredBlogPosts,
-  otherBlogPosts,
+  posts,
 }) => {
   const { isMobileMenuDrawerOpen } = useGlobalUIContext();
   return (
@@ -36,8 +34,7 @@ const BlogPage: NextPage<BlogPageProps> = ({
           }
         >
           <Blog
-            featuredBlogPosts={featuredBlogPosts}
-            otherBlogPosts={otherBlogPosts}
+            posts={posts}
           />
           <Footer />
         </main>
@@ -49,13 +46,11 @@ const BlogPage: NextPage<BlogPageProps> = ({
 export default BlogPage;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const featuredBlogPosts = await getMarkdownFrontMatter("content/home/blog");
-  const otherBlogPosts = await getMarkdownFrontMatter("content/blog");
+  const posts = await getMarkdownFrontMatter("content/blog");
 
   return {
     props: {
-      featuredBlogPosts,
-      otherBlogPosts,
+      posts,
     },
   };
 };

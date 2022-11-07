@@ -16,7 +16,7 @@ export const AboutMe: React.FC<AboutMeProps> = ({}) => {
         <div>
           <p>
             Howdy! My name is Perry but some people call me Pez. I&apos;m a software
-            engineer who revels in taking an idea and transforming it into a
+            engineer who has a great passion for taking an idea and transforming it into a
             fully operational piece of software.
           </p>
           <p>
@@ -25,7 +25,7 @@ export const AboutMe: React.FC<AboutMeProps> = ({}) => {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://meadowvalefoods.co.uk/"
+              href="https://github.com/PerrySmithMoss/handover"
               className={styles.inlineLink}
             >
               Handover

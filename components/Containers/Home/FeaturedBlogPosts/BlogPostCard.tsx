@@ -1,8 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import { IPost } from "../../../../types/IBlog";
-import { Button } from "../../../Button/Button/Button";
-import { SeeAll } from "../../../Button/SeeAll/SeeAll";
 import styles from "./FeaturedBlogPosts.module.scss";
 import { Badge } from "../../../Badge/Badge";
 
@@ -16,7 +14,7 @@ export const BlogPostCard: React.FC<BlogPostCardProps> = ({ post }) => {
       <div className={styles.postInner}>
         <div className={styles.postImageContainer}>
           <Image
-            height={85}
+            height={75}
             width="100%"
             // width="100%"
             // height="100%"
@@ -37,8 +35,6 @@ export const BlogPostCard: React.FC<BlogPostCardProps> = ({ post }) => {
           </div>
           <h4>{post.title}</h4>
           <p>{post.description}</p>
-          {/* <SeeAll buttonText="Read Full Article" colour="#00FFFF" /> */}
-          {/* <Button text="Read More" backgroundColour="rgb(40, 45, 65)" colour="white" variant="filled" /> */}
         </div>
       </div>
     </article>

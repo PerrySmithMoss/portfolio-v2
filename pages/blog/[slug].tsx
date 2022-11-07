@@ -60,7 +60,10 @@ const BlogPost: NextPage<BlogPostProps> = ({
 export default BlogPost;
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  // const files = await getFiles("content/home/blog");
   const files = await getFiles("content/blog");
+
+  // const files = featured.concat(other)
 
   const paths = files.map((filename) => ({
     params: {

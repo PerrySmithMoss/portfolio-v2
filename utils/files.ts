@@ -165,7 +165,7 @@ export async function getFileBySlug(
       heading: `h${flag.length}`,
       content,
       indent: flag.length,
-      slug: slugify(content)
+      slug: slugify(content),
     })
   );
 
@@ -203,15 +203,23 @@ export async function getRecommendations(
   const recommendations =
     similarRecommendations.length >= 3
       ? similarRecommendations
-      : [
-          ...similarRecommendations,
+      : // : [
+        //     ...similarRecommendations,
+        //     otherFiles.filter(
+        //       (file: any) =>
+        //         !similarRecommendations.some(
+        //           (recommendation: any) => (recommendation.slug = file.slug)
+        //         )
+        //     ),
+        //   ];
+        similarRecommendations.concat(
           otherFiles.filter(
             (file: any) =>
               !similarRecommendations.some(
                 (recommendation: any) => (recommendation.slug = file.slug)
               )
-          ),
-        ];
+          )
+        );
 
   return recommendations.slice(0, 3);
 }

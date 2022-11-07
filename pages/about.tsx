@@ -17,7 +17,7 @@ const About: NextPage<AboutProps> = ({}) => {
   return (
     <div>
       <Head>
-        <title>Perry Smith-Moss</title>
+        <title>About Me | Perry Smith-Moss</title>
         <SEO />
       </Head>
 

@@ -1,13 +1,13 @@
 ---
 id: "3"
-title: "How to add a reading time stat to your website"
-datePublished: "19th May, 2022"
-slug: "how-to-add-reading-time-stat-to-your-website"
-image: "/assets/images/home/blog/code.jpg"
-description: "Learn how you can add a reading time stat to your own website.."
+title: "How to add an estimated reading time stat to your website in JavaScript"
+datePublished: "2nd Nov, 2022"
+slug: "how-to-add-reading-time-stat-to-your-website-in-javascript"
+image: "/assets/images/blog/estimated-reading-time.jpg"
+description: "Find out how you can calculate the estimated reading time of a piece of content in JavaScript."
 featuredPost: false
-tech: ["Next.js", "React.js"]
+tech: ["JavaScript"]
 tags: ["Featured Post"]
 ---
 
-#### How To Create Custom Visual Studio Code Snippets
+## How to add an estimated reading time stat to your website in JavaScript

@@ -98,32 +98,6 @@ const Home: NextPage<HomePageProps> = ({
                 className={`transitionDiv easytransitions__TransitionPart8 split_vertical`}
               ></div>
             </div>
-            {/* <div
-              className={`active_slide ${styles.transitionSection} slideSection`}
-              data-transition={`split_vertical`}
-            >
-              {isMouted && isHome ? (
-                <Loader />
-              ) : (
-                <div className={styles.mainContainer}>
-                  <Navbar />
-                  <main
-                    className={
-                      isMobileMenuDrawerOpen
-                        ? `${styles.mainWrapperBlur} ${styles.mainWrapper}`
-                        : styles.mainWrapper
-                    }
-                  >
-                    <Hero />
-                    <FeaturedProjects featuredProjects={featuredProjects} />
-                    <FeaturedBlogPosts featuredBlogPosts={featuredBlogPosts} />
-                    <FeaturedSnippets featuredSnippets={featuredSnippets} />
-                    <GetInTouch />
-                    <Footer />
-                  </main>
-                </div>
-              )}
-            </div> */}
           </div>
         )}
       </div>

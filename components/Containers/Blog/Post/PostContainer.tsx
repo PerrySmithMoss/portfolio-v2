@@ -76,12 +76,10 @@ export const PostContainer: React.FC<PostContainerProps> = ({
         <div className={styles.grid}>
           <article className={`${styles.markdown} markdown`}>
             <div className={styles.articleBody}>
-              {/* <MDXRemote {...content} /> */}
               <Component
                 components={
                   {
                     ...MDXComponents,
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                   } as any
                 }
               />
@@ -101,7 +99,7 @@ export const PostContainer: React.FC<PostContainerProps> = ({
             {recommendations.map((post: IPost) => (
               <article key={post.id} className={styles.otherPost}>
                 <Image
-                  height={400}
+                  height={500}
                   width={750}
                   objectFit="cover"
                   className={styles.image}

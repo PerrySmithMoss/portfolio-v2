@@ -45,6 +45,23 @@ code[class*='language-'] ::selection {
   background-color: var(--selection);
 }
 
+p code {
+  --tw-prose-invert-code: #fff;
+  line-height: 1.75;
+  --tw-prose-code: var(--tw-prose-invert-code);
+  box-sizing: border-box;
+  border: 0 solid #e5e7eb;
+  font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+  color: var(--tw-prose-code);
+  font-weight: 600;
+  font-size: .875em;
+  border-radius: .375rem;
+  border-width: 1px;
+  padding: .25rem;
+  --tw-border-opacity: 1;
+  border-color: rgb(75 85 99/var(--tw-border-opacity));
+}
+
 /* Line numbers */
 
 pre.line-numbers {
