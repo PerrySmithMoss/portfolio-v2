@@ -1,8 +1,8 @@
 ---
 id: "4"
-title: "Learn how you can make your own blog with Next.js"
+title: "Create your own blog with Next.js and Markdown language"
 datePublished: "19th May, 2022"
-slug: "create-your-own-blog-with-nextjs"
+slug: "create-your-own-blog-with-nextjs-and-markdown-language"
 image: "/assets/images/blog/create-your-own-nextjs-blog.jpg"
 description: "Learn how you can create your own blog with Next.js."
 featuredPost: false

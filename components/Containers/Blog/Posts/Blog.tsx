@@ -13,14 +13,14 @@ interface BlogProps {
 export const Blog: React.FC<BlogProps> = ({
   posts,
 }) => {
-  // Sometimes you will get error if there is a .DS_Store file in the directory where your posts are kept
-  // To resolve this problem you will need to delete that file by using the following command on macOS:
-  // find . -name '.DS_Store' -type f -delete
   return (
     <section className={styles.blogWrapper}>
       <div className={styles.wrapper}>
         <div className={styles.headerBorderLeft}>
           <h1>Latest Posts</h1>
+        </div>
+        <div className={styles.subHeading}>
+          <p>Here are some of my how tos, mental models and where I look into the new trends of Web Development.</p>
         </div>
         <div className={styles.allPostsGrid}>
           {posts.map((post: IPost) => (

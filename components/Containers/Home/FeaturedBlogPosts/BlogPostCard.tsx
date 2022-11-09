@@ -3,6 +3,7 @@ import Image from "next/image";
 import { IPost } from "../../../../types/IBlog";
 import styles from "./FeaturedBlogPosts.module.scss";
 import { Badge } from "../../../Badge/Badge";
+import Link from "next/link";
 
 interface BlogPostCardProps {
   post: IPost;
@@ -10,6 +11,7 @@ interface BlogPostCardProps {
 
 export const BlogPostCard: React.FC<BlogPostCardProps> = ({ post }) => {
   return (
+    <Link href={`/blog/${post.slug}`}>
     <article className={styles.postWrapper}>
       <div className={styles.postInner}>
         <div className={styles.postImageContainer}>
@@ -38,5 +40,6 @@ export const BlogPostCard: React.FC<BlogPostCardProps> = ({ post }) => {
         </div>
       </div>
     </article>
+    </Link>
   );
 };

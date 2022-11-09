@@ -32,6 +32,11 @@
   }
 }
 
+.subHeading p {
+  font-size: clamp(14px, 3vw, 16px);
+}
+
+
 .subtextContainer {
   display: flex;
   justify-content: center;
