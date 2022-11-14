@@ -33,11 +33,10 @@ export const FeaturedBlogPosts: React.FC<FeaturedBlogPostsProps> = ({
             onscreen: {
               y: 0,
               opacity: 1,
-              // transition: { type: "spring", bounce: 0.4, duration: 1 },
             },
           }}
           whileInView={"onscreen"}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.2 }}
       >
         <div className={styles.header}>
           <div className={styles.headerBorderLeft}>

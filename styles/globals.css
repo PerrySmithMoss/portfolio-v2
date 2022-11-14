@@ -29,6 +29,7 @@ body {
   /* overflow-y: hidden; */
   /* overflow: hidden; */
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 html {

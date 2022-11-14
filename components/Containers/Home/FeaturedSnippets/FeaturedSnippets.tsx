@@ -24,11 +24,10 @@ export const FeaturedSnippets: React.FC<FeaturedSnippetsProps> = ({
           onscreen: {
             y: 0,
             opacity: 1,
-            transition: { type: "spring", bounce: 0.4, duration: 1 },
           },
         }}
         whileInView={"onscreen"}
-        viewport={{ once: true, amount: 0.35 }}
+        viewport={{ once: true, amount: 0.2 }}
       >
         <div className={styles.header}>
           <div className={styles.headerBorderLeft}>

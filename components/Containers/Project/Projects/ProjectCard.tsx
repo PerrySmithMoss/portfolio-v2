@@ -9,6 +9,7 @@ import styles from "./Projects.module.scss";
 import { IProject } from "../../../../types/IProject";
 import { Badge } from "../../../Badge/Badge";
 import { Button } from "../../../Button/Button/Button";
+import { motion as m } from "framer-motion";
 
 interface ProjectCardProps {
   project: IProject;
@@ -16,7 +17,12 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
-    <li className={styles.cardWrapper}>
+    <m.li
+      className={styles.cardWrapper}
+      initial={{ y: 60, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 0.1 }}
+    >
       <div className={styles.cardBody}>
         <Link href={`/projects/${project.slug}`}>
           <div className={styles.imageContainer}>
@@ -51,7 +57,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         </div>
         <p>{project.description}</p>
         <div className={styles.buttonContainer}>
-          <Button text="Preview" variant="filled" backgroundColour="rgb(40, 45, 65)" colour="white"  size="sm">
+          <Button
+            text="Preview"
+            variant="filled"
+            backgroundColour="rgb(40, 45, 65)"
+            colour="white"
+            size="sm"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               role="img"
@@ -88,6 +100,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           </Button>
         </div>
       </div>
-    </li>
+    </m.li>
   );
 };

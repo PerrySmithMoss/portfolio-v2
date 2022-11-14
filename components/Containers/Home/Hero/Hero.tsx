@@ -61,17 +61,17 @@ export const Hero: React.FC<HeroProps> = ({}) => {
 
   return (
     <section className={styles.heroContainer}>
-        {isMounted &&
-          items.map((item, i) => (
-            <m.div
-              key={i}
-              initial={{  x: i === 4 ? 0 : 60, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: i * 0.1 }}
-            >
-              {item}
-            </m.div>
-          ))}
+      {isMounted &&
+        items.map((item, i) => (
+          <m.div
+            key={i}
+            initial={{ x: i === 4 ? 0 : 60, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: i * 0.1 }}
+          >
+            {item}
+          </m.div>
+        ))}
     </section>
   );
 };
