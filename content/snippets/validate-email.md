@@ -22,11 +22,11 @@ export function isEmailValid(email: string) {
 ## Usage
 
 ```typescript
-if (isEmailValid(email) === false) {
-  // Email is invalid
+if (isEmailValid(email)) {
+  // Email is valid
   // Do stuff..
 } else {
-  // Email is valid
+  // Email is invalid
   // Do stuff..
 }
 ```

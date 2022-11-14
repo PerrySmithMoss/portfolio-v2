@@ -2,9 +2,7 @@ import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { Hero } from "../components/Containers/Home/Hero/Hero";
 import { FeaturedProjects } from "../components/Containers/Home/FeaturedProjects/FeaturedProjects";
-import { Navbar } from "../components/Navbar/Navbar";
 import { SEO } from "../components/SEO/SEO";
-import styles from "../styles/Home.module.scss";
 import { ISnippet } from "../types/ISnippet";
 import { FeaturedSnippets } from "../components/Containers/Home/FeaturedSnippets/FeaturedSnippets";
 import { getMarkdownFrontMatter } from "../utils/files";
@@ -12,8 +10,6 @@ import { IProject } from "../types/IProject";
 import { IPost } from "../types/IBlog";
 import { FeaturedBlogPosts } from "../components/Containers/Home/FeaturedBlogPosts/FeaturedBlogPosts";
 import { GetInTouch } from "../components/Containers/Home/GetInTouch/GetInTouch";
-import { Footer } from "../components/Footer/Footer";
-import { useGlobalUIContext } from "../context/GlobalUI.context";
 
 interface HomePageProps {
   featuredProjects: IProject[];
@@ -26,30 +22,17 @@ const Home: NextPage<HomePageProps> = ({
   featuredSnippets,
   featuredBlogPosts,
 }) => {
-  const { isMobileMenuDrawerOpen } = useGlobalUIContext();
   return (
     <>
       <Head>
         <title>Perry Smith-Moss</title>
         <SEO />
       </Head>
-      <div className={styles.mainContainer}>
-        <Navbar />
-        <main
-          className={
-            isMobileMenuDrawerOpen
-              ? `${styles.mainWrapperBlur} ${styles.mainWrapper}`
-              : styles.mainWrapper
-          }
-        >
-          <Hero />
-          <FeaturedProjects featuredProjects={featuredProjects} />
-          <FeaturedBlogPosts featuredBlogPosts={featuredBlogPosts} />
-          <FeaturedSnippets featuredSnippets={featuredSnippets} />
-          <GetInTouch />
-          <Footer />
-        </main>
-      </div>
+      <Hero />
+      <FeaturedProjects featuredProjects={featuredProjects} />
+      <FeaturedBlogPosts featuredBlogPosts={featuredBlogPosts} />
+      <FeaturedSnippets featuredSnippets={featuredSnippets} />
+      <GetInTouch />
     </>
   );
 };

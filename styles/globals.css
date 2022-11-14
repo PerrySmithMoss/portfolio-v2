@@ -1,13 +1,6 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: "Poppins-Regular";
-  /* overflow-x: hidden; */
-  /* overflow-y: hidden; */
-  /* overflow: hidden; */
   -webkit-font-smoothing: antialiased;
-  background-color: var(--dark-navy);
   --dark-navy: #001219;
   --light-navy: #1b1f30;
   --cyan: #00ffff;
@@ -27,6 +20,14 @@ body {
   --fs-xl: 20px;
   --fs-xxl: 22px;
   --border-radius: 4px;
+
+  padding: 0;
+  margin: 0;
+  background-color: var(--dark-navy);
+  font-family: "Poppins-Regular";
+  /* overflow-x: hidden; */
+  /* overflow-y: hidden; */
+  /* overflow: hidden; */
   scroll-behavior: smooth;
 }
 
@@ -78,44 +79,6 @@ h6 {
   color: #ffffff;
   line-height: 1.1;
   margin: 0px;
-}
-
-.active_slide {
-  display: block !important;
-}
-
-.transitionDiv {
-  width: 200px;
-  height: 200px;
-  background: #001219;
-  background: white;
-  position: absolute;
-  transform: scale(0);
-  z-index: 1;
-}
-
-.split_vertical {
-  transform: scaleY(0);
-}
-
-.easytransitions__TransitionPart7 {
-  width: 100% !important;
-  display: none;
-  bottom: -100px;
-  animation: horizontal 1s forwards;
-}
-.easytransitions__TransitionPart7.split_vertical {
-  display: block;
-}
-
-.easytransitions__TransitionPart8 {
-  width: 100% !important;
-  display: none;
-  top: -100px;
-  animation: horizontal 1s forwards;
-}
-.easytransitions__TransitionPart8.split_vertical {
-  display: block;
 }
 
 .heading-hash_anchor {
