@@ -4,6 +4,7 @@ import { IProject } from "../../../../types/IProject";
 import { Badge } from "../../../Badge/Badge";
 import { Button } from "../../../Button/Button/Button";
 import styles from "./FeaturedProjects.module.scss";
+import { motion as m } from "framer-motion";
 
 interface ProjectCardProps {
   project: IProject;
@@ -11,9 +12,24 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
-    <li
+    <m.li
+      id={project.id}
       style={{ backgroundColor: project.brandColor }}
       className={styles.cardWrapper}
+      initial={"offscreen"}
+      variants={{
+        offscreen: {
+          x: parseInt(project.id) % 2 === 0 ? 300 : -300,
+          opacity: 0,
+        },
+        onscreen: {
+          x: 0,
+          opacity: 1,
+          transition: { type: "spring", bounce: 0.4, duration: 2 },
+        },
+      }}
+      whileInView={"onscreen"}
+      viewport={{ once: true, amount: 0.35 }}
     >
       <Link href={project.readMoreLink}>
         <div className={styles.cardInner}>
@@ -90,6 +106,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           </div>
         </div>
       </Link>
-    </li>
+    </m.li>
   );
 };

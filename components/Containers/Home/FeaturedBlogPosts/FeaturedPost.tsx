@@ -3,8 +3,6 @@ import Image from "next/image";
 import { IPost } from "../../../../types/IBlog";
 import styles from "./FeaturedBlogPosts.module.scss";
 import { Badge } from "../../../Badge/Badge";
-import { SeeAll } from "../../../Button/SeeAll/SeeAll";
-import { Button } from "../../../Button/Button/Button";
 import Link from "next/link";
 
 interface FeaturedPostProps {

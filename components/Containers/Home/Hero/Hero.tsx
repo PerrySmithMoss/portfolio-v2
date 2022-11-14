@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./Hero.module.scss";
 import { ScrollDown } from "../../../ScrollDown/ScrollDown";
-import { AnimatePresence, motion as m } from "framer-motion";
+import { motion as m } from "framer-motion";
 
 interface HeroProps {}
 
@@ -61,7 +61,6 @@ export const Hero: React.FC<HeroProps> = ({}) => {
 
   return (
     <section className={styles.heroContainer}>
-      <AnimatePresence>
         {isMounted &&
           items.map((item, i) => (
             <m.div
@@ -73,16 +72,6 @@ export const Hero: React.FC<HeroProps> = ({}) => {
               {item}
             </m.div>
           ))}
-      </AnimatePresence>
-      {/* <AnimatePresence>
-        <m.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
-        >
-      <ScrollDown />
-       </m.div>
-      </AnimatePresence>  */}
     </section>
   );
 };

@@ -1,10 +1,10 @@
 import React from "react";
 import { IPost } from "../../../../types/IBlog";
 import { Button } from "../../../Button/Button/Button";
-import { SeeAll } from "../../../Button/SeeAll/SeeAll";
 import { BlogPostCard } from "./BlogPostCard";
 import styles from "./FeaturedBlogPosts.module.scss";
 import { FeaturedPost } from "./FeaturedPost";
+import { motion as m } from "framer-motion";
 
 interface FeaturedBlogPostsProps {
   featuredBlogPosts: IPost[];
@@ -23,14 +23,26 @@ export const FeaturedBlogPosts: React.FC<FeaturedBlogPostsProps> = ({
 
   return (
     <section className={styles.wrapper}>
-      <div className={styles.container}>
+      <m.div className={styles.container}
+          initial={"offscreen"}
+          variants={{
+            offscreen: {
+              y: 50,
+              opacity: 0,
+            },
+            onscreen: {
+              y: 0,
+              opacity: 1,
+              // transition: { type: "spring", bounce: 0.4, duration: 1 },
+            },
+          }}
+          whileInView={"onscreen"}
+          viewport={{ once: true, amount: 0.3 }}
+      >
         <div className={styles.header}>
           <div className={styles.headerBorderLeft}>
             <h2>Featured Posts</h2>
           </div>
-          {/* <div className={styles.arrowContainer}>
-            <SeeAll colour="#00FFFF" buttonText="View more" />
-          </div> */}
         </div>
         <div className={styles.postsContainer}>
           <div className={styles.postsWithFeature}>
@@ -62,7 +74,7 @@ export const FeaturedBlogPosts: React.FC<FeaturedBlogPostsProps> = ({
             />
           </div>
         </div>
-      </div>
+      </m.div>
     </section>
   );
 };

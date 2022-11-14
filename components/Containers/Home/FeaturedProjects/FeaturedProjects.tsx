@@ -15,7 +15,7 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
     <section className={styles.wrapper}>
       <div className={styles.header}>
         <div className={styles.headerBorderLeft}>
-          <h2 >Featured Projects</h2>
+          <h2>Featured Projects</h2>
         </div>
       </div>
       <a id="featuredProjects" className={styles.featuredProjectsLink}></a>

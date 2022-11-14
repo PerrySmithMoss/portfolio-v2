@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import styles from "./Navbar.module.scss";
-import { AnimatePresence, motion as m } from "framer-motion";
+import { motion as m } from "framer-motion";
 import { useGlobalUIContext } from "../../context/GlobalUI.context";
 
 interface NavbarProps {}
@@ -48,7 +48,6 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
         </div>
         <div className={styles.navbarLinks}>
           <ol>
-            <AnimatePresence>
               {navLinks.map((link, i) => (
                 <m.li
                   key={link.id}
@@ -67,10 +66,8 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
                   </Link>
                 </m.li>
               ))}
-            </AnimatePresence>
           </ol>
         </div>
-        <AnimatePresence>
           <div className={styles.navbarLinksWrapper}>
             <m.a
               href="https://github.com/PerrySmithMoss"
@@ -130,7 +127,6 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
               </m.a>
             </div>
           </div>
-        </AnimatePresence>
         <div className={styles.navbarMobileMenu}>
           <div>
             <button

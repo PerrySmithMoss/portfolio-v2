@@ -3,13 +3,29 @@ import { ContactForm } from "./ContactForm";
 import styles from "./GetInTouch.module.scss";
 import { MdEmail } from "react-icons/md";
 import { SocialLinks } from "../../../SocialLinks/SocialLinks";
+import { motion as m } from "framer-motion";
 
 interface GetInTouchProps {}
 
 export const GetInTouch: React.FC<GetInTouchProps> = ({}) => {
   return (
     <section className={styles.wrapper}>
-      <div className={styles.getInTouchContainer}>
+      <m.div className={styles.getInTouchContainer}
+      
+      initial={"offscreen"}
+      variants={{
+        offscreen: {
+          y: 50,
+          opacity: 0,
+        },
+        onscreen: {
+          y: 0,
+          opacity: 1,
+          transition: { type: "spring", bounce: 0.4, duration: 1 },
+        },
+      }}
+      whileInView={"onscreen"}
+      viewport={{ once: true, amount: 0.35 }}>
         <div className={styles.getInTouchGrid}>
           <div>
             <div className={styles.header}>
@@ -95,7 +111,7 @@ export const GetInTouch: React.FC<GetInTouchProps> = ({}) => {
             </div>
           </div>
         </div>
-      </div>
+      </m.div>
     </section>
   );
 };

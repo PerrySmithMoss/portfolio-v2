@@ -5,6 +5,7 @@ import {
   TechListType,
 } from "../../../DynamicIcon/DynamicTechIcon";
 import styles from "./FeaturedSnippets.module.scss";
+import { motion as m } from "framer-motion";
 
 interface SnippetCardProps {
   snippet: ISnippet;
@@ -12,7 +13,7 @@ interface SnippetCardProps {
 
 export const SnippetCard: React.FC<SnippetCardProps> = ({ snippet }) => {
   return (
-    <article className={styles.cardWrapper}>
+    <m.article id={snippet.id} className={styles.cardWrapper}>
       <div className={styles.cardBody}>
         <div className={styles.cardHeader}>
           <h4>{snippet.title}</h4>
@@ -20,6 +21,6 @@ export const SnippetCard: React.FC<SnippetCardProps> = ({ snippet }) => {
         <DynamicTechIcons techs={snippet.tech as Array<TechListType>} />
         <p>{snippet.excerpt}</p>
       </div>
-    </article>
+    </m.article>
   );
 };
