@@ -27,7 +27,6 @@ export const PostContainer: React.FC<PostContainerProps> = ({
   recommendations,
   headings,
 }) => {
-  console.log(typeof mdxSource)
   const Component = React.useMemo(
     () => getMDXComponent(mdxSource),
     [mdxSource]
@@ -81,6 +80,7 @@ export const PostContainer: React.FC<PostContainerProps> = ({
                 components={
                   {
                     ...MDXComponents,
+                    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
                   } as any
                 }
               />

@@ -21,12 +21,7 @@ export const SnippetContainer: React.FC<SnippetProps> = ({
   frontMatter,
   recommendations,
 }) => {
-
-  console.log(typeof content)
-  const Component = React.useMemo(
-    () => getMDXComponent(content),
-    [content]
-  );
+  const Component = React.useMemo(() => getMDXComponent(content), [content]);
   return (
     <section className={styles.snippetsWrapper}>
       <div className={styles.wrapper}>
@@ -42,11 +37,11 @@ export const SnippetContainer: React.FC<SnippetProps> = ({
 
             <div className={styles.articleBody}>
               {/* <MDXRemote {...content} /> */}
-                        <Component
+              <Component
                 components={
                   {
                     ...MDXComponents,
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
                   } as any
                 }
               />

@@ -32,7 +32,6 @@ export async function getFiles(pathOfFiles: string): Promise<string[]> {
     console.log("Files undefined");
     return [];
   } else {
-    // console.log("Files:", files);
     return files;
   }
 }
@@ -161,7 +160,7 @@ export async function getFileBySlug(
   const regXHeader = /(?<flag>#{1,6})\s+(?<content>.+)/g;
 
   const headings = Array.from(source.matchAll(regXHeader)).map(
-    /* eslint-disable  @typescript-eslint/no-explicit-any */
+    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
     ({ groups: { flag, content } }: { [key: string]: any }) => ({
       heading: `h${flag.length}`,
       content,
@@ -204,20 +203,11 @@ export async function getRecommendations(
   const recommendations =
     similarRecommendations.length >= 3
       ? similarRecommendations
-      : // : [
-        //     ...similarRecommendations,
-        //     otherFiles.filter(
-        //       (file: any) =>
-        //         !similarRecommendations.some(
-        //           (recommendation: any) => (recommendation.slug = file.slug)
-        //         )
-        //     ),
-        //   ];
-        similarRecommendations.concat(
+      : similarRecommendations.concat(
           otherFiles.filter(
             (file: any) =>
               !similarRecommendations.some(
-                (recommendation: any) => (recommendation.slug = file.slug)
+                (recommendation: IMedia) => (recommendation.slug = file.slug)
               )
           )
         );
