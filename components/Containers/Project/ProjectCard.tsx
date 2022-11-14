@@ -4,11 +4,11 @@ import Image from "next/image";
 import {
   DynamicTechIcons,
   TechListType,
-} from "../../../DynamicIcon/DynamicTechIcon";
+} from "../../DynamicIcon/DynamicTechIcon";
 import styles from "./Projects.module.scss";
-import { IProject } from "../../../../types/IProject";
-import { Badge } from "../../../Badge/Badge";
-import { Button } from "../../../Button/Button/Button";
+import { IProject } from "../../../types/IProject";
+import { Badge } from "../../Badge/Badge";
+import { Button } from "../../Button/Button/Button";
 import { motion as m } from "framer-motion";
 
 interface ProjectCardProps {
@@ -32,6 +32,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               // height={250}
               // width={300}
               layout="fill"
+              priority
             />
           </div>
         </Link>

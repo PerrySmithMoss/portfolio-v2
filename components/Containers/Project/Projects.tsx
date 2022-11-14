@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { IProject } from "../../../../types/IProject";
-import { getTags } from "../../../../utils/tags";
-import { Chip } from "../../../Chip/Chip";
+import { IProject } from "../../../types/IProject";
+import { getTags } from "../../../utils/tags";
+import { Chip } from "../../Chip/Chip";
 import { ProjectCard } from "./ProjectCard";
 import styles from "./Projects.module.scss";
 import { motion as m } from "framer-motion";

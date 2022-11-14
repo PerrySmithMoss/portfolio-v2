@@ -15,7 +15,7 @@ import { getMDXComponent } from "mdx-bundler/client";
 import { MDXComponents } from "../../../MDXComponents/MDXComponents";
 
 interface PostContainerProps {
-  mdxSource: any;
+  mdxSource: string;
   frontMatter: IPost;
   recommendations: IPost[];
   headings: IHeading[];
@@ -27,6 +27,7 @@ export const PostContainer: React.FC<PostContainerProps> = ({
   recommendations,
   headings,
 }) => {
+  console.log(typeof mdxSource)
   const Component = React.useMemo(
     () => getMDXComponent(mdxSource),
     [mdxSource]

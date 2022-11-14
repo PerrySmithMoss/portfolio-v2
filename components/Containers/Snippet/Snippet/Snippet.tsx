@@ -11,7 +11,7 @@ import { MDXComponents } from "../../../MDXComponents/MDXComponents";
 import { getMDXComponent } from "mdx-bundler/client";
 
 interface SnippetProps {
-  content: any;
+  content: string;
   frontMatter: ISnippet;
   recommendations: ISnippet[];
 }
@@ -21,6 +21,8 @@ export const SnippetContainer: React.FC<SnippetProps> = ({
   frontMatter,
   recommendations,
 }) => {
+
+  console.log(typeof content)
   const Component = React.useMemo(
     () => getMDXComponent(content),
     [content]

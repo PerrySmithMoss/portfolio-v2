@@ -1,6 +1,6 @@
 import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
-import { Projects } from "../../components/Containers/Project/Projects/Projects";
+import { Projects } from "../../components/Containers/Project/Projects";
 import { SEO } from "../../components/SEO/SEO";
 import { IProject } from "../../types/IProject";
 import { getMarkdownFrontMatter } from "../../utils/files";

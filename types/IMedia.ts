@@ -6,7 +6,7 @@ export type IMedia = ISnippet | IPost | IProject;
 
 export interface IHeading {
   heading: string;
-  content: any;
+  content: string;
   indent: number
   slug: string
 }

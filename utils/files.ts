@@ -161,6 +161,7 @@ export async function getFileBySlug(
   const regXHeader = /(?<flag>#{1,6})\s+(?<content>.+)/g;
 
   const headings = Array.from(source.matchAll(regXHeader)).map(
+    /* eslint-disable  @typescript-eslint/no-explicit-any */
     ({ groups: { flag, content } }: { [key: string]: any }) => ({
       heading: `h${flag.length}`,
       content,
