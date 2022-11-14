@@ -120,12 +120,6 @@
   transform: translateX(5px);
 }
 
-.heroButtonSecondary:hover,
-.heroButtonSecondary:hover svg path{
-  // fill: var(--light-white);
-  // color: var(--light-white);
-}
-
 .heroButtonAccent {
   display: inline-block;
   position: relative;
@@ -151,9 +145,3 @@
     font-size: 15px;
   }
 }
-
-// @media (max-width: 475px) {
-// .heroContainer h1 {
-//   max-width: 125px;
-// }
-// }

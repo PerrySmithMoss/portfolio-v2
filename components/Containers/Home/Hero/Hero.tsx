@@ -10,7 +10,7 @@ export const Hero: React.FC<HeroProps> = ({}) => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 1500);
+    const timeout = setTimeout(() => setIsMounted(true), 1000);
     return () => clearTimeout(timeout);
   }, []);
 
@@ -57,7 +57,7 @@ export const Hero: React.FC<HeroProps> = ({}) => {
 
   const five = <ScrollDown />;
 
-  const items = [one, two, three, four];
+  const items = [one, two, three, four, five];
 
   return (
     <section className={styles.heroContainer}>
@@ -66,7 +66,7 @@ export const Hero: React.FC<HeroProps> = ({}) => {
           items.map((item, i) => (
             <m.div
               key={i}
-              initial={{ x: 60, opacity: 0 }}
+              initial={{  x: i === 4 ? 0 : 60, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: i * 0.1 }}
             >
@@ -76,13 +76,13 @@ export const Hero: React.FC<HeroProps> = ({}) => {
       </AnimatePresence>
       {/* <AnimatePresence>
         <m.div
-          initial={{ x: 0, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 1.8 }}
-        > */}
-          <ScrollDown />
-        {/* </m.div>
-      </AnimatePresence> */}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+        >
+      <ScrollDown />
+       </m.div>
+      </AnimatePresence>  */}
     </section>
   );
 };
