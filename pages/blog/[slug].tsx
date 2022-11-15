@@ -8,7 +8,6 @@ import { IPost } from "../../types/IBlog";
 import { IHeading } from "../../types/IMedia";
 
 interface BlogPostProps {
-  slug: string;
   frontMatter: IPost;
   mdxSource: string;
   recommendations: IPost[];
@@ -16,7 +15,6 @@ interface BlogPostProps {
 }
 
 const BlogPost: NextPage<BlogPostProps> = ({
-  slug,
   mdxSource,
   frontMatter,
   recommendations,
@@ -41,10 +39,7 @@ const BlogPost: NextPage<BlogPostProps> = ({
 export default BlogPost;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // const files = await getFiles("content/home/blog");
   const files = await getFiles("content/blog");
-
-  // const files = featured.concat(other)
 
   const paths = files.map((filename) => ({
     params: {
@@ -67,10 +62,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
   );
 
   const recommendations = await getRecommendations("content/blog", slug);
-
   return {
     props: {
-      slug,
       mdxSource,
       frontMatter,
       recommendations,

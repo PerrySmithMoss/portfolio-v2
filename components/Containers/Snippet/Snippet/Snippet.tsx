@@ -36,14 +36,10 @@ export const SnippetContainer: React.FC<SnippetProps> = ({
             </div>
 
             <div className={styles.articleBody}>
-              {/* <MDXRemote {...content} /> */}
               <Component
-                components={
-                  {
-                    ...MDXComponents,
-                    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
-                  } as any
-                }
+                components={{
+                  MDXComponents,
+                }}
               />
             </div>
           </article>

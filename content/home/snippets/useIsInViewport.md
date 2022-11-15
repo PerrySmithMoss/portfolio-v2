@@ -8,7 +8,7 @@ tags: ["TypeScript", "JavaScript", 'React.js']
 tech: ["javascript", "typescript", "react"]
 ---
 
-## Code
+## React.js useIsInViewport Hook
 
 ```typescript
 export function useIsInViewport(ref) {

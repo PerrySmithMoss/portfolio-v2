@@ -8,7 +8,7 @@ tags: ["TypeScript", "React.js"]
 tech: ["react", "typescript"]
 ---
 
-## Code
+## React.js useDebounce Hook
 
 ```typescript
 import { useState, useEffect } from "react";

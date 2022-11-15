@@ -23,7 +23,7 @@ export const Snippets: React.FC<SnippetsProps> = ({ snippets, tags }) => {
     });
 
     setFilteredSnippets(snippetResults);
-  }, [selectedTags]);
+  }, [snippets, selectedTags]);
 
   useEffect(() => {
     const snippetResults = snippets.filter((snippet: ISnippet) => {
@@ -37,7 +37,7 @@ export const Snippets: React.FC<SnippetsProps> = ({ snippets, tags }) => {
     });
 
     setFilteredSnippets(snippetResults);
-  }, [searchInput]);
+  }, [snippets, searchInput]);
 
   const availableTags = getTags(filteredSnippets);
 

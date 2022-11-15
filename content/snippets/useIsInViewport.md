@@ -1,14 +1,14 @@
 ---
 id: "5"
-title: "useIsInViewport"
-excerpt: "useIsInViewport"
+title: "React.js useIsInViewport Hook"
+excerpt: "React hook which reports if an element is in viewport."
 thumbnail: "/assets/images/home/snippets/debounce.png"
-slug: "validate-email"
-tags: ["TypeScript", "JavaScript"]
-tech: ["javascript", "typescript"]
+slug: "useIsInViewport"
+tags: ["TypeScript", "JavaScript", 'React.js']
+tech: ["javascript", "typescript", "react"]
 ---
 
-## Code
+## React.js useIsInViewport Hook
 
 ```typescript
 export function useIsInViewport(ref) {

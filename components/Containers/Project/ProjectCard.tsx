@@ -29,8 +29,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             <Image
               className={styles.cardImage}
               src={project.coverImage}
-              // height={250}
-              // width={300}
+              alt={project.title}
               layout="fill"
               priority
             />

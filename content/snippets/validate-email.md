@@ -8,7 +8,7 @@ tags: ["TypeScript", "JavaScript"]
 tech: ["javascript", "typescript"]
 ---
 
-## Code
+## Validate an email address with JavaScript RegEx.
 
 ```typescript
 export function isEmailValid(email: string) {

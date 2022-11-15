@@ -23,7 +23,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, tags }) => {
     });
 
     setFilteredSnippets(snippetResults);
-  }, [selectedTags]);
+  }, [projects, selectedTags]);
 
   useEffect(() => {
     const snippetResults = projects.filter((project: IProject) => {
@@ -37,7 +37,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, tags }) => {
     });
 
     setFilteredSnippets(snippetResults);
-  }, [searchInput]);
+  }, [projects, searchInput]);
 
   const availableTags = getTags(filteredSnippets);
 

@@ -8,4 +8,4 @@ tags: ['JavaScript', 'TypeScript']
 tech: ['javascript']
 ---
 
-#### React useDebounce hook
+## Validate an email address with JavaScript RegEx.

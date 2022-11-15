@@ -8,7 +8,7 @@ tags: ["TypeScript", "JavaScript", "React.js"]
 tech: ["javascript", "typescript", "reactjs"]
 ---
 
-## Code
+## React.js useMediaQuery Hook
 
 ```typescript
 import { useState } from "react";

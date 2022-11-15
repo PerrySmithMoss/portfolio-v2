@@ -25,11 +25,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         onscreen: {
           x: 0,
           opacity: 1,
-          transition: { type: "spring", bounce: 0.4, duration: 1.5 },
+          transition: { type: "spring", bounce: 0.4, duration: 2 },
         },
       }}
       whileInView={"onscreen"}
-      viewport={{ once: true, amount: 0.35 }}
+      viewport={{ once: true, amount: 0.3 }}
     >
       <Link href={project.readMoreLink}>
         <div className={styles.cardInner}>

@@ -8,4 +8,4 @@ tags: ['TypeScript', 'React.js']
 tech: ['react', 'typescript']
 ---
 
-## useOnClickOutside
+## React.js useOnClickOutside Hook

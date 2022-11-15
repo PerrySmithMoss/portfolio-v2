@@ -20,6 +20,7 @@ export const FeaturedPost: React.FC<FeaturedPostProps> = ({ post }) => {
           layout="responsive"
           objectFit="fill"
           src={post.image}
+          alt={post.title}
         />
       </div>
       <div className={styles.featuredPostText}>

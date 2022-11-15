@@ -8,4 +8,4 @@ tags: ["JavaScript", "TypeScript", "Next.js"]
 tech: ["nextjs", "typescript"]
 ---
 
-#### React useDebounce hook
+## Next.js SEO component

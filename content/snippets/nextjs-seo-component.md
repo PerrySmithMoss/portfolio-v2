@@ -8,7 +8,7 @@ tags: ["TypeScript", "Next.js"]
 tech: ["nextjs", "typescript"]
 ---
 
-## Code
+## Next.js SEO component
 
 
 ## Usage

@@ -35,7 +35,7 @@ export const PostContainer: React.FC<PostContainerProps> = ({
     <section>
       <div className={styles.wrapper}>
         <div className={styles.heroImage}>
-          <Image priority src={frontMatter.image} height={600} width={1300} />
+          <Image priority src={frontMatter.image} height={600} width={1300} alt={frontMatter.title} />
         </div>
         <Badge
           colour="rgb(34, 139, 230)"
@@ -77,12 +77,9 @@ export const PostContainer: React.FC<PostContainerProps> = ({
           <article className={`${styles.markdown} markdown`}>
             <div className={styles.articleBody}>
               <Component
-                components={
-                  {
-                    ...MDXComponents,
-                    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
-                  } as any
-                }
+                components={{
+                  MDXComponents,
+                }}
               />
             </div>
           </article>

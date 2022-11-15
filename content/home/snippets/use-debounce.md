@@ -8,4 +8,4 @@ tags: ['JavaScript', 'TypeScript', 'React.js']
 tech: ['react', 'typescript']
 ---
 
-#### React useDebounce hook
+## React useDebounce hook
