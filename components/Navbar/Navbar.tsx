@@ -9,9 +9,11 @@ interface NavbarProps {}
 
 export const Navbar: React.FC<NavbarProps> = ({}) => {
   const router = useRouter();
+  const arrOfRoute = router.route.split('/');
+  const baseRoute = '/' + arrOfRoute[1];
+
   const { isMobileMenuDrawerOpen, setIsMobileMenuDrawerOpen } =
     useGlobalUIContext();
-
   return (
     <header className={styles.navbarHeader}>
       <nav className={styles.navbarNav}>
@@ -58,7 +60,7 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
                 <Link href={link.url}>
                   <a
                     className={
-                      router.pathname === link.url ? styles.active : ""
+                      baseRoute === link.url ? styles.active : ""
                     }
                   >
                     {link.name}.

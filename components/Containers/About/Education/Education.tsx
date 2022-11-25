@@ -42,7 +42,7 @@ export const Education: React.FC<EducationProps> = ({}) => {
               <div className={styles.cardTextContainer}>
                 <div className={styles.cardTextHeading}>
                   <h4>BSc Computer Networks &amp; Security</h4>
-                  <span>2017-2020</span>
+                  <span>Sep 2017 - Sep 2020</span>
                 </div>
                 <a
                   target="_blank"

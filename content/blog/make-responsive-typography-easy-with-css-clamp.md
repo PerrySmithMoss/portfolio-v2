@@ -1,6 +1,6 @@
 ---
 id: "6"
-title: "Responsive typography made simple"
+title: "Responsive typography made easy with CSS clamp"
 datePublished: "19th May, 2022"
 slug: "make-responsive-typography-easy-with-css-clamp"
 image: "/assets/images/blog/responsive-typography-made-simple-with-css.jpg"
