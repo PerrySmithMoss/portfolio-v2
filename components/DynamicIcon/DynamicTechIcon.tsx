@@ -1,4 +1,3 @@
-// import clsx from 'clsx';
 import * as React from "react";
 import {
   SiFirebase,
@@ -24,8 +23,6 @@ import {
 } from "react-icons/si";
 import styles from  "./Icon.module.scss"
 
-// import Tooltip from '@/components/Tooltip';
-
 export type TechListType = keyof typeof techList;
 
 export type DynamicTechIconsProps = {
@@ -41,11 +38,9 @@ export const DynamicTechIcons: React.FC<DynamicTechIconsProps> = ({ techs }) => 
         const current = techList[tech];
 
         return (
-          //   <Tooltip key={current.name} content={<p>{current.name}</p>}>
           <li key={tech}>
             <current.icon />
           </li>
-          //   </Tooltip>
         );
       })}
     </ul>

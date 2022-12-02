@@ -1,9 +1,6 @@
 import React from "react";
-import Image from "next/image";
 import { IPost } from "../../../../types/IBlog";
 import styles from "./Blog.module.scss";
-import { Badge } from "../../../Badge/Badge";
-import Link from "next/link";
 import { motion as m } from "framer-motion";
 import { BlogCard } from "./BlogCard";
 
