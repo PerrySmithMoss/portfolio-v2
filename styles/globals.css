@@ -35,7 +35,7 @@ body {
 html {
   scrollbar-width: thin;
   z-index: 20;
-  scroll-padding-top: 175px;
+  scroll-padding-top: 170px;
   scrollbar-color: var(--light-navy) var(--dark-navy);
 }
 

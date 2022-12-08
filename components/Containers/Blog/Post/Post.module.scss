@@ -89,8 +89,8 @@
 
   .grid {
     display: flex;
-    padding-right: 200px;
-    gap: 3rem;
+    padding-right: 225px;
+    gap: 4rem;
     color: white;
     margin-top: 1.5rem;
     border-top: 1px solid rgb(75 85 99);
@@ -196,6 +196,7 @@
 
   .recommendationsGrid {
     display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2rem;
 
     img {
@@ -238,12 +239,14 @@
 }
 @media (max-width: 952px) {
   .recommendationsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     margin-top: 0px;
   }
 }
 
 @media (max-width: 768px) {
   .grid {
+    grid-template-columns: 100% !important;
     gap: 2rem !important;
   }
   .socialLinksContainer {
@@ -254,6 +257,9 @@
   }
   .sidebar {
     display: none;
+  }
+  .recommendationsGrid {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
   }
   .recommendationsContainer {
     margin-top: 3rem;
