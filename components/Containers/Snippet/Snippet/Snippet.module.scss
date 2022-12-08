@@ -1,16 +1,11 @@
-.snippetsWrapper {
+.wrapper {
   margin: 0px auto;
   max-width: 1200px;
   color: var(--white);
   font-family: "Poppins-Regular";
-  padding-bottom: 100px;
-  height: 100vh;
-}
-
-.wrapper {
+  padding-bottom: 50px;
   margin-top: 150px;
   color: white;
-
   h1 {
     font-size: 34px;
     font-family: "Poppins-Bold";
@@ -47,7 +42,6 @@
 }
 
 .sidebar {
-  height: 100vh;
   position: relative;
   .sidebarOuter {
     position: sticky;
@@ -105,7 +99,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 912px) {
   .grid {
     grid-template-columns: 100% !important;
     gap: 2rem !important;
@@ -117,3 +111,4 @@
     margin-right: 0px !important;
   }
 }
+

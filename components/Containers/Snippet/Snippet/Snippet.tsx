@@ -9,6 +9,7 @@ import { SocialLinks } from "../../../SocialLinks/SocialLinks";
 import styles from "./Snippet.module.scss";
 import { MDXComponents } from "../../../MDXComponents/MDXComponents";
 import { getMDXComponent } from "mdx-bundler/client";
+import { IHeading } from "../../../../types/IMedia";
 
 interface SnippetProps {
   content: string;
@@ -19,12 +20,11 @@ interface SnippetProps {
 export const SnippetContainer: React.FC<SnippetProps> = ({
   content,
   frontMatter,
-  recommendations,
+  recommendations
 }) => {
   const Component = React.useMemo(() => getMDXComponent(content), [content]);
   return (
-    <section className={styles.snippetsWrapper}>
-      <div className={styles.wrapper}>
+      <section className={styles.wrapper}>
         <div className={styles.grid}>
           <article>
             <h1>{frontMatter.title}</h1>
@@ -36,11 +36,13 @@ export const SnippetContainer: React.FC<SnippetProps> = ({
             </div>
 
             <div className={styles.articleBody}>
+            <article className={`${styles.markdown} markdown`}>
               <Component
                 components={{
                   MDXComponents,
                 }}
               />
+              </article>
             </div>
           </article>
           <aside className={styles.sidebar}>
@@ -70,7 +72,6 @@ export const SnippetContainer: React.FC<SnippetProps> = ({
             </div>
           </aside>
         </div>
-      </div>
     </section>
   );
 };

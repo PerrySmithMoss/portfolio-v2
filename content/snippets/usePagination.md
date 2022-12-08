@@ -4,13 +4,13 @@ title: "React.js usePagination Hook"
 excerpt: "Custom React.js hook used for client-side pagination."
 thumbnail: "/assets/images/home/snippets/debounce.png"
 slug: "usePagination"
-tags: ["TypeScript", "JavaScript", "React.js"]
-tech: ["javascript", "typescript", "react"]
+tags: ["TypeScript", "React.js"]
+tech: ["typescript", "react"]
 ---
 
 ## React.js usePagination Hook
 
-```typescript
+```jsx
 import { useState } from "react";
 
 const usePagination = (itemsPerPage: number, totalItems: number) => {
@@ -51,7 +51,7 @@ export default usePagination;
 
 ## Usage
 
-```javascript
+```jsx
 import { useEffect, useRef, useState, useMemo } from "react";
 import usePagination from "./hooks/usePagination";
 

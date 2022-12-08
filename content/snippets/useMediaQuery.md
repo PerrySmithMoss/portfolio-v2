@@ -4,13 +4,13 @@ title: "React.js useMediaQuery Hook"
 excerpt: "Custom React.js hook that watches for certain breakpoints."
 thumbnail: "/assets/images/home/snippets/debounce.png"
 slug: "useMediaQuery"
-tags: ["TypeScript", "JavaScript", "React.js"]
-tech: ["javascript", "typescript", "reactjs"]
+tags: ["TypeScript", "React.js"]
+tech: ["react", "typescript"]
 ---
 
 ## React.js useMediaQuery Hook
 
-```typescript
+```jsx
 import { useState } from "react";
 
 export const useMediaQuery = (width: number) => {
@@ -39,7 +39,7 @@ export default
 
 ## Usage
 
-```javascript
+```jsx
 import useMediaQuery from "./hooks/useMediaQuery";
 
 export default function App() {

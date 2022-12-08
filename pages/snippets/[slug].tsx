@@ -64,7 +64,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       mdxSource,
       frontMatter,
-      recommendations,
+      recommendations
     },
   };
 };

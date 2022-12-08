@@ -1,15 +1,12 @@
-.postWrapper {
-  margin: 0px auto;
-  max-width: 1200px;
-  color: var(--white);
-  font-family: "Poppins-Regular";
-  // padding-bottom: 100px;
-  height: 100vh;
-}
-
 .wrapper {
   margin-top: 150px;
+  margin: 0 auto;
   color: white;
+  margin: 0px auto;
+  max-width: 1366px;
+  width: 100%;
+  color: var(--white);
+  font-family: "Poppins-Regular";
 
   h1 {
     font-size: 34px;
@@ -36,6 +33,8 @@
 
   .heroImage {
     position: relative;
+    overflow: hidden;
+    width: 100%;
     border-radius: 6px;
     padding-bottom: 0.75rem;
 
@@ -51,9 +50,7 @@
     margin: 0;
     list-style: none;
     flex-wrap: wrap;
-    // justify-content: space-between;
     margin-top: 1.25rem;
-    // gap: 14px;
 
     span {
       color: var(--cyan);
@@ -63,10 +60,8 @@
       align-items: center;
       position: relative;
       gap: 5px;
-      margin: 0 0.5rem;
       font-size: 14px;
       p {
-        // color: var(--cyan);
         margin: 0;
         padding: 0;
       }
@@ -79,6 +74,7 @@
       margin: 0;
       padding: 0;
       margin-left: 0.5rem;
+      margin-right: 0.5rem;
       background: var(--light-white);
       border-radius: 50%;
       content: "";
@@ -92,16 +88,16 @@
   }
 
   .grid {
-    display: grid;
-    grid-template-columns: auto 250px;
-    max-width: 1600px;
-    // padding: 0 125px;
-    gap: 4rem;
+    display: flex;
+    padding-right: 200px;
+    gap: 3rem;
     color: white;
     margin-top: 1.5rem;
-    width: 100%;
     border-top: 1px solid rgb(75 85 99);
     .markdown {
+      width: 100%;
+      flex-grow: 1;
+      max-width: 1050px;
       h1,
       h2,
       h3,
@@ -110,8 +106,6 @@
       h6 {
         margin-top: 2rem;
         position: relative;
-        display: block;
-        width: fit-content;
       }
       h2:first-of-type {
         margin-top: 0rem;
@@ -120,13 +114,11 @@
     article,
     aside {
       margin-top: 1.5rem;
-      width: 100%;
       h2,
       h3,
       h4,
       h5,
       h6 {
-        // margin-top: 2rem;
         margin-bottom: 0.75rem;
         font-family: "Poppins-Bold";
       }
@@ -152,7 +144,6 @@
     margin-top: 0.75rem;
 
     strong {
-      // font-family: "Poppins-Bold";
       color: white;
     }
 
@@ -181,8 +172,10 @@
 }
 
 .sidebar {
-  // height: 100vh;
   position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 250px;
   .sidebarOuter {
     position: sticky;
     position: -webkit-sticky;
@@ -203,7 +196,6 @@
 
   .recommendationsGrid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2rem;
 
     img {
@@ -230,6 +222,15 @@
   }
 }
 
+@media (max-width: 1080px) {
+  .sidebar {
+    display: none;
+  }
+  .grid { 
+    padding-right: 0px !important;
+  }
+}
+
 @media (max-width: 1000px) {
   .grid {
     gap: 4rem !important;
@@ -237,14 +238,12 @@
 }
 @media (max-width: 952px) {
   .recommendationsGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     margin-top: 0px;
   }
 }
 
 @media (max-width: 768px) {
   .grid {
-    grid-template-columns: 100% !important;
     gap: 2rem !important;
   }
   .socialLinksContainer {
@@ -257,6 +256,9 @@
     display: none;
   }
   .recommendationsContainer {
+    margin-top: 3rem;
+  }
+  .recommendationsContainer {
     margin-top: 3.5rem;
   }
   .blogHeader {
@@ -266,19 +268,23 @@
   }
 }
 
-@media (max-width: 640px) {
-  .recommendationsGrid {
-    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
-  }
-  .recommendationsContainer {
-    margin-top: 3rem;
-  }
-}
-
 @media (max-width: 480px) {
   .blogHeader {
     h1 {
       font-size: 24px;
+    }
+  }
+  .markdown {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 14px;
     }
   }
 }
@@ -286,9 +292,24 @@
 @media (max-width: 350px) {
 .recommendationsContainer {
   margin-top: 2.5rem;
-
-  h2 {
-    font-size: 20px;
-  }
 }
+}
+
+
+@media (max-width: 320px) {
+  .blogHeader {
+    h1 {
+      font-size: 20px;
+    }
+  }
+  .markdown {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: 18px;
+    }
+  }
 }

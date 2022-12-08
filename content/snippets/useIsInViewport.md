@@ -4,13 +4,13 @@ title: "React.js useIsInViewport Hook"
 excerpt: "React hook which reports if an element is in viewport."
 thumbnail: "/assets/images/home/snippets/debounce.png"
 slug: "useIsInViewport"
-tags: ["TypeScript", "JavaScript", 'React.js']
-tech: ["javascript", "typescript", "react"]
+tags: ["JavaScript", 'React.js']
+tech: ["javascript", "react"]
 ---
 
 ## React.js useIsInViewport Hook
 
-```typescript
+```jsx
 export function useIsInViewport(ref) {
   const [isIntersecting, setIsIntersecting] = useState(false);
 
@@ -38,7 +38,7 @@ export function useIsInViewport(ref) {
 
 ## Usage
 
-```typescript
+```jsx
 import { useEffect, useRef, useState, useMemo } from "react";
 import { useIsInViewport } from "./hooks/useIsInViewport";
 

@@ -10,7 +10,7 @@ tech: ["react", "typescript"]
 
 ## React.js useDebounce Hook
 
-```typescript
+```jsx
 import { useState, useEffect } from "react";
 
 export default function useDebounce(value: string, delay: number) {
@@ -40,7 +40,7 @@ export default function useDebounce(value: string, delay: number) {
 
 ## Usage
 
-```typescript
+```jsx
 import useDebounce from "hooks/useDebounce";
 
 const [searchInput, setSearchInput] = useState<string>("");

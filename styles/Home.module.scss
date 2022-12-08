@@ -22,10 +22,17 @@
 .mainWrapper {
   padding: 0px 125px;
   width: 100%;
-  max-width: 1600px;
+  // max-width: 1600px;
   min-height: 100vh;
   margin: 0 auto;
 }
+
+@media (max-width: 769px) {
+  .mainWrapper {
+    padding: 0px 1.5rem !important;
+  }
+}
+
 
 @media (max-width: 1080px) {
   .mainWrapper {

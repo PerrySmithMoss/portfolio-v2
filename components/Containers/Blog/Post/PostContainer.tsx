@@ -32,10 +32,10 @@ export const PostContainer: React.FC<PostContainerProps> = ({
     [mdxSource]
   );
   return (
-    <section>
-      <div className={styles.wrapper}>
+    <section className={styles.wrapper}>
+      <div>
         <div className={styles.heroImage}>
-          <Image priority src={frontMatter.image} height={600} width={1300} alt={frontMatter.title} />
+          <Image priority src={frontMatter.image} height={600} width={1366} alt={frontMatter.title} />
         </div>
         <Badge
           colour="rgb(34, 139, 230)"
