@@ -1,9 +1,9 @@
 ---
-id: "3"
+id: "1"
 title: "Chinwag"
 readMoreLink: "/projects/im-listening"
-githubLink: "https://github.com/PerrySmithMoss/im-listening"
-urlLink: null
+githubLink: "https://github.com/PerrySmithMoss/chinwag"
+urlLink: "https://chinwag.vercel.app"
 brandColor: "#04948c"
 image: "/assets/images/home/projects/template.png"
 mockupImage: "/assets/images/home/projects/chinwag/mockup.png"

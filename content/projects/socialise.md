@@ -1,9 +1,9 @@
 ---
-id: "2"
+id: "7"
 title: "Socialise"
 slug: "im-listening"
-githubLink: "https://github.com/PerrySmithMoss/im-listening"
-urlLink: "needlink.co.uk"
+githubLink: "https://github.com/PerrySmithMoss/Socialise"
+urlLink: "https://socialise.vercel.app"
 brandColor: "#14ffec"
 image: "/assets/images/home/projects/template.png"
 logo: "/assets/images/home/projects/im-listening/logo.png"

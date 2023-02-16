@@ -1,9 +1,9 @@
 ---
-id: "5"
+id: "6"
 title: "Spotify Clone"
 slug: "spotify-clone"
-githubLink: "https://github.com/PerrySmithMoss/im-listening"
-urlLink: null
+githubLink: "https://github.com/PerrySmithMoss/spotify-clone"
+urlLink: "https://spotify-clone-perrysmithmoss.vercel.app"
 brandColor: "#1DB954"
 image: "/assets/images/home/projects/template.png"
 logo: "/assets/images/home/projects/im-listening/logo.png"

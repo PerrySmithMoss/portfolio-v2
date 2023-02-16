@@ -5,7 +5,6 @@ import {
   SiAzuredevops,
   SiCss3,
   SiExpress,
-  SiFlutter,
   SiGit,
   SiGraphql,
   SiJavascript,
@@ -13,6 +12,7 @@ import {
   SiMicrosoftazure,
   SiMongodb,
   SiMysql,
+  SiMicrosoftsqlserver,
   SiNextdotjs,
   SiNodedotjs,
   SiPhp,
@@ -129,7 +129,7 @@ export const MySkills: React.FC<MySkillsProps> = ({}) => {
                 <div>
                   <SiMysql color="00758F" size={40} />
                 </div>
-                <p>MySQL</p>
+                <p>SQL</p>
               </li>
               <li>
                 <div>
@@ -249,7 +249,7 @@ export const MySkills: React.FC<MySkillsProps> = ({}) => {
               <div>
                 <SiMysql color="00758F" size={40} />
               </div>
-              <p>MySQL</p>
+              <p>SQL</p>
             </li>
             <li>
               <div>

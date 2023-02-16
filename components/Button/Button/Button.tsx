@@ -6,9 +6,10 @@ interface ButtonProps {
   variant: "filled" | "outline" | "none";
   children?: React.ReactNode;
   link?: string;
+  external?: boolean;
   text: string;
   colour?: string;
-  fontSize?: string
+  fontSize?: string;
   backgroundColour?: string;
   size?: "sm" | "md" | "lg" | "none";
   type?: "primary" | "secondary" | "accent";
@@ -16,6 +17,7 @@ interface ButtonProps {
 
 export const Button: React.FC<ButtonProps> = ({
   link,
+  external,
   children,
   text,
   variant,
@@ -35,7 +37,7 @@ export const Button: React.FC<ButtonProps> = ({
               backgroundColor: backgroundColour
                 ? backgroundColour
                 : "transparent",
-                fontSize: fontSize ? fontSize : "14px"
+              fontSize: fontSize ? fontSize : "14px",
             }}
             className={`${styles.accentButton} ${
               variant === "filled"
@@ -53,6 +55,7 @@ export const Button: React.FC<ButtonProps> = ({
                 : styles.none
             }`}
             href={link}
+            target={external ? "_blank" : "_self"}
           >
             {children}
             {text}
@@ -64,7 +67,7 @@ export const Button: React.FC<ButtonProps> = ({
               backgroundColor: backgroundColour
                 ? backgroundColour
                 : "transparent",
-                fontSize: fontSize ? fontSize : "14px"
+              fontSize: fontSize ? fontSize : "14px",
             }}
             className={`${styles.accentButton} ${
               variant === "filled"
@@ -81,6 +84,7 @@ export const Button: React.FC<ButtonProps> = ({
                 ? styles.medium
                 : styles.none
             }`}
+            target={external ? "_blank" : "_self"}
           >
             {children}
             {text}
@@ -99,7 +103,7 @@ export const Button: React.FC<ButtonProps> = ({
                 backgroundColor: backgroundColour
                   ? backgroundColour
                   : "transparent",
-                  fontSize: fontSize ? fontSize : "14px"
+                fontSize: fontSize ? fontSize : "14px",
               }}
               className={`${styles.secondaryButton} ${
                 variant === "filled"
@@ -129,7 +133,7 @@ export const Button: React.FC<ButtonProps> = ({
               backgroundColor: backgroundColour
                 ? backgroundColour
                 : "transparent",
-                fontSize: fontSize ? fontSize : "14px"
+              fontSize: fontSize ? fontSize : "14px",
             }}
             className={`${styles.secondaryButton} ${
               variant === "filled"
@@ -146,6 +150,7 @@ export const Button: React.FC<ButtonProps> = ({
                 ? styles.medium
                 : styles.none
             }`}
+            target={external ? "_blank" : "_self"}
           >
             {children}
             {text}
@@ -164,7 +169,7 @@ export const Button: React.FC<ButtonProps> = ({
                 backgroundColor: backgroundColour
                   ? backgroundColour
                   : "transparent",
-                  fontSize: fontSize ? fontSize : "14px"
+                fontSize: fontSize ? fontSize : "14px",
               }}
               className={`${styles.primaryButton} ${
                 variant === "filled"
@@ -182,6 +187,7 @@ export const Button: React.FC<ButtonProps> = ({
                   : styles.none
               }`}
               href={link}
+              target={external ? "_blank" : "_self"}
             >
               {children}
               {text}
@@ -194,7 +200,7 @@ export const Button: React.FC<ButtonProps> = ({
               backgroundColor: backgroundColour
                 ? backgroundColour
                 : "transparent",
-                fontSize: fontSize ? fontSize : "14px"
+              fontSize: fontSize ? fontSize : "14px",
             }}
             className={`${styles.primaryButton} ${
               variant === "filled"
@@ -211,6 +217,7 @@ export const Button: React.FC<ButtonProps> = ({
                 ? styles.medium
                 : styles.none
             }`}
+            target={external ? "_blank" : "_self"}
           >
             {children}
             {text}

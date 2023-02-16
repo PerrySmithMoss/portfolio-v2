@@ -1,10 +1,10 @@
 ---
-id: "4"
+id: "2"
 title: "VitaTrack"
 readMoreLink: "/projects/vitatrack"
-githubLink: "https://github.com/PerrySmithMoss/vitatrack"
+githubLink: "https://github.com/PerrySmithMoss/VitaTrack"
 mockupImage: "/assets/images/home/projects/vitatrack/mockup1.png"
-urlLink: "needlink.co.uk"
+urlLink: "https://vita-track.vercel.app"
 brandColor: "#3a86ff"
 image: "/assets/images/home/projects/vitatrack/mockup1.png"
 description: "Web application which allows users to track their workouts and nutrition.."

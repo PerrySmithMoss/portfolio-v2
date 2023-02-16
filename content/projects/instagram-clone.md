@@ -1,9 +1,9 @@
 ---
-id: "6"
+id: "5"
 title: "Instagram Clone"
 slug: "instagram-clone"
-githubLink: "https://github.com/PerrySmithMoss/im-listening"
-urlLink: null
+githubLink: "https://github.com/PerrySmithMoss/instagram-clone"
+urlLink: "https://instagram-clone-perrysmithmoss.vercel.app"
 brandColor: "#04948c"
 image: "/assets/images/home/projects/template.png"
 logo: "/assets/images/home/projects/im-listening/logo.png"

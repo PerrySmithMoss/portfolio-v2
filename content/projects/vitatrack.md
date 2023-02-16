@@ -1,9 +1,9 @@
 ---
-id: "7"
+id: "2"
 title: "VitaTrack"
 slug: "vitatrack"
 githubLink: "https://github.com/PerrySmithMoss/VitaTrack"
-urlLink: null
+urlLink: "https://vita-track.vercel.app"
 brandColor: "#00CC99"
 image: "/assets/images/home/projects/vitatrack/mockup1.png"
 logo: "/assets/images/home/projects/im-listening/logo.png"

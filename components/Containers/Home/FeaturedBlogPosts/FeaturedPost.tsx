@@ -15,7 +15,7 @@ export const FeaturedPost: React.FC<FeaturedPostProps> = ({ post }) => {
       <div className={styles.featurePostImageContainer}>
         {/* Image */}
         <Image
-          height={55}
+          height={60}
           width="100%"
           layout="responsive"
           objectFit="fill"
