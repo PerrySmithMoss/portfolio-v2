@@ -56,6 +56,7 @@ export const Button: React.FC<ButtonProps> = ({
             }`}
             href={link}
             target={external ? "_blank" : "_self"}
+            rel="noreferrer"
           >
             {children}
             {text}
@@ -85,6 +86,7 @@ export const Button: React.FC<ButtonProps> = ({
                 : styles.none
             }`}
             target={external ? "_blank" : "_self"}
+            rel="noreferrer"
           >
             {children}
             {text}
@@ -151,6 +153,7 @@ export const Button: React.FC<ButtonProps> = ({
                 : styles.none
             }`}
             target={external ? "_blank" : "_self"}
+            rel="noreferrer"
           >
             {children}
             {text}
@@ -188,6 +191,7 @@ export const Button: React.FC<ButtonProps> = ({
               }`}
               href={link}
               target={external ? "_blank" : "_self"}
+              rel="noreferrer"
             >
               {children}
               {text}
@@ -218,6 +222,7 @@ export const Button: React.FC<ButtonProps> = ({
                 : styles.none
             }`}
             target={external ? "_blank" : "_self"}
+            rel="noreferrer"
           >
             {children}
             {text}
