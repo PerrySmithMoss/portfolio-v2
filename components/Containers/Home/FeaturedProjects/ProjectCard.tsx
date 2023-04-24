@@ -1,5 +1,5 @@
-import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 import { IProject } from "../../../../types/IProject";
 import { Badge } from "../../../Badge/Badge";
 import { Button } from "../../../Button/Button/Button";
@@ -125,11 +125,17 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         </div>
         <div className={styles.columnTwo}>
           <div className={styles.imageContainer}>
-            <img
-              src={project.mockupImage}
-              alt={`${project.title} mockup image`}
-              className={styles.mockupImage}
-            />
+            <div
+              style={{ width: "100%", height: "100%", position: "relative" }}
+            >
+              <img
+                src={project.mockupImage}
+                alt={`${project.title} mockup image`}
+                className={styles.mockupImage}
+                // layout="fill"
+                // objectFit="contain"
+              />
+            </div>
           </div>
         </div>
       </div>

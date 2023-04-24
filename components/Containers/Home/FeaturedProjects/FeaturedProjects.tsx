@@ -12,32 +12,34 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
   featuredProjects,
 }) => {
   return (
-    <section className={styles.wrapper}>
-      <div className={styles.header}>
-        <div className={styles.headerBorderLeft}>
-          <h2>Featured Projects</h2>
+      <section className={styles.wrapper}>
+        <div className={styles.header}>
+          <div className={styles.headerBorderLeft}>
+            <h2>Featured Projects</h2>
+          </div>
         </div>
-      </div>
-      <a id="featuredProjects" className={styles.featuredProjectsLink}></a>
-      <div className={styles.projectsContainer}>
-        <ul className={styles.projectsWrapper}>
-          {featuredProjects
-            .sort((a: IProject, b: IProject) => parseInt(a.id) - parseInt(b.id))
-            .map((project: IProject) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-        </ul>
-      </div>
-      <div className={styles.loadMoreButton}>
-        <Button
-          text="See more"
-          variant="outline"
-          size="lg"
-          colour="#00FFFF"
-          link="/projects"
-          // backgroundColour="rgb(40, 45, 65)"
-        />
-      </div>
-    </section>
-  );
-};
+        <a id="featuredProjects" className={styles.featuredProjectsLink}></a>
+        <div className={styles.projectsContainer}>
+          <ul className={styles.projectsWrapper}>
+            {featuredProjects
+              .sort(
+                (a: IProject, b: IProject) => parseInt(a.id) - parseInt(b.id)
+              )
+              .map((project: IProject) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+          </ul>
+        </div>
+        <div className={styles.loadMoreButton}>
+          <Button
+            text="See more"
+            variant="outline"
+            size="lg"
+            colour="#00FFFF"
+            link="/projects"
+            // backgroundColour="rgb(40, 45, 65)"
+          />
+        </div>
+      </section>
+    );
+  }

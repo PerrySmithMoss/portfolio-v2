@@ -3,9 +3,11 @@
   text-decoration: inherit;
   display: flex;
   justify-content: center;
+  bottom: 0.5rem;
   position: absolute;
-  bottom: 2.75rem;
+  bottom: 0rem;
   left: 50%;
+  transform: translate(-50%, -50%);
   cursor: pointer;
   transition-property: color, background-color, border-color,
     text-decoration-color, fill, stroke, -webkit-text-decoration-color;
@@ -14,7 +16,7 @@
 }
 
 .scrollDown svg {
-  stroke: var(--white);
+  stroke: var(--cyan);
   -o-transition: stroke 0.2s ease-in;
   -ms-transition: stroke 0.2s ease-in;
   -moz-transition: stroke 0.2s ease-in;
@@ -49,6 +51,13 @@
   width: 2.2rem;
 }
 
+@media (min-width: 768px) {
+  .arrowDownIcon {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+}
+
 @media (min-width: 500px) {
   .arrowDownIcon {
     width: 2.5rem;
@@ -56,9 +65,3 @@
   }
 }
 
-@media (min-width: 768px) {
-  .arrowDownIcon {
-    width: 2.8rem;
-    height: 2.8rem;
-  }
-}
