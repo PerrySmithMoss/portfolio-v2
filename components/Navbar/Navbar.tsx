@@ -1,21 +1,40 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./Navbar.module.scss";
 import { motion as m } from "framer-motion";
 import { useGlobalUIContext } from "../../context/GlobalUI.context";
+import { useOnClickOutside } from "../../hooks/useOnClickOutside";
 
 interface NavbarProps {}
 
 export const Navbar: React.FC<NavbarProps> = ({}) => {
   const router = useRouter();
-  const arrOfRoute = router.route.split('/');
-  const baseRoute = '/' + arrOfRoute[1];
-
+  const arrOfRoute = router.route.split("/");
+  const baseRoute = "/" + arrOfRoute[1];
   const { isMobileMenuDrawerOpen, setIsMobileMenuDrawerOpen } =
     useGlobalUIContext();
+  const navRef = useRef<HTMLElement>(null);
+
+  useOnClickOutside(navRef, () => setIsMobileMenuDrawerOpen(false));
+
+  useEffect(() => {
+    router.events.on("routeChangeComplete", () => {
+      if (isMobileMenuDrawerOpen) {
+        setIsMobileMenuDrawerOpen(false);
+      }
+    });
+    return () => {
+      router.events.off("routeChangeComplete", () => {
+        if (isMobileMenuDrawerOpen) {
+          setIsMobileMenuDrawerOpen(false);
+        }
+      });
+    };
+  }, [router.events, isMobileMenuDrawerOpen]);
+
   return (
-    <header className={styles.navbarHeader}>
+    <header ref={navRef} className={styles.navbarHeader}>
       <nav className={styles.navbarNav}>
         <div className={styles.navbarLogo} tabIndex={-1}>
           <Link href="/" aria-label="home">
@@ -50,7 +69,7 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
         </div>
         <div className={styles.navbarLinks}>
           <ol>
-            {navLinks.map((link, i) => (
+            {navLinks.map((link) => (
               <m.li
                 key={link.id}
                 initial={{ opacity: 0 }}
@@ -58,11 +77,7 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
                 transition={{ delay: 0.5 }}
               >
                 <Link href={link.url}>
-                  <a
-                    className={
-                      baseRoute === link.url ? styles.active : ""
-                    }
-                  >
+                  <a className={baseRoute === link.url ? styles.active : ""}>
                     {link.name}.
                   </a>
                 </Link>
@@ -137,9 +152,10 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
             >
               <label htmlFor="check">
                 <input
-                  onClick={() =>
+                  onChange={() =>
                     setIsMobileMenuDrawerOpen(!isMobileMenuDrawerOpen)
                   }
+                  checked={isMobileMenuDrawerOpen}
                   type="checkbox"
                   id="check"
                 />

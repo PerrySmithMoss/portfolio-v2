@@ -33,9 +33,6 @@ export const FeaturedSnippets: React.FC<FeaturedSnippetsProps> = ({
           <div className={styles.headerBorderLeft}>
             <h2>Featured Snippets</h2>
           </div>
-          {/* <div className={styles.arrowContainer}>
-          <SeeAll colour="#00FFFF" buttonText="View more" />
-        </div> */}
         </div>
         <div className={styles.snippetsContainer}>
           <div className={styles.snippetsGrid}>
@@ -50,7 +47,6 @@ export const FeaturedSnippets: React.FC<FeaturedSnippetsProps> = ({
               size="lg"
               colour="#00FFFF"
               link="/snippets"
-              // backgroundColour="rgb(40, 45, 65)"
             />
           </div>
         </div>

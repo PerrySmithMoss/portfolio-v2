@@ -33,20 +33,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       }}
       whileInView={"onscreen"}  
       viewport={{ once: true, amount: 0.2 }}
-
-      // initial={"offscreen"}
-      // variants={{
-      //   offscreen: {
-      //     y: 50,
-      //     opacity: 0,
-      //   },
-      //   onscreen: {
-      //     y: 0,
-      //     opacity: 1,
-      //   },
-      // }}
-      // whileInView={"onscreen"}
-      // viewport={{ once: true, amount: 0.2 }}
     >
       <div className={styles.cardInner}>
         <div className={styles.columnOne}>
