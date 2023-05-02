@@ -8,7 +8,7 @@
 }
 
 .wrapper {
-  margin-top: 150px;
+  margin-top: 125px;
   color: white;
 
   p {
@@ -212,6 +212,9 @@
 }
 
 @media (max-width: 768px) {
+  .wrapper {
+    margin-top: 100px;
+  }
   .snippetsGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }

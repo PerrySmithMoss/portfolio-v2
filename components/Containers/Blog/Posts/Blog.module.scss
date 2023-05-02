@@ -7,7 +7,7 @@
 }
 
 .wrapper {
-  margin-top: 150px;
+  margin-top: 125px;
   color: white;
 
   hr {
@@ -214,10 +214,12 @@
     margin-left: 20px !important;
   }
 }
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .wrapper {
-    margin-top: 125px;
+    margin-top: 100px;
   }
+}
+@media (max-width: 640px) {
   .allPostsGrid {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }

@@ -14,7 +14,7 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
   const baseRoute = "/" + arrOfRoute[1];
   const { isMobileMenuDrawerOpen, setIsMobileMenuDrawerOpen } =
     useGlobalUIContext();
-  const navRef = useRef<HTMLElement>(null);
+  const navRef = useRef<HTMLDivElement>(null);
 
   useOnClickOutside(navRef, () => setIsMobileMenuDrawerOpen(false));
 
@@ -34,7 +34,7 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
   }, [router.events, isMobileMenuDrawerOpen]);
 
   return (
-    <header ref={navRef} className={styles.navbarHeader}>
+    <header className={styles.navbarHeader}>
       <nav className={styles.navbarNav}>
         <div className={styles.navbarLogo} tabIndex={-1}>
           <Link href="/" aria-label="home">
@@ -144,7 +144,7 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
             </m.a>
           </div>
         </div>
-        <div className={styles.navbarMobileMenu}>
+        <div ref={navRef} className={styles.navbarMobileMenu}>
           <div>
             <button
               aria-label="Mobile Menu"
