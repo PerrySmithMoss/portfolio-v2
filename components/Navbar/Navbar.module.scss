@@ -270,6 +270,12 @@
 }
 
 @media (max-width: 769px) {
+  .navbarHeader {
+    padding: 0px 1rem !important;
+  }
+  .navbarMobileHamburger {
+    padding-right: 1rem !important;
+  }
   .navbarLinks {
     display: none;
   }
@@ -338,15 +344,6 @@
     transform: translateX(0vw);
     visibility: visible;
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-  }
-}
-
-@media (max-width: 640px) {
-  .navbarHeader {
-    padding: 0px 1rem !important;
-  }
-  .navbarMobileHamburger {
-    padding-right: 1rem !important;
   }
 }
 
