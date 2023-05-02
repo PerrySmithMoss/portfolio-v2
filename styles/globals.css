@@ -25,9 +25,6 @@ body {
   margin: 0;
   background-color: var(--dark-navy);
   font-family: "Poppins-Regular";
-  /* overflow-x: hidden; */
-  /* overflow-y: hidden; */
-  /* overflow: hidden; */
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -42,8 +39,6 @@ html {
 body::-webkit-scrollbar {
   z-index: 20;
   background: #0000;
-  /* width: 4px; */
-  /* height: 4px !important; */
   width: 12px;
 }
 body::-webkit-scrollbar-track,

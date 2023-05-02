@@ -5,21 +5,24 @@ import { Badge } from "../../../Badge/Badge";
 import { Button } from "../../../Button/Button/Button";
 import styles from "./FeaturedProjects.module.scss";
 import { motion as m } from "framer-motion";
+import useMediaQuery from "../../../../hooks/useMediaQuery";
 
 interface ProjectCardProps {
   project: IProject;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+  const matches = useMediaQuery(768)
   return (
     <m.li
       id={project.id}
+      key={project.id}
       style={{ backgroundColor: project.brandColor }}
       className={styles.cardWrapper}
       initial={"offscreen"}
       variants={{
         offscreen: {
-          x: parseInt(project.id) % 2 === 0 ? 300 : -300,
+          x: parseInt(project.id) % 2 === 0 ? matches ? 300 : 175 : matches ? -300 : -175,
           opacity: 0,
         },
         onscreen: {
@@ -28,8 +31,22 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           transition: { type: "spring", bounce: 0.4, duration: 2 },
         },
       }}
-      whileInView={"onscreen"}
-      viewport={{ once: true, amount: 0.3 }}
+      whileInView={"onscreen"}  
+      viewport={{ once: true, amount: 0.2 }}
+
+      // initial={"offscreen"}
+      // variants={{
+      //   offscreen: {
+      //     y: 50,
+      //     opacity: 0,
+      //   },
+      //   onscreen: {
+      //     y: 0,
+      //     opacity: 1,
+      //   },
+      // }}
+      // whileInView={"onscreen"}
+      // viewport={{ once: true, amount: 0.2 }}
     >
       <div className={styles.cardInner}>
         <div className={styles.columnOne}>
@@ -37,7 +54,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             <h3>{project.title}</h3>
             <p>{project.description}</p>
             <div className={styles.badgeContainer}>
-              {project.tech.map((tech: string, index) => (
+              {project.tech.map((tech, index) => (
                 <Badge
                   key={index}
                   text={tech}
@@ -131,7 +148,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               <img
                 src={project.mockupImage}
                 alt={`${project.title} mockup image`}
-                style={{marginRight: "250px"}}
+                style={{ marginRight: "250px" }}
                 className={`${
                   project.title.toLowerCase() === "handover"
                     ? styles.mockupImageSmall

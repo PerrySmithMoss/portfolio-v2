@@ -149,6 +149,9 @@
 }
 
 @media (max-width: 768px) {
+  .cardWrapper {
+    margin-top: 4rem;
+  }
   .projectsWrapper {
     margin-top: 3.5rem !important;
   }
@@ -228,6 +231,7 @@
 
 @media (max-width: 378px) {
   .cardWrapper {
+    margin-top: 2.5rem;
     .cardInner {
       .buttonContainer {
         display: flex;
