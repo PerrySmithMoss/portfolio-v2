@@ -9,7 +9,7 @@ image: "/assets/images/home/projects/template.png"
 logo: "/assets/images/home/projects/im-listening/logo.png"
 mockupImage: "/assets/images/projects/spotify-clone/mockup.png"
 coverImage: "/assets/images/projects/spotify-clone/mockup.png"
-description: "A clone of the Spotfiy web application."
+description: "A clone of the Spotify web application."
 tech: ["nextjs"]
 tags: ["Next.js"]
 platform: "Web"

@@ -106,10 +106,6 @@
   }
 }
 
-.cursor {
-  cursor: pointer;
-}
-
 .chipsContainer {
   display: flex;
   flex-flow: row wrap;
@@ -170,7 +166,6 @@
 
   .imageContainer {
     position: relative;
-    cursor: pointer;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -211,10 +206,6 @@
   margin-top: 1rem;
   font-family: "Poppins-Bold";
   font-size: clamp(16px, 3vw, 18px);
-  cursor: pointer;
-}
-.cardBody h4:hover {
-  text-decoration: underline;
 }
 
 .cardBody p {

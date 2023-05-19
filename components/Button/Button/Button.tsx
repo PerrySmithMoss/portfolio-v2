@@ -10,9 +10,11 @@ interface ButtonProps {
   text: string;
   colour?: string;
   fontSize?: string;
+  submissionType?: "submit";
   backgroundColour?: string;
   size?: "sm" | "md" | "lg" | "none";
   type?: "primary" | "secondary" | "accent";
+  onClick?: () => void;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -26,6 +28,8 @@ export const Button: React.FC<ButtonProps> = ({
   backgroundColour,
   type,
   size,
+  onClick,
+  submissionType,
 }) => {
   if (type === "accent")
     return (
@@ -57,6 +61,8 @@ export const Button: React.FC<ButtonProps> = ({
             href={link}
             target={external ? "_blank" : "_self"}
             rel="noreferrer"
+            onClick={onClick}
+            type={submissionType}
           >
             {children}
             {text}
@@ -87,6 +93,8 @@ export const Button: React.FC<ButtonProps> = ({
             }`}
             target={external ? "_blank" : "_self"}
             rel="noreferrer"
+            onClick={onClick}
+            type={submissionType}
           >
             {children}
             {text}
@@ -123,6 +131,8 @@ export const Button: React.FC<ButtonProps> = ({
                   : styles.none
               }`}
               href={link}
+              onClick={onClick}
+              type={submissionType}
             >
               {children}
               {text}
@@ -154,6 +164,8 @@ export const Button: React.FC<ButtonProps> = ({
             }`}
             target={external ? "_blank" : "_self"}
             rel="noreferrer"
+            onClick={onClick}
+            type={submissionType}
           >
             {children}
             {text}
@@ -192,6 +204,8 @@ export const Button: React.FC<ButtonProps> = ({
               href={link}
               target={external ? "_blank" : "_self"}
               rel="noreferrer"
+              onClick={onClick}
+              type={submissionType}
             >
               {children}
               {text}
@@ -223,6 +237,8 @@ export const Button: React.FC<ButtonProps> = ({
             }`}
             target={external ? "_blank" : "_self"}
             rel="noreferrer"
+            onClick={onClick}
+            type={submissionType}
           >
             {children}
             {text}

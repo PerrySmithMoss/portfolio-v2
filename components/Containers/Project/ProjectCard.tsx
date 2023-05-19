@@ -23,7 +23,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       transition={{ delay: 0.1 }}
     >
       <div className={styles.cardBody}>
-        <a target="_blank" href={`${project.urlLink}`} rel="noreferrer">
           <div className={styles.imageContainer}>
             <Image
               className={styles.cardImage}
@@ -33,11 +32,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               priority
             />
           </div>
-        </a>
         <div className={styles.cardHeader}>
-          <a target="_blank" href={`${project.urlLink}`} rel="noreferrer">
             <h4>{project.title}</h4>
-          </a>
         </div>
 
         {/* <DynamicTechIcons techs={project.tech as Array<TechListType>} /> */}

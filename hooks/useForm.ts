@@ -1,7 +1,9 @@
 import { useState } from "react";
 
 type Errors = {
-  [key: string]: string;
+  name: string;
+  email: string;
+  message: string;
 };
 
 type FormData = {
@@ -16,12 +18,16 @@ export function useForm() {
     email: "",
     message: "",
   });
-  const [errors, setErrors] = useState<Errors>({});
+  const [errors, setErrors] = useState<Errors>({
+    name: "",
+    email: "",
+    message: "",
+  });
 
   const emailRegex = new RegExp(
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
   );
-  const nameRegex = new RegExp(/^[a-zA-Z\s]*[^\s]$/gim);
+  const nameRegex = new RegExp(/^[\w\d][^<>/\\&]*$/gim);
   const messageRegex = new RegExp(/^[\w\d][^<>/\\&]*$/gim);
 
   function isValid(value: string, name: string, regex: RegExp, text: string) {
@@ -42,9 +48,9 @@ export function useForm() {
       case "email":
         return isValid(value, name, emailRegex, "email");
       case "name":
-        return isValid(value, name, nameRegex, "Name");
+        return isValid(value, name, nameRegex, "name");
       case "message":
-        return isValid(value, name, messageRegex, "Message");
+        return isValid(value, name, messageRegex, "message");
       default:
         break;
     }
@@ -61,9 +67,28 @@ export function useForm() {
   };
 
   const isFormValid = () => {
-    let errorArray = Object.values(errors);
-    return errorArray.length === 3 && errorArray.filter(Boolean).length === 0;
+    const formEntries = Object.entries(formData);
+    const errorArray = Object.values(errors);
+    const emptyVals = errorArray.filter((error) => error.length >  0);
+
+    if (emptyVals.length > 0) {
+      let result: { [key: string]: string } = {};
+
+      formEntries.forEach((entry) => {
+        if (!entry[1]) {
+          result[entry[0]] = `Your ${entry[0]} is required`;
+        }
+      });
+
+      setErrors({ ...errors, ...result });
+    } else if (
+      errorArray.length === 3 &&
+      errorArray.filter(Boolean).length === 0
+    ) {
+      return true;
+    }
+    return false;
   };
 
-  return { formData, errors, handleInput, isFormValid: isFormValid() };
+  return { formData, errors, handleInput, isFormValid: isFormValid, setFormData };
 }

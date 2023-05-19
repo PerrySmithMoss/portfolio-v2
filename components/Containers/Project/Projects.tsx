@@ -14,19 +14,19 @@ interface ProjectsProps {
 export const Projects: React.FC<ProjectsProps> = ({ projects, tags }) => {
   const [searchInput, setSearchInput] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const [filteredSnippets, setFilteredSnippets] =
+  const [filteredProjects, setFilteredProjects] =
     useState<IProject[]>(projects);
 
   useEffect(() => {
-    const snippetResults = projects.filter((project: IProject) => {
+    const projectResults = projects.filter((project: IProject) => {
       return selectedTags.every((tag: string) => project.tags.includes(tag));
     });
 
-    setFilteredSnippets(snippetResults);
+    setFilteredProjects(projectResults);
   }, [projects, selectedTags]);
 
   useEffect(() => {
-    const snippetResults = projects.filter((project: IProject) => {
+    const projectResults = projects.filter((project: IProject) => {
       return (
         project.title.toLowerCase().includes(searchInput.toLowerCase()) ||
         project.description.toLowerCase().includes(searchInput.toLowerCase()) ||
@@ -36,10 +36,10 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, tags }) => {
       );
     });
 
-    setFilteredSnippets(snippetResults);
+    setFilteredProjects(projectResults);
   }, [projects, searchInput]);
 
-  const availableTags = getTags(filteredSnippets);
+  const availableTags = getTags(filteredProjects);
 
   const toggleBadge = (tag: string) => {
     if (selectedTags.includes(tag)) {
@@ -105,8 +105,8 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, tags }) => {
           </div>
           <div>
             <ul className={styles.snippetsGrid}>
-              {filteredSnippets.length > 0 ? (
-                filteredSnippets.map((project: IProject) => (
+              {filteredProjects.length > 0 ? (
+                filteredProjects.map((project: IProject) => (
                   <ProjectCard key={project.id} project={project} />
                 ))
               ) : (

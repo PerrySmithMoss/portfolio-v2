@@ -1,3 +1,4 @@
+
 .wrapper {
   margin: 0px auto;
   max-width: 1000px;
@@ -53,7 +54,16 @@
   // padding: 3rem;
   // background-color: #141724;
   border-radius: 12px;
-
+.error {
+  color: #ef4444;
+  margin: 0;
+  font-size: 14px;
+}
+.success {
+  color: #4BB543;
+  margin: 0;
+  font-size: 14px;
+}
   input[type="text"] {
     font-family: "Poppins-Regular";
   }
@@ -106,6 +116,7 @@
     font-size: var(--fs-xs);
   }
   .buttonContainer {
+    // margin-top: 1.25rem;
     display: flex;
   }
 }
