@@ -22,7 +22,7 @@ export const Hero: React.FC<HeroProps> = ({}) => {
 
   const two = (
     <div>
-      <h2>Perry Smith Moss.</h2>
+      <h2>Perry Smith-Moss.</h2>
     </div>
   );
 
