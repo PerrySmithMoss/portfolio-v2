@@ -13,7 +13,9 @@ export const Footer: React.FC<FooterProps> = ({}) => {
           <a className={styles.feedbackLink}>Feedback</a> is always appreciated.
         </p> */}
 
-        <p>&copy; Perry Smith-Moss 2022 &bull; <button><a className={styles.feedbackLink}>Feedback</a> is always appreciated.</button></p>
+        <p>&copy; Perry Smith-Moss 2022 
+          {/* &bull; <button><a className={styles.feedbackLink}>Feedback</a> is always appreciated.</button> */}
+          </p>
       </div>
     </footer>
   );
