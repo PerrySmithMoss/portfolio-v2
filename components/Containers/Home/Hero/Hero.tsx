@@ -29,18 +29,19 @@ export const Hero: React.FC<HeroProps> = ({}) => {
   const three = (
     <div>
       <p>
-        I&apos;m a software engineer who specializes in solving business
-        problems with the best suited technology. Currently, I am building an
-        E-commerce platform for{" "}
+        I am a dynamic software engineer, dedicated to unravelling complex
+        business challenges by leveraging cutting-edge technology. At this
+        moment, I am meticulously crafting a transformative driver and mechanic
+        portal for{" "}
         <a
           target="_blank"
           rel="noreferrer"
-          href="https://meadowvalefoods.co.uk/"
+          href="https://www.whocanfixmycar.com"
           className={styles.heroLink}
         >
-          Meadow Vale Foods
+          WhoCanFixMyCar
         </a>
-        , which will revolutionise the way they do business.
+        .
       </p>
     </div>
   );
