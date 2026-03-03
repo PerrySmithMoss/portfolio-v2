@@ -133,7 +133,7 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
           <div>
             <m.a
               className={styles.navbarButon}
-              href="/assets/pdf/Perry_Smith-Moss_Resume.pdf"
+              href="/assets/pdf/Perry-Smith-Moss-Senior-Full-Stack-Engineer-CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0 }}
@@ -231,7 +231,7 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
                 </ol>
                 <a
                   className={styles.navbarMobileButon}
-                  href="/assets/pdf/Perry_Smith-Moss_Resume.pdf"
+                  href="/assets/pdf/Perry-Smith-Moss-Senior-Full-Stack-Engineer-CV.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
