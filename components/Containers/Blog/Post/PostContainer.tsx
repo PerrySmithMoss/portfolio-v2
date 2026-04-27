@@ -1,18 +1,16 @@
-import React from "react";
-import Link from "next/link";
-import styles from "./Post.module.scss";
-import Image from "next/image";
-import { IPost } from "../../../../types/IBlog";
-import { Badge } from "../../../Badge/Badge";
-import { TableOfContents } from "../../../TableOfContents/TableOfContents";
-import { IHeading } from "../../../../types/IMedia";
-import {
-  HiOutlineClock,
-  HiOutlinePencil,
-  HiOutlineCalendar,
-} from "react-icons/hi";
 import { getMDXComponent } from "mdx-bundler/client";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useMemo } from "react";
+import { HiOutlineCalendar, HiOutlineClock, HiOutlinePencil } from "react-icons/hi";
+
+import { IPost } from "../../../../types/IBlog";
+import { IHeading } from "../../../../types/IMedia";
+import { Badge } from "../../../Badge/Badge";
 import { MDXComponents } from "../../../MDXComponents/MDXComponents";
+import { TableOfContents } from "../../../TableOfContents/TableOfContents";
+
+import styles from "./Post.module.scss";
 
 interface PostContainerProps {
   mdxSource: string;
@@ -27,107 +25,100 @@ export const PostContainer: React.FC<PostContainerProps> = ({
   recommendations,
   headings,
 }) => {
-  const Component = React.useMemo(
-    () => getMDXComponent(mdxSource),
-    [mdxSource]
-  );
+  const Component = useMemo(() => getMDXComponent(mdxSource), [mdxSource]);
+
   return (
     <section className={styles.wrapper}>
-      <div>
+      <header className={styles.hero}>
         <div className={styles.heroImage}>
-          <Image priority src={frontMatter.image} height={600} width={1366} alt={frontMatter.title} />
+          <Image
+            priority
+            src={frontMatter.image}
+            fill
+            sizes="100vw"
+            alt={frontMatter.title}
+            style={{ objectFit: "cover" }}
+          />
         </div>
+
         <Badge
           colour="rgb(34, 139, 230)"
           backgroundColour="#0c2231"
           text={frontMatter.tech[0]}
           size="lg"
         />
+
         <div className={styles.blogHeader}>
           <h1>{frontMatter.title}</h1>
         </div>
+
         <ul className={styles.blogInfo}>
           <li className={styles.flex}>
-            <HiOutlinePencil />
-            <div>
-              <p>
-                <span>Perry Smith-Moss</span>
-              </p>
-            </div>
+            <HiOutlinePencil aria-hidden="true" />
+            <span>Perry Smith-Moss</span>
           </li>
           <li className={styles.flex}>
-            <HiOutlineCalendar />
-            <div>
-              <p>
-                <span>May 23rd, 2022</span>
-              </p>
-            </div>
+            <HiOutlineCalendar aria-hidden="true" />
+            <time dateTime="2022-05-23">May 23rd, 2022</time>
           </li>
-
           <li className={styles.flex}>
-            <HiOutlineClock />
-            <div>
-              <p>
-                <span>{frontMatter.readingTime} minute read</span>
-              </p>
-            </div>
+            <HiOutlineClock aria-hidden="true" />
+            <span>{frontMatter.readingTime} minute read</span>
           </li>
         </ul>
-        <div className={styles.grid}>
-          <article className={`${styles.markdown} markdown`}>
-            <div className={styles.articleBody}>
-              <Component
-                components={{
-                  MDXComponents,
-                }}
-              />
-            </div>
-          </article>
-          <aside className={styles.sidebar}>
-            <div className={styles.sidebarOuter}>
-              <div className={styles.sidebarInner}>
-                <TableOfContents headings={headings} />
-              </div>
-            </div>
-          </aside>
-        </div>
-        <div className={styles.recommendationsContainer}>
-          <h2>Other posts you may like</h2>
-          <div className={styles.recommendationsGrid}>
-            {recommendations.map((post: IPost) => (
-              <article key={post.id} className={styles.otherPost}>
+      </header>
+
+      <div className={styles.grid}>
+        <article className={`${styles.markdown} markdown`}>
+          <div className={styles.articleBody}>
+            <Component components={MDXComponents} />
+          </div>
+        </article>
+
+        <aside className={styles.sidebar}>
+          <nav className={styles.sidebarSticky}>
+            <TableOfContents headings={headings} />
+          </nav>
+        </aside>
+      </div>
+
+      <section className={styles.recommendationsContainer}>
+        <h2>Other posts you may like</h2>
+        <div className={styles.recommendationsGrid}>
+          {recommendations.map((post) => (
+            <article key={post.id} className={styles.otherPost}>
+              <div className={styles.imageWrapper}>
                 <Image
-                  height={500}
-                  width={750}
-                  objectFit="cover"
-                  className={styles.image}
                   src={post.image}
                   alt={post.title}
+                  width={750}
+                  height={500}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className={styles.image}
+                  style={{ objectFit: "cover" }}
                 />
+              </div>
 
-                <div>
-                  <div className={styles.badgeWrapper}>
-                    <Badge
-                      colour="rgb(34, 139, 230)"
-                      backgroundColour="#0c2231"
-                      text={post.tech[0]}
-                      size="md"
-                    />
-                  </div>
-                  <Link href={`/blog/${post!.slug}`}>
-                    <div>
-                      <h3>{post.title}</h3>
-                    </div>
-                  </Link>
-                  <div>
-                    <p>{post.description}</p>
-                  </div>
+              <div className={styles.content}>
+                <div className={styles.badgeWrapper}>
+                  <Badge
+                    colour="rgb(34, 139, 230)"
+                    backgroundColour="#0c2231"
+                    text={post.tech[0]}
+                    size="md"
+                  />
                 </div>
-              </article>
-            ))}
-          </div>
+
+                <Link href={`/blog/${post.slug}`} className={styles.titleLink}>
+                  <h3>{post.title}</h3>
+                </Link>
+
+                <p>{post.description}</p>
+              </div>
+            </article>
+          ))}
         </div>
-      </div>
+      </section>
     </section>
   );
 };
