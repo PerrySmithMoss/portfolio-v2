@@ -23,20 +23,14 @@ export const Badge: React.FC<BadgeProps> = ({
           backgroundColor: backgroundColour ? backgroundColour : "transparent",
         }}
         className={`${styles.badgeOuter} ${
-          size === "lg"
-            ? styles.large
-            : size === "sm"
-            ? styles.small
-            : styles.medium
+          size === "lg" ? styles.large : size === "sm" ? styles.small : styles.medium
         }`}
       >
         <span
           style={{
             color: colour ? colour : "#00FFFF",
-            backgroundColor: backgroundColour
-              ? backgroundColour
-              : "transparent",
-            textTransform: uppercase  ? "uppercase" : "none",
+            backgroundColor: backgroundColour ? backgroundColour : "transparent",
+            textTransform: uppercase ? "uppercase" : "none",
           }}
           className={styles.badgeInner}
         >

@@ -1,86 +1,62 @@
-.primaryButton {
-  box-sizing: inherit;
-  display: flex;
+.baseButton {
+  box-sizing: border-box;
+  display: inline-flex;
   align-items: center;
-  text-decoration-skip-ink: auto;
-  position: relative;
+  justify-content: flex-start;
   border-radius: 4px;
   gap: 8px;
-  font-family: var(--font-poppins);
   text-decoration: none;
   cursor: pointer;
-  font-size: var(--fs-sm);
+  transition: all 0.25s ease-in-out;
+  border: none;
+  white-space: nowrap;
 }
-.primaryButton:hover {
-  background-color: #212539 !important;
+
+.primaryButton {
+  &:hover {
+    background-color: #212539 !important;
+  }
 }
 
 .secondaryButton {
-  box-sizing: inherit;
-  display: flex;
-  align-items: center;
-  text-decoration-skip-ink: auto;
-  position: relative;
-  border-radius: 4px;
-  gap: 8px;
-  font-family: var(--font-poppins);
-  text-decoration: none;
-  cursor: pointer;
-  font-size: var(--fs-sm);
   background-color: transparent;
-}
-.secondaryButton:hover {
-  opacity: 0.5s;
-  background-color: #20caca !important;
+  &:hover {
+    opacity: 0.8;
+    background-color: #20caca !important;
+  }
 }
 
 .accentButton {
-  box-sizing: inherit;
-  display: flex;
-  align-items: center;
-  text-decoration-skip-ink: auto;
-  position: relative;
-  border-radius: 4px;
-  gap: 8px;
-  font-family: var(--font-poppins);
-  text-decoration: none;
-  cursor: pointer;
-  font-size: var(--fs-sm);
+  &:hover {
+    text-decoration: underline;
+  }
 }
-.accentButton:hover {
-  // color: var(--cyan) !important;
-  text-decoration: underline;
-}
-// .accentButton:hover svg {
-//   fill: var(--cyan) !important;
-// }
 
-// .filled {
-// }
 .outline {
   border: 1px solid var(--cyan);
 }
 
-.small {
-  padding: 0.50rem 1.2rem;
-  text-align: center;
+.sm {
+  padding: 0.4rem 0.75rem !important;
 }
-.medium {
-  padding: 0.70rem 1.2rem;
-  text-align: center;
+
+.md {
+  padding: 0.6rem 1rem !important;
 }
-.large {
-  padding: 0.75rem 3rem;
-  text-align: center;
+
+.lg {
+  padding: 0.75rem 3rem !important;
 }
+
 .none {
-  padding: 0.50rem 0rem 0.50rem 0;
-  text-align: center;
+  padding: 0.5rem 0rem !important;
 }
 
 @media (max-width: 378px) {
-  .small {
-    padding-left: 0px;
+  .small,
+  .medium,
+  .large {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 }
-

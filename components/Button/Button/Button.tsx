@@ -10,7 +10,7 @@ interface ButtonProps {
   text: string;
   colour?: string;
   fontSize?: string;
-  submissionType?: "submit";
+  submissionType?: "submit" | "button" | "reset";
   backgroundColour?: string;
   size?: "sm" | "md" | "lg" | "none";
   type?: "primary" | "secondary" | "accent";
@@ -26,224 +26,69 @@ export const Button: React.FC<ButtonProps> = ({
   fontSize,
   colour,
   backgroundColour,
-  type,
-  size,
+  type = "primary",
+  size = "md",
   onClick,
-  submissionType,
+  submissionType = "button",
 }) => {
-  if (type === "accent")
+  const dynamicStyles: React.CSSProperties = {
+    color: colour || "#00FFFF",
+    backgroundColor: backgroundColour || "transparent",
+    fontSize: fontSize || "14px",
+  };
+
+  const classNames = [
+    styles.baseButton,
+    styles[`${type}Button`], 
+    styles[variant],       
+    styles[size],          
+  ].filter(Boolean).join(" ");
+
+  const content = (
+    <>
+      {children}
+      {text}
+    </>
+  );
+
+  // external Link
+  if (link && external) {
     return (
-      <>
-        {link ? (
-          <a
-            style={{
-              color: colour ? colour : "#00FFFF",
-              backgroundColor: backgroundColour
-                ? backgroundColour
-                : "transparent",
-              fontSize: fontSize ? fontSize : "14px",
-            }}
-            className={`${styles.accentButton} ${
-              variant === "filled"
-                ? styles.filled
-                : variant === "outline"
-                ? styles.outline
-                : null
-            } ${
-              size === "lg"
-                ? styles.large
-                : size === "sm"
-                ? styles.small
-                : size === "md"
-                ? styles.medium
-                : styles.none
-            }`}
-            href={link}
-            target={external ? "_blank" : "_self"}
-            rel="noreferrer"
-            onClick={onClick}
-            type={submissionType}
-          >
-            {children}
-            {text}
-          </a>
-        ) : (
-          <a
-            style={{
-              color: colour ? colour : "#00FFFF",
-              backgroundColor: backgroundColour
-                ? backgroundColour
-                : "transparent",
-              fontSize: fontSize ? fontSize : "14px",
-            }}
-            className={`${styles.accentButton} ${
-              variant === "filled"
-                ? styles.filled
-                : variant === "outline"
-                ? styles.outline
-                : null
-            } ${
-              size === "lg"
-                ? styles.large
-                : size === "sm"
-                ? styles.small
-                : size === "md"
-                ? styles.medium
-                : styles.none
-            }`}
-            target={external ? "_blank" : "_self"}
-            rel="noreferrer"
-            onClick={onClick}
-            type={submissionType}
-          >
-            {children}
-            {text}
-          </a>
-        )}
-      </>
+      <a
+        href={link}
+        className={classNames}
+        style={dynamicStyles}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={onClick}
+      >
+        {content}
+      </a>
     );
-  else if (type === "secondary")
+  }
+
+  // internal Next.js Link
+  if (link) {
     return (
-      <>
-        {link ? (
-          <Link href={link}>
-            <a
-              style={{
-                color: colour ? colour : "#00FFFF",
-                backgroundColor: backgroundColour
-                  ? backgroundColour
-                  : "transparent",
-                fontSize: fontSize ? fontSize : "14px",
-              }}
-              className={`${styles.secondaryButton} ${
-                variant === "filled"
-                  ? styles.filled
-                  : variant === "outline"
-                  ? styles.outline
-                  : null
-              } ${
-                size === "lg"
-                  ? styles.large
-                  : size === "sm"
-                  ? styles.small
-                  : size === "md"
-                  ? styles.medium
-                  : styles.none
-              }`}
-              href={link}
-              onClick={onClick}
-              type={submissionType}
-            >
-              {children}
-              {text}
-            </a>
-          </Link>
-        ) : (
-          <a
-            style={{
-              color: colour ? colour : "#00FFFF",
-              backgroundColor: backgroundColour
-                ? backgroundColour
-                : "transparent",
-              fontSize: fontSize ? fontSize : "14px",
-            }}
-            className={`${styles.secondaryButton} ${
-              variant === "filled"
-                ? styles.filled
-                : variant === "outline"
-                ? styles.outline
-                : null
-            } ${
-              size === "lg"
-                ? styles.large
-                : size === "sm"
-                ? styles.small
-                : size === "md"
-                ? styles.medium
-                : styles.none
-            }`}
-            target={external ? "_blank" : "_self"}
-            rel="noreferrer"
-            onClick={onClick}
-            type={submissionType}
-          >
-            {children}
-            {text}
-          </a>
-        )}
-      </>
+      <Link 
+        href={link} 
+        className={classNames} 
+        style={dynamicStyles}
+        onClick={onClick}
+      >
+        {content}
+      </Link>
     );
-  else
-    return (
-      <>
-        {link ? (
-          <Link href={link}>
-            <a
-              style={{
-                color: colour ? colour : "#00FFFF",
-                backgroundColor: backgroundColour
-                  ? backgroundColour
-                  : "transparent",
-                fontSize: fontSize ? fontSize : "14px",
-              }}
-              className={`${styles.primaryButton} ${
-                variant === "filled"
-                  ? styles.filled
-                  : variant === "outline"
-                  ? styles.outline
-                  : null
-              } ${
-                size === "lg"
-                  ? styles.large
-                  : size === "sm"
-                  ? styles.small
-                  : size === "md"
-                  ? styles.medium
-                  : styles.none
-              }`}
-              href={link}
-              target={external ? "_blank" : "_self"}
-              rel="noreferrer"
-              onClick={onClick}
-              type={submissionType}
-            >
-              {children}
-              {text}
-            </a>
-          </Link>
-        ) : (
-          <a
-            style={{
-              color: colour ? colour : "#00FFFF",
-              backgroundColor: backgroundColour
-                ? backgroundColour
-                : "transparent",
-              fontSize: fontSize ? fontSize : "14px",
-            }}
-            className={`${styles.primaryButton} ${
-              variant === "filled"
-                ? styles.filled
-                : variant === "outline"
-                ? styles.outline
-                : null
-            } ${
-              size === "lg"
-                ? styles.large
-                : size === "sm"
-                ? styles.small
-                : size === "md"
-                ? styles.medium
-                : styles.none
-            }`}
-            target={external ? "_blank" : "_self"}
-            rel="noreferrer"
-            onClick={onClick}
-            type={submissionType}
-          >
-            {children}
-            {text}
-          </a>
-        )}
-      </>
-    );
+  }
+
+  return (
+    <button
+      type={submissionType}
+      className={classNames}
+      style={dynamicStyles}
+      onClick={onClick}
+    >
+      {content}
+    </button>
+  );
 };

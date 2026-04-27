@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import styles from "./Education.module.scss";
 import { motion as m } from "framer-motion";
+import Image from "next/image";
+import React from "react";
+import styles from "./Education.module.scss";
 
 interface EducationProps {}
 
@@ -36,7 +36,7 @@ export const Education: React.FC<EducationProps> = ({}) => {
                   height={60}
                   width={90}
                   src="/assets/images/about/glyndwr-uni.png"
-                  alt=""
+                  alt="Wrexham University"
                 />
               </div>
               <div className={styles.cardTextContainer}>
@@ -53,14 +53,13 @@ export const Education: React.FC<EducationProps> = ({}) => {
                   Wrexham Glyndwr University
                 </a>
                 <p>
-                  Graduated with{" "}
-                  <span className={styles.bold}>First-Class </span> Honours.
+                  Graduated with <span className={styles.bold}>First-Class </span> Honours.
                 </p>
                 <div className={styles.cardList}>
                   <p>
                     <span>Course Content: </span>
-                    Computer Networks & Security, Computer Science, Problem
-                    Solving with Programming, Project Management and more.
+                    Computer Networks & Security, Computer Science, Problem Solving with
+                    Programming, Project Management and more.
                   </p>
                 </div>
               </div>
