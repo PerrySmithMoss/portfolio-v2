@@ -2,11 +2,11 @@ import Link, { LinkProps } from "next/link";
 import React from "react";
 
 export type DefaultLinkProps = {
-  href?: string;
+  href: string;
   children: React.ReactNode;
   openInNewTab?: boolean;
   className?: string;
-} & React.ComponentPropsWithoutRef<"a"> &
+} & Omit<React.ComponentPropsWithoutRef<"a">, "href"> &
   LinkProps;
 
 export const DefaultLink: React.FC<DefaultLinkProps> = ({
@@ -16,28 +16,30 @@ export const DefaultLink: React.FC<DefaultLinkProps> = ({
   className,
   ...rest
 }) => {
-  const isNewTab =
+  const isExternal =
     openInNewTab !== undefined
       ? openInNewTab
       : href && !href.startsWith("/") && !href.startsWith("#");
 
-  if (!isNewTab) {
+  if (!isExternal) {
     return (
-      <Link href={href}>
-        <a {...rest} className={className}>
-          {children}
-        </a>
+      <Link 
+        href={href} 
+        className={className} 
+        {...rest}
+      >
+        {children}
       </Link>
     );
   }
 
   return (
     <a
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
-      href={href}
+      className={`${className || ""} cursor-newtab`}
       {...rest}
-      className={`${className} cursor-newtab`}
     >
       {children}
     </a>

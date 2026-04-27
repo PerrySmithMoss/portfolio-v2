@@ -1,38 +1,40 @@
 import Link from "next/link";
 import React from "react";
-import { DefaultLink } from "./DefaultLink";
 import styles from "./Link.module.scss";
 
-interface CustomLinkProps {
+interface CustomLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   children: React.ReactNode;
   href: string;
-  className: string;
+  className?: string;
 }
 
 export const CustomLink: React.FC<CustomLinkProps> = ({
   children,
-  className,
+  className = "",
   href,
   ...rest
 }) => {
-  const isNewTab = href && !href.startsWith("/") && !href.startsWith("#");
+  const isExternal = href && !href.startsWith("/") && !href.startsWith("#");
 
-  if (!isNewTab) {
+  if (!isExternal) {
     return (
-      <Link href={href}>
-        <a {...rest} className={className}>
-          {children}
-        </a>
+      <Link 
+        href={href} 
+        className={className} 
+        {...rest}
+      >
+        {children}
       </Link>
     );
   }
+
   return (
     <a
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
-      href={href}
-      {...rest}
       className={`${styles.customLink} ${className}`}
+      {...rest}
     >
       {children}
     </a>
