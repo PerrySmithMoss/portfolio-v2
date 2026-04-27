@@ -1,11 +1,9 @@
-
 .wrapper {
   margin: 0px auto;
   max-width: 1000px;
   color: var(--white);
   font-family: "Poppins-Regular";
-  padding-top: 100px;
-  padding-bottom: 50px;
+  padding: 30px 0;
 }
 .wrapper h2 {
   color: var(--white);
@@ -31,7 +29,7 @@
 .getInTouchGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 4rem;
+  gap: 3rem;
   // margin-top: 4rem;
   justify-items: center;
   align-items: center;
@@ -54,16 +52,16 @@
   // padding: 3rem;
   // background-color: #141724;
   border-radius: 12px;
-.error {
-  color: #ef4444;
-  margin: 0;
-  font-size: 14px;
-}
-.success {
-  color: #4BB543;
-  margin: 0;
-  font-size: 14px;
-}
+  .error {
+    color: #ef4444;
+    margin: 0;
+    font-size: 14px;
+  }
+  .success {
+    color: #4bb543;
+    margin: 0;
+    font-size: 14px;
+  }
   input[type="text"] {
     font-family: "Poppins-Regular";
   }
@@ -173,16 +171,20 @@
   }
   .getInTouchGrid {
     grid-template-columns: repeat(1, minmax(0, 1fr));
-    gap: 3rem;
+    gap: 2rem;
   }
   .mailSVG {
     width: 250px;
     height: 250px;
   }
 }
-@media (max-width: 768px) {
+
+@media (max-width: 520px) {
+  .getInTouchGrid {
+    gap: 1.5rem;
+  }
   .wrapper {
-    padding-top: 0px;
+    padding: 20px 0;
   }
 }
 

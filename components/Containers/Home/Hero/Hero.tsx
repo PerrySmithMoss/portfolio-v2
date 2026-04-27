@@ -1,33 +1,29 @@
-import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
-import styles from "./Hero.module.scss";
+import React, { useEffect, useState } from "react";
 import { ScrollDown } from "../../../ScrollDown/ScrollDown";
-import { motion as m } from "framer-motion";
+import styles from "./Hero.module.scss";
 
 interface HeroProps {}
 
-export const Hero: React.FC<HeroProps> = ({}) => {
+export const Hero: React.FC<HeroProps> = () => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 1000);
+    const timeout = setTimeout(() => setIsMounted(true), 100);
     return () => clearTimeout(timeout);
   }, []);
 
-  const one = (
-    <div>
+  const items = [
+    <header key="one">
       <h1>Greetings, my name is</h1>
-    </div>
-  );
-
-  const two = (
-    <div>
+    </header>,
+    
+    <div key="two">
       <h2>Perry Smith-Moss.</h2>
-    </div>
-  );
-
-  const three = (
-    <div>
+    </div>,
+    
+    <div key="three">
       <p>
         I am a dynamic software engineer, dedicated to unravelling complex
         business challenges by leveraging cutting-edge technology. At this
@@ -35,7 +31,7 @@ export const Hero: React.FC<HeroProps> = ({}) => {
         portal for{" "}
         <a
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           href="https://www.whocanfixmycar.com"
           className={styles.heroLink}
         >
@@ -43,35 +39,35 @@ export const Hero: React.FC<HeroProps> = ({}) => {
         </a>
         .
       </p>
+    </div>,
+    
+    <div key="four" className={styles.heroButtonContainer}>
+      <Link href="/projects" className={styles.heroButton}>
+        Projects
+      </Link>
+    </div>,
+    
+    <div key="five">
+      <ScrollDown />
     </div>
-  );
-
-  const four = (
-    <div className={styles.heroButtonContainer}>
-      <div>
-        <Link href="/projects">
-          <a className={styles.heroButton}>Projects</a>
-        </Link>
-      </div>
-    </div>
-  );
-
-  const five = <ScrollDown />;
-
-  const items = [one, two, three, four, five];
+  ];
 
   return (
     <section className={styles.heroContainer}>
       {isMounted &&
         items.map((item, i) => (
-          <m.div
+          <motion.div
             key={i}
             initial={{ x: i === 4 ? 0 : 60, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: i * 0.1 }}
+            transition={{ 
+              delay: i * 0.1,
+              duration: 0.5,
+              ease: "easeOut"
+            }}
           >
             {item}
-          </m.div>
+          </motion.div>
         ))}
     </section>
   );

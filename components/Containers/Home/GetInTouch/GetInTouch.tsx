@@ -1,9 +1,9 @@
+import { motion as m } from "framer-motion";
 import React from "react";
-import { ContactForm } from "./ContactForm";
-import styles from "./GetInTouch.module.scss";
 import { MdEmail } from "react-icons/md";
 import { SocialLinks } from "../../../SocialLinks/SocialLinks";
-import { motion as m } from "framer-motion";
+import { ContactForm } from "./ContactForm";
+import styles from "./GetInTouch.module.scss";
 
 interface GetInTouchProps {}
 
@@ -11,7 +11,6 @@ export const GetInTouch: React.FC<GetInTouchProps> = ({}) => {
   return (
     <section className={styles.wrapper}>
       <m.div className={styles.getInTouchContainer}
-      
       initial={"offscreen"}
       variants={{
         offscreen: {
