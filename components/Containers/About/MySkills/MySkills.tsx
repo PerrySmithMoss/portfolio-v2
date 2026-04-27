@@ -1,13 +1,12 @@
 import { motion as m } from "framer-motion";
 import React from "react";
+import { FaAws } from "react-icons/fa";
 import {
-  SiAmazonaws,
   SiDocker,
   SiExpress,
   SiGit,
   SiJavascript,
   SiKubernetes,
-  SiMicrosoftazure,
   SiMongodb,
   SiMysql,
   SiNextdotjs,
@@ -18,6 +17,7 @@ import {
   SiTerraform,
   SiTypescript
 } from "react-icons/si";
+import { VscAzure } from "react-icons/vsc";
 import styles from "./MySkills.module.scss";
 
 interface MySkillsProps {}
@@ -50,13 +50,13 @@ export const MySkills: React.FC<MySkillsProps> = ({}) => {
             <div>
               <li>
                 <div>
-                  <SiAmazonaws color="#FF9900" size={45} />
+                  <FaAws color="#FF9900" size={45} />
                 </div>
                 <p>AWS</p>
               </li>
               <li>
                 <div>
-                <SiMicrosoftazure color="008AD7" size={40} />
+                <VscAzure color="008AD7" size={40} />
               </div>
               <p>Azure</p>
               </li>
@@ -190,13 +190,13 @@ export const MySkills: React.FC<MySkillsProps> = ({}) => {
             </li>
         <li>
                 <div>
-                  <SiAmazonaws color="#FF9900" size={45} />
+                  <FaAws color="#FF9900" size={45} />
                 </div>
                 <p>AWS</p>
               </li>
               <li>
                 <div>
-                <SiMicrosoftazure color="008AD7" size={40} />
+                <VscAzure color="008AD7" size={40} />
               </div>
               <p>Azure</p>
               </li>
