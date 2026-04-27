@@ -1,11 +1,11 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
-import { SEO } from "../../components/SEO/SEO";
-import { getFileBySlug, getFiles, getRecommendations } from "../../utils/files";
-import { IParams } from "../../types/IParams";
 import { PostContainer } from "../../components/Containers/Blog/Post/PostContainer";
+import { SEO } from "../../components/SEO/SEO";
 import { IPost } from "../../types/IBlog";
 import { IHeading } from "../../types/IMedia";
+import { IParams } from "../../types/IParams";
+import { getFileBySlug, getFiles, getRecommendations } from "../../utils/files";
 
 interface BlogPostProps {
   frontMatter: IPost;
@@ -41,11 +41,13 @@ export default BlogPost;
 export const getStaticPaths: GetStaticPaths = async () => {
   const files = await getFiles("content/blog");
 
-  const paths = files.map((filename) => ({
-    params: {
-      slug: filename.replace(".md", ""),
-    },
-  }));
+  const paths = files
+    .filter((path) => /\.mdx?$/.test(path))
+    .map((filename) => ({
+      params: {
+        slug: filename.replace(/\.mdx?$/, ""),
+      },
+    }));
 
   return {
     paths,
@@ -56,10 +58,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const { slug } = context.params as IParams;
 
-  const { frontMatter, mdxSource, headings } = await getFileBySlug(
-    "content/blog",
-    slug
-  );
+  const { frontMatter, mdxSource, headings } = await getFileBySlug("content/blog", slug);
 
   const recommendations = await getRecommendations("content/blog", slug);
   return {

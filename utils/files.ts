@@ -2,16 +2,16 @@ import { promises as fsPromise } from "fs";
 import matter from "gray-matter";
 import path from "path";
 
-import { ISnippet } from "../types/ISnippet";
 import { IPost } from "../types/IBlog";
-import { IProject } from "../types/IProject";
 import { IHeading, IMedia } from "../types/IMedia";
+import { IProject } from "../types/IProject";
+import { ISnippet } from "../types/ISnippet";
 import { readingTime } from "./words";
 
 import { bundleMDX } from "mdx-bundler";
 import mdxPrism from "mdx-prism";
-import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import { slugify } from "./slugify";
 
@@ -21,18 +21,13 @@ import { slugify } from "./slugify";
  * @returns {string[]} An array of file strings
  */
 export async function getFiles(pathOfFiles: string): Promise<string[]> {
-  let files;
   try {
-    files = await fsPromise.readdir(path.join(pathOfFiles));
-  } catch (e) {
-    console.log("Error while trying to read files: ", e);
-  }
-
-  if (files === undefined) {
-    console.log("Files undefined");
-    return [];
-  } else {
+    const fullPath = path.join(process.cwd(), pathOfFiles);
+    const files = await fsPromise.readdir(fullPath);
     return files;
+  } catch (e) {
+    console.error("Error reading directory:", e);
+    return [];
   }
 }
 
@@ -42,16 +37,9 @@ export async function getFiles(pathOfFiles: string): Promise<string[]> {
  * @param {string} file - The name of the file which you want to read
  * @returns {string} A string of the files content
  */
-export async function readFile(
-  pathOfFile: string,
-  file: string,
-  encoding = "utf-8" as BufferEncoding
-): Promise<string> {
-  if (!pathOfFile) {
-    throw new Error("A file path is required...");
-  }
-
-  return fsPromise.readFile(path.join(pathOfFile, file), encoding);
+export async function readFile(pathOfFile: string, file: string): Promise<string> {
+  const fullPath = path.join(process.cwd(), pathOfFile, file);
+  return fsPromise.readFile(fullPath, "utf8");
 }
 
 /**
@@ -59,9 +47,7 @@ export async function readFile(
  * @param {string} pathOfFiles - The path of where the files are stored
  * @returns {data[]} An array of data objects which contain the front matter of a markdown file
  */
-export async function getMarkdownFrontMatter(
-  pathOfFiles: string
-): Promise<IMedia[]> {
+export async function getMarkdownFrontMatter(pathOfFiles: string): Promise<IMedia[]> {
   const files = await getFiles(pathOfFiles);
 
   let parsedMarkdownFiles;
@@ -74,7 +60,7 @@ export async function getMarkdownFrontMatter(
         return {
           ...(data as ISnippet | IPost | IProject),
         };
-      })
+      }),
     );
   } catch (e) {
     console.log("Error while trying to parse files: ", e);
@@ -96,7 +82,7 @@ export async function getMarkdownFrontMatter(
  */
 export async function getFileBySlug(
   pathOfFile: string,
-  slug: string
+  slug: string,
 ): Promise<{
   mdxSource: string;
   frontMatter: {
@@ -116,7 +102,7 @@ export async function getFileBySlug(
       process.cwd(),
       "node_modules",
       "esbuild",
-      "esbuild.exe"
+      "esbuild.exe",
     );
   } else {
     process.env.ESBUILD_BINARY_PATH = path.join(
@@ -124,13 +110,13 @@ export async function getFileBySlug(
       "node_modules",
       "esbuild",
       "bin",
-      "esbuild"
+      "esbuild",
     );
   }
 
   const { code, frontmatter } = await bundleMDX({
     source: source,
-    cwd: "/" + pathOfFile + slug + ".md",
+    cwd: path.join(process.cwd(), pathOfFile),
     mdxOptions(options) {
       options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkGfm];
       options.rehypePlugins = [
@@ -149,10 +135,9 @@ export async function getFileBySlug(
       ];
       return options;
     },
-    esbuildOptions(options, frontmatter) {
+    esbuildOptions(options) {
       options.minify = false;
-      options.target = ["chrome60", "firefox60", "safari11", "edge18"];
-
+      options.target = ["es2022", "chrome91", "firefox90", "safari15", "edge91"];
       return options;
     },
   });
@@ -166,7 +151,7 @@ export async function getFileBySlug(
       content,
       indent: flag.length,
       slug: slugify(content),
-    })
+    }),
   );
 
   return {
@@ -188,7 +173,7 @@ export async function getFileBySlug(
  */
 export async function getRecommendations(
   pathOfFile: string,
-  slug: string
+  slug: string,
 ): Promise<(IMedia | IMedia[])[]> {
   const files = await getMarkdownFrontMatter(pathOfFile);
 
@@ -197,7 +182,7 @@ export async function getRecommendations(
   const otherFiles = files.filter((file: IMedia) => file.slug !== slug);
 
   const similarRecommendations = otherFiles.filter((file: IMedia) =>
-    file.tags.some((tag: string) => currentFile!.tags.includes(tag))
+    file.tags.some((tag: string) => currentFile!.tags.includes(tag)),
   );
 
   const recommendations =
@@ -207,9 +192,9 @@ export async function getRecommendations(
           otherFiles.filter(
             (file: any) =>
               !similarRecommendations.some(
-                (recommendation: IMedia) => (recommendation.slug = file.slug)
-              )
-          )
+                (recommendation: IMedia) => (recommendation.slug = file.slug),
+              ),
+          ),
         );
 
   return recommendations.slice(0, 3);
