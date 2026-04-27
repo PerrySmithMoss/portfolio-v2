@@ -1,5 +1,5 @@
-import React from "react";
 import Link from "next/link";
+import React from "react";
 import { ISnippet } from "../../../../types/ISnippet";
 import {
   DynamicTechIcons,
@@ -13,16 +13,21 @@ interface SnippetCardProps {
 
 export const SnippetCard: React.FC<SnippetCardProps> = ({ snippet }) => {
   return (
-    <Link href={`/snippets/${snippet.slug}`}>
-    <article id={snippet.id} className={styles.cardWrapper}>
-      <div className={styles.cardBody}>
-        <div className={styles.cardHeader}>
-          <h4>{snippet.title}</h4>
+    <Link 
+      href={`/snippets/${snippet.slug}`} 
+      className={styles.cardLink}
+    >
+      <article id={snippet.id} className={styles.cardWrapper}>
+        <div className={styles.cardBody}>
+          <header className={styles.cardHeader}>
+            <h4>{snippet.title}</h4>
+          </header>
+          <div className={styles.iconWrapper}>
+            <DynamicTechIcons techs={snippet.tech as Array<TechListType>} />
+          </div>
+          <p>{snippet.excerpt}</p>
         </div>
-        <DynamicTechIcons techs={snippet.tech as Array<TechListType>} />
-        <p>{snippet.excerpt}</p>
-      </div>
-    </article>
+      </article>
     </Link>
   );
 };

@@ -1,12 +1,12 @@
-import React from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
+import React from "react";
 import { ISnippet } from "../../../../types/ISnippet";
 import {
   DynamicTechIcons,
   TechListType,
 } from "../../../DynamicIcon/DynamicTechIcon";
 import styles from "./Snippets.module.scss";
-import { motion as m } from "framer-motion";
 
 interface SnippetCardProps {
   snippet: ISnippet;
@@ -14,21 +14,23 @@ interface SnippetCardProps {
 
 export const SnippetCard: React.FC<SnippetCardProps> = ({ snippet }) => {
   return (
-    <m.li
+    <motion.li
       className={styles.cardWrapper}
       initial={{ y: 60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 0.1 }}
+      transition={{ delay: 0.1, duration: 0.4 }}
     >
-      <Link href={`/snippets/${snippet.slug}`}>
+      <Link href={`/snippets/${snippet.slug}`} className={styles.cardLink}>
         <div className={styles.cardBody}>
-          <div className={styles.cardHeader}>
+          <header className={styles.cardHeader}>
             <h4>{snippet.title}</h4>
+          </header>
+          <div className={styles.iconContainer}>
+            <DynamicTechIcons techs={snippet.tech as Array<TechListType>} />
           </div>
-          <DynamicTechIcons techs={snippet.tech as Array<TechListType>} />
           <p>{snippet.excerpt}</p>
         </div>
       </Link>
-    </m.li>
+    </motion.li>
   );
 };

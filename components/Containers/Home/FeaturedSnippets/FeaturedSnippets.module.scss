@@ -3,7 +3,7 @@
   max-width: 1000px;
   color: var(--white);
   font-family: "Poppins-Regular";
-  padding: 100px 0;
+  padding: 30px 0;
   // min-height: 100vh;
 }
 .wrapper h2 {
@@ -39,7 +39,9 @@
   color: var(--cyan);
   position: relative;
   display: inline-block;
-  transition: transform 0.2s, -webkit-transform 0.2s;
+  transition:
+    transform 0.2s,
+    -webkit-transform 0.2s;
   font-size: var(--fs-sm);
   cursor: pointer;
 }
@@ -72,10 +74,14 @@
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   // padding: 8px;
   cursor: pointer;
-  -webkit-box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow:
+    0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  box-shadow:
+    0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
   // border: 1px solid rgb(75, 85, 99, 1);
 }
 
@@ -154,7 +160,7 @@
 
 @media (max-width: 520px) {
   .wrapper {
-    padding: 0px 0 100px 0;
+    padding: 0px 0 30px 0;
   }
 }
 
@@ -169,4 +175,3 @@
     margin-top: 1.5rem;
   }
 }
-

@@ -1,15 +1,14 @@
-import React from "react";
+import { getMDXComponent } from "mdx-bundler/client";
 import Link from "next/link";
+import React, { useMemo } from "react";
 import { ISnippet } from "../../../../types/ISnippet";
 import {
   DynamicTechIcons,
   TechListType,
 } from "../../../DynamicIcon/DynamicTechIcon";
+import { MDXComponents } from "../../../MDXComponents/MDXComponents";
 import { SocialLinks } from "../../../SocialLinks/SocialLinks";
 import styles from "./Snippet.module.scss";
-import { MDXComponents } from "../../../MDXComponents/MDXComponents";
-import { getMDXComponent } from "mdx-bundler/client";
-import { IHeading } from "../../../../types/IMedia";
 
 interface SnippetProps {
   content: string;
@@ -20,58 +19,59 @@ interface SnippetProps {
 export const SnippetContainer: React.FC<SnippetProps> = ({
   content,
   frontMatter,
-  recommendations
+  recommendations,
 }) => {
-  const Component = React.useMemo(() => getMDXComponent(content), [content]);
+  const Component = useMemo(() => getMDXComponent(content), [content]);
+
   return (
-      <section className={styles.wrapper}>
-        <div className={styles.grid}>
-          <article>
+    <section className={styles.wrapper}>
+      <div className={styles.grid}>
+        <article className={styles.mainContent}>
+          <header className={styles.header}>
             <h1>{frontMatter.title}</h1>
-            <p>{frontMatter.excerpt}</p>
-            <div>
+            <p className={styles.description}>{frontMatter.excerpt}</p>
+            <div className={styles.techIcons}>
               <DynamicTechIcons
                 techs={frontMatter.tech as Array<TechListType>}
               />
             </div>
+          </header>
 
-            <div className={styles.articleBody}>
-            <article className={`${styles.markdown} markdown`}>
-              <Component
-                components={{
-                  MDXComponents,
-                }}
-              />
-              </article>
-            </div>
-          </article>
-          <aside className={styles.sidebar}>
-            <div className={styles.sidebarOuter}>
-              <div className={styles.sidebarInner}>
-                <h3>Follow me</h3>
-                <div className={styles.socialLinksContainer}>
-                  <SocialLinks />
-                </div>
-                <h3>Other Snippets</h3>
-                <ul className={styles.recommendations}>
-                  {recommendations.map((recommendation: ISnippet) => (
+          <div className={`${styles.markdown} markdown`}>
+            <Component components={MDXComponents} />
+          </div>
+        </article>
+
+        <aside className={styles.sidebar}>
+          <div className={styles.sidebarOuter}>
+            <nav className={styles.sidebarInner}>
+              <h3>Follow me</h3>
+              <div className={styles.socialLinksContainer}>
+                <SocialLinks />
+              </div>
+
+              <h3>Other Snippets</h3>
+              <ul className={styles.recommendations}>
+                {recommendations.map((recommendation) => (
+                  <li key={recommendation.slug}>
                     <Link
-                      key={recommendation.slug}
                       href={`/snippets/${recommendation.slug}`}
+                      className={styles.recommendationLink}
                     >
-                      <li className={styles.recommendationWrapper}>
+                      <div className={styles.recommendationWrapper}>
                         <p>{recommendation.title}</p>
                         <DynamicTechIcons
                           techs={recommendation.tech as Array<TechListType>}
                         />
-                      </li>
+                      </div>
                     </Link>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </aside>
-        </div>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+        </aside>
+      </div>
     </section>
   );
 };
