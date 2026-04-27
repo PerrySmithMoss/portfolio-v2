@@ -1,34 +1,44 @@
-import React from "react";
-import { IPost } from "../../../../types/IBlog";
-import { motion as m } from "framer-motion";
-import styles from "./Blog.module.scss";
-import { Badge } from "../../../Badge/Badge";
+import { motion } from "framer-motion"; // Modern import
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
+import { IPost } from "../../../../types/IBlog";
+import { Badge } from "../../../Badge/Badge";
+import styles from "./Blog.module.scss";
 
 interface BlogCardProps {
   post: IPost;
 }
 
+const cardVariants = {
+  hidden: { y: 60, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { delay: 0.5, duration: 0.4 },
+  },
+};
+
 export const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
   return (
-    <m.article
-      key={post.id}
+    <motion.article
       className={styles.otherPost}
-      initial={{ y: 60, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 0.5 }}
+      initial="hidden"
+      animate="visible"
+      variants={cardVariants}
     >
-      <Image
-        height={500}
-        width={750}
-        objectFit="cover"
-        className={styles.image}
-        src={post.image}
-        alt={post.title}
-      />
-
-      <div>
+      <div className={styles.imageWrapper}>
+        <Image
+          src={post.image}
+          alt={post.title}
+          width={750}
+          height={500}
+          sizes="(max-width: 768px) 100vw, 33vw" // Helps Next.js optimize
+          className={styles.image}
+          priority
+        />
+      </div>
+      <div className={styles.content}>
         <div className={styles.badgeWrapper}>
           <Badge
             colour="rgb(34, 139, 230)"
@@ -37,15 +47,11 @@ export const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
             size="md"
           />
         </div>
-        <Link href={`/blog/${post!.slug}`}>
-          <div>
-            <h3>{post.title}</h3>
-          </div>
+        <Link href={`/blog/${post.slug}`} className={styles.titleLink}>
+          <h3>{post.title}</h3>
         </Link>
-        <div>
-          <p>{post.description}</p>
-        </div>
+        <p className={styles.description}>{post.description}</p>
       </div>
-    </m.article>
+    </motion.article>
   );
 };

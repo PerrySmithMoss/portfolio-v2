@@ -3,7 +3,7 @@
   max-width: 1200px;
   color: var(--white);
   font-family: "Poppins-Regular";
-  padding-bottom: 100px;
+  padding-bottom: 75px;
 }
 
 .wrapper {
@@ -39,7 +39,6 @@
 .subHeading p {
   font-size: clamp(14px, 3vw, 16px);
 }
-
 
 .subtextContainer {
   display: flex;
@@ -166,6 +165,24 @@
 }
 
 .otherPost {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .imageWrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    line-height: 0;
+  }
+
+  .image {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+  }
+
   img {
     border-radius: 8px;
   }
@@ -208,7 +225,7 @@
   }
   .allPostsGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    margin-top: 50px;
+    gap: 2.5rem;
   }
   .postContent {
     margin-left: 20px !important;
@@ -229,6 +246,12 @@
   }
 }
 
+@media (max-width: 550px) {
+  .wrapper {
+    margin-top: 85px;
+  }
+}
+
 @media (max-width: 510px) {
   .post {
     flex-direction: column;
@@ -236,13 +259,16 @@
   .postContent {
     margin-left: 0px !important;
   }
+  .allPostsGrid {
+    margin-top: 20px;
+  }
   .featuredPost {
     p {
-      margin-top: .5rem;
+      margin-top: 0.5rem;
       font-size: 14px;
     }
-    h2{
+    h2 {
       font-size: 18px;
     }
-}
+  }
 }
