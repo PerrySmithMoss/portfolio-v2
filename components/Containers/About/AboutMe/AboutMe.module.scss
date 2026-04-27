@@ -16,12 +16,6 @@
   align-items: center;
 }
 
-.aboutMeContainer {
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-  gap: 50px;
-}
-
 .aboutMeContainer p {
   color: var(--light-white);
   font-size: clamp(14px, 3vw, 16px);
@@ -52,30 +46,18 @@
   text-decoration: underline;
 }
 
-.pictureContainer {
-  position: relative;
-  max-width: 300px;
-}
-
-.pictureWrapper {
-  display: block;
-  position: relative;
-  width: 100%;
-  border-radius: 4px;
-}
-.pictureWrapper img {
-  border-radius: 8px;
-}
 
 @media (max-width: 768px) {
   .aboutMeContainer {
     display: block;
   }
-  .pictureContainer {
-    margin: 50px auto 0px;
-    width: 70%;
-  }
   .aboutMeWrapper {
     margin-top: 100px;
+  }
+}
+
+@media (max-width: 550px) {
+  .aboutMeWrapper {
+    margin-top: 75px;
   }
 }

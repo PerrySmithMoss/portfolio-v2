@@ -1,7 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import styles from "./AboutMe.module.scss";
 import { motion as m } from "framer-motion";
+import React from "react";
+import styles from "./AboutMe.module.scss";
 
 interface AboutMeProps {}
 
@@ -53,17 +52,6 @@ export const AboutMe: React.FC<AboutMeProps> = ({}) => {
               will not only make their business more efficent but also their
               customers time.
             </p>
-          </div>
-          <div className={styles.pictureContainer}>
-            <div className={styles.pictureWrapper}>
-              {/* @TODO: Add picture of myself */}
-              <Image
-                src="/assets/images/about/picture.png"
-                height={500}
-                width={500}
-                alt="Picture of Perry Smith-Moss"
-              />
-            </div>
           </div>
         </div>
       </m.div>
