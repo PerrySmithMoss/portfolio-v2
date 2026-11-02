@@ -186,7 +186,5 @@ export const Navbar: React.FC<NavbarProps> = () => {
 const navLinks = [
   { id: 1, name: "Home", url: "/" },
   { id: 2, name: "Projects", url: "/projects" },
-  { id: 3, name: "Blog", url: "/blog" },
-  { id: 4, name: "Snippets", url: "/snippets" },
-  { id: 5, name: "About", url: "/about" },
+  { id: 3, name: "About", url: "/about" },
 ];
