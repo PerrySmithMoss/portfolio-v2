@@ -132,6 +132,43 @@
   margin-top: 2rem;
 }
 
+.cardWrapper .cardInner.desktopCard {
+  flex-direction: column;
+  min-height: 0;
+
+  .columnOne {
+    width: 100%;
+    padding: 32px 44px 28px !important;
+  }
+
+  .columnText {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 18px;
+    max-width: none;
+    width: 100%;
+
+    h3,
+    p {
+      grid-column: 1 / -1;
+      margin: 0 !important;
+    }
+
+    p {
+      max-width: 720px;
+    }
+  }
+
+  .buttonContainer {
+    margin-top: 0;
+  }
+
+  .desktopColumn {
+    width: 100%;
+    padding: 0 44px 28px;
+  }
+}
+
 @media (max-width: 970px) {
   .cardInner {
     flex-direction: column;
@@ -181,6 +218,19 @@
 }
 
 @media (max-width: 540px) {
+  .cardWrapper .cardInner.desktopCard {
+    .columnOne {
+      padding: 25px !important;
+    }
+
+    .columnText {
+      grid-template-columns: 1fr;
+    }
+
+    .desktopColumn {
+      padding: 0 16px 24px;
+    }
+  }
   .columnOne {
     padding: 25px !important;
   }

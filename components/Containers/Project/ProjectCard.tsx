@@ -52,7 +52,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             src={coverImage}
             alt={`${title} project preview`}
             fill
-            sizes="(max-width: 768px) 100vw, 33vw"
+            sizes="(max-width: 625px) 100vw, (max-width: 768px) 50vw, 33vw"
             priority
             style={{ objectFit: "cover" }}
           />

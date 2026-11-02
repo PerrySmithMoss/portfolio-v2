@@ -9,6 +9,7 @@ export interface IProject {
   image: string;
   logo: string;
   mockupImage: string;
+  desktopPreview?: boolean;
   coverImage: string;
   description: string;
   tech: string[];

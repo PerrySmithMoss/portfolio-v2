@@ -5,6 +5,7 @@ import { IProject } from "../../../../types/IProject";
 import { Badge } from "../../../Badge/Badge";
 import { Button } from "../../../Button/Button/Button";
 import styles from "./FeaturedProjects.module.scss";
+import { ProjectMockup } from "./ProjectMockup";
 
 interface ProjectCardProps {
   project: IProject;
@@ -42,7 +43,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       viewport={{ once: true, amount: 0.2 }}
       variants={cardVariants}
     >
-      <div className={styles.cardInner}>
+      <div className={`${styles.cardInner} ${project.desktopPreview ? styles.desktopCard : ""}`}>
         <div className={styles.columnOne}>
           <div className={styles.columnText}>
             <h3>{project.title}</h3>
@@ -115,21 +116,32 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             </div>
           </div>
         </div>
-        <div className={styles.columnTwo}>
-          <div className={styles.imageContainer}>
-            <div style={{ width: "100%", height: "100%", position: "relative" }}>
-              <img
-                src={project.mockupImage}
-                alt={`${project.title} mockup image`}
-                style={{ marginRight: "250px" }}
-                className={`${
-                  project.title.toLowerCase() === "handover"
-                    ? styles.mockupImageSmall
-                    : styles.mockupImage
-                }`}
-              />
+        <div
+          className={`${styles.columnTwo} ${
+            project.desktopPreview ? styles.desktopColumn : ""
+          }`}
+        >
+          {project.desktopPreview ? (
+            <ProjectMockup
+              title={project.title}
+              desktopImage={project.mockupImage}
+            />
+          ) : (
+            <div className={styles.imageContainer}>
+              <div style={{ width: "100%", height: "100%", position: "relative" }}>
+                <img
+                  src={project.mockupImage}
+                  alt={`${project.title} mockup image`}
+                  style={{ marginRight: "250px" }}
+                  className={`${
+                    project.title.toLowerCase() === "handover"
+                      ? styles.mockupImageSmall
+                      : styles.mockupImage
+                  }`}
+                />
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </m.li>
