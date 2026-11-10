@@ -6,6 +6,7 @@ import { Badge } from "../../../Badge/Badge";
 import { Button } from "../../../Button/Button/Button";
 import styles from "./FeaturedProjects.module.scss";
 import { ProjectMockup } from "./ProjectMockup";
+import { ProjectDevices } from "../../../ProjectDevices/ProjectDevices";
 
 interface ProjectCardProps {
   project: IProject;
@@ -43,14 +44,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       viewport={{ once: true, amount: 0.2 }}
       variants={cardVariants}
     >
-      <div className={`${styles.cardInner} ${project.desktopPreview ? styles.desktopCard : ""}`}>
+      <div className={`${styles.cardInner} ${project.mobileMockupImage ? styles.deviceCard : project.desktopPreview ? styles.desktopCard : ""}`}>
         <div className={styles.columnOne}>
           <div className={styles.columnText}>
             <h3>{project.title}</h3>
             <p>{project.description}</p>
 
             <div className={styles.badgeContainer}>
-              {project.tech.map((tech, index) => (
+              {project.tech.slice(0, 4).map((tech, index) => (
                 <Badge
                   key={index}
                   text={tech}
@@ -118,13 +119,21 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         </div>
         <div
           className={`${styles.columnTwo} ${
-            project.desktopPreview ? styles.desktopColumn : ""
+            project.mobileMockupImage ? styles.deviceColumn : project.desktopPreview ? styles.desktopColumn : ""
           }`}
         >
-          {project.desktopPreview ? (
+          {project.mobileMockupImage ? (
+            <ProjectDevices
+              title={project.title}
+              desktopImage={project.mockupImage}
+              mobileImage={project.mobileMockupImage}
+            />
+          ) : project.desktopPreview ? (
             <ProjectMockup
               title={project.title}
               desktopImage={project.mockupImage}
+              alt={project.mockupAlt}
+              quality={project.imageQuality}
             />
           ) : (
             <div className={styles.imageContainer}>

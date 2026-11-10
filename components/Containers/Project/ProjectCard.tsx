@@ -5,6 +5,7 @@ import { IProject } from "../../../types/IProject";
 import { Badge } from "../../Badge/Badge";
 import { Button } from "../../Button/Button/Button";
 import styles from "./Projects.module.scss";
+import { ProjectDevices } from "../../ProjectDevices/ProjectDevices";
 
 const EXTERNAL_ICON = (
   <svg
@@ -46,16 +47,27 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       transition={{ duration: 0.4 }}
     >
       <div className={styles.cardBody}>
-        <div className={styles.imageContainer}>
-          <Image
+        <div
+          className={styles.imageContainer}
+          style={project.mobileMockupImage ? { backgroundColor: project.brandColor } : undefined}
+        >
+          {project.mobileMockupImage ? (
+            <ProjectDevices
+              title={title}
+              desktopImage={project.mockupImage}
+              mobileImage={project.mobileMockupImage}
+              compact
+            />
+          ) : <Image
             className={styles.cardImage}
             src={coverImage}
+            quality={project.imageQuality}
             alt={`${title} project preview`}
             fill
             sizes="(max-width: 625px) 100vw, (max-width: 768px) 50vw, 33vw"
             priority
-            style={{ objectFit: "cover" }}
-          />
+            style={{ objectFit: project.coverImageFit ?? "cover" }}
+          />}
         </div>
 
         <div className={styles.cardHeader}>
@@ -63,7 +75,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         </div>
 
         <div className={styles.badgeContainer}>
-          {tags.slice(0, 3).map((tag, index) => (
+          {(project.featuredTags ?? tags).slice(0, 4).map((tag, index) => (
             <Badge
               key={index}
               text={tag}

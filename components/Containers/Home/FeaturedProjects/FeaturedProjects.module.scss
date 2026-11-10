@@ -71,6 +71,7 @@
       .badgeContainer {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         gap: 8px;
       }
 
@@ -131,6 +132,25 @@
   margin-top: 2rem;
 }
 
+.cardWrapper .cardInner.deviceCard {
+  min-height: 460px;
+
+  .columnOne {
+    width: 43%;
+    padding: 48px 24px 48px 36px;
+  }
+
+  .badgeContainer {
+    flex-wrap: wrap;
+  }
+
+  .deviceColumn {
+    width: 57%;
+    min-width: 0;
+    padding: 24px 20px 24px 0;
+  }
+}
+
 .cardWrapper .cardInner.desktopCard {
   flex-direction: column;
   min-height: 0;
@@ -169,6 +189,18 @@
 }
 
 @media (max-width: 970px) {
+  .cardWrapper .cardInner.deviceCard {
+    .columnOne {
+      padding: 36px 36px 24px !important;
+    }
+
+    .deviceColumn {
+      width: 100%;
+      max-width: 640px;
+      align-self: center;
+      padding: 0 24px 28px;
+    }
+  }
   .cardInner {
     flex-direction: column;
     -webkit-box-direction: normal;
@@ -217,6 +249,15 @@
 }
 
 @media (max-width: 540px) {
+  .cardWrapper .cardInner.deviceCard {
+    .columnOne {
+      padding: 25px !important;
+    }
+
+    .deviceColumn {
+      padding: 0 12px 20px;
+    }
+  }
   .cardWrapper .cardInner.desktopCard {
     .columnOne {
       padding: 25px !important;
