@@ -1,5 +1,5 @@
 ---
-id: "3"
+id: "4"
 title: "VitaTrack"
 slug: "vitatrack"
 githubLink: "https://github.com/PerrySmithMoss/VitaTrack"
@@ -11,7 +11,8 @@ coverImage: "/assets/images/projects/vitatrack/mockup.png"
 mockupImage: "/assets/images/home/projects/vitatrack/mockup1.png"
 description: "Web application which allows users to track their workouts and nutrition."
 tech: ["nextjs", "nodejs", "graphql", "reactQuery"]
-tags: ["Next.js", "Node.js", "GraphQL", "React-Query"]
+tags: ["Next.js","TypeScript","GraphQL","PostgreSQL","Node.js","React-Query"]
+featuredTags: ["Next.js","TypeScript","GraphQL","PostgreSQL"]
 platform: "Web"
 ---
 

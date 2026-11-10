@@ -1,5 +1,5 @@
 ---
-id: "3"
+id: "4"
 title: "VitaTrack"
 readMoreLink: "/projects/vitatrack"
 githubLink: "https://github.com/PerrySmithMoss/VitaTrack"
@@ -8,7 +8,7 @@ urlLink: "https://vita-track.vercel.app"
 brandColor: "#3a86ff"
 image: "/assets/images/home/projects/vitatrack/mockup1.png"
 description: "Web application which allows users to track their workouts and nutrition.."
-tech: ["Next.js", "Node.js", "GraphQL"]
+tech: ["Next.js","TypeScript","GraphQL","PostgreSQL"]
 platform: "Web"
 ---
 

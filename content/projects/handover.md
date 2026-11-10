@@ -1,5 +1,5 @@
 ---
-id: "5"
+id: "6"
 title: "Handover"
 slug: "handover"
 githubLink: "https://github.com/PerrySmithMoss/handover"
@@ -11,7 +11,8 @@ mockupImage: "/assets/images/projects/handover/mockup.png"
 coverImage: "/assets/images/projects/handover/image.png"
 description: "A secure messaging platform which allows healthcare professionals to track and handover their patients."
 tech: ["Flutter", "Dart", "Firebase"]
-tags: ["Flutter", "Dart", "Firebase"]
+tags: ["Flutter","Dart","Firebase"]
+featuredTags: ["Flutter","Dart","Firebase"]
 platform: "Mobile"
 ---
 

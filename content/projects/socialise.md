@@ -1,5 +1,5 @@
 ---
-id: "8"
+id: "9"
 title: "Socialise"
 slug: "socialise"
 githubLink: "https://github.com/PerrySmithMoss/Socialise"
@@ -11,7 +11,8 @@ mockupImage: "/assets/images/home/projects/socialise/mockup3.png"
 coverImage: "/assets/images/projects/socialise/mockup.png"
 description: "A social media platform where users can share what they're doing and chat with others."
 tech: ["React.js", "Node.js", "GraphQL"]
-tags: ["React.js", "Node.js", "GraphQL"]
+tags: ["React.js","Node.js","GraphQL","MySQL"]
+featuredTags: ["React.js","Node.js","GraphQL","MySQL"]
 platform: "Web"
 ---
 

@@ -1,5 +1,5 @@
 ---
-id: "2"
+id: "3"
 title: "Chinwag"
 readMoreLink: "/projects/im-listening"
 githubLink: "https://github.com/PerrySmithMoss/chinwag"
@@ -8,7 +8,7 @@ brandColor: "#04948c"
 image: "/assets/images/home/projects/template.png"
 mockupImage: "/assets/images/home/projects/chinwag/mockup.png"
 description: "Real-time messaging platform which enables communication between users."
-tech: ["React.js", "Node.js", "Socket.io"]
+tech: ["Next.js","Node.js","Socket.io","PostgreSQL"]
 platform: "Web"
 ---
 

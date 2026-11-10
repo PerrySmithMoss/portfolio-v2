@@ -1,5 +1,5 @@
 ---
-id: "4"
+id: "5"
 title: "I'm Listening"
 slug: "im-listening"
 githubLink: "https://github.com/PerrySmithMoss/im-listening"
@@ -11,7 +11,8 @@ image: "/assets/images/home/projects/template.png"
 logo: "/assets/images/home/projects/im-listening/logo.png"
 description: "I'm Listening is a platform where users can share what music they're listening to."
 tech: ["nextjs", "nodejs", "graphql", "redis"]
-tags: ["Next.js", "Node.js", "GraphQL", "Redis"]
+tags: ["Next.js","TypeScript","GraphQL","Redis","Node.js"]
+featuredTags: ["Next.js","TypeScript","GraphQL","Redis"]
 platform: "Web"
 ---
 

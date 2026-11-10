@@ -1,5 +1,5 @@
 ---
-id: "4"
+id: "5"
 title: "I'm Listening"
 readMoreLink: "/projects/im-listening"
 githubLink: "https://github.com/PerrySmithMoss/im-listening"
@@ -8,7 +8,7 @@ urlLink: "https://im-listening.vercel.app"
 brandColor: "#df532a"
 image: "/assets/images/home/projects/template.png"
 description: "I'm Listening is a platform where users can share what music they're listening to."
-tech: ["Next.js", "Node.js", "GraphQL", "Redis"]
+tech: ["Next.js","TypeScript","GraphQL","Redis"]
 platform: "Web"
 ---
 

@@ -1,5 +1,5 @@
 ---
-id: "6"
+id: "7"
 title: "Instagram Clone"
 slug: "instagram-clone"
 githubLink: "https://github.com/PerrySmithMoss/instagram-clone"
@@ -10,7 +10,8 @@ logo: "/assets/images/projects/instagram-clone/instagram-clone.png"
 mockupImage: "/assets/images/projects/instagram-clone/instagram-clone.png"
 coverImage: "/assets/images/projects/instagram-clone/instagram-clone.png"
 description: "A clone of the Instgram web application."
-tags: ["Next.js", "Firebase"]
+tags: ["Next.js","TypeScript","Firebase","Tailwind CSS"]
+featuredTags: ["Next.js","TypeScript","Firebase","Tailwind CSS"]
 tech: ["nextjs", "firebase"]
 platform: "Web"
 ---

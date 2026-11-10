@@ -8,7 +8,7 @@ brandColor: "#8338ec"
 image: "/assets/images/home/projects/template.png"
 mockupImage: "/assets/images/home/projects/fleetly/mockup.png"
 description: "High performance, full-stack vehicle fleet monitoring system."
-tech: ["React.js", "Node.js", "Socket.io"]
+tech: ["Next.js","TypeScript","SSE","MapLibre GL"]
 platform: "Web"
 ---
 
