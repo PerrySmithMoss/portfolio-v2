@@ -53,13 +53,13 @@ export const Education: React.FC<EducationProps> = ({}) => {
                   Wrexham Glyndwr University
                 </a>
                 <p>
-                  Graduated with <span className={styles.bold}>First-Class </span> Honours.
+                  Graduated with <span className={styles.bold}>first-class honours</span>.
                 </p>
                 <div className={styles.cardList}>
                   <p>
-                    <span>Course Content: </span>
-                    Computer Networks & Security, Computer Science, Problem Solving with
-                    Programming, Project Management and more.
+                    <span>Studied: </span>
+                    computer networks and security, computer science,
+                    programming and project management.
                   </p>
                 </div>
               </div>

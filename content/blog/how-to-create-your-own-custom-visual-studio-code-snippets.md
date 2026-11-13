@@ -1,10 +1,11 @@
 ---
 id: "1"
-title: "How to create your own custom Visual Studio Code snippets"
-datePublished: "19th May, 2022"
+title: "Create custom snippets in Visual Studio Code"
+datePublished: "19 May 2022"
+datePublishedISO: "2022-05-19"
 slug: "how-to-create-your-own-custom-visual-studio-code-snippets"
 image: "/assets/images/home/blog/code.jpg"
-description: "Increase your programming efficiency by learning how to create your own custom Visual Studio Code snippets."
+description: "Create reusable code snippets in VS Code, from a console.log shortcut to a TypeScript React component."
 featuredPost: true
 tech: ["VS Code"]
 tags: ["Featured Post"]
@@ -12,13 +13,13 @@ tags: ["Featured Post"]
 
 ## Introduction
 
-Code snippets are a great way to improve your developer workflow and efficiency. This makes a lot easier or us nerds to enter repeating code patterns, such as loops, conditional-statements, functions etc. Luckily, Visual Studio Code allows us users to store code snippets on a global, per language or per file basis, meaning we can map each of our snippets to an individual language, individual file or keep it global.
+Custom snippets save you from typing the same code patterns repeatedly. This guide walks through two examples in Visual Studio Code: a console.log shortcut and a TypeScript React component.
 
 ---
 
 ## How to create custom Visual Studio Code snippets
 
-In the Visual Studio app/program on your computer click **Code** (top left of screen next to file) > Prefrences > Configure User Snippets on macOS. On Windows you you would click **Code** > Prefrences > User Snippets. From here we can then select if we want the snippet to be global, for a specific file or a specific language. Once you have seleted the type of snippet you will then be prompted to enter a file name for the snippet. After you enter your file name it will open and you will be greated by a bunch of text explaining how to work with snippets. More information on how to work with snippets can be found on the offical Visual Studio Code documentation [here](https://code.visualstudio.com/docs/editor/userdefinedsnippets).
+In the Visual Studio app/program on your computer click **Code** (top left of screen next to file) > Preferences > Configure User Snippets on macOS. On Windows you would click **Code** > Preferences > User Snippets. From here we can then select if we want the snippet to be global, for a specific file or a specific language. Once you have selected the type of snippet you will then be prompted to enter a file name for the snippet. After you enter your file name it will open and you will be greeted by a bunch of text explaining how to work with snippets. More information on how to work with snippets can be found on the official Visual Studio Code documentation [here](https://code.visualstudio.com/docs/editor/userdefinedsnippets).
 
 <br/>
 

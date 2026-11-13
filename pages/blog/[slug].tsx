@@ -1,5 +1,4 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import Head from "next/head";
 import { PostContainer } from "../../components/Containers/Blog/Post/PostContainer";
 import { SEO } from "../../components/SEO/SEO";
 import { IPost } from "../../types/IBlog";
@@ -22,10 +21,14 @@ const BlogPost: NextPage<BlogPostProps> = ({
 }) => {
   return (
     <>
-      <Head>
-        <title>{frontMatter.title} | Perry Smith-Moss</title>
-        <SEO />
-      </Head>
+      <SEO
+        metaTitle={`${frontMatter.title} | Perry Smith-Moss`}
+        metaDescription={frontMatter.description}
+        canonicalLink={`https://perrysmithmoss.com/blog/${frontMatter.slug}`}
+        ogUrl={`https://perrysmithmoss.com/blog/${frontMatter.slug}`}
+        ogImage={frontMatter.image}
+        ogType="article"
+      />
       <PostContainer
         mdxSource={mdxSource}
         frontMatter={frontMatter}

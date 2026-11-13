@@ -9,7 +9,7 @@ image: "/assets/images/projects/vordian/today-desktop.webp"
 mockupImage: "/assets/images/projects/vordian/today-desktop.webp"
 desktopPreview: true
 mockupAlt: "Vordian Today dashboard with the client review queue, a selected coaching decision and supporting evidence"
-description: "An AI-assisted coaching app that turns client check-ins from Google Sheets into evidence-backed insights and suggested next steps for coaches to review."
+description: "A tool I’m building to help fitness coaches review Google Sheets check-ins, with AI summaries and links to the data behind them."
 tech: ["Next.js","TypeScript","PostgreSQL","AI"]
 platform: "Web"
 ---

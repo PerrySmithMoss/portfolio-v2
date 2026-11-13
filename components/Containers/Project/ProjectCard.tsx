@@ -107,7 +107,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             <Button
               link={githubLink}
               external
-              text="Github"
+              text="Source code"
               colour="white"
               variant="none"
               size="sm"

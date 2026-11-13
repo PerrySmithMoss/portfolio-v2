@@ -32,10 +32,10 @@ export function useForm() {
 
   function isValid(value: string, name: string, regex: RegExp, text: string) {
     if (!value) {
-      setErrors({ ...errors, [name]: `Your ${text} is required` });
+      setErrors({ ...errors, [name]: `Please enter your ${text}.` });
       return false;
     } else if (!regex.test(value)) {
-      setErrors({ ...errors, [name]: `Your ${text} is not valid` });
+      setErrors({ ...errors, [name]: `Please check your ${text}.` });
       return false;
     } else {
       setErrors({ ...errors, [name]: "" });
@@ -46,7 +46,7 @@ export function useForm() {
   function validateInput(name: string, value: string) {
     switch (name) {
       case "email":
-        return isValid(value, name, emailRegex, "email");
+        return isValid(value, name, emailRegex, "email address");
       case "name":
         return isValid(value, name, nameRegex, "name");
       case "message":
@@ -76,7 +76,7 @@ export function useForm() {
 
       formEntries.forEach((entry) => {
         if (!entry[1]) {
-          result[entry[0]] = `Your ${entry[0]} is required`;
+          result[entry[0]] = `Please enter your ${entry[0] === "email" ? "email address" : entry[0]}.`;
         }
       });
 

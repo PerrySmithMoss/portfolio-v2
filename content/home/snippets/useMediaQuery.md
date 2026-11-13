@@ -1,14 +1,14 @@
 ---
 id: "7"
-title: "React.js useMediaQuery Hook"
-excerpt: "Custom React.js hook that watches for certain breakpoints."
+title: "React useMediaQuery hook"
+excerpt: "Respond to viewport breakpoints in React."
 thumbnail: "/assets/images/home/snippets/debounce.png"
 slug: "useMediaQuery"
 tags: ["TypeScript", "JavaScript", "React.js"]
 tech: ["javascript", "typescript", "reactjs"]
 ---
 
-## React.js useMediaQuery Hook
+## React useMediaQuery hook
 
 ```typescript
 import { useState } from "react";

@@ -1,14 +1,14 @@
 ---
 id: "5"
-title: "React.js useIsInViewport Hook"
-excerpt: "React hook which reports if an element is in viewport."
+title: "React useIsInViewport hook"
+excerpt: "Check whether an element is visible in the viewport."
 thumbnail: "/assets/images/home/snippets/debounce.png"
 slug: "useIsInViewport"
 tags: ["TypeScript", "JavaScript", 'React.js']
 tech: ["javascript", "typescript", "react"]
 ---
 
-## React.js useIsInViewport Hook
+## React useIsInViewport hook
 
 ```typescript
 export function useIsInViewport(ref) {

@@ -1,10 +1,11 @@
 ---
 id: "3"
-title: "How to add an estimated reading time stat to your website using JavaScript"
-datePublished: "2nd Nov, 2022"
+title: "Estimate reading time with JavaScript"
+datePublished: "2 November 2022"
+datePublishedISO: "2022-11-02"
 slug: "how-to-add-reading-time-stat-to-your-website"
 image: "/assets/images/blog/estimated-reading-time.jpg"
-description: "Find out how you can calculate the estimated reading time of a piece of content in JavaScript."
+description: "Count the words in a piece of text and use them to estimate its reading time."
 featuredPost: false
 tech: ["JavaScript"]
 tags: ["Featured Post"]
@@ -12,21 +13,21 @@ tags: ["Featured Post"]
 
 ## Introduction
 
-Have you seen those blog posts which state how long it will take you to read the post? Just like this very blog post that you're reading right now... Neat feature, right? That's exactly what I thought when I first saw it. Lucky for you, I am going to explain how you can also add this exact feature to your blog posts. All it's going to take is a little sprinkle of JavaScript.
+An estimated reading time gives readers an idea of how long a post will take. Here’s a small JavaScript function that calculates it from the word count.
 
 ---
 
 ## Method
 
-Given that the average adult reads 200-250 words per minute, we will will use the middle figure of 225 as our baseline words per minute figure. We can then simply divide the total number of words by our 225 figure to get the estimated reading time. We will then round that number up to make things simpler for the reader.
+This example uses 225 words per minute as a baseline. Divide the word count by that number, then round up to get an estimated reading time in minutes.
 
 ---
 
 ## Code
 
-Firstly, we're going to need a function which counts the total amount of words within a string. This function will take a string as a parameter and loop over each word in the string, incrementing a wordCount variable for each word it . Eventually returning the value of the wordCount variable at the end of the loop.
+Start with a function that counts the words in a string. It loops through the words, increments a counter for each one and returns the total.
 
-As you can see by the implemenation below, I first convert the string into an array of strings by leveraging RegEx inside the JavaScript .split() method. This will split the string every time there is a whitespace character (tabs, spaces, line, breaks etc.). We can then loop over this array of words, incrementing a wordCount variable for each valid word. As you can see by the code below I have created a seperate function called isWord in order to validate if a word is actually a word and not a symbol, number, special character or empty string etc.
+As you can see by the implementation below, I first convert the string into an array of strings by leveraging RegEx inside the JavaScript .split() method. This will split the string every time there is a whitespace character (tabs, spaces, line, breaks etc.). We can then loop over this array of words, incrementing a wordCount variable for each valid word. As you can see by the code below I have created a separate function called isWord in order to validate if a word is actually a word and not a symbol, number, special character or empty string etc.
 
 ```javascript
 function wordCounter(string) {
@@ -59,7 +60,7 @@ function isWord(str) {
 }
 ```
 <br />
-We can then bring this all together by creating one last function which calculates the reading time. As you can see by the implementation below, the function takes text as a parameter, passes that text to our wordCounter function we created above and then divides that by our pre defined wordsPerMinute variable. We then round that number up using Math.ceil to make things simpler for the reader. Voilà! 
+We can then bring this all together by creating one last function which calculates the reading time. As you can see by the implementation below, the function takes text as a parameter, passes that text to our wordCounter function we created above and then divides that by our predefined wordsPerMinute variable. We then round that number up using Math.ceil to make things simpler for the reader. Voilà!
 
 ```javascript
 const wordsPerMinute = 225;

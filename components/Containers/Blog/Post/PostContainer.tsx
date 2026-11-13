@@ -59,7 +59,9 @@ export const PostContainer: React.FC<PostContainerProps> = ({
           </li>
           <li className={styles.flex}>
             <HiOutlineCalendar aria-hidden="true" />
-            <time dateTime="2022-05-23">May 23rd, 2022</time>
+            <time dateTime={frontMatter.datePublishedISO}>
+              {frontMatter.datePublished}
+            </time>
           </li>
           <li className={styles.flex}>
             <HiOutlineClock aria-hidden="true" />
@@ -83,7 +85,7 @@ export const PostContainer: React.FC<PostContainerProps> = ({
       </div>
 
       <section className={styles.recommendationsContainer}>
-        <h2>Other posts you may like</h2>
+        <h2>More posts</h2>
         <div className={styles.recommendationsGrid}>
           {recommendations.map((post) => (
             <article key={post.id} className={styles.otherPost}>

@@ -50,7 +50,7 @@ export const SnippetContainer: React.FC<SnippetProps> = ({
                 <SocialLinks />
               </div>
 
-              <h3>Other Snippets</h3>
+              <h3>More snippets</h3>
               <ul className={styles.recommendations}>
                 {recommendations.map((recommendation) => (
                   <li key={recommendation.slug}>

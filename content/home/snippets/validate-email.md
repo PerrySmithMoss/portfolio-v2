@@ -1,11 +1,11 @@
 ---
 id: "4"
-title: "Validate an email address with JavaScript RegEx."
-excerpt: "A useful function to determine whether a string is a valid email address or not."
+title: "Check an email address with JavaScript"
+excerpt: "Check the format of an email address with a regular expression."
 thumbnail: "/assets/images/home/snippets/debounce.png"
 slug: "validate-email"
 tags: ['JavaScript', 'TypeScript']
 tech: ['javascript']
 ---
 
-## Validate an email address with JavaScript RegEx.
+## Check an email address with JavaScript

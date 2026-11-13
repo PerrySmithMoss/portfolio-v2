@@ -20,8 +20,8 @@ interface SEOProps {
 }
 
 export const SEO: React.FC<SEOProps> = ({
-  metaTitle = "Perry Smith-Moss",
-  metaDescription = "Perry Smith-Moss is a software engineer who specializes in solving business problems with the best suited technology.",
+  metaTitle = "Perry Smith-Moss | Software engineer",
+  metaDescription = "I’m Perry Smith-Moss, a software engineer building Vordian, a tool for fitness coaches. Explore my projects, experience and writing.",
   metaKeywords = "perrysmithmoss, Perry Smith-Moss, Web Developer, Software Developer, Software Engineer, Web Development, Developer Portfolio, Portfolio",
   metaRobots = "index, follow",
   ogType = "website",

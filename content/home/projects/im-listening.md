@@ -7,7 +7,7 @@ mockupImage: "/assets/images/home/projects/im-listening/mockup2.png"
 urlLink: "https://im-listening.vercel.app"
 brandColor: "#df532a"
 image: "/assets/images/home/projects/template.png"
-description: "I'm Listening is a platform where users can share what music they're listening to."
+description: "A web app for sharing what you’re listening to."
 tech: ["Next.js","TypeScript","GraphQL","Redis"]
 platform: "Web"
 ---

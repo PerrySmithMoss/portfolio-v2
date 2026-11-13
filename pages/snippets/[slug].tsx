@@ -1,5 +1,4 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import Head from "next/head";
 import { SEO } from "../../components/SEO/SEO";
 import { getFileBySlug, getFiles, getRecommendations } from "../../utils/files";
 
@@ -20,10 +19,12 @@ const Snippet: NextPage<SnippetProps> = ({
 }) => {
   return (
     <>
-      <Head>
-        <title>{frontMatter.title} | Perry Smith-Moss</title>
-        <SEO />
-      </Head>
+      <SEO
+        metaTitle={`${frontMatter.title} | Perry Smith-Moss`}
+        metaDescription={frontMatter.excerpt}
+        canonicalLink={`https://perrysmithmoss.com/snippets/${frontMatter.slug}`}
+        ogUrl={`https://perrysmithmoss.com/snippets/${frontMatter.slug}`}
+      />
       <SnippetContainer
         content={mdxSource}
         frontMatter={frontMatter}
