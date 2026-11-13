@@ -9,7 +9,7 @@ image: "/assets/images/home/projects/template.png"
 logo: "/assets/images/home/projects/im-listening/logo.png"
 mockupImage: "/assets/images/home/projects/im-listening/mockup3.png"
 coverImage: "/assets/images/home/projects/chinwag/test.png"
-description: "Real-time messaging platform which enables text and video communication between multiple users."
+description: "A messaging app with real-time text and video chat."
 tech: ["next.js", "nodejs", "socketIo", "reactQuery"]
 tags: ["Next.js","Node.js","Socket.io","PostgreSQL","React-Query"]
 featuredTags: ["Next.js","Node.js","Socket.io","PostgreSQL"]

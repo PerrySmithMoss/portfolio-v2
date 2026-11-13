@@ -14,22 +14,17 @@
 }
 
 .heroContainer h1 {
-  // line-height: 1.1;
-  letter-spacing: 0.07rem;
-  font-family: "Poppins-Light";
-  margin: 0px 0px 1rem 0px;
-  color: var(--white);
-  font-size: clamp(14px, 5vw, 18px);
+  font-family: "Poppins-Medium";
+  margin: 0px;
+  color: var(--cyan);
+  font-size: clamp(30px, 6vw, 80px);
 }
 
 .heroContainer h2 {
   font-family: "Poppins-Medium";
-  // line-height: 1.2;
   margin: 1rem 0px 0px;
-  color: var(--cyan);
-  // letter-spacing: 0.05rem;
-  margin: 0px;
-  font-size: clamp(30px, 6vw, 80px);
+  color: var(--white);
+  font-size: clamp(20px, 3vw, 32px);
 }
 
 .heroContainer p {

@@ -1,13 +1,14 @@
 ---
 id: "1"
-title: "How to create your own custom Visual Studio Code snippets"
-datePublished: "19th May, 2022"
+title: "Create custom snippets in Visual Studio Code"
+datePublished: "19 May 2022"
+datePublishedISO: "2022-05-19"
 slug: "how-to-create-your-own-custom-visual-studio-code-snippets"
 image: "/assets/images/home/blog/code.jpg"
-description: "Increase your programming efficiency by learning how to create your own custom Visual Studio Code snippets."
+description: "Create reusable code snippets in VS Code, from a console.log shortcut to a TypeScript React component."
 featuredPost: false
 tech: ["VS Code"]
 tags: ["Featured Post"]
 ---
 
-## How to create your own custom Visual Studio Code snippets
+## Create custom snippets in Visual Studio Code

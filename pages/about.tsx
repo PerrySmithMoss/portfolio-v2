@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import { SEO } from "../components/SEO/SEO";
 import { AboutMe } from "../components/Containers/About/AboutMe/AboutMe";
 import { MySkills } from "../components/Containers/About/MySkills/MySkills";
@@ -10,10 +9,12 @@ interface AboutProps {}
 const About: NextPage<AboutProps> = ({}) => {
   return (
     <>
-      <Head>
-        <title>About Me | Perry Smith-Moss</title>
-        <SEO />
-      </Head>
+      <SEO
+        metaTitle="About | Perry Smith-Moss"
+        metaDescription="I’m Perry, a software engineer building Vordian. Read about my work at Meadow Vale Foods and WhoCanFixMyCar, and the projects I’m building now."
+        canonicalLink="https://perrysmithmoss.com/about"
+        ogUrl="https://perrysmithmoss.com/about"
+      />
       <AboutMe />
       <MySkills />
       <Education />

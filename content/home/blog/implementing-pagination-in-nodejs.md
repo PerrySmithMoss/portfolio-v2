@@ -1,10 +1,11 @@
 ---
 id: "4"
-title: "Implementing pagination in Node.js"
-datePublished: "25th Nov, 2022"
+title: "Offset and cursor pagination in Node.js"
+datePublished: "25 November 2022"
+datePublishedISO: "2022-11-25"
 slug: "implementing-pagination-in-nodejs"
 image: "/assets/images/blog/implement-cursor-pagination-with-nodejs.jpg"
-description: "Take your knowledge of the back-end to the next level by learning how to implement offset-based pagination and cursor-based pagination."
+description: "Compare offset and cursor pagination, with Node.js and Prisma examples for each approach."
 featuredPost: false
 tech: ["Node.js", "Prisma"]
 tags: ["Pagination", "Prisma", "Node.js"]
@@ -12,13 +13,7 @@ tags: ["Pagination", "Prisma", "Node.js"]
 
 ## Introduction
 
-Pagination is defined as the process of seperating of bunch of data into smaller, more digestable pieces. Clicking through an archive of products, or turning the page of a book, are both examples of pagintion. In a technical setting, pagination is more efficient, quick, and server-friendly to break the results up into multiple pages.
-
-For one, most users aren't going to look beyond the first X results regardless of how many there are on one page, so there would be a lot of results unused that were retrieved, processed, and sent to the client which is wasted bandwidth and CPU time. In fact, by paginating you increase the chance that they will continue on beyond where they would have stopped if it were all on one page.
-
-Two, if this were just text data it would be pretty quick even for a large amount of data, but if you throw in pictures and stuff that have to be displayed for each result, such as in a catalog, then things really start slowing down the more results which are returned.
-
-In this post I discuss the two most common implementations of pagination and how to implement both of them using Node.js and Prisma.
+Pagination splits a set of results into smaller pages. This post compares offset and cursor pagination, then works through an implementation of each using Node.js and Prisma.
 
 ## Offset-based pagination
 
@@ -38,9 +33,9 @@ Offset-based pagination uses of a `offset` and `limit` parameter in order to off
 
 Offset pagination should be used for shallow pagination of a small result set. For example, a recipe interface that allows you to filter recipe records by author and paginate the results.
 
-### Node.js implemenation
+### Node.js implementation
 
-Now that you have a brief understanding of offset based pagination, we can get to the fun part of actually implementing it into a Node.js application. To demonstrate this method of pagination I have set up a simple express roue called `users-offset`,which you can see below. This route returns a paginated response of users from a database. The full source code can be found in the Github [repo](https://github.com/PerrySmithMoss/common-features.git).
+Now that you have a brief understanding of offset based pagination, we can get to the fun part of actually implementing it into a Node.js application. To demonstrate this method of pagination I have set up a simple Express route called `users-offset`,which you can see below. This route returns a paginated response of users from a database. The full source code can be found in the GitHub [repo](https://github.com/PerrySmithMoss/common-features.git).
 
 ```javascript
 app.get("/users-offset-pagination", async (req, res) => {
@@ -135,7 +130,7 @@ Lastly, we then return a JSON response with the paginated users and paging infor
 
 ## Cursor-based pagination
 
-The other common implementation of pagination is cursor-based, whereby a `cursor` will be used to represent a piece of data that contains a pointer to an element and the info to get the next/previous elements. Important point here is that the identifier must have a unique value and should be sequential in nature. Ideal candidates for this are numeric IDs and timestamps. In most cases, the cursor is opaque, so users cannot manipulate it. For example, let's say we have a message thread with the most recent 20 messages and we want to fetch older messages in the thread. Using cursor-based pagination we could use the date of the last message as the `cursor` and fetch older messages in the thread by returing the most recent messages that are older than the `cusor`.
+The other common implementation of pagination is cursor-based, whereby a `cursor` will be used to represent a piece of data that contains a pointer to an element and the info to get the next/previous elements. Important point here is that the identifier must have a unique value and should be sequential in nature. Ideal candidates for this are numeric IDs and timestamps. In most cases, the cursor is opaque, so users cannot manipulate it. For example, let's say we have a message thread with the most recent 20 messages and we want to fetch older messages in the thread. Using cursor-based pagination we could use the date of the last message as the `cursor` and fetch older messages in the thread by returning the most recent messages that are older than the `cursor`.
 
 ### Advantages of cursor-based pagination
 
@@ -152,9 +147,9 @@ The other common implementation of pagination is cursor-based, whereby a `cursor
 
 Cursor-based pagination is ideal for cursor pagination approach is for infinite scrolling webpages such as social media feeds. Also, it is ideal for batch processing large number of records.
 
-### Node.js implemenation
+### Node.js implementation
 
-The implementation of cursor-based pagination will have a very similar structure to the implemenation of offset-based pagination above. To demonstrate this particular method of pagination I have set up another express route called `users-cursor-pagination`, which you can see below. This route returns a paginated response of users from a database. The full source code can be found in the Github [repo](https://github.com/PerrySmithMoss/common-features.git).
+The implementation of cursor-based pagination will have a very similar structure to the implementation of offset-based pagination above. To demonstrate this particular method of pagination I have set up another express route called `users-cursor-pagination`, which you can see below. This route returns a paginated response of users from a database. The full source code can be found in the GitHub [repo](https://github.com/PerrySmithMoss/common-features.git).
 
 ```javascript
 app.get("/users-cursor", async (req, res) => {
@@ -218,7 +213,7 @@ app.get("/users-cursor", async (req, res) => {
 });
 ```
 
-As you can see above, this code contains slightly more code compared to it's counter part, due to it being slightly more complex. We begin by first grabbing the `limit` and `cursor` query param passed in by the user. If there is no limit I have set a `maxLimit` of 6, meaning a max of 6 results will show in the response. Also, if there is no `cursor` parameters passed in by the user it will default to null. In this example, we will be using a date as the cursor.
+As you can see above, this code contains slightly more code compared to its counterpart, due to it being slightly more complex. We begin by first grabbing the `limit` and `cursor` query param passed in by the user. If there is no limit I have set a `maxLimit` of 6, meaning a max of 6 results will show in the response. Also, if there is no `cursor` parameters passed in by the user it will default to null. In this example, we will be using a date as the cursor.
 
 Next we check if the `limit` passed in by the user is greater than the `maxLimit` of 6 that we set. This will stop the case in which the user if requesting too many records at one time. If so, we return an error message stating that the the limit it too large.
 
@@ -245,7 +240,7 @@ As you can see above, if there is a cursor passed as an argument, we query the d
 
 Then, we can check if our database has more data. Since, we fetch limit + 1, we can find out if there is more data if our fetched data and limit + 1 are same.
 
-If `hasMore` is true, we need to determine the next cursor value. We can do that by accessing the last record in the users array, using the created_at field as the cursor. Another critical thing to note here is removing the last element from the fetched data. Because we needed that value to calculate the cursor, it shouldn't be retured in the response to the user. We then return the current cursor, next cursor and the users as a json response.
+If `hasMore` is true, we need to determine the next cursor value. We can do that by accessing the last record in the users array, using the created_at field as the cursor. Another critical thing to note here is removing the last element from the fetched data. Because we needed that value to calculate the cursor, it shouldn't be returned in the response to the user. We then return the current cursor, next cursor and the users as a json response.
 
 In the next statement we check if the cursor passed in is a valid ISO date. This is done by using a npm package called moment and call a function called `isValid` on the cursor. This will return a boolean value which represents if the cursor is a valid ISO date. If the cursor is valid we call the same `getUsersByCursor` function we discussed above and pass in the cursor and limit + 1. We then have the same process as mentioned above.
 
@@ -255,6 +250,6 @@ If the cursor is not a valid ISO date we return a status 422 with an error messa
 
 ## Conclusion
 
-As you can see above both cursor-based and offset-based pgination have their advantages/disadvantages. However, the scalability issue which comes with offset-based pagination is a major pain point and cannot be ignored. With this in mind, the cursor approach is always recommended, as it eliminates the duplicated items and doesn’t skip any item. A pointer keeps track of where the data is and which item needs to be fetched next. There are different situations in which both cursor and offset have their advantages. The usage primarily depends upon the data being dealt with.
+As you can see above both cursor-based and offset-based pagination have their advantages/disadvantages. However, the scalability issue which comes with offset-based pagination is a major pain point and cannot be ignored. With this in mind, the cursor approach is always recommended, as it eliminates the duplicated items and doesn’t skip any item. A pointer keeps track of where the data is and which item needs to be fetched next. There are different situations in which both cursor and offset have their advantages. The usage primarily depends upon the data being dealt with.
 
 However, when static data is being queried, the cost of performance may not justify using a cursor since the complexity increases in such a situation. It is quite evident that cursor-based pagination is a better choice compared to offset pagination. Still, the decision to go for the right approach depends entirely upon the use case and the effect pagination will have on the product.

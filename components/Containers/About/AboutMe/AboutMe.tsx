@@ -20,13 +20,12 @@ export const AboutMe: React.FC<AboutMeProps> = ({}) => {
         <div className={styles.aboutMeContainer}>
           <div>
             <p>
-              Yo! My name is Perry but some people call me Pez. I&apos;m a
-              software engineer who has a great passion for taking an idea and
-              transforming it into a fully operational piece of software.
+              I’m Perry, a software engineer. I also go by Pez. I enjoy
+              taking an idea and working through the details that turn it into
+              useful software.
             </p>
             <p>
-              My enthusiasm for software sparked when I started to work on an
-              app called{" "}
+              I got interested in building software while working on{" "}
               <a
                 target="_blank"
                 rel="noreferrer"
@@ -35,11 +34,11 @@ export const AboutMe: React.FC<AboutMeProps> = ({}) => {
               >
                 Handover
               </a>
-              , which was part of my dissertation project in university. Since
-              then I&apos;ve been hooked on anything software related.
+              , my university dissertation project: a messaging app for
+              healthcare professionals to manage patient handovers.
             </p>
             <p>
-              Currently, I am working with{" "}
+              My first role was at{" "}
               <a
                 target="_blank"
                 rel="noreferrer"
@@ -48,9 +47,34 @@ export const AboutMe: React.FC<AboutMeProps> = ({}) => {
               >
                 Meadow Vale Foods
               </a>
-              , building them a brand new website and E-commerce portal, which
-              will not only make their business more efficent but also their
-              customers time.
+              , where I worked on their website and e-commerce portal. I then
+              joined{" "}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.whocanfixmycar.com/"
+                className={styles.inlineLink}
+              >
+                WhoCanFixMyCar
+              </a>
+              , working on web applications for drivers and mechanics.
+            </p>
+            <p>
+              Since then, I’ve been working on projects of my own. My main focus
+              now is{" "}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://vordian.app/"
+                className={styles.inlineLink}
+              >
+                Vordian
+              </a>
+              , a tool to help fitness coaches review client check-ins from
+              Google Sheets. It brings together trends, AI summaries and the
+              data behind them. The aim is to make reviews easier while leaving
+              the decisions with the coach. I’m now looking for feedback from
+              coaches to understand how it could fit into their day-to-day work.
             </p>
           </div>
         </div>

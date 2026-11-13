@@ -52,7 +52,7 @@ export const Snippets: React.FC<SnippetsProps> = ({ snippets, tags }) => {
             <h1>Snippets</h1>
           </div>
           <div className={styles.subHeading}>
-            <p>Here is a collection of code snippets which you may find useful.</p>
+            <p>Small pieces of code for tasks I’ve come across while building things.</p>
           </div>
 
           <div className={styles.searchContainer}>
@@ -65,7 +65,8 @@ export const Snippets: React.FC<SnippetsProps> = ({ snippets, tags }) => {
                 </span>
               </div>
               <input
-              name="search-snippets"
+                name="search-snippets"
+                aria-label="Search snippets"
                 className={styles.searchInput}
                 onChange={(e) => setSearchInput(e.target.value)}
                 value={searchInput}
@@ -73,7 +74,7 @@ export const Snippets: React.FC<SnippetsProps> = ({ snippets, tags }) => {
                 placeholder="Search snippets..."
               />
               {searchInput && (
-                <button onClick={() => setSearchInput("")} className={styles.iconContainer}>
+                <button aria-label="Clear snippet search" onClick={() => setSearchInput("")} className={styles.iconContainer}>
                   <span className={`${styles.icon} ${styles.cursor}`}>
                     {/* Simplified Close SVG */}
                     <svg width="20px" height="20px" viewBox="0 0 24 24" stroke="white" strokeWidth="2">
@@ -113,7 +114,7 @@ export const Snippets: React.FC<SnippetsProps> = ({ snippets, tags }) => {
                 <SnippetCard key={snippet.id} snippet={snippet} />
               ))
             ) : (
-              <div className={styles.noResults}>No snippets found.</div>
+              <div className={styles.noResults}>No matching snippets. Try another search or remove a filter.</div>
             )}
           </ul>
         </m.div>

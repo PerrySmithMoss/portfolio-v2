@@ -52,7 +52,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, tags }) => {
             <h1>Projects</h1>
           </div>
           <div className={styles.subHeading}>
-            <p>Check some out my of my side projects below.</p>
+            <p>Projects I’m building, ideas I’ve explored and things I’ve made to learn.</p>
           </div>
 
           <div className={styles.searchContainer}>
@@ -66,6 +66,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, tags }) => {
               </div>
               <input
                 name="search-snippets"
+                aria-label="Search projects"
                 className={styles.searchInput}
                 onChange={(e) => setSearchInput(e.target.value)}
                 value={searchInput}
@@ -73,7 +74,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, tags }) => {
                 placeholder="Search projects..."
               />
               {searchInput && (
-                <button onClick={() => setSearchInput("")} className={styles.iconContainer}>
+                <button aria-label="Clear project search" onClick={() => setSearchInput("")} className={styles.iconContainer}>
                   <span className={`${styles.icon} ${styles.cursor}`}>
                     <svg width="20px" height="20px" viewBox="0 0 24 24" stroke="white" strokeWidth="2">
                       <line x1="18" y1="6" x2="6" y2="18" />
@@ -124,7 +125,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, tags }) => {
                 <ProjectCard key={project.id} project={project} />
               ))
             ) : (
-              <div className={styles.noResults}>No projects match your criteria</div>
+              <div className={styles.noResults}>No matching projects. Try another search or remove a filter.</div>
             )}
           </ul>
         </m.div>

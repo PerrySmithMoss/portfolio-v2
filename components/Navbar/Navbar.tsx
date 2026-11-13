@@ -81,7 +81,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
             href="https://github.com/PerrySmithMoss"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="github"
+            aria-label="GitHub"
             className={styles.navbarIcon}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -102,7 +102,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
             href="https://www.linkedin.com/in/perrysmithmoss"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="linkedin"
+            aria-label="LinkedIn"
             className={styles.navbarIcon}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -129,7 +129,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              Resume
+              CV
             </motion.a>
           </div>
         </div>
@@ -172,7 +172,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Resume
+                  CV
                 </a>
               </nav>
             </aside>

@@ -28,13 +28,12 @@ export const GetInTouch: React.FC<GetInTouchProps> = ({}) => {
           <div>
             <div className={styles.header}>
               <div className={styles.headerBorderLeft}>
-                <h2>Get In Touch</h2>
+                <h2>Get in touch</h2>
               </div>
             </div>
             <p>
-              If you want to know more about me or my work, or if you would just
-              like to say hello, feel free to send me a message. I&apos;d love to
-              hear from you.
+              Want to talk about a project, ask about Vordian or say hello?
+              Send me a message.
             </p>
             <ContactForm />
           </div>

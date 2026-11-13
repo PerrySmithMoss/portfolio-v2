@@ -25,7 +25,7 @@ export const SocialLinks: React.FC<SocialLinksProps> = ({ align, size }) => {
                 size === "large" ? styles.large : styles.small
               } icon-github`}
             >
-              Github
+              GitHub
             </span>
           </a>
         </li>

@@ -21,11 +21,11 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     const message = {
-      from: `"Perry Smith-Moss Website 🧑🏻‍🦱" <${process.env.EMAIL_FROM}>`, // sender address
+      from: `"Perry Smith-Moss Portfolio" <${process.env.EMAIL_FROM}>`, // sender address
       to: process.env.EMAIL_TO as string, // list of receivers
-      subject: "Get In Touch", // Subject line
+      subject: "New portfolio message", // Subject line
       html: `<div>
-        <h1>Get In Touch</h1>
+        <h1>New portfolio message</h1>
         <h3>From: ${contact.name}</h3>
         <h3>Email: ${contact.email}</h3>
         <h3>Message: ${contact.message}</h3>
@@ -37,13 +37,18 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       .then((info) => {
         return {
           status: 200,
-          msg: "Success! Your email was sent.",
+          msg: "Thanks for getting in touch. Your message has been sent.",
           info: info.messageId,
           preview: nodemailer.getTestMessageUrl(info),
         };
       })
-      .catch((err) => {
-        return { status: 400, msg: err, info: null, preview: null };
+      .catch(() => {
+        return {
+          status: 400,
+          msg: "Your message couldn’t be sent. Please email me at perrysmithmoss@gmail.com.",
+          info: null,
+          preview: null,
+        };
       });
 
     res.status(emailRes.status).json(emailRes);
@@ -51,8 +56,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     res
       .status(400)
       .json({
-        status: 200,
-        msg: "Ooops! There was an error whilst trying to send your email. Please contact me via Linkedin @perrysmithmoss",
+        status: 400,
+        msg: "Your message couldn’t be sent. Please email me at perrysmithmoss@gmail.com.",
         info: null,
         preview: null,
       });

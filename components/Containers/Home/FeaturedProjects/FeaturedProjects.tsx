@@ -32,7 +32,7 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
         </div>
         <div className={styles.loadMoreButton}>
           <Button
-            text="See more"
+            text="View all projects"
             variant="outline"
             size="lg"
             colour="#00FFFF"

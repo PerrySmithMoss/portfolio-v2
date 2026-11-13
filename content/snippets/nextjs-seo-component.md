@@ -1,14 +1,14 @@
 ---
 id: "3"
-title: "Next.js SEO component"
-excerpt: "A re-useable component to ease the pain of entering SEO meta tags."
+title: "Next.js Pages Router SEO component"
+excerpt: "A reusable component for page titles, descriptions and social sharing metadata in the Next.js Pages Router."
 thumbnail: "/assets/images/home/snippets/debounce.png"
 slug: "nextjs-seo-component"
 tags: ["TypeScript", "Next.js"]
 tech: ["nextjs", "typescript"]
 ---
 
-## Next.js SEO component
+## Next.js Pages Router SEO component
 
 ```jsx
 interface SEOProps {

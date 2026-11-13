@@ -1,14 +1,14 @@
 ---
 id: "8"
-title: "React.js useOnScreen Hook"
-excerpt: "React hook which reports if an element is in screen view."
+title: "React useOnScreen hook"
+excerpt: "Check whether an element is visible in the viewport."
 thumbnail: "/assets/images/home/snippets/debounce.png"
 slug: "useOnScreen"
 tags: ["JavaScript", "React.js"]
 tech: ["javascript", "react"]
 ---
 
-## React.js useOnScreen Hook
+## React useOnScreen hook
 
 ```jsx
 import { useEffect, useState } from "react";

@@ -34,8 +34,7 @@ export const MySkills: React.FC<MySkillsProps> = ({}) => {
           <div>
             <h2>Tech Stack</h2>
             <p>
-              Below you can see a list of technolgies which are my &apos;bread
-              and butter&apos;.
+              Tools and technologies I’ve used across work and personal projects.
             </p>
           </div>
         </div>

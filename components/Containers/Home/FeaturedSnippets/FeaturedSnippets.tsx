@@ -42,7 +42,7 @@ export const FeaturedSnippets: React.FC<FeaturedSnippetsProps> = ({
           </div>
           <div className={styles.loadMoreButton}>
             <Button
-              text="See more"
+            text="View all snippets"
               variant="outline"
               size="lg"
               colour="#00FFFF"

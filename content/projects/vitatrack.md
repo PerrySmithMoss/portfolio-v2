@@ -9,7 +9,7 @@ image: "/assets/images/home/projects/vitatrack/mockup1.png"
 logo: "/assets/images/home/projects/im-listening/logo.png"
 coverImage: "/assets/images/projects/vitatrack/mockup.png"
 mockupImage: "/assets/images/home/projects/vitatrack/mockup1.png"
-description: "Web application which allows users to track their workouts and nutrition."
+description: "A web app for tracking workouts and nutrition."
 tech: ["nextjs", "nodejs", "graphql", "reactQuery"]
 tags: ["Next.js","TypeScript","GraphQL","PostgreSQL","Node.js","React-Query"]
 featuredTags: ["Next.js","TypeScript","GraphQL","PostgreSQL"]

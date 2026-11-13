@@ -18,12 +18,11 @@ export const Blog: React.FC<BlogProps> = ({ posts }) => {
           transition={{ delay: 0.1 }}
         >
           <div className={styles.headerBorderLeft}>
-            <h1>Latest Posts</h1>
+            <h1>Blog</h1>
           </div>
           <div className={styles.subHeading}>
             <p>
-              Here are some of my how tos, mental models and where I look into
-              the new trends of Web Development.
+              Notes and tutorials from things I’ve built and learned.
             </p>
           </div>
           <div className={styles.allPostsGrid}>

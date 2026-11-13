@@ -94,7 +94,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
               {project.githubLink && (
                 <Button
-                  text="Github repo"
+                  text="Source code"
                   link={project.githubLink}
                   external
                   colour="white"

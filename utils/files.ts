@@ -15,14 +15,24 @@ import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import { slugify } from "./slugify";
 
+// These paths are relative to content/. Keep that literal prefix in filesystem calls
+// so Next.js does not trace unrelated files from the project root.
+type ContentDirectory =
+  | "blog"
+  | "projects"
+  | "snippets"
+  | "home/blog"
+  | "home/projects"
+  | "home/snippets";
+
 /**
  * A function to asynchronously return file names
  * @param {string} pathOfFiles - The path of where the files are stored
  * @returns {string[]} An array of file strings
  */
-export async function getFiles(pathOfFiles: string): Promise<string[]> {
+export async function getFiles(pathOfFiles: ContentDirectory): Promise<string[]> {
   try {
-    const fullPath = path.join(process.cwd(), pathOfFiles);
+    const fullPath = path.join(process.cwd(), "content", pathOfFiles);
     const files = await fsPromise.readdir(fullPath);
     return files;
   } catch (e) {
@@ -37,8 +47,8 @@ export async function getFiles(pathOfFiles: string): Promise<string[]> {
  * @param {string} file - The name of the file which you want to read
  * @returns {string} A string of the files content
  */
-export async function readFile(pathOfFile: string, file: string): Promise<string> {
-  const fullPath = path.join(process.cwd(), pathOfFile, file);
+export async function readFile(pathOfFile: ContentDirectory, file: string): Promise<string> {
+  const fullPath = path.join(process.cwd(), "content", pathOfFile, file);
   return fsPromise.readFile(fullPath, "utf8");
 }
 
@@ -47,7 +57,7 @@ export async function readFile(pathOfFile: string, file: string): Promise<string
  * @param {string} pathOfFiles - The path of where the files are stored
  * @returns {data[]} An array of data objects which contain the front matter of a markdown file
  */
-export async function getMarkdownFrontMatter(pathOfFiles: string): Promise<IMedia[]> {
+export async function getMarkdownFrontMatter(pathOfFiles: ContentDirectory): Promise<IMedia[]> {
   const files = await getFiles(pathOfFiles);
 
   let parsedMarkdownFiles;
@@ -81,7 +91,7 @@ export async function getMarkdownFrontMatter(pathOfFiles: string): Promise<IMedi
  * @returns {mdxSource, frontMatter} An object which contains the markdown and front-matter
  */
 export async function getFileBySlug(
-  pathOfFile: string,
+  pathOfFile: ContentDirectory,
   slug: string,
 ): Promise<{
   mdxSource: string;
@@ -116,7 +126,7 @@ export async function getFileBySlug(
 
   const { code, frontmatter } = await bundleMDX({
     source: source,
-    cwd: path.join(process.cwd(), pathOfFile),
+    cwd: path.join(process.cwd(), "content", pathOfFile),
     mdxOptions(options) {
       options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkGfm];
       options.rehypePlugins = [
@@ -136,7 +146,7 @@ export async function getFileBySlug(
       return options;
     },
     esbuildOptions(options) {
-      options.minify = false;
+      // Keep the default minification: this code is serialized into page data.
       options.target = ["es2022", "chrome91", "firefox90", "safari15", "edge91"];
       return options;
     },
@@ -172,7 +182,7 @@ export async function getFileBySlug(
  * @returns {IMedia} An array of recommendation objects which contain the front-matter
  */
 export async function getRecommendations(
-  pathOfFile: string,
+  pathOfFile: ContentDirectory,
   slug: string,
 ): Promise<(IMedia | IMedia[])[]> {
   const files = await getMarkdownFrontMatter(pathOfFile);
@@ -192,7 +202,7 @@ export async function getRecommendations(
           otherFiles.filter(
             (file: any) =>
               !similarRecommendations.some(
-                (recommendation: IMedia) => (recommendation.slug = file.slug),
+                (recommendation: IMedia) => recommendation.slug === file.slug,
               ),
           ),
         );

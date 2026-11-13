@@ -59,7 +59,7 @@ export const FeaturedBlogPosts: React.FC<FeaturedBlogPostsProps> = ({ featuredBl
           )}
 
           <div className={styles.loadMoreButton}>
-            <Button text="See more" variant="outline" size="lg" link="/blog" />
+            <Button text="View all posts" variant="outline" size="lg" link="/blog" />
           </div>
         </div>
       </m.div>

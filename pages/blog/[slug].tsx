@@ -1,5 +1,4 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import Head from "next/head";
 import { PostContainer } from "../../components/Containers/Blog/Post/PostContainer";
 import { SEO } from "../../components/SEO/SEO";
 import { IPost } from "../../types/IBlog";
@@ -22,10 +21,14 @@ const BlogPost: NextPage<BlogPostProps> = ({
 }) => {
   return (
     <>
-      <Head>
-        <title>{frontMatter.title} | Perry Smith-Moss</title>
-        <SEO />
-      </Head>
+      <SEO
+        metaTitle={`${frontMatter.title} | Perry Smith-Moss`}
+        metaDescription={frontMatter.description}
+        canonicalLink={`https://perrysmithmoss.com/blog/${frontMatter.slug}`}
+        ogUrl={`https://perrysmithmoss.com/blog/${frontMatter.slug}`}
+        ogImage={frontMatter.image}
+        ogType="article"
+      />
       <PostContainer
         mdxSource={mdxSource}
         frontMatter={frontMatter}
@@ -39,7 +42,7 @@ const BlogPost: NextPage<BlogPostProps> = ({
 export default BlogPost;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const files = await getFiles("content/blog");
+  const files = await getFiles("blog");
 
   const paths = files
     .filter((path) => /\.mdx?$/.test(path))
@@ -58,9 +61,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const { slug } = context.params as IParams;
 
-  const { frontMatter, mdxSource, headings } = await getFileBySlug("content/blog", slug);
+  const { frontMatter, mdxSource, headings } = await getFileBySlug("blog", slug);
 
-  const recommendations = await getRecommendations("content/blog", slug);
+  const recommendations = await getRecommendations("blog", slug);
   return {
     props: {
       mdxSource,

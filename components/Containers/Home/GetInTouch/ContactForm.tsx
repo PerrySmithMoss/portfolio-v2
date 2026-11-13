@@ -85,7 +85,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({}) => {
           name="email"
           type="email"
           required
-          placeholder="Enter your email"
+          placeholder="Enter your email address"
         />
         {errors.email && (
           <p style={{ paddingTop: "6px" }} className={styles.error}>
@@ -104,7 +104,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({}) => {
           value={formData.message}
           name="message"
           required
-          placeholder="Enter your message"
+          placeholder="What would you like to talk about?"
         />
         {errors.message && <p className={styles.error}>{errors.message}</p>}
 
@@ -116,7 +116,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({}) => {
       </label>
       <div className={styles.buttonContainer}>
         <Button
-          text="Submit"
+          text="Send message"
           submissionType="submit"
           colour="#00FFFF"
           size="lg"

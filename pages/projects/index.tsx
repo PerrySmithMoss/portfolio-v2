@@ -1,5 +1,4 @@
 import type { GetStaticProps, NextPage } from "next";
-import Head from "next/head";
 import { Projects } from "../../components/Containers/Project/Projects";
 import { SEO } from "../../components/SEO/SEO";
 import { IProject } from "../../types/IProject";
@@ -14,10 +13,12 @@ interface ProjectsPageProps {
 const ProjectsPage: NextPage<ProjectsPageProps> = ({ projects, tags }) => {
   return (
     <>
-      <Head>
-        <title>Projects | Perry Smith-Moss</title>
-        <SEO />
-      </Head>
+      <SEO
+        metaTitle="Projects | Perry Smith-Moss"
+        metaDescription="Explore Vordian and other projects I’ve built, from fitness tools and fleet tracking to messaging apps."
+        canonicalLink="https://perrysmithmoss.com/projects"
+        ogUrl="https://perrysmithmoss.com/projects"
+      />
       <Projects projects={projects} tags={tags} />
     </>
   );
@@ -26,7 +27,7 @@ const ProjectsPage: NextPage<ProjectsPageProps> = ({ projects, tags }) => {
 export default ProjectsPage;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const content = await getMarkdownFrontMatter("content/projects");
+  const content = await getMarkdownFrontMatter("projects");
 
   // Order projects by ID
   const projects = content.sort((x, y) => parseInt(x.id) - parseInt(y.id));
