@@ -16,34 +16,24 @@ export const Hero: React.FC<HeroProps> = () => {
 
   const items = [
     <header key="one">
-      <h1>Greetings, my name is</h1>
+      <h1>Perry Smith-Moss</h1>
     </header>,
     
     <div key="two">
-      <h2>Perry Smith-Moss.</h2>
+      <h2>Software engineer. Currently building Vordian.</h2>
     </div>,
     
     <div key="three">
       <p>
-        I am a dynamic software engineer, dedicated to unravelling complex
-        business challenges by leveraging cutting-edge technology. At this
-        moment, I am meticulously crafting a transformative driver and mechanic
-        portal for{" "}
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.whocanfixmycar.com"
-          className={styles.heroLink}
-        >
-          WhoCanFixMyCar
-        </a>
-        .
+        I’m building a tool to help fitness coaches review client check-ins and
+        make sense of the data behind them. Previously, I worked on software at
+        WhoCanFixMyCar and Meadow Vale Foods.
       </p>
     </div>,
     
     <div key="four" className={styles.heroButtonContainer}>
       <Link href="/projects" className={styles.heroButton}>
-        Projects
+        Explore my work →
       </Link>
     </div>,
     
