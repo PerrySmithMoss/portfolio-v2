@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { ScrollDown } from "../../../ScrollDown/ScrollDown";
 import styles from "./Hero.module.scss";
@@ -32,9 +31,9 @@ export const Hero: React.FC<HeroProps> = () => {
     </div>,
     
     <div key="four" className={styles.heroButtonContainer}>
-      <Link href="/projects" className={styles.heroButton}>
+      <a href="#featuredProjects" className={styles.heroButton}>
         Explore my work →
-      </Link>
+      </a>
     </div>,
     
     <div key="five">
