@@ -27,7 +27,7 @@ const ProjectsPage: NextPage<ProjectsPageProps> = ({ projects, tags }) => {
 export default ProjectsPage;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const content = await getMarkdownFrontMatter("content/projects");
+  const content = await getMarkdownFrontMatter("projects");
 
   // Order projects by ID
   const projects = content.sort((x, y) => parseInt(x.id) - parseInt(y.id));

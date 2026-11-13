@@ -25,7 +25,7 @@ const BlogPage: NextPage<BlogPageProps> = ({ posts }) => {
 export default BlogPage;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getMarkdownFrontMatter("content/blog");
+  const posts = await getMarkdownFrontMatter("blog");
 
   return {
     props: {

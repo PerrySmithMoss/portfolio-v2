@@ -25,7 +25,7 @@ export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
   const featuredProjects = await getMarkdownFrontMatter(
-    "content/home/projects"
+    "home/projects"
   );
 
   return {

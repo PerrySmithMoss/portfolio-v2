@@ -27,7 +27,7 @@ const SnippetsPage: NextPage<SnippetsPageProps> = ({ snippets, tags }) => {
 export default SnippetsPage;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const snippets = await getMarkdownFrontMatter("content/snippets");
+  const snippets = await getMarkdownFrontMatter("snippets");
 
   // Gather all tags (removing duplicates)
   const tags = getTags(snippets as ISnippet[]);

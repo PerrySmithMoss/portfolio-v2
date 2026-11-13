@@ -37,7 +37,7 @@ const Snippet: NextPage<SnippetProps> = ({
 export default Snippet;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const files = await getFiles("content/snippets");
+  const files = await getFiles("snippets");
 
   const paths = files.map((filename) => ({
     params: {
@@ -55,11 +55,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const { slug } = context.params as IParams;
 
   const { frontMatter, mdxSource } = await getFileBySlug(
-    "content/snippets",
+    "snippets",
     slug
   );
 
-  const recommendations = await getRecommendations("content/snippets", slug);
+  const recommendations = await getRecommendations("snippets", slug);
 
   return {
     props: {

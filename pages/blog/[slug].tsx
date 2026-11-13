@@ -42,7 +42,7 @@ const BlogPost: NextPage<BlogPostProps> = ({
 export default BlogPost;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const files = await getFiles("content/blog");
+  const files = await getFiles("blog");
 
   const paths = files
     .filter((path) => /\.mdx?$/.test(path))
@@ -61,9 +61,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const { slug } = context.params as IParams;
 
-  const { frontMatter, mdxSource, headings } = await getFileBySlug("content/blog", slug);
+  const { frontMatter, mdxSource, headings } = await getFileBySlug("blog", slug);
 
-  const recommendations = await getRecommendations("content/blog", slug);
+  const recommendations = await getRecommendations("blog", slug);
   return {
     props: {
       mdxSource,
