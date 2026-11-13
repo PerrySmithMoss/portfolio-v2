@@ -192,7 +192,7 @@ export async function getRecommendations(
           otherFiles.filter(
             (file: any) =>
               !similarRecommendations.some(
-                (recommendation: IMedia) => (recommendation.slug = file.slug),
+                (recommendation: IMedia) => recommendation.slug === file.slug,
               ),
           ),
         );
