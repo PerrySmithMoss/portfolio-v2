@@ -1,12 +1,27 @@
-import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./ScrollDown.module.scss";
 
 interface ScrollDownProps {}
 
 export const ScrollDown: React.FC<ScrollDownProps> = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // The scroll cue is only useful while the visitor is at the top of the page.
+    const updateVisibility = () => setIsVisible(window.scrollY < 32);
+
+    updateVisibility();
+    window.addEventListener("scroll", updateVisibility, { passive: true });
+
+    return () => window.removeEventListener("scroll", updateVisibility);
+  }, []);
+
   return (
-    <Link href="/#featuredProjects" className={styles.scrollDown}>
+    <a
+      href="#featuredProjects"
+      aria-label="Scroll to featured projects"
+      className={`${styles.scrollDown} ${isVisible ? "" : styles.hidden}`}
+    >
       <svg
         stroke="currentColor"
         strokeWidth="0"
@@ -23,6 +38,6 @@ export const ScrollDown: React.FC<ScrollDownProps> = () => {
           d="M112 268l144 144 144-144M256 392V100"
         />
       </svg>
-    </Link>
+    </a>
   );
 };

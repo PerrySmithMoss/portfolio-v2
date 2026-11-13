@@ -12,13 +12,16 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
   featuredProjects,
 }) => {
   return (
-      <section className={styles.wrapper}>
+      <section
+        id="featuredProjects"
+        aria-labelledby="featured-projects-heading"
+        className={styles.wrapper}
+      >
         <div className={styles.header}>
           <div className={styles.headerBorderLeft}>
-            <h2>Featured Projects</h2>
+            <h2 id="featured-projects-heading">Featured Projects</h2>
           </div>
         </div>
-        <a id="featuredProjects" className={styles.featuredProjectsLink}></a>
         <div className={styles.projectsContainer}>
           <ul className={styles.projectsWrapper}>
             {featuredProjects

@@ -36,6 +36,13 @@ html {
   scrollbar-color: var(--light-navy) var(--dark-navy);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html,
+  body {
+    scroll-behavior: auto;
+  }
+}
+
 body::-webkit-scrollbar {
   z-index: 20;
   background: #0000;
