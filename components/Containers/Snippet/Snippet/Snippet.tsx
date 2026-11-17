@@ -38,6 +38,7 @@ export const SnippetContainer: React.FC<SnippetProps> = ({
           </header>
 
           <div className={`${styles.markdown} markdown`}>
+            {/* eslint-disable-next-line react-hooks/static-components -- mdx-bundler's documented factory is memoized by source above. */}
             <Component components={MDXComponents} />
           </div>
         </article>
