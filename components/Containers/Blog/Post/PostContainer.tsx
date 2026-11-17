@@ -73,6 +73,7 @@ export const PostContainer: React.FC<PostContainerProps> = ({
       <div className={styles.grid}>
         <article className={`${styles.markdown} markdown`}>
           <div className={styles.articleBody}>
+            {/* eslint-disable-next-line react-hooks/static-components -- mdx-bundler's documented factory is memoized by source above. */}
             <Component components={MDXComponents} />
           </div>
         </article>

@@ -6,6 +6,8 @@ import { useGlobalUIContext } from "../../context/GlobalUI.context";
 import { useOnClickOutside } from "../../hooks/useOnClickOutside";
 import styles from "./Navbar.module.scss";
 
+const MotionLink = motion.create(Link);
+
 interface NavbarProps {}
 
 export const Navbar: React.FC<NavbarProps> = () => {
@@ -29,8 +31,6 @@ export const Navbar: React.FC<NavbarProps> = () => {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events, isMobileMenuDrawerOpen, setIsMobileMenuDrawerOpen]);
-
-  const MotionLink = motion.create(Link);
 
   return (
     <header className={styles.navbarHeader}>

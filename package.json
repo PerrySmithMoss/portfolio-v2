@@ -9,7 +9,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
     "esbuild": "^0.28.0",
@@ -18,7 +18,7 @@
     "marked": "^18.0.2",
     "mdx-bundler": "^10.1.1",
     "mdx-prism": "^0.3.4",
-    "next": "16.2.4",
+    "next": "16.4.6",
     "nodemailer": "^8.0.6",
     "react": "19.2.5",
     "react-dom": "19.2.5",
@@ -34,7 +34,7 @@
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "eslint": "10.2.1",
-    "eslint-config-next": "16.2.4",
+    "eslint-config-next": "16.4.6",
     "sass": "^1.99.0",
     "typescript": "6.0.3"
   }
