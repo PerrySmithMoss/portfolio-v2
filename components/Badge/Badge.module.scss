@@ -53,7 +53,7 @@
   -webkit-tap-highlight-color: transparent;
   line-height: 24px;
   text-transform: uppercase;
-  font-family: "Poppins-Bold";
+  font-family: var(--font-poppins-bold);
   letter-spacing: 0.3px;
   background-color: transparent !important;
   box-sizing: border-box;

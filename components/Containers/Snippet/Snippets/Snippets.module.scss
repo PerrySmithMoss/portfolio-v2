@@ -2,7 +2,7 @@
   margin: 0px auto;
   max-width: 1200px;
   color: var(--white);
-  font-family: "Poppins-Regular";
+  font-family: var(--font-poppins);
   padding-bottom: 100px;
   height: 100vh;
 }
@@ -35,7 +35,7 @@
 }
 
 .searchContainer {
-  font-family: "Poppins-Regular";
+  font-family: var(--font-poppins);
   margin-top: 2rem;
   width: 100%;
 
@@ -63,7 +63,7 @@
   }
 
   input[type="text"] {
-    font-family: "Poppins-Regular";
+    font-family: var(--font-poppins);
   }
   button,
   button:focus {
@@ -80,7 +80,7 @@
     color: var(--light-white);
   }
   input {
-    font-family: "Poppins-Regular";
+    font-family: var(--font-poppins);
     border: 1px solid transparent;
     background-color: transparent;
     resize: none;
@@ -93,7 +93,7 @@
   }
   ::placeholder {
     color: var(--light-white);
-    font-family: "Poppins-Regular";
+    font-family: var(--font-poppins);
     font-size: var(--fs-xs);
   }
 
@@ -188,7 +188,7 @@
   justify-content: space-between;
 }
 .cardBody h4 {
-  font-family: "Poppins-Medium";
+  font-family: var(--font-poppins-medium);
   font-size: clamp(16px, 3vw, 18px);
 }
 

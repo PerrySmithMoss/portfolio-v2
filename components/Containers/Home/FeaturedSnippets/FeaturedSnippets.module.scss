@@ -2,14 +2,14 @@
   margin: 0px auto;
   max-width: 1000px;
   color: var(--white);
-  font-family: "Poppins-Regular";
+  font-family: var(--font-poppins);
   padding: 30px 0;
   // min-height: 100vh;
 }
 .wrapper h2 {
   color: var(--white);
   font-size: clamp(18px, 5vw, 22px);
-  font-family: "Poppins-Bold";
+  font-family: var(--font-poppins-bold);
 }
 
 .headerBorderLeft {
@@ -113,7 +113,7 @@
   justify-content: space-between;
 }
 .cardBody h4 {
-  font-family: "Poppins-Medium";
+  font-family: var(--font-poppins-medium);
   font-size: var(--fs-lg);
 }
 

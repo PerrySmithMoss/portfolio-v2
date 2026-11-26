@@ -15,14 +15,14 @@
 }
 
 .heroContainer h1 {
-  font-family: "Poppins-Medium";
+  font-family: var(--font-poppins-medium);
   margin: 0px;
   color: var(--cyan);
   font-size: clamp(30px, 6vw, 80px);
 }
 
 .heroContainer h2 {
-  font-family: "Poppins-Medium";
+  font-family: var(--font-poppins-medium);
   margin: 1rem 0px 0px;
   color: var(--white);
   font-size: clamp(20px, 3vw, 32px);

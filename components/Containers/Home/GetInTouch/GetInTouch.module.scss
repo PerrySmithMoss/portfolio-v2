@@ -2,13 +2,13 @@
   margin: 0 auto;
   max-width: 1000px;
   color: var(--white);
-  font-family: "Poppins-Regular";
+  font-family: var(--font-poppins);
   padding: clamp(5rem, 8vw, 8rem) 0 30px;
 }
 .wrapper h2 {
   color: var(--white);
   font-size: clamp(18px, 5vw, 22px);
-  font-family: "Poppins-Bold";
+  font-family: var(--font-poppins-bold);
 }
 
 .headerBorderLeft {
@@ -47,7 +47,7 @@
 
 // Contact form
 .contactForm {
-  font-family: "Poppins-Regular";
+  font-family: var(--font-poppins);
   margin-top: 2rem;
   // padding: 3rem;
   // background-color: #141724;
@@ -63,23 +63,23 @@
     font-size: 14px;
   }
   input[type="text"] {
-    font-family: "Poppins-Regular";
+    font-family: var(--font-poppins);
   }
   input {
-    font-family: "Poppins-Regular";
+    font-family: var(--font-poppins);
   }
   textarea {
-    font-family: "Poppins-Regular";
+    font-family: var(--font-poppins);
   }
 
   ::placeholder {
     color: var(--light-white);
-    font-family: "Poppins-Regular";
+    font-family: var(--font-poppins);
     font-size: var(--fs-xs);
   }
   textarea::placeholder {
     color: var(--light-white);
-    font-family: "Poppins-Regular";
+    font-family: var(--font-poppins);
     font-size: var(--fs-sm);
   }
 
