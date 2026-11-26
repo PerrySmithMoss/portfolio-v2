@@ -2,7 +2,7 @@
   margin: 0px auto;
   max-width: 1200px;
   color: var(--white);
-  font-family: "Poppins-Regular";
+  font-family: var(--font-poppins);
   padding-bottom: 75px;
 }
 
@@ -75,7 +75,7 @@
   h2 {
     margin-top: 1rem;
     font-size: clamp(18px, 5vw, 24px);
-    font-family: "Poppins-Medium";
+    font-family: var(--font-poppins-medium);
     cursor: pointer;
   }
   h2:hover {
@@ -135,7 +135,7 @@
   h3 {
     margin-top: 1rem;
     font-size: 18px;
-    font-family: "Poppins-Medium";
+    font-family: var(--font-poppins-medium);
     cursor: pointer;
   }
   h3:hover {
@@ -189,7 +189,7 @@
   h3 {
     margin-top: 0.75rem;
     font-size: 18px;
-    font-family: "Poppins-Medium";
+    font-family: var(--font-poppins-medium);
     cursor: pointer;
   }
   h3:hover {

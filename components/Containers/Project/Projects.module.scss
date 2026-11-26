@@ -9,7 +9,7 @@
   margin: 0 auto;
   max-width: 1200px;
   color: var(--white);
-  font-family: "Poppins-Regular";
+  font-family: var(--font-poppins);
   padding-bottom: 100px;
 }
 
@@ -41,7 +41,7 @@
 .searchContainer {
   margin-top: 2rem;
   width: 100%;
-  font-family: "Poppins-Regular";
+  font-family: var(--font-poppins);
   @include flex-center;
 
   .searchInner {
@@ -67,7 +67,7 @@
     border: none;
     outline: none;
     color: var(--light-white);
-    font-family: "Poppins-Regular";
+    font-family: var(--font-poppins);
 
     &::placeholder {
       color: rgba(255, 255, 255, 0.5);
@@ -144,7 +144,7 @@
 
   h4 {
     margin-top: 1rem;
-    font-family: "Poppins-Bold";
+    font-family: var(--font-poppins-bold);
     font-size: clamp(16px, 3vw, 18px);
   }
 

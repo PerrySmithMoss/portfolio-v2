@@ -6,11 +6,11 @@
   max-width: 1366px;
   width: 100%;
   color: var(--white);
-  font-family: "Poppins-Regular";
+  font-family: var(--font-poppins);
 
   h1 {
     font-size: 34px;
-    font-family: "Poppins-Bold";
+    font-family: var(--font-poppins-bold);
     margin-top: 0.75rem;
   }
 
@@ -123,7 +123,7 @@
       h5,
       h6 {
         margin-bottom: 0.75rem;
-        font-family: "Poppins-Bold";
+        font-family: var(--font-poppins-bold);
       }
     }
   }
@@ -227,7 +227,7 @@
       h3 {
         margin-top: 0.75rem;
         font-size: 18px;
-        font-family: "Poppins-Medium";
+        font-family: var(--font-poppins-medium);
         color: white;
         transition: color 0.2s ease;
 
@@ -248,7 +248,7 @@
   }
 
   h2 {
-    font-family: "Poppins-Bold";
+    font-family: var(--font-poppins-bold);
     font-size: clamp(20px, 4vw, 24px);
     padding-bottom: 25px;
     color: white;
@@ -265,7 +265,7 @@
     h3 {
       margin-top: 0.75rem;
       font-size: 18px;
-      font-family: "Poppins-Medium";
+      font-family: var(--font-poppins-medium);
       cursor: pointer;
     }
     h3:hover {
