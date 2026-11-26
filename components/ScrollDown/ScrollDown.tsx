@@ -4,7 +4,7 @@ import styles from "./ScrollDown.module.scss";
 interface ScrollDownProps {}
 
 export const ScrollDown: React.FC<ScrollDownProps> = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     // The scroll cue is only useful while the visitor is at the top of the page.
