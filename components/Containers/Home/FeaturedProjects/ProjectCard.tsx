@@ -141,6 +141,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 <img
                   src={project.mockupImage}
                   alt={`${project.title} mockup image`}
+                  loading="lazy"
                   style={{ marginRight: "250px" }}
                   className={`${
                     project.title.toLowerCase() === "handover"
